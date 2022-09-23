@@ -1,0 +1,393 @@
+#+TITLE: Planetary-nebulae
+* Find PNe in LAMOST
+:PROPERTIES:
+:ID:       
+:END:
+
+
+I found a new PN Candidate (32.035994 49.233615), by using synthetic fotometry based on Lamost spectra of objects
+catalog as emission lines objects. See the [[https://github.com/AngelGSoto/python-notebooks/blob/master/Lamost%20and%20emission%20line%20objects.ipynb][notebook]].
+
++ Papers:
+
+#+BEGIN_SRC bibtex
+@ARTICLE{2022RAA....22f5015L,
+       author = {{Lu}, Yan and {Luo}, A. -Li and {Wang}, Li-Li and {Wang}, You-Fen and {Li}, Yin-Bi and {Han}, Jin-Shu and {Qin}, Li and {Tang}, Yan-Ke and {Qiu}, Bo and {Zhang}, Shuo and {Zhang}, Jian-Nan and {Zhao}, Yong-Heng},
+       title = "{106 New Emission-line Galaxies and 29 New Galactic H II Regions are Identified with Spectra in the Unknown Data Set of LAMOST DR7}",
+       journal = {Research in Astronomy and Astrophysics},
+       keywords = {techniques: spectroscopic, Galaxies, (ISM:) HII regions},
+       year = 2022,
+       month = jun,
+       volume = {22},
+       number = {6},
+       eid = {065015},
+       pages = {065015},
+       doi = {10.1088/1674-4527/ac693b},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2022RAA....22f5015L},
+       adsnote = {Provided by the SAO/NASA Astrophysics Data System}}
+
+#+END_SRC
+
+#+BEGIN_SRC bibtex
+@ARTICLE{2022ApJS..260...35W,
+       author = {{Wang}, Luqian and {Li}, Jiao and {Wu}, You and {Gies}, Douglas R. and {Liu}, Jin Zhong and {Liu}, Chao and {Guo}, Yanjun and {Chen}, Xuefei and {Han}, Zhanwen},
+       title = "{Identification of New Classical Be Stars from the LAMOST Medium Resolution Survey}",
+       journal = {\apjs},
+       keywords = {Early-type stars, Be stars, Surveys, 430, 142, 1671, Astrophysics - Solar and Stellar Astrophysics, Astrophysics - Astrophysics of Galaxies},
+       year = 2022,
+       month = jun,
+       volume = {260},
+       number = {2},
+       eid = {35},
+       pages = {35},
+       doi = {10.3847/1538-4365/ac617a},
+       archivePrefix = {arXiv},
+       eprint = {2203.15289},
+       primaryClass = {astro-ph.SR},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2022ApJS..260...35W},
+       adsnote = {Provided by the SAO/NASA Astrophysics Data System}}
+#+END_SRC
+
+#+BEGIN_SRC bibtex
+@ARTICLE{2022ApJS..259...38Z,
+       author = {{Zhang}, Yun-Jin and {Hou}, Wen and {Luo}, A. -Li and {Li}, Shuo and {Qin}, Li and {Lu}, Yan and {Li}, Yin-Bi and {Chen}, Jian-Jun and {Zhao}, Yong-Heng},
+       title = "{A Catalog of Early-type H{\ensuremath{\alpha}} Emission-line Stars and 62 Newly Confirmed Herbig Ae/Be Stars from LAMOST Data Release 7}",
+       journal = {\apjs},
+       keywords = {Ae stars, Pre-main sequence, Be stars, Herbig Ae/Be stars, 20, 1289, 142, 723, Astrophysics - Solar and Stellar Astrophysics},
+       year = 2022,
+       month = apr,
+       volume = {259},
+       number = {2},
+       eid = {38},
+       pages = {38},
+       doi = {10.3847/1538-4365/ac4964},
+       archivePrefix = {arXiv},
+       eprint = {2107.00402},
+       primaryClass = {astro-ph.SR},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2022ApJS..259...38Z},
+       adsnote = {Provided by the SAO/NASA Astrophysics Data System}}
+#+END_SRC
+
+#+BEGIN_SRC bibtex
+@ARTICLE{2021RAA....21..288S,
+       author = {{Shridharan}, Baskaran and {Mathew}, Blesson and {Nidhi}, Sabu and {Anusha}, Ravikumar and {Arun}, Roy and {Kartha}, Sreeja S. and {Kumar}, Yerra Bharat},
+       title = "{Discovery of 2716 hot emission-line stars from LAMOST DR5}",
+       journal = {Research in Astronomy and Astrophysics},
+       keywords = {stars: early-type, methods: data analysis, techniques: photometric, astronomical databases: catalogs, Astrophysics - Solar and Stellar Astrophysics},
+       year = 2021,
+       month = dec,
+       volume = {21},
+       number = {11},
+       eid = {288},
+       pages = {288},
+       doi = {10.1088/1674-4527/21/11/288},
+       archivePrefix = {arXiv},
+       eprint = {2108.08025},
+       primaryClass = {astro-ph.SR},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2021RAA....21..288S},
+       adsnote = {Provided by the SAO/NASA Astrophysics Data System}}
+#+END_SRC
+
+#+BEGIN_SRC bibtex
+@ARTICLE{2021PASP..133l4501Y,
+       author = {{Yang}, Yujie and {Jiang}, Bin},
+       title = "{Searching for Galactic H II Regions from the LAMOST Spectroscopic Database}",
+       journal = {\pasp},
+       keywords = {1671, 1858, 694},
+       year = 2021,
+       month = dec,
+       volume = {133},
+       number = {1030},
+       eid = {124501},
+       pages = {124501},
+       doi = {10.1088/1538-3873/ac193a},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2021PASP..133l4501Y},
+       adsnote = {Provided by the SAO/NASA Astrophysics Data System}}
+#+END_SRC
+
+#+BEGIN_SRC bibtex
+@ARTICLE{2020yCatp040001605H,
+       author = {{Hou}, W. and {Luo}, A. -L. and {Hu}, J. -Y. and {Yang}, H. -F. and {Du}, C. -D. and {Liu}, C. and {Lee}, C. -D. and {Lin}, C. -C. and {Wang}, Y. -F. and {Zhang}, Y. and {Cao}, Z. -H. and {Hou}, Y. -H.},
+       title = "{VizieR Online Data Catalog: LAMOST catalog of early-type emission-line stars (Hou+, 2016)}",
+       journal = {VizieR Online Data Catalog (other)},
+       keywords = {Stars: emission, Stars: early-type},
+       year = 2020,
+       month = aug,
+       volume = {0400},
+       eid = {J/other/RAA/16},
+       pages = {J/other/RAA/16},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2020yCatp040001605H},
+       adsnote = {Provided by the SAO/NASA Astrophysics Data System}}
+#+END_SRC
+
+#+BEGIN_SRC bibtex
+@ARTICLE{2020RAA....20...97Z,
+       author = {{Zhang}, Meng and {Chen}, Bing-Qiu and {Huo}, Zhi-Ying and {Zhang}, Hua-Wei and {Xiang}, Mao-Sheng and {Yuan}, Hai-Bo and {Huang}, Yang and {Wang}, Chun and {Liu}, Xiao-Wei},
+       title = "{A catalogue of H{\ensuremath{\alpha}} emission-line point sources in the vicinity fields of M 31 and M 33 from the LAMOST survey}",
+       journal = {Research in Astronomy and Astrophysics},
+       keywords = {stars: emission-line, planetary nebulae: general, galaxies: individual (M 31, M 33), 694, Astrophysics - Astrophysics of Galaxies},
+       year = 2020,
+       month = jun,
+       volume = {20},
+       number = {6},
+       eid = {097},
+       pages = {097},
+       doi = {10.1088/1674-4527/20/6/97},
+       archivePrefix = {arXiv},
+       eprint = {2001.11681},
+       primaryClass = {astro-ph.GA},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2020RAA....20...97Z},
+       adsnote = {Provided by the SAO/NASA Astrophysics Data System}}
+#+END_SRC
+
+#+BEGIN_SRC bibtex
+@ARTICLE{2020AJ....159...43H,
+       author = {{Hou}, Wen and {Luo}, A. -li and {Li}, Yin-Bi and {Qin}, Li},
+       title = "{Spectroscopically Identified Cataclysmic Variables from the LAMOST Survey. I. The Sample}",
+       journal = {\aj},
+       keywords = {Cataclysmic variable stars, Dwarf novae, Nova-like variable stars, Catalogs, Astronomy data analysis, 203, 418, 1126, 205, 1858, Astrophysics - Solar and Stellar Astrophysics},
+       year = 2020,
+       month = feb,
+       volume = {159},
+       number = {2},
+       eid = {43},
+       pages = {43},
+       doi = {10.3847/1538-3881/ab5962},
+       archivePrefix = {arXiv},
+       eprint = {1911.08338},
+       primaryClass = {astro-ph.SR},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2020AJ....159...43H},
+       adsnote = {Provided by the SAO/NASA Astrophysics Data System}}
+#+END_SRC
+
+#+BEGIN_SRC bibtex
+@ARTICLE{2020A&A...643A.122S,
+       author = {{{\v{S}}koda}, P. and {Podsztavek}, O. and {Tvrd{\'\i}k}, P.},
+       title = "{Active deep learning method for the discovery of objects of interest in large spectroscopic surveys{\ensuremath{\star}}}",
+       journal = {\aap},
+       keywords = {surveys, virtual observatory tools, methods: statistical, techniques: spectroscopic, stars: emission-line, Be, line: profiles, Astrophysics - Instrumentation and Methods for Astrophysics, Computer Science - Machine Learning},
+       year = 2020,
+       month = nov,
+       volume = {643},
+       eid = {A122},
+       pages = {A122},
+       doi = {10.1051/0004-6361/201936090},
+       archivePrefix = {arXiv},
+       eprint = {2009.03219},
+       primaryClass = {astro-ph.IM},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2020A&A...643A.122S},
+       adsnote = {Provided by the SAO/NASA Astrophysics Data System}}
+#+END_SRC
+
+*** Catalogs for other class of objects
+
++ PNe -> [[https://ui.adsabs.harvard.edu/abs/2021A%26A...656A..51G/abstract][González-Santamaría, I. et. al.]]
++ HII regions -> [[https://ui.adsabs.harvard.edu/abs/2014ApJS..212....1A/abstract][Anderson, L. D. et. al.]]
++ Ae/Be stars -> [[https://ui.adsabs.harvard.edu/abs/2021A%26A...650A.182G/abstract][Guzmán-Díaz, J. et. al.]]
+
+** How measurement of the emission lines ratios?
+*** Tools
+   + The STAR- MELT PYTHON package for emission-line analysis of YSOs, [[https://ui.adsabs.harvard.edu/abs/2021MNRAS.507.3331C/abstract][Campbell-White, Justyn et. al. 2021]].
+   + [[https://www.aanda.org/articles/aa/pdf/2015/01/aa23152-13.pdf][PyNeb]].
+   + [[https://specutils.readthedocs.io/en/stable/analysis.html][Specutils]].
+   
+** GAIA
+:PROPERTIES:
+:header-args: :noweb yes :dir data
+:END:
+
+#+name: read-gaia-cans-new
+#+BEGIN_SRC python
+  df_new = pd.read_csv("cans-new-gaiadr3.csv")
+#+END_SRC
+
+#+name: read-gaia-pn
+#+BEGIN_SRC python
+  df_pn_all = pd.read_csv("Luis_hash-pn-gaia.csv")
+  mask = df_pn_all["PNstat"] == "T"
+  df_pn = df_pn_all[mask]
+#+END_SRC
+
+
+#+name: gaia-match
+#+BEGIN_SRC python :results output
+  import numpy as np
+  import json
+  import matplotlib.pyplot as plt
+  from  astropy.table import Table
+  import pandas as pd
+  import seaborn as sns
+  from scipy.stats import gaussian_kde
+  
+  <<read-gaia-cans-new>>
+  <<read-gaia-pn>>
+  
+  lgd_kws = {'frameon': True, 'fancybox': True, 'shadow': True}
+  
+  # removing inf or nan values
+  col = ["parallax", "phot_g_mean_mag", "bp_rp"] 
+  df_new = df_new[col] 
+  df_new1 = df_new.dropna()
+ 
+  # G-mag
+  Gmag = np.array(df_new1["phot_g_mean_mag"]) 
+  
+  # Color
+  #cbp_rpmag = df["phot_bp_mean_mag"] - df["phot_rp_mean_mag"]
+  bp_rpmag = np.array(df_new1["bp_rp"])
+  
+  # Calculate the point density
+  xy = np.vstack([bp_rpmag, Gmag])
+  z = gaussian_kde(xy)(xy)
+  
+  # Sort the points by density, so that the densest points are plotted last
+  idx = z.argsort()
+  x, y, z = bp_rpmag[idx], Gmag[idx], z[idx]
+  
+  # PNe
+  Gmag_pn = df_pn["phot_g_mean_mag"]
+  bp_rpmag_pn = df_pn["bp_rp"]
+  colors = ["cerulean",]
+  colors = sns.xkcd_palette(colors)
+  
+  # # known PNe
+  # Gmag_cv = df_cv["phot_g_mean_mag"]
+  # bp_rpmag_cv = df_cv["bp_rp"]
+  # colors1 = ["pale yellow"]
+  # colors1 = sns.xkcd_palette(colors1)
+  
+#+END_SRC
+
+#+BEGIN_SRC python :return pltfile :results file 
+  
+  <<gaia-match>>
+  
+  pltfile = 'color-mag-gaia-true.pdf'
+  sns.set_style('ticks')
+  fig = plt.figure(figsize=(6, 7))
+  ax = fig.add_subplot(111)
+  
+  ax.scatter(x, y, c=z, s=50, zorder = 10,edgecolor=['none'])
+  ax.scatter(bp_rpmag_pn, Gmag_pn, c = colors, edgecolor=['black'], alpha = 0.4, s = 50)
+  #plt.scatter(bp_rpmag, Gmag, alpha=0.8)
+  plt.xlabel(r'$G_{BP} - G_{RP}$')
+  plt.ylabel(r'$G$')
+  #ax.set_xlim(-30.0, 390.0)
+  #ax.set_ylim(-90.0, 90.0)
+  ax.legend(prop={'family': 'monospace', 'size': 'x-small'}, **lgd_kws)
+  plt.gca().invert_yaxis()
+  fig.savefig(pltfile)     
+  
+#+END_SRC
+
+#+RESULTS:
+[[file:data/color-mag-gaia-all.pdf]]
+
+#+BEGIN_SRC python :return pltfile :results file :results output
+  
+  <<gaia-match>>
+  
+  # Absolute magnitude
+  
+  # G-mag
+  Gmag_abs = np.array(df_new1["phot_g_mean_mag"]) + 5*np.log10(np.array(df_new1["parallax"] / 1000.)) + 5
+  
+  # Color
+  bp_rpmag = np.array(df_new1["bp_rp"])  
+  
+  # Creating new pandas table
+  data = {'G_abs':Gmag_abs,
+	  'bp_rp':bp_rpmag}
+  df_result = pd.DataFrame(data)
+  
+  df_result_new = df_result.dropna()
+  
+  G_abs = np.array(df_result_new["G_abs"])
+  bp_rp = np.array(df_result_new["bp_rp"])
+  # Calculate the point density
+  xy = np.vstack([bp_rp, G_abs])
+  z = gaussian_kde(xy)(xy)
+  
+  # Sort the points by density, so that the densest points are plotted last
+  idx = z.argsort()
+  x, y, z = bp_rp[idx], G_abs[idx], z[idx]
+  
+  # PN
+  Gmag_pn_abs = df_pn["phot_g_mean_mag"] + 5*np.log10(np.array(df_pn["parallax"] / 1000.)) + 5
+  bp_rpmag_pn = df_pn["bp_rp"]
+  colors = ["cerulean",]
+  colors = sns.xkcd_palette(colors)
+  
+  # # CV
+  # Gmag_cv_abs = df_cv["phot_g_mean_mag"] + 5*np.log10(np.array(df_cv["parallax"] / 1000.)) + 5
+  # bp_rpmag_cv = df_cv["bp_rp"]
+  # colors1 = ["pale yellow",]
+  # colors1 = sns.xkcd_palette(colors1)
+  
+  pltfile = 'color-mag_abs-gaia.pdf'
+  sns.set_style('ticks')
+  fig = plt.figure(figsize=(6, 7))
+  ax = fig.add_subplot(111)
+  ax.scatter(x, y, c=z, s=50, edgecolor=['none'])
+  ax.scatter(bp_rpmag_pn, Gmag_pn_abs, c = colors, edgecolor=['black'], alpha = 0.4,
+	     s = 50, label= "PN")
+  #ax.scatter(bp_rpmag_cv, Gmag_cv_abs, c = colors1, edgecolor=['black'], alpha = 0.9, s = 50)
+  #plt.scatter(bp_rpmag, Gmag_abs, alpha=0.8)
+  plt.xlabel(r'$G_{BP} - G_{RP}$')
+  plt.ylabel(r'$M_G + A_G$')
+  #ax.set_xlim(-30.0, 390.0)
+  #ax.set_ylim(-90.0, 90.0)
+  ax.legend(prop={'family': 'monospace', 'size': 'x-small'}, **lgd_kws)
+  plt.gca().invert_yaxis()
+  fig.savefig(pltfile)  
+  
+#+END_SRC
+
+#+RESULTS:
+[[file:data]]
+
+#+BEGIN_SRC python :return pltfile :results file :results output
+  
+  <<gaia-match>>
+  
+  # removing inf or nan values
+  col = ["parallax"] 
+  df_new = df_new[col] 
+  df_new1 =  df_new.dropna()
+
+  d = 1 / df_new1["parallax"] 
+
+  # QSOs from simbad
+  df_pn_new = df_pn[col] 
+  df_pn_new1 =  df_pn_new.dropna()
+
+  d_pn = 1 / df_pn_new1["parallax"] 
+
+  pltfile = 'dist-distance-gaia.pdf'
+  with sns.axes_style("ticks"):
+    # Bar diagram
+    fig, ax1 = plt.subplots(1, 1, figsize=(10, 6), sharex=True)
+    plt.xlabel(r"$D(Kpc)$", fontsize=33)
+    plt.ylabel(r"Density", fontsize=33)
+    plt.tick_params(axis='x', labelsize=33) 
+    plt.tick_params(axis='y', labelsize=33)
+    d = [x for x in d]
+    sns.distplot(d,norm_hist=True, kde=False, ax=ax1,
+                 bins=2000, color='r')
+    d_pn = [x for x in d_pn]
+    sns.distplot(d_pn, norm_hist=True, kde=False, ax=ax1,
+                 bins=2000, color='b', label = "PN")
+                
+    ax1.set(xlim=[-50, 70])
+    ax1.legend(loc='upper left')
+    ymax = ax1.get_ybound()[1]
+    sns.despine()
+    plt.tight_layout()
+    plt.savefig(pltfile)
+  
+#+END_SRC
+
+#+RESULTS:
+[[file:data]]
+
+
