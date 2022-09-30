@@ -10,14 +10,14 @@ ROOT1 = Path("PSDR1_tap")
 ROOT2 = Path("match_gaia_tap")
 
 parser = argparse.ArgumentParser(
-    description="""Firts table from the S-PLUS catalogs """)
+    description="""Firts table from the S-PLUS catalogs""")
 
 parser.add_argument("table1", type=str,
                     default=" teste-program",
-                    help="Name of catalog, taken the prefix ")
+                    help="Name of catalog, taken the prefix")
 parser.add_argument("table2", type=str,
                     default=" teste-program",
-                    help="Name of catalog, taken the prefix ")
+                    help="Name of catalog, taken the prefix")
 
 cmd_args = parser.parse_args()
 file1 = cmd_args.table1 + ".csv"
@@ -49,10 +49,12 @@ col = ["Plx", "e_Plx", "Gmag", "e_Gmag", "BPmag", "e_BPmag", "RPmag", "e_RPmag",
 
 tab_new2_ = tab_new2[col]
 tab_final = hstack([tab_new1, tab_new2_])
+
+print("Number of objects is:", len(tab_final))
 #df_new2 = df2[mask]
 
-
-# Save the final file (ASCII)
+#Save the final file (ASCII)
+tab_final.write("SySt-PS-Gaia.ecsv", format="ascii.ecsv")
 
 #df.to_csv(file_df, index=False)
 

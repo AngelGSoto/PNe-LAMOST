@@ -15,7 +15,6 @@ parser.add_argument("source", type=str,
                     default="teste-program",
                     help="Name of catalog, taken the prefix ")
 
-
 cmd_args = parser.parse_args()
 file_ = cmd_args.source + ".csv"
 

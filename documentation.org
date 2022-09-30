@@ -4,7 +4,6 @@
 :ID:       
 :END:
 
-
 I found a new PN Candidate (32.035994 49.233615), by using synthetic fotometry based on Lamost spectra of objects
 catalog as emission lines objects. See the [[https://github.com/AngelGSoto/python-notebooks/blob/master/Lamost%20and%20emission%20line%20objects.ipynb][notebook]].
 
@@ -187,7 +186,7 @@ catalog as emission lines objects. See the [[https://github.com/AngelGSoto/pytho
 
 ** How measurement of the emission lines ratios?
 *** Tools
-   + The STAR- MELT PYTHON package for emission-line analysis of YSOs, [[https://ui.adsabs.harvard.edu/abs/2021MNRAS.507.3331C/abstract][Campbell-White, Justyn et. al. 2021]].
+   + The STAR-MELT Python package for emission-line analysis of YSOs, [[https://ui.adsabs.harvard.edu/abs/2021MNRAS.507.3331C/abstract][Campbell-White, Justyn et. al. 2021]].
    + [[https://www.aanda.org/articles/aa/pdf/2015/01/aa23152-13.pdf][PyNeb]].
    + [[https://specutils.readthedocs.io/en/stable/analysis.html][Specutils]].
    
