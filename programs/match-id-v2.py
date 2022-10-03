@@ -1,5 +1,5 @@
 '''
-Luis A
+Luis A. Gutiérrez Soto
 This script allows to find the coincidences between list using the ID
 '''
 from astropy.table import Table, hstack
@@ -52,7 +52,6 @@ for (cat_ps, metadata_ps), (cat_gaia, metadata_gaia) in zip(catalogs_ps.items(),
     # Making mask and applying
     id1 = tab_ps[metadata_ps["ID"]]
     id2 = tab_gaia[metadata_gaia["ID"]]
-    
     mask1 = np.array([source in id2 for source in id1])
     mask2 = np.array([source in id1 for source in id2])
 
