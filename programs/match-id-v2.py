@@ -1,9 +1,12 @@
+'''
+Luis A
+This script allows to find the coincidences between list using the ID
+'''
 from astropy.table import Table, hstack
 import numpy as np
 import argparse
 import os
 import pandas as pd
-
 from pathlib import Path
   
 ROOT1 = Path("PSDR1_tap")
