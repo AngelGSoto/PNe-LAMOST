@@ -14,7 +14,7 @@ catalogs_ps = {'SySt': {'file': 'PSDR1_tap/syst-PS1dr1.csv',
             'PN': {'file': 'PSDR1_tap/PN-PS1dr1.csv',
                      'ID': 'OName'},
             'CV': {'file': 'PSDR1_tap/CV-PS1dr1.csv',
-                    'ID': 'MAX'},
+                    'ID': 'recno'},
             'SNR': {'file': 'PSDR1_tap/snr-PS1dr1.csv',
                     'ID': 'SNR'},
             'YSO': {'file': 'PSDR1_tap/yso-rigliaco-PS1dr1.csv',
@@ -23,47 +23,45 @@ catalogs_ps = {'SySt': {'file': 'PSDR1_tap/syst-PS1dr1.csv',
                     'ID': 'Object'},
             }
 
-catalogs_gaia = {'SySt': {'file': 'PSDR1_tap/syst-PS1dr1.csv',
+catalogs_gaia = {'SySt': {'file': 'match_gaia_tap/SySt_gaia.csv',
                     'ID': 'Name'},
-            'PN': {'file': 'PSDR1_tap/PN-PS1dr1.csv',
+            'PN': {'file': 'match_gaia_tap/PN_gaia.csv',
                      'ID': 'OName'},
-            'CV': {'file': 'PSDR1_tap/CV-PS1dr1.csv',
-                    'ID': 'MAX'},
-            'SNR': {'file': 'PSDR1_tap/snr-PS1dr1.csv',
+            'CV': {'file': 'match_gaia_tap/cv_gaia.csv',
+                    'ID': 'recno'},
+            'SNR': {'file': 'match_gaia_tap/snr_gaia.csv',
                     'ID': 'SNR'},
-            'YSO': {'file': 'PSDR1_tap/yso-rigliaco-PS1dr1.csv',
+            'YSO': {'file': 'match_gaia_tap/yso_gaia-rialco.csv',
                     'ID': 'Name'},
-            'AeBe': {'file': 'PSDR1_tap/AeBe-PS1dr1.csv',
+            'AeBe': {'file': 'match_gaia_tap/AeBe_gaia.csv',
                     'ID': 'Object'},
             }
 
-df = pd.read_csv(ROOT1 / file1)
+for (cat_ps, metadata_ps), (cat_gaia, metadata_gaia) in zip(catalogs_ps.items(),
+                                                            catalogs_gaia.items()):
+    
+    df_ps = pd.read_csv(metadata_ps["file"])
+    df_gaia = pd.read_csv(metadata_gaia["file"])
+    # # Converting pandas in astropy table
+    tab_ps = Table.from_pandas(df_ps)
+    tab_gaia = Table.from_pandas(df_gaia)
 
-# Table with the IDs
-df2 = pd.read_csv(ROOT2 / file2)
+    # Making mask and applying
+    id1 = tab_ps[metadata_ps["ID"]]
+    id2 = tab_gaia[metadata_gaia["ID"]]
+    
+    mask1 = np.array([source in id2 for source in id1])
+    mask2 = np.array([source in id1 for source in id2])
 
-# Converting pandas in astropy table
-tab1 = Table.from_pandas(df)
-tab2 = Table.from_pandas(df2)
+    # aplying the mask
+    tab_new1 = tab_ps[mask1]
+    tab_new2 = tab_gaia[mask2]
+    
+    tab_final = hstack([tab_new1, tab_new2])
 
-# Making mask and applying
-id1 = tab1["Name"]
-id2 = tab2["Name"]
-mask1 = np.array([source in id2 for source in id1])
-mask2 = np.array([source in id1 for source in id2])
+    #Save the final file (ASCII.ECSV)
+    fileascii = "{}-PS-Gaia.ecsv".format(cat_ps) 
+    tab_final.write(fileascii, format="ascii.ecsv", overwrite=True)
 
-# aplying the mask
-tab_new1 = tab1[mask1]
-tab_new2 = tab2[mask2]
+    
 
-# Selecting columns of Gaia table
-col = ["Plx", "e_Plx", "Gmag", "e_Gmag", "BPmag", "e_BPmag", "RPmag", "e_RPmag", "BP-RP", "BP-G", "G-RP", "Teff"]
-
-tab_new2_ = tab_new2[col]
-tab_final = hstack([tab_new1, tab_new2_])
-
-print("Number of objects is:", len(tab_final))
-#df_new2 = df2[mask]
-
-#Save the final file (ASCII)
-tab_final.write("SySt-PS-Gaia.ecsv", format="ascii.ecsv")
