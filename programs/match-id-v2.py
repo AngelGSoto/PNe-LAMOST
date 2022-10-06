@@ -24,6 +24,8 @@ catalogs_ps = {'SySt': {'file': 'PSDR1_tap/syst-PS1dr1.csv',
                     'ID': 'Name'},
             'AeBe': {'file': 'PSDR1_tap/AeBe-PS1dr1.csv',
                     'ID': 'Object'},
+            'Star': {'file': 'PSDR1_tap/stars-PS1dr1.csv',
+                    'ID': 'Name'},
             }
 
 catalogs_gaia = {'SySt': {'file': 'match_gaia_tap/SySt_gaia.csv',
@@ -38,6 +40,8 @@ catalogs_gaia = {'SySt': {'file': 'match_gaia_tap/SySt_gaia.csv',
                     'ID': 'Name'},
             'AeBe': {'file': 'match_gaia_tap/AeBe_gaia.csv',
                     'ID': 'Object'},
+            'Star': {'file': 'match_gaia_tap/stars_gaia.csv',
+                     'ID': 'Name'},
             }
 
 for (cat_ps, metadata_ps), (cat_gaia, metadata_gaia) in zip(catalogs_ps.items(),
