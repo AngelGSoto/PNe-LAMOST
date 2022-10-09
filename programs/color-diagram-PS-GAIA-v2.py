@@ -106,17 +106,33 @@ ax.set_xlim(-1.2, 5.7)
 ax.set_ylim(-3.3, 9.2)
 
 # Region where are located the PNe
-result = findIntersection(1/3.6, 0.5, -10.8, 31.26, 0.0)
+result = findIntersection(1/3.6, 0.5, -7, 23.5, 0.0)
 
 x_new = np.linspace(-15.5, result,  200)
-x_new2 = np.linspace(result, -10.0, 200)
-x_new3 = np.linspace(-10.0, 1.1, 200)
 y = (1/3.6)*x_new + 0.5
-yy = -10.8*x_new2 + 31.26
+yy = -7*x_new + 23.5
 #Mask
 #mask = y >= result_y - 0.5
-ax.plot(x_new, y, color='k', linestyle='-')
-ax.plot(x_new2, yy , color='k', linestyle='-')
+ax.plot(x_new, y, color='k', linestyle='-.')
+ax.plot(x_new, yy , color='k', linestyle='-.')
+
+#reshape
+x_new = x_new.ravel()
+y = y.ravel()
+yy = yy.ravel()
+plt.fill_between(x_new, y, yy, color="k", alpha=0.1)
+
+# Some texts
+ax.text(0.05, 0.9, "PN zone", fontsize=30,
+        bbox=dict(facecolor='gray', alpha=0.0),
+        transform=ax.transAxes)
+
+bbox_props = dict(boxstyle="round", fc="w", ec="0.78", alpha=0.5, pad=0.1)
+plt.text(0.3, 0.3, 'Stars',
+         transform=ax.transAxes, c="b", weight='bold', fontsize=12.8, bbox=bbox_props)
+
+plt.text(0.1, 0.2, 'Others EMO',
+         transform=ax.transAxes, c="orange", weight='bold', fontsize=10.8, bbox=bbox_props)
 
 ax.legend(prop={'family': 'monospace', 'size': 30}, **lgd_kws)
 #plt.gca().invert_yaxis()
