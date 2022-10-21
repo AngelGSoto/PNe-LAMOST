@@ -4,6 +4,7 @@
 :ID:       
 :END:
 
+
 I found a new PN Candidate (32.035994 49.233615), by using synthetic fotometry based on Lamost spectra of objects
 catalog as emission lines objects. See the [[https://github.com/AngelGSoto/python-notebooks/blob/master/Lamost%20and%20emission%20line%20objects.ipynb][notebook]].
 
@@ -179,14 +180,12 @@ catalog as emission lines objects. See the [[https://github.com/AngelGSoto/pytho
 #+END_SRC
 
 *** Catalogs for other class of objects
+    
++ HII regions [[https://ui.adsabs.harvard.edu/abs/2014ApJS..212....1A/abstract][Anderson, L. D. et. al.]]. 
 
-+ PNe -> [[https://ui.adsabs.harvard.edu/abs/2021A%26A...656A..51G/abstract][González-Santamaría, I. et. al.]]
-+ HII regions -> [[https://ui.adsabs.harvard.edu/abs/2014ApJS..212....1A/abstract][Anderson, L. D. et. al.]]
-+ Ae/Be stars -> [[https://ui.adsabs.harvard.edu/abs/2021A%26A...650A.182G/abstract][Guzmán-Díaz, J. et. al.]]
-+ Stars -> [[https://ui.adsabs.harvard.edu/abs/2014MNRAS.444.2251L/abstract][López-Valdivia, R. et. al.]]
 ** How measurement of the emission lines ratios?
 *** Tools
-   + The STAR-MELT Python package for emission-line analysis of YSOs, [[https://ui.adsabs.harvard.edu/abs/2021MNRAS.507.3331C/abstract][Campbell-White, Justyn et. al. 2021]].
+   + The STAR- MELT PYTHON package for emission-line analysis of YSOs, [[https://ui.adsabs.harvard.edu/abs/2021MNRAS.507.3331C/abstract][Campbell-White, Justyn et. al. 2021]].
    + [[https://www.aanda.org/articles/aa/pdf/2015/01/aa23152-13.pdf][PyNeb]].
    + [[https://specutils.readthedocs.io/en/stable/analysis.html][Specutils]].
    
@@ -388,7 +387,3 @@ catalog as emission lines objects. See the [[https://github.com/AngelGSoto/pytho
 
 #+RESULTS:
 [[file:data]]
-
-** Matches
-   I had performed a systematic cross-match between different class of objects and GAIA and panstarr. For that I used =TOPCAT=.
-   

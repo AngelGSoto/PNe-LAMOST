@@ -12,27 +12,27 @@ from pathlib import Path
 ROOT1 = Path("PSDR1_tap")
 ROOT2 = Path("match_gaia_tap")
 
-catalogs_ps = {'SySt': {'file': 'PSDR1_tap/syst-PS1dr1.csv',
+catalogs_ps = {'SySt': {'file': 'gaia_distance_tab/SySt-dist-gaia.csv',
                     'ID': 'Name'},
-            'PN': {'file': 'PSDR1_tap/PN-santamaria-PS1dr1.csv',
+            'PN': {'file': 'gaia_distance_tab/PN-santamaria-dist-gaia.csv',
                      'ID': 'PNG'},
-            'CV': {'file': 'PSDR1_tap/CV-PS1dr1.csv',
+            'CV': {'file': 'gaia_distance_tab/CV-dist-gaia.csv',
                     'ID': 'recno'},
-            'SNR': {'file': 'PSDR1_tap/snr-PS1dr1.csv',
+            'SNR': {'file': 'gaia_distance_tab/snrs-dist-gaia.csv',
                     'ID': 'SNR'},
-            'YSO': {'file': 'PSDR1_tap/yso-rigliaco-PS1dr1.csv',
+            'YSO': {'file': 'gaia_distance_tab/YSO-dist-gaia.csv',
                     'ID': 'Name'},
-            'AeBe': {'file': 'PSDR1_tap/AeBe-PS1dr1.csv',
+            'AeBe': {'file': 'gaia_distance_tab/AeBe-dist-gaia.csv',
                     'ID': 'Object'},
-            'Star': {'file': 'PSDR1_tap/stars-PS1dr1.csv',
+            'Star': {'file': 'gaia_distance_tab/Stars-MNRAS-dist-gaia.csv',
                     'ID': 'Name'},
-            'Star2': {'file': 'PSDR1_tap/stars-Smart-PS1dr1.csv',
+            'Star2': {'file': 'gaia_distance_tab/Star-smart-dist-gaia.csv',
                     'ID': 'GaiaEDR3'},
-            'cans-hue': {'file': 'PSDR1_tap/cans-hue-PS1dr1.csv',
+            'cans-hue': {'file': 'gaia_distance_tab/cans-hue-dist-gaia.csv',
                     'ID': 'LAMOST'},
-            'cans-new': {'file': 'PSDR1_tap/cans-new-PS1dr1.csv',
+            'cans-new': {'file': 'gaia_distance_tab/cans-new-dist-gaia.csv',
                     'ID': 'LAMOST'},
-            'cans-sim': {'file': 'PSDR1_tap/cans-sim-PS1dr1.csv',
+            'cans-sim': {'file': 'gaia_distance_tab/cans-sim-dist-gaia.csv',
                     'ID': 'LAMOST'},
             }
 
@@ -68,11 +68,11 @@ for (cat_ps, metadata_ps), (cat_gaia, metadata_gaia) in zip(catalogs_ps.items(),
     # # Converting pandas in astropy table
     tab_ps = Table.from_pandas(df_ps)
     tab_gaia = Table.from_pandas(df_gaia)
+    
 
     # Making mask and applying
     id1 = tab_ps[metadata_ps["ID"]]
     id2 = tab_gaia[metadata_gaia["ID"]]
-    
     mask1 = np.array([source in id2 for source in id1])
     mask2 = np.array([source in id1 for source in id2])
 
@@ -83,8 +83,5 @@ for (cat_ps, metadata_ps), (cat_gaia, metadata_gaia) in zip(catalogs_ps.items(),
     tab_final = hstack([tab_new1, tab_new2])
 
     #Save the final file (ASCII.ECSV)
-    fileascii = "{}-PS-Gaia.ecsv".format(cat_ps) 
+    fileascii = "{}-Gaia-distance.ecsv".format(cat_ps) 
     tab_final.write(fileascii, format="ascii.ecsv", overwrite=True)
-
-    
-

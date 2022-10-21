@@ -21,25 +21,25 @@ tab_pn = Table.read("PN-PS-Gaia.ecsv", format="ascii.ecsv")
 tab_star = Table.read("Star-PS-Gaia.ecsv", format="ascii.ecsv")
 tab_star2 = Table.read("Star2-PS-Gaia.ecsv", format="ascii.ecsv")
 
-catalogs = {'SySt': {'file': 'SySt-PS-Gaia.ecsv',
-                     'G': 'Gmag',
-                     'BP-RP': 'BP-RP',
+catalogs = {'SySt': {'file': 'SySt-PS-GaiaEDR3.ecsv',
+                     'G': 'phot_g_mean_mag',
+                     'BP-RP': 'bp_rp',
                      'r': 'rmag'},
-            'CV': {'file': 'CV-PS-Gaia.ecsv',
-                    'G': 'Gmag',
-                   'BP-RP': 'BP-RP',
+            'CV': {'file': 'CV-PS-GaiaEDR3.ecsv',
+                    'G': 'phot_g_mean_mag',
+                   'BP-RP': 'bp_rp',
                    'r': 'rmag'},
-            'SNR': {'file': 'SNR-PS-Gaia.ecsv',
-                    'G': 'Gmag',
-                    'BP-RP': 'BP-RP',
+            'SNR': {'file': 'SNR-PS-GaiaEDR3.ecsv',
+                    'G': 'phot_g_mean_mag',
+                    'BP-RP': 'bp_rp',
                     'r': 'rmag'},
-            'YSO': {'file': 'YSO-PS-Gaia.ecsv',
-                    'G': 'Gmag',
-                    'BP-RP': 'BP-RP',
+            'YSO': {'file': 'YSO-PS-GaiaEDR3.ecsv',
+                    'G': 'phot_g_mean_mag',
+                    'BP-RP': 'bp_rp',
                     'r': 'rmag'},
-            'AeBe': {'file': 'AeBe-PS-Gaia.ecsv',
-                     'G': 'Gmag',
-                     'BP-RP': 'BP-RP',
+            'AeBe': {'file': 'AeBe-PS-GaiaEDR3.ecsv',
+                     'G': 'phot_g_mean_mag',
+                     'BP-RP': 'bp_rp',
                      'r': 'rmag'},
             }
 
@@ -120,10 +120,10 @@ ax.set_xlim(-1.2, 5.7)
 ax.set_ylim(-3.3, 9.2)
 
 # Region where are located the PNe
-result = findIntersection(1/3.6, 0.5, -7, 23.5, 0.0)
+result = findIntersection(1/1.8, 0.3, -7, 23.5, 0.0)
 
 x_new = np.linspace(-15.5, result,  200)
-y = (1/3.6)*x_new + 0.5
+y = (1/1.8)*x_new + 0.3
 yy = -7*x_new + 23.5
 #Mask
 #mask = y >= result_y - 0.5
@@ -150,6 +150,5 @@ plt.text(0.1, 0.2, 'Others EMO',
 
 ax.legend(prop={'family': 'monospace', 'size': 30}, **lgd_kws)
 #plt.gca().invert_yaxis()
-fig.savefig("Figs/color-diagram-ps-gaia-v2.pdf")
+fig.savefig("Figs/color-diagram-ps-gaiaEDR3.pdf")
 plt.clf()
-    

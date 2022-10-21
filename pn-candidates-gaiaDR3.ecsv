@@ -1,0 +1,36 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: recno_1, datatype: int64}
+# - {name: SpecL_1, datatype: string}
+# - {name: LAMOST_1, datatype: string}
+# - {name: RAJ2000_1, datatype: float64}
+# - {name: DEJ2000_1, datatype: float64}
+# - {name: RAJ2000_x, datatype: float64}
+# - {name: DEJ2000_x, datatype: float64}
+# - {name: gmag, datatype: float64}
+# - {name: e_gmag, datatype: float64}
+# - {name: rmag_x, datatype: float64}
+# - {name: e_rmag, datatype: float64}
+# - {name: imag, datatype: float64}
+# - {name: e_imag, datatype: float64}
+# - {name: zmag, datatype: float64}
+# - {name: e_zmag, datatype: float64}
+# - {name: ymag, datatype: float64}
+# - {name: e_ymag, datatype: float64}
+# - {name: ra, datatype: float64}
+# - {name: dec, datatype: float64}
+# - {name: parallax, datatype: float64}
+# - {name: parallax_error, datatype: float64}
+# - {name: parallax_over_error, datatype: float64}
+# - {name: phot_g_mean_mag, datatype: float64}
+# - {name: phot_bp_mean_mag, datatype: float64}
+# - {name: phot_rp_mean_mag, datatype: float64}
+# - {name: bp_rp, datatype: float64}
+# - {name: angDist_2, datatype: float64}
+# schema: astropy-2.0
+recno_1 SpecL_1 LAMOST_1 RAJ2000_1 DEJ2000_1 RAJ2000_x DEJ2000_x gmag e_gmag rmag_x e_rmag imag e_imag zmag e_zmag ymag e_ymag ra dec parallax parallax_error parallax_over_error phot_g_mean_mag phot_bp_mean_mag phot_rp_mean_mag bp_rp angDist_2
+960 spec-56581-VB031N50V1_sp08-218.fits "LAMOST J020808.63+491401.0" 32.035994 49.233615 32.03587567 49.23369522 18.9177 0.0151 19.0456 0.013 19.6406 0.0141 19.8749 0.037 19.6803 0.1074 32.03587639616 49.23369448112 0.1819 0.3727 0.4879 19.340435 18.887802 18.925892 -0.03809 0.396219
+473 spec-56629-HD090800N293915M01_sp11-086.fits "LAMOST J090602.63+311037.8" 136.510966 31.1771819 136.51093564 31.17717755 20.4175 0.0283 19.9359 0.0464 19.9592 0.0178 19.5088 0.015 19.6736 0.0299 136.51094101334 31.17718815381 "" "" "" 21.642576 20.234236 19.406057 0.828178 0.080186
+500 spec-56571-KP194918N413456V01_sp12-206.fits "LAMOST J200023.21+424606.1" 300.096725 42.768369 300.09683946 42.76844222 15.1795 0.0018 "" "" "" "" "" "" "" "" 300.09667899883 42.76820865557 1.1122 0.0113 98.8523 12.778373 12.994491 12.423141 0.57135 0.473983
+540 spec-56568-VB081N11V1_sp05-101.fits "LAMOST J052527.51+105446.5" 81.364646 10.912922 81.36464116 10.91274326 14.5259 0.0223 13.286 "" 13.022 "" 12.885 "" 13.1852 0.0375 81.36462059741 10.91272185297 "" "" "" 14.456131 14.223429 12.9187 1.304729 0.726103
