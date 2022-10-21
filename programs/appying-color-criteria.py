@@ -27,7 +27,7 @@ G_r = tab['phot_g_mean_mag'] - tab['rmag_x']
 bp_rp = tab['bp_rp']
 
 #applying the color criteria
-c_eq1 = (1/1.8)*bp_rp + 0.3
+c_eq1 = (1/1.5)*bp_rp + 0.15
 c_eq2 = -7*bp_rp + 23.5
 
 mask = (G_r >= c_eq1) & (G_r <= c_eq2)
@@ -47,6 +47,16 @@ col = ["recno_1", "SpecL_1", "LAMOST_1", "RAJ2000_1", "DEJ2000_1", "RAJ2000_x", 
 #Saving file
 tab_f[col].write("pn-candidates-gaiaDR3.ecsv", format="ascii.ecsv", overwrite=True)
 
+# For lamost
+n = len(tab_f["RAJ2000_1"])
+print(n)
+sep = np.linspace(2.0, 2.0, num=n)
+ra = tab_f["RAJ2000_1"]
+dec = tab_f["DEJ2000_1"]
+table = Table([ra, dec, sep], names=('ra', 'dec', 'radius'), meta={'name': 'first table'})
+asciifile = "cans-new-PS-GaiaEDR3-coorLamost.dat"
+table.write(asciifile, format="ascii.commented_header", delimiter=',', overwrite=True)
+
 #Plotting
 lgd_kws = {'frameon': True, 'fancybox': True, 'shadow': True}
 sns.set_style('ticks')
@@ -59,13 +69,13 @@ ax.set_xlim(-1.2, 5.7)
 ax.set_ylim(-3.3, 9.2)
 #fig = plt.figure(figsize=(10, 8))
 #ax = fig.add_subplot(111)
-ax.scatter(bp_rp_f, G_r_f, s=150, c = sns.xkcd_palette(["forest green"]), edgecolors= "g", zorder = 1, lw=0.5, alpha = 0.7, label = "PN candidates")
+ax.scatter(bp_rp_f, G_r_f, s=250, c = sns.xkcd_palette(["denim blue"]), edgecolors= "b", zorder = 1, lw=3, alpha = 0.7, label = "PN candidates")
 
 # Region where are located the PNe
-result = findIntersection(1/1.8, 0.3, -7, 23.5, 0.0)
+result = findIntersection(1/1.5, 0.15, -7, 23.5, 0.0)
 
 x_new = np.linspace(-15.5, result,  200)
-y = (1/1.8)*x_new + 0.3
+y = (1/1.5)*x_new + 0.15
 yy = -7*x_new + 23.5
 #Mask
 #mask = y >= result_y - 0.5
@@ -77,6 +87,11 @@ x_new = x_new.ravel()
 y = y.ravel()
 yy = yy.ravel()
 plt.fill_between(x_new, y, yy, color="k", alpha=0.1)
+
+bbox_props = dict(boxstyle="round", fc="w", ec="0.78", alpha=0.6, pad=0.1)
+for label_, x, y in zip(tab_f["LAMOST_1"], bp_rp_f, G_r_f):
+    ax.annotate(label_, (x, y), alpha=1, size=8,
+                   xytext=(25.0, 10.6), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props, zorder=100)
 
 ax.legend(prop={'family': 'monospace', 'size': 30}, **lgd_kws)
 #plt.gca().invert_yaxis()

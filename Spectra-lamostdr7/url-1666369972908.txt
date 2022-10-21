@@ -1,0 +1,8 @@
+#command to download listed file(s)> wget --content-disposition -nc -i url-1666369972908.txt 
+http://dr7.lamost.org:80/v2.0/spectrum/fits/241712206?token=
+http://dr7.lamost.org:80/v2.0/spectrum/fits/486111086?token=
+http://dr7.lamost.org:80/v2.0/spectrum/fits/162212206?token=
+http://dr7.lamost.org:80/v2.0/spectrum/fits/165008218?token=
+http://dr7.lamost.org:80/v2.0/spectrum/fits/367712206?token=
+http://dr7.lamost.org:80/v2.0/spectrum/fits/186811086?token=
+http://dr7.lamost.org:80/v2.0/spectrum/fits/160905101?token=
