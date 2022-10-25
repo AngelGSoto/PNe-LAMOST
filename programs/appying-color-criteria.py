@@ -35,7 +35,6 @@ tab_f = tab[mask]
 for i, ii in zip(tab_f["RAJ2000_1"], tab_f["DEJ2000_1"]):
     print(i, ii)
 
-
 G_r_f = tab_f['phot_g_mean_mag'] - tab_f['rmag_x']
 bp_rp_f = tab_f['bp_rp']
 
