@@ -392,4 +392,4 @@ catalog as emission lines objects. See the [[https://github.com/AngelGSoto/pytho
 
 ** Making the coloured images
    + The comobination, =g, r, i=:
-     :python ../programs/rgb_image-ps1.py cutout_rings_v3_skycell_2294_031_stk_i_unconv cutout_rings_v3_skycell_2294_031_stk_r_unconv cutout_rings_v3_skycell_2294_031_stk_g_unconv --vmin_r -100.2 --vmax_r 7890.0 --vmin_g -100 --vmax_g 3000 --vmin_b -100.4 --vmax_b 3000.0 --debug
+     : python ../programs/rgb_image-ps1.py cutout_rings_v3_skycell_2294_031_stk_i_unconv cutout_rings_v3_skycell_2294_031_stk_r_unconv cutout_rings_v3_skycell_2294_031_stk_g_unconv --vmin_r -100.2 --vmax_r 7890.0 --vmin_g -100 --vmax_g 3000 --vmin_b -100.4 --vmax_b 3000.0 --debug
