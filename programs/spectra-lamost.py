@@ -5,8 +5,9 @@ import argparse
 from astropy.io import fits
 import matplotlib.pyplot as plt
 import seaborn as sn
-sn.set_context("poster")
 import glob
+sn.set_context("poster")
+
 
 parser = argparse.ArgumentParser(
     description="""Making the LAMOST spectra""")
@@ -24,10 +25,10 @@ wl = hdudata[2]
 Flux = hdudata[0]
 
 # Emission lines
-wv_lin = [3869.76, 3967.46, 4101.74, 4340.471, 4685.71, 4711.26, 4740.120, 4861.33, 4958.92, 5006.8, 5411, 6562.82, 6879,  7005.87, 7113, 7135, 7751, 8236.79, 9001.27]
-#em_lin = [r"[Ne III]" + "\n" + "3869", "[Ne III] + H7" + "\n" + "3968", r"H$\delta$", r"H$\gamma$", "He II", "[Ar IV]" + "\n" + "4711", "[Ar IV]" + "\n" + "4740", r"H$\beta$", "[O III]" + "\n" + "4958", "[O III]" + "\n" + "5007", "He II" + "\n" + "5411", "[N II]", r"H$\alpha$", "[N II]", "[S II]" + "\n" + "6731", "[Ar V]" + "\n" + "7005", "?" + "\n" + "7113", "[Ar III]" + "\n" + "7135", "[Ar III]" + "\n" + "7751", "He II" + "\n" + "8236", "[S III]" + "\n" + "9069"]
+wv_lin = [3869.76, 3967.46, 4101.74, 4340.471, 4542, 4685.71, 4711.26, 4740.120, 4861.33, 4958.92, 5006.8, 5411, 6562.82, 6879,  7005.87, 7113, 7135, 7751, 8236.79, 9001.27]
+#em_lin = [r"[Ne III]" + "\n" + "3869", "[Ne III] + H7" + "\n" + "3968", r"H$\delta$", r"H$\gamma$", "He II", "He II", "[Ar IV]" + "\n" + "4711", "[Ar IV]" + "\n" + "4740", r"H$\beta$", "[O III]" + "\n" + "4958", "[O III]" + "\n" + "5007", "He II" + "\n" + "5411", "[N II]", r"H$\alpha$", "[N II]", "[S II]" + "\n" + "6731", "[Ar V]" + "\n" + "7005", "?" + "\n" + "7113", "[Ar III]" + "\n" + "7135", "[Ar III]" + "\n" + "7751", "He II" + "\n" + "8236", "[S III]" + "\n" + "9069"]
 
-em_lin = [r"[Ne III] 3869", "[Ne III] + H7 3968", r"H$\delta$", r"H$\gamma$", "He II", "[Ar IV] 4711", "[Ar IV] 4740", r"H$\beta$", "[O III] 4958", "[O III] 5007", "He II 5411",  r"H$\alpha$", "? 6879", "[Ar V] 7005", "? 7113", "[Ar III] 7135", "[Ar III] 7751", "He II 8236", "? 9001"]
+em_lin = [r"[Ne III] 3869", "[Ne III] + H7 3968", r"H$\delta$", r"H$\gamma$", "He II", "He II", "[Ar IV] 4711", "[Ar IV] 4740", r"H$\beta$", "[O III] 4958", "[O III] 5007", "He II 5411",  r"H$\alpha$", "? 6879", "[Ar V] 7005", "? 7113", "[Ar III] 7135", "[Ar III] 7751", "He II 8236", "? 9001"]
 
 #m = (5000 < wl) &  (6000 > wl)
 #new_flux = Flux[m].max()
