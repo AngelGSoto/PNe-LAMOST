@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{astrojournals}
+\bibliographystyle{apj}
+\usepackage[spanish, es-minimal, english]{babel}
+\usepackage[vmargin=0.8in, hmargin=1.00in]{geometry}
+%\usepackage[demo]{graphicx}
+%\usepackage{floatrow}
+%\caption{caption text}
+\usepackage{sidecap}
+\usepackage{cleveref}
+\crefname{section}{§}{§§}
+\Crefname{section}{§}{§§}
+
+
+\setlength{\fboxsep}{0pt}%
+\newlength\figwidth
+\setlength\figwidth{0.48\textwidth}
+\setlength\tabcolsep{0pt}
+\usepackage{hyperref}
+\newcommand\raiselabel[1]{\raisebox{0.39\figwidth}[-0.39\figwidth]{#1}}
+%\renewcommand{\baselinestretch}{1.3}
+\newcommand{\gt}{>}
+\newcommand\U[1]{\ensuremath{\mathrm{#1}}}
+\newcommand\msol{M_\odot}
+\newcommand\msolagno{M_\odot\,\U{yr^{-1}}}
+
+%\newcommand\U[1]{\ensuremath{\mathrm{#1}}}
+\newcommand\K{\U{K}}
+\newcommand\cm{\U{cm}}
+\newcommand\AU{\U{AU}}
+\newcommand\g{\U{g}}
+
+\newcommand\acre{\ensuremath{_{\mathrm{acre}}}}
+\newcommand\eff{\ensuremath{_{\mathrm{eff}}}}
+\newcommand\Ext{\ensuremath{_{\mathrm{Ext}}}}
+\newcommand\Int{\ensuremath{_{\mathrm{Int}}}}
+
+\newcommand\ha{\ensuremath{\mathrm{H\alpha}}}
+\newcommand\oiii{\ensuremath{\mathrm{[O\,III]}}}
+\newcommand\A{\ensuremath{\text{\AA{}}}}
+
+%% Commands for the postage stamp images
+\setlength{\fboxsep}{0pt}%
+%\newlength\figwidth
+\setlength\figwidth{0.46\textwidth}
+\newlength\figstampcolsep
+\setlength\figstampcolsep{5pt}
+\newcommand\BowshockFig[1]{
+  \includegraphics[width=\figwidth, clip, trim=10 10 10 10]
+  {#1}
+}
+\newcommand\BowshockFigImg[1]{
+  \includegraphics[width=0.5\figwidth, clip, trim=350 50 350 50]                 %Images
+  {#1}
+}
+
+\newcommand\BowshockFigImag[1]{
+  \includegraphics[width=0.9\figwidth, clip, trim=20 20 10 10]                 %Images
+  {#1}
+}
+%\newcommand\raiselabel[1]{\raisebox{0.9\figwidth}[-0.5\figwidth]{#1}}
+
+
+\title{Discovery of a new high  ionization planetary nebula in LAMOST}
+
+\author{Luis A. Gutiérrez Soto     
+}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+Planetary nebulae (PNe) represent the last stage of evolution of low- and intermediate-mass stars (0.8$\msol$ - 8.0$\msol$). The PNe phase begin when gas is ejected from the red giant stars late in their lives and subsequently this gas is ionized by the radiation field coming from the remnant star resulted. An emission nebula expands, a glowing shell of ionized gas until lost in the interstellar medium. 
+
+The number of the PNe discovered in the galaxy is relatively low (\(\sim 3,500\))
+
+\bibliography{ref-pne}
+
+\end{document}
+

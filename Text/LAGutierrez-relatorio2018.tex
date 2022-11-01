@@ -1,0 +1,369 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{astrojournals}
+\bibliographystyle{apj}
+\usepackage[spanish, es-minimal, english]{babel}
+\usepackage[vmargin=0.8in, hmargin=1.00in]{geometry}
+%\usepackage[demo]{graphicx}
+%\usepackage{floatrow}
+%\caption{caption text}
+\usepackage{sidecap}
+\usepackage{cleveref}
+\crefname{section}{§}{§§}
+\Crefname{section}{§}{§§}
+
+
+\setlength{\fboxsep}{0pt}%
+\newlength\figwidth
+\setlength\figwidth{0.48\textwidth}
+\setlength\tabcolsep{0pt}
+\usepackage{hyperref}
+\newcommand\raiselabel[1]{\raisebox{0.39\figwidth}[-0.39\figwidth]{#1}}
+%\renewcommand{\baselinestretch}{1.3}
+\newcommand{\gt}{>}
+\newcommand\U[1]{\ensuremath{\mathrm{#1}}}
+\newcommand\msol{M_\odot}
+\newcommand\msolagno{M_\odot\,\U{yr^{-1}}}
+
+%\newcommand\U[1]{\ensuremath{\mathrm{#1}}}
+\newcommand\K{\U{K}}
+\newcommand\cm{\U{cm}}
+\newcommand\AU{\U{AU}}
+\newcommand\g{\U{g}}
+
+\newcommand\acre{\ensuremath{_{\mathrm{acre}}}}
+\newcommand\eff{\ensuremath{_{\mathrm{eff}}}}
+\newcommand\Ext{\ensuremath{_{\mathrm{Ext}}}}
+\newcommand\Int{\ensuremath{_{\mathrm{Int}}}}
+
+\newcommand\ha{\ensuremath{\mathrm{H\alpha}}}
+\newcommand\oiii{\ensuremath{\mathrm{[O\,III]}}}
+\newcommand\A{\ensuremath{\text{\AA{}}}}
+
+%% Commands for the postage stamp images
+\setlength{\fboxsep}{0pt}%
+%\newlength\figwidth
+\setlength\figwidth{0.46\textwidth}
+\newlength\figstampcolsep
+\setlength\figstampcolsep{5pt}
+\newcommand\BowshockFig[1]{
+  \includegraphics[width=\figwidth, clip, trim=10 10 10 10]
+  {#1}
+}
+\newcommand\BowshockFigImg[1]{
+  \includegraphics[width=0.5\figwidth, clip, trim=350 50 350 50]                 %Images
+  {#1}
+}
+
+\newcommand\BowshockFigImag[1]{
+  \includegraphics[width=0.9\figwidth, clip, trim=20 20 10 10]                 %Images
+  {#1}
+}
+%\newcommand\raiselabel[1]{\raisebox{0.9\figwidth}[-0.5\figwidth]{#1}}
+
+
+\title{Searching for Galactic halo planetary nebulae and symbiotics stars in J-PLUS and S-PLUS surveys }
+
+\author{
+         PhD student: Luis A. Gutiérrez Soto\\
+         Supervisor: Dra. Denise R. Gon\c{c}alves and Dr. Stavros Akras
+}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+% Planetary nebulae (PNe) are formed after the asymptotic giant branch (AGB) evolutionary stage of low- and intermediate-mass stars (\(0.8~\msol - 8~\msol\)). In that phase of the stellar evolution, the outer layers of the stellar atmosphere are ejected due to thermal pulses. The central star of the planetary nebulae are evolved stars, typically with \(T \gt 5 \times 10^{4}~\K\), even hotter than Galactic O stars  \citep{Osterbrock:2006}. The ejected material is subsequently ionized by the UV radiation field from the nucleus. The composition of the material ejected, which form the PNe, is the result of nuclear burning at the interior of the star during its evolution from the main sequence to the tip of the AGB. Therefore, these objects are useful tools for studying the chemical and physical features of the ejected gas, which inform about the previous nucleosynthesis of the progenitor stars.\\
+
+%  About 3000 PNe have been identified in the Galaxy \citep{Parker:2012}. Of these, only fourteen objects are in the Galactic halo. Halo planetary nebulae (HPNe) are objects of low-metallicity. In addition to that, they are interesting objects because they provide important clues about the final evolution of old, low-mass halo stars, and they are able to convey fundamental information of the low-mass evolution and the early chemical conditions of the Galaxy \citep{Otsuka:2010}.\\
+
+% Symbiotic stars (SySt) are binary systems. They are composed by a hot white dwarf (WD) and a cool giant star. The WDs accrete material from the wind of their giant companions. Part of the wind of the giant star is ionized by the radiation that comes from the WD, producing a spectrum with two components: one with absorption features from the cool stellar photosphere and another with emission lines produced by the excited ions \citep{Allen:1984a, Corradi:2008}. The symbiotic stars can be divided into two types. S-type systems, if the hot component is a typical red giant branch (RGB) which dominates the near-IR colours. And D-type systems, if the near-IR emission shows a significant contribution from warm dust, known to be typical of evolved asymptotic giant branch (AGB) stars. Symbiotic stars are generally much denser than even the youngest PNe \citep{Frew:2008}.  Previously \citet{Gutierrez:1988} and \citet{Gutierrez:1995} used the line ratio \(\oiii{}~ \lambda 4363/ \lambda 5007 \) to separate PNe from symbiotic systems. This ratio is a good indicator of electron temperature, at densities typical of PNe, and a good density indicator, at the  densities characteristic of the symbiotic stars. Diagnostic diagrams using either emission-line intensities or optical and near-IR colours are very useful to separate PNe from symbiotic stars. The Raman-scattered OVI line at \(\lambda \lambda 6825, 7082\) is also a good diagnostic of symbiotic stars in the visible.\\
+
+Planetary nebulae (PNe) and symbiotic stars (SySt) are very similar objects, in terms that both involve the ionization of circumstellar gas,
+either ejected and ionized by a white dwarf itself (PNe), or associated to the stellar wind of a red giant that is ionized by high
+energy photons generated in the accretion onto a companion star
+(SySt).
+PNe are essential objects to study the chemical evolution of galaxies (see, for a review, \citealp{Magrini:2012} and Gonçalves 2018) as well as to determine extragalactic distances (see, for instance, \citealp{Ciardullo:2012}). On the other hand, the binary nature of the symbiotic systems make them one of the possible supernova Ia progenitors \citep{Whelan:1973, Chen:2011}.
+Both enrich the interstellar medium, with PNe providing important information about the stellar nucleosynthesis of low- to intermediate-mass stars (\(0.8 - 8~\msol\)). However, both families of objects are intrinsically different, with SySt constituted by interacting binary systems which can alter significantly the evolutionary and chemical path of the stars involved.
+
+About 3,500 planetary nebulae \citep{Parker:2017} and 250 SySt are known in the Galaxy (\citealp{Rodriguez:2014}, Akras et al. in press). Only 14 PNe and around 5\% of the SySt are located at high Galactic latitudes.
+
+
+This report describes the techniques, that we developed to identify new halo PNe and SySt by using the Javalambre-Photometric Local Universe Survey (J-PLUS) and the Southern Photometric Local Universe Survey (S-PLUS). J-PLUS and S-PLUS surveys will provide observations about the Galactic halo. Due to the fact that both filter sets have a proper filter to isolate the \ha{} emission line, these surveys allow us to systematically  search for \ha{} emitters such as PNe and SySt in the Galactic halo. In this work we explore different colour colour diagrams (helped by PCA-machine learning), in order to select PNe and symbiotics, by using the J/S-PLUS synthetic photometry  of several  emission line objects. We applied our technique to the J/S-PLUS data, in order to identify possible PN and SySt candidates. We have also worked in the methodology of selection for PNe and SySt in the Javalambre-Physics of the Accelerating Universe Astrophysical Survey (J-PAS). So that when J-PAS data become available in the future, we can immediately apply our photometric tools to J-PAS data as well. 
+
+\section{J-PLUS and S-PLUS surveys}
+\label{sec:surveys}
+
+The Javalambre Photometric Local Universe Survey (J-PLUS) is a multi-filter imaging map, that is being operated from the Observatorio Astrofífico de Javalambre (OAJ, \citealp{Cenarro:2018}), using the 83 cm Jalambre Auxiliary Survey Telescope (JAST/T80) and T80Cam camera. It is mapping the Northern sky. This survey has a Southern counterpart, the Southern-Photometric Local Universe Survey (S-PLUS; Mendes de Oliveira et al. in prep.). S-PLUS is making use of the T80-South, a new telescope located near the summit of Cerro Tololo in Chile (Cerro Tololo InterAmerican Observatory, CTIO). Both are equipped with a camera that provides a \(\sim\)2.0 deg$^2$ field of view (FoV), and both will cover \(\sim\)8,000 \(\mathrm{deg}^{2}\) in total and are constituted by a 12 filter system spanning the optical range, from 3,000 to 10,000\AA. Although the original goal of the J-PLUS survey is to afford the photometric calibration for the J-PAS \citep{Benitez:2014}), it will also provide photometric data about the local Universe as well as information about various type object in the Galactic halo for different scientific goals. 
+
+
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=.95\linewidth, clip]{../paper-phot/splus-filter-2018.pdf}
+%   \caption{Transmission curves for the 12 filters of the J-PLUS survey. The fill area represent the 7 narrow-band filters and the open area represent the 5 broad-band filters. The transmission curves are estimated after accounting for the effects of the both the efficiency of the CCD and the atmospheric extinction. The S-PLUS transmission curve are very similar to that.}
+%   \label{fig:jpas-filter}
+% \end{figure}
+  
+
+% Given that these surveys will observe in direction of the Galactic halo. They will be able to detected halo PNe and other objects like SySt in this region of the Milky Way. Therefore these surveys offers a big opportunity to perform a systematic searched for these objects, taking advantage of their great combination of  narrow- and broad band filters. This PhD project is been developed as part of the J-PAS, J-PLUS and S-PLUS collaboration.
+
+\subsection{J-PLUS and S-PLUS data releases}
+\label{sec:dr}
+
+ The first J-PLUS Date Release  (DR1) is composed of 515 fields observed with the 12 narrow- and broad-band filters amounting 1022 deg$^2$. DR1 is based on images collected from November 2015 to January 2018 by the JAST/T80 telescope. More of  1 million objects were observed in this first data release. The limiting magnitude in r-band of both surveys is around 22. The S-PLUS survey has already started to operate and at the moment it has observed 172 deg$^2$ (first S-PLUS data release, DR1) of the Southern sky.
+
+
+\section{ Synthetic photometry and photo-spectra}
+\label{chap:meto}
+
+% \subsection{Photometric system}
+% \label{sec:pho}
+
+% Before we move to the details of the selection criteria for halo PNe and SySts, we first introduce the synthetic photometry we will use to developed the necessary tools to identify our objects. ``Synthetic photometry'' is the name given to magnitudes and colours derived by convolving model atmosphere fluxes or observed spectrophotometric fluxes with standard passbands. The passband or response function of a standard system is normally obtained by multiplying together the transmission filter, reflectivity of the telescope mirror, the transmission of the camera optics, and the quantum efficiency of the detector used \citep{Bessel:2005}. \\
+
+% To create the synthetic magnituded of a particular survey we need to use the AB magnitude defined in the Vega system \citet{Oke:1983}, which it is given by this equation
+
+% \begin{equation}
+%   \label{eq:magequ}
+%   m_{\nu} =  -2.5 \log \frac{\int  f_{\nu} S_{\nu} d(\log \nu)} {\int  S_{\nu}  d(\log \nu)}  - 48.60
+% \end{equation}
+
+% \noindent where \(f_{\nu}\) is the flux in \( \text{ergs}~\text{cm}^{-2}~ \text{s}^{-1}~\text{Hz}^{-1} \),  \( S_{\nu}\) is the response function of the system corresponding to the atmosphere, telescope, filter and detector combinations, and the constant comes from the flux of Vega at \(\lambda = 5500 \A\).
+
+% \subsection{ Synthetic photometry}
+% \label{subsec:mag}
+
+The synthetic photometry or photo-spectra  of several emission line sources like PNe, SySt, cataclysmic variables (CV), QSOs, extra-galactic HII regions, young stellar objects (YSOs) and star forming galaxies were obtained by the convolution of the theoretical transmission curves of the J-PLUS and S-PLUS system with the optical spectra previously available.
+
+\begin{figure}
+\centering
+\begin{tabular}{l l}
+  (\textit{a}) & (\textit{b})  \\
+  \includegraphics[width=0.5\linewidth, trim=10 9.5 0 8]{../paper-phot/DdDm-1-HPNe-JPLUS17-magnitude-paper.pdf}
+  & \includegraphics[width=0.5\linewidth, trim=10 9.5 0 8]{../paper-phot/LMC1-sys-JPLUS17-magnitude-paper.pdf}\\
+  \end{tabular}  
+  \caption{(\textit{a}) J-PLUS synthetic photo-spectra of the PN DdDm 1. The \ha{} emission is clearly perceptible. (\textit{b})J-PLUS synthetic photo-spectra of SySt LMC1. It also has \ha{} emission with a increasing continuum  along of the wavelength. The square symbols represent the SDSS broad-band filters, from left to right, they are \(uJAVA, g, r, i~ \text{and}~ z\). The circle symbols are the narrow-band filters, from left to right, they are J0378, J0395, J0410, J0430, J0515, J0660 and J0861.}
+\label{fig:convol}
+\end{figure}
+
+Figure~\ref{fig:convol} displays the J-PLUS photo-spectra of the halo PN DdDm 1 \citep{Kwitter:1998} and of the SySt LMC1 \citet{Munari:2002} to illustrate the appearance of typical emission line objects in the J-PLUS configuration.  Both objects show clearly \ha{} emission with a continuum a little more intense in the blue part of the spectrum in the case of the PN and a continuum increasing at longer wavelengths in the case of the symbiotic. The spectral resolution of the J-PLUS photometry (S-PLUS as well) allow us to perceive undoubtedly the reddened nature of the SySt. 
+
+Synthetic photometric magnitudes are also calculated from a number of photo-ionization models. The models were generated using the photo ionization code CLOUDY \citep{Ferland:2013}. The initial parameters used to compute these models cover the typical physical conditions of PNe population located in the Galactic halo. They represent different sets of nebular abundances, and three different densities of 1,000~$\mathrm{cm^{-3}}$, 3,000~$\mathrm{cm^{-3}}$ and 6,000~$\mathrm{cm^{-3}}$. It was considered a spherically symmetric nebula with a fixed outer radius of \(2.7''\) at distance of 10 kpc from Galactic disk. Central star with black body effective temperature from 50,000 to 250,000~K, in steps 10$\times 10^3$ K and luminosities of 500~L$_{\odot}$, 1,000~L$_{\odot}$, 5,000~L$_{\odot}$ and 10,000~L$_{\odot}$ were also considered. We reddened these modeled spectra using three different  color excesses,  E(B - V) = 0.0, 0.1 and 0.2. We assume these values, because J-PLUS and S-PLUS have a average extinction of E(B - V) = 0.1.
+
+Several groups of QSOs at specific red-shift were also selected. QSOs at the red-shift ranges \(1.3 < z < 1.4\), \(2.4 < z < 2.6\) and \(3.2 < z < 3.4\) can display photo-spectra that resemble those of PNe with \ha{} emission.  This is because, the CIV 1540.0 \AA, C III]  1909.0 \AA~ and Mg  2798.0 \AA~ emission lines of the QSOs at these red-shift ranges drop into the J0660 filter (\ha{} + [N II] filter). 
+
+
+
+% \begin{figure}[htp] 
+% \centering
+% \begin{tabular}{l l}
+% (\textit{a}) & (\textit{b})  \\
+%  \includegraphics[width=0.48\linewidth, trim=20 9.5 30 8, clip]{CVs-spectros/spec-1567-53172-0495-catB-CV-JPAS15-magnitude.pdf}&
+% \includegraphics[width=0.48\linewidth, trim=20 9.5 30 8, clip]{QSOs-301-spectros/spec-5449-56030-0644-QSOs-301-JPAS15-magnitude.pdf}\\
+ 
+
+% (\textit{c}) & (\textit{d})  \\
+% \includegraphics[width=0.48\linewidth, trim=20 9.5 30 8, clip]{NGC55-HII-spectros/H-22b.pdf}&
+%  \includegraphics[width=0.48\linewidth, trim=20 9.5 30 8, clip]{SFGs-spectros/spec-0266-51602-0101-SFGs-JPAS15-magnitude.pdf}\\
+
+
+% \end{tabular}
+% \caption{J-PAS photo-spectra  of; (\textit{a}) CV, (\textit{b}) a QSOs,  (\textit{c}) the extra galactic H II region: H 22 \citep{Magrini:2012} and (\textit{d}) a SFG.} 
+% \label{fig:convobj2}
+% \end{figure}
+
+\section{PCA applied to synthetic  photometry}
+\label{sec:pca-con}
+
+ The principal component analysis (PCA, Pearson 1901) has been extensively used in Astronomy (e.g. \citealp{Bailer:1998, Karampelas:2012}). For instance, PCA was employed to detect variable stars in multi-band light curves (Süveges et al. 2012; Sokolovsky et al. 2017a). We used the PCA methodology to determine the best possible colours combinations able to separate halo PNe and symbiotic stars from their mimics, i. e. \ha{} sources.
+ 
+In first place, we discuss the primordial principles of the PCA. PCA  is a linear and orthogonal transformations of a data set of \(m\) quantities. We consider that each data point is represented by a vector, \(\mathbf{x_J}\), in the m-dimensional space. The data set is transformed onto a new data set of \(m\) uncorrelated axes. These new \(m\)-axes are the eigenvectors of the variance-covariance matrix of the data, where the variance of the data are emphasized \citep{Moretti:2018}. These eigenvectors are called principal components (PCs).
+
+\begin{figure}
+\centering
+\begin{tabular}{l l}
+  \includegraphics[width=0.5\linewidth, trim=20 9.5  5 8]{../paper-phot/Fig1-JPLUS-PC1-PC2-v0.pdf}
+   \includegraphics[width=0.5\linewidth, trim=20 9.5 5 8]{../paper-phot/Fig2-JPLUS-PC1-PC3-v0.pdf}
+  \end{tabular}  
+  \caption{(\textit{Upper panel}) J-PLUS PC2 vs PC1 and (\textit{lower panel}) J-PLUS PC3 vs PC1 diagrams. Included in the
+diagrams are families of CLOUDY modelled halo PNe spanning a range of halo PNe properties (dark violet circle). Black circles represent halo PNe H 4-1 and PNG 135.9+55.9 spectra from SDSS, DdDM-1 \citep{Kwitter:1998}, NGC 2022 \citep{Kwitter:2003}, and MWC 574 \citep{Pereira:2007}. Gray diamonds represent HII regions in NGC 55 \citep{Magrini:2017}. Red boxes display \citet{Munari:2002} SySt, this group also includes external SySt from NGC 205 \citep{Goncalves:2015}, IC 10 \citep{Goncalves:2008} and NGC 185 \citep{Goncalves:2012} and red triangles correspond to IPHAS symbiotics \citep{Rodriguez:2014}. Violet circles correspond cataclysmic variables (CVs) form SDSS. Orange triangles refer to SDSS star-forming galaxies (SDSS SFGs). SDSS QSOs at different red-shift ranges are shown as light blue diamonds and  YSOs (Alcala et al. 2014, Rigliaco et al. 2012) are represented by salmon stars.}
+\label{fig:PCA}
+\end{figure}
+
+% \begin{figure}
+% \centering
+% \setlength\tabcolsep{1.5pt}
+% \newcommand\raiselabell[1]{\raisebox{0.90\figwidth}[-0.90\figwidth]{#1}}
+% \begin{tabular}{l  }  
+%   \framebox{\includegraphics[width=1.4\figwidth,   clip]{plot1-pca-splus.pdf}} %trim=60 50 100 50 
+%   \\
+%    \raiselabell{(\textit{a})} \\
+%    \framebox{\includegraphics[width=1.4\figwidth,  clip]{plot2-pca-jpas.pdf}}\\
+ 
+%  \raiselabell{(\textit{b})}  \\
+   
+% \end{tabular}
+% \caption{(\textit{a}) J-PLUS PC2 vs PC1 and (\textit{b}) J-PLUS PC3 vs PC1 diagrams. Different symbols correspond to different emission line objects types: halo PNe (black circles); modelled halo PNe (green stars), QSOs with redshift in the range from 0.01 to 1.0 (light green circles); 1.01 to 2.0 (light orange stars); 2.01 to 3.0 (light orange triangles); 3.01 to 4.0 (light blue diamonds); and 4.01 to 5.0 (green boxes), CVs (violet circles); star-forming galaxies (black, open triangles); Munari symbiotic stars (red boxes); symbiotic stars from IPHAS (red triangles). The PC1, PC2 and PC3 were estimated using the covariance method.}
+%   \label{fig:pca}
+% \end{figure}
+
+ The left panel of Figure \ref{fig:PCA} shows the distribution of all emission objects on the PC2 vs PC1 diagram, in which we are plotting the new data system (old variables projected into to new axis or PCs). Many of the QSOs, CVs and star forming galaxies  occupy different region around zero PC1 and PC2 values. This mean that they shared similar spectral characteristic in J-PLUS configuration. Halo PNe, SySt, YSOs and HII regions exhibit higher values of the PC1 and PC2 and they lie in different regions, indicating their particular characteristic. Given that PNe have high PC1 values and that they have strong emission lines (e. g. \ha{} emission), PC1 is basically dominated by this emission line. The high values of the PC2 for SySt and YSOs indicate that PC2 reflects on the shape of the continuum emission in the optical regime. In right panel of Figure \ref{fig:PCA} it is shown the PC3 vs PC1 diagram. Here the  majority of the PNe are located in the central region with zero values in the PC3-axis. However a small number of PNe have PC3 $> 2.0$. On the other hand, SySt, YSOs and HII regions have negative values in this axis.
+
+\begin{figure}
+\centering
+\setlength\tabcolsep{1.5pt}
+\newcommand\raiselabell[1]{\raisebox{0.92\figwidth}[-0.92\figwidth]{#1}}
+\begin{tabular}{l  l}  
+(\textit{a}) & (\textit{b})  \\
+ \framebox{\includegraphics[width=1.0\figwidth,   clip]{../paper-phot/jplus-wight1.pdf}} %trim=60 50 100 50 
+  &
+
+\framebox{\includegraphics[width=1.0\figwidth,  clip]{../paper-phot/jplus-wight2.pdf}}
+  
+  \end{tabular}
+\caption{(\textit{a})  Weights associated with PC1  and (\textit{b}) weights associated with PC2 for the sources of the Figure~\ref{fig:PCA}. In the plots, the abscissas are the weights ($W_i$) and the ordinates are the filters.}
+  \label{fig:weight}
+\end{figure}
+
+Each PC is a linear combination of all the input variables. In  J/S-PLUS photometric sytem the input variables are the twelve filters. The coefficients, \(w_{i,j}\), are the weights that determine the contribution of each filter to the $i$th principal component. Figure \ref{fig:weight} presents the contributions, \(w_{i,j}\), of the filters to the first two principal components. The horizontal line indicates zero contribution of a filter to the PC. This mean, that the values of filters near this line have no effect on the PC value. The larger the distance of a filter from the  zero value line, the more it contributes to a specific PC.
+
+Filters with strong emission lines contribute significantly to PC1. This is expected because strong emission lines contribute to the major dispersion of the data (PNe have strong emission lines and high values of PC1). The left panel of Figure \ref{fig:weight} shows that the J0660 filter is the most distant from the zero contribution line, indicating that PC1 is dominated by the J0660 filter. The filters J0378, \(g\) and \(r\) also contribute to the PC1 value, although this contribution is less important than the J0660 one. The J0515, \(i\) and J0861 filters are the ones closer from the horizontal line. These filters are not affected by intense emission lines. The weights corresponding to PC2 show a regular distribution, being positive in the blue and negative for longer wavelength (redder spectra, see right panel of Figure \ref{fig:weight}). Therefore PC2 is related with the shape of the continuum. PC2 is particularly dominated by the  \(i\), J0861 and \(z\) filters. They are far away from the zero line as it is perceptible in Figure \ref{fig:weight}. For this reason, symbiotic stars and young stellar objects (sources with intense red continuum) are found to exhibit higher PC2 value compared to PNe and to be located at the upper part of the second diagram of Figure \ref{fig:PCA}. It is important to notice, that the J0660 filter is also contributing to the second variance of the data, and the weights of the J0410  and \(r\) filters are practically zero.
+
+\section{Synthetic colour-colour diagrams}
+\label{sec:colour}
+
+\subsection{IPHAS equivalent colour-colour diagram}
+\label{sec:iphas}
+
+\begin{SCfigure}
+\centering
+  \includegraphics[width=0.5\linewidth]{../paper-phot/Fig1-JPLUS17-Viironen.pdf}
+  \caption{J/S-PLUS (r-J0660) vs (r - i) colour-colour diagram, equivalent to IPHAS (r' - \ha{}) vs. (r' - i'). Yellow and green symbols with error-bars are the J-PLUS observations for H 4-1 and PNG 135.9+55.9, respectively. Included in the
+diagrams are families of CLOUDY modelled halo PNe (density map region) spanning a range of halo PNe properties. The other symbols are the same as in Figure \ref{fig:PCA}. The limiting region applied in the candidate selection are shown as black lines for halo PNe and discontinuous red lines for SySt} 
+  \label{fig:Viironen}
+\end{SCfigure}
+
+
+ In the past \citet{Drew:2005} introduced the IPHAS\footnote{INT Photometric \ha{} Survey of the northern Galactic plane} catalog showing that the \((r' - H\alpha)\) vs \((r' - i)\) colour-colour diagram is an optimal tool to select objects as emission line stars. The IPHAS survey also allowed a systematic searched for PN and SySt candidates in the Galactic plane by using the \((r' - H\alpha)\) vs \((r' - i')\) colour-colour diagram, to be spectroscopic confirmed later \citep{Corradi:2008, Viironen:2009a}. Given that J-PLUS and S-PLUS surveys include the three same filters of the IPHAS, we reproduced the IPHAS colour-colour diagram with the J-PLUS synthetic photometry in order to show the privilege location of the halo PNe and SySt into the diagram. Figure \ref{fig:Viironen} show this diagram. Objects with strong \ha{} emission appear to be placed at the upper left of the diagram, while the higher reddening sources are located to the right part (see Figure~\ref{fig:Viironen}). In this sense, the (\(r - J0660\)) colour indicates strong \ha{} emission while the (\(r - i\)) colour  indicates higher reddening \citep{Corradi:2008}. In Figure \ref{fig:Viironen} it is perceptible that SySt show lower \ha{} excesses than PNe, however they are still above to the other classes of \ha{} emitters. The latter exhibit a wide range in the  \((r - i\)) colour. The symbols with errorbars (blue and green circles) in Figure \ref{fig:Viironen}, are the halo PNe observed by the J-PLUS survey during the science verification phase.
+
+\subsection{New J/S-PLUS diagnostic diagrams}
+\label{sec:newcolor}
+
+%\clearpage
+\begin{figure}[ht]
+\setlength\tabcolsep{\figstampcolsep}
+\centering
+\begin{tabular}{l l}
+ \BowshockFig{../paper-phot/Fig2-JPLUS17-J0515-J0660.pdf} & \BowshockFig{../paper-phot/Fig5-JPLUS17-J0660-r.pdf} \\
+\BowshockFig{../paper-phot/Fig3-JPLUS17-z-g.pdf} & \BowshockFig{../paper-phot/Fig6-JPLUS17-g-i.pdf} \\
+
+  
+  \end{tabular}
+  \caption{ J/S-PLUS (\textit{a}) (\(J0515 - J0660\)) vs (\(J0515 - J0861\)), (\textit{b}) (\(g - J0515\)) vs (\(J0660 - r\)), (\textit{c}) (\(z - J0660\)) vs (\(z - g\)) and (\textit{d}) (\(J0410 - J0660\)) vs (\( g - i\)) color-colour diagrams. The symbols are the same that in Figure \ref{fig:Viironen}.}
+  \label{fig:new-colors}
+\end{figure}
+%\clearpage
+
+
+ With the analysis done in section \ref{sec:pca-con}, we determined which are the best filters to characterize the spectra of several classes of emission line objects in the J/S-PLUS configurations. In agreement with the results of PCA we select a filter set to explore different colour-colour diagrams to discriminate PNe and SySt of the most effective ways. In Figure \ref{fig:new-colors} we display these colour-colour diagrams with the filter select from PCA.
+
+Every diagram in Figure \ref{fig:new-colors} is able to separate  PNe and SySt from other \ha{} emission line objects. The criteria of selection in the diagrams for PNe and SySt are represented by the black lines and  dashed red lines, respectively. These selection lines provide sources with strong \ha{} emission while minimizing contamination from other objects. However, based in these diagrams we concluded that it is very hard to separate PNe from HII regions in J/S-PLUS surveys. In addition, the contamination of PN candidates list from possible mimics (QSOs, CVs, star forming galaxies and YSOs) is found to be very small while the situation is bit worst for SySt for which the contamination from YSOs and HII regions is important.
+
+ Using various colour-colour diagrams provides approach better to distinguish PNe and SySt from their possibles mimics. This is because, the combination of several  narrow- and broad-band filters to construct several colour-colour diagrams allow to characterize whole the optical spectrum of every type of source. 
+
+Two halo PNe, H 4-1 and PNG 135.9+55.9, were observed during the \textit{science verification data} (SVD) of the J-PLUS survey. The J-PLUS SVD data of these two known halo PNe are presented in Figures \ref{fig:Viironen} and \ref{fig:new-colors} (big yellow circle corresponds to H 4-1 and  big green circle corresponds to PNG 135.9+55.9). They are located in the expected region, together to the PN models and their synthetic counterparts.
+
+\section{Results }
+\label{sec:serch}
+
+By applying the IPHAS equivalent and our colour-colour diagrams to the J-PLUS and S-PLUS DR1, we identified one possible PN candidate in the J-PLUS data but none in S-PLUS. It was not possible to find SySt candidates in these first data releases. Figure \ref{fig:applied} displays the diagnostic diagrams with the PN candidate (09:50:20.9, 31:29:11.02, blue circle) found in J-PLUS catalog by using the 5 colour-colour diagrams. The known Galactic PN Sp 4-1
+(19:00:26.55, 38:21:07.27, green circle), the known HII region [HLG90] 73 (01:05:08.83, +02:09:11.01, gray diamond) and the HII galaxy LEDA 101538  (16:16:23.54 +47 02 02.29, red diamond) are also presented. [HLG90] 73 is an extra-galactic HII region located in the galaxy IC 1613. These objects were recovered in J-PLUS DR1 by applying our criteria, demonstrating  the potential of our methodology to identify PNe and HII regions. However, it is very hard to distinguish PNe from HII region with the J-PLUS filter set. 
+
+\begin{figure}
+\setlength\tabcolsep{\figstampcolsep}
+\centering
+\begin{tabular}{l l}
+ \BowshockFig{../paper-phot/Fig2-IDR-JPLUS-J0515_ISO_GAUSS.pdf} & \BowshockFig{../paper-phot/Fig5-IDR-JPLUS-r_ISO_GAUSS.pdf} \\
+
+\BowshockFig{../paper-phot/Fig3-IDR-JPLUS-z_ISO_GAUSS.pdf} & \BowshockFig{../paper-phot/Fig6-IDR-JPLUS-gi_ISO_GAUSS.pdf} \\
+
+\end{tabular}
+  \caption{The same color-colour diagram as in Figure \ref{fig:new-colors}. Including in these diagram the \ha{} emitters found in J-PLUS DR1.  The blue circle represent the PN candidate. The green circle is the known PN SP 4-1. The gray diamond is the external HII region [HLG90] 73 located in IC 1613 and the red diamond is the HII Galaxy LEDA 101538. The orange circles are the PNe from HASH catalog.}
+  \label{fig:applied}
+\end{figure}
+
+We cross-matched the J-PLUS catalog (DR1) with the most recent PN catalog called HASH (Hong Kong/ AAO/ Strasbourg/ \ha{}, \citealp{Parker:2017}). We found  4 matches classified as  PN \textit{probables} in HASH catalog. We putted these 4 objects in the colour-colour diagrams. They are represented by the orange circles in Figure \ref{fig:applied}. As expected they lie outside  the PN zone, indicating that they are likely not genuine PNe. This is confirmed by the lack of the \ha{} emission. In first diagram of Figure \ref{fig:applied} we  show that all HASH PNe have \((J0515 - J0660) < 0.0\), indicating no \ha{} emission.       
+
+Figure \ref{fig:images} displays the images of the PN candidate in all 12 filters.  Figure \ref{fig:cand} shows its photo-spectrum and corresponding RGB image. The photo-spectrum of the PN candidate is very similar to the photo-spectrum of the PN DdDm 1 shown in Figure \ref{fig:convol}, with strong \ha{} emission. In both, the \(g\) broad-band magnitude standing out significantly compared to other filters, for instance, J0515 filter, indicating a strong contribution of the [O III] and/or H$\beta$ emission lines. Figure \ref{fig:objects} shows the photo-spectra and corresponding RGB images of the 3 known objects select with the colour-colour diagrams. The known PN SP 4-1 (upper panel), the HII region [HLG90] 73 (middle panel) and the HII galaxy LEDA 101538 are also presented. This objects show very similar spectral features. The \ha{} emission is perceptible in all the photo-spectra. Now, we can see why it is very difficult to discriminate PNe from  HII regions or HII galaxies (the spectra of the HII galaxies are very similar to the spectra of giant extragalactic HII regions \citealp{Sargent:1970}) in the J/S-PLUS photometry.      
+
+
+\begin{figure}
+\setlength\tabcolsep{\figstampcolsep}
+\centering
+\begin{tabular}{l l l l l l}
+ \BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_uJAVA_swp-crop.pdf} & \BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_J0378_swp-crop.pdf}& \BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_J0395_swp-crop.pdf} & \BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_J0410_swp-crop.pdf} \\ \BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_J0430_swp-crop.pdf} & \BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_gSDSS_swp-crop.pdf} &
+\BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_J0515_swp-crop.pdf} & \BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_rSDSS_swp-crop.pdf} \\ \BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_J0660_swp-crop.pdf} & \BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_iSDSS_swp-crop.pdf} & \BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_J0861_swp-crop.pdf} & \BowshockFigImg{../paper-phot/1000001-JPLUS-00873-v2_zSDSS_swp-crop.pdf} 
+  \end{tabular}
+  \caption{The 12 images of the halo PN candidate.}
+  \label{fig:images}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{tabular}{l l}
+  \includegraphics[width=0.5\linewidth, trim=10 60 10 8]{../paper-phot/photospectrum_6129_auto.pdf} &
+ \includegraphics[width=0.52\linewidth]{../paper-phot/26063-6129-PNcandidate.png}\\
+\end{tabular}
+  \caption{J-PLUS photo-spectrum of the PN candidate (09:50:20.9, 31:29:11.02), and its corresponding RGB image.} 
+  \label{fig:cand}
+\end{figure}
+
+\begin{figure}
+\setlength\tabcolsep{\figstampcolsep}
+\centering
+\begin{tabular}{l l}
+\includegraphics[width=0.5\linewidth, trim=10 60 10 8]{../paper-phot/photospectrum_18242_auto.pdf} & \includegraphics[width=0.52\linewidth]{../paper-phot/26122-18242-PN.png}\\ \includegraphics[width=0.5\linewidth, trim=10 60 10 8]{../paper-phot/photospectrum_17767_auto.pdf} & \includegraphics[width=0.52\linewidth]{../paper-phot/26334-17767-HIIregion.png} \\ \includegraphics[width=0.5\linewidth, trim=10 60 10 8]{../paper-phot/photospectrum_12636_auto.pdf} & \includegraphics[width=0.52\linewidth]{../paper-phot/26184-12636-HIIGalaxy.png}
+  \end{tabular}
+  \caption{ J-PLUS photo-spectra and corresponding RGB images of the (\textit{Upper panel}) disk Galactic PN Sp 4-1, (\textit{Middle panel}) HII region [HLG90] 73 and (\textit{Lower panel}) HII galaxy LEDA 101538.}
+  \label{fig:objects}
+\end{figure}
+
+
+\section{Developed activities}
+\label{sec:activ}
+
+\begin{itemize}
+\item The first  draft of the paper has been written, and I described the photometric tools to identify PNe and SySt, the results of the application of them to the J-PLUS and S-PLUS data and the first confirmation spectroscopic of the nebular nature of the PN candidate select in the J-PLUS catalog. The paper will be submitted soon (probably up to the end of December).  
+
+\item The PN candidate was observed in the INT telescope to get its spectrum. The data is under reduction.
+
+\item The PN group prepared the section of PNe and SySt in the Milky Way for the J-PLUS ``Paper 0'' (accepted for publication in A\&A) and the S-PLUS ``Paper 0''.
+
+\item I participated with a talk at the XXXth General Assembly of the International Astronomical Union Vienna, August 20-31, 2018
+
+
+\item I am actually spending a period in the Centro de Estudios de Física del Cosmos de Aragón  (CEFCA), Spain, working with the members of the J-PAS and J-PLUS collaboration.
+\end{itemize}
+
+\section{Next step}
+\label{sec:step}
+
+\begin{itemize}
+\item J-PLUS and S-PLUS continue observing. Soon, the second internal releases and the second data releases (DR2) will be available for the collaboration. Therefore, we will apply our photometric tools to the catalogs.
+
+\item Finish my stay in CEFCA. 
+
+\item  Write the thesis. 
+
+\end{itemize}
+  
+
+
+\bibliography{ref-pne}
+
+\end{document}
