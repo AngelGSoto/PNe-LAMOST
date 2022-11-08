@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[twocolumn]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{natbib}
@@ -11,6 +11,7 @@
 %\usepackage{floatrow}
 %\caption{caption text}
 \usepackage{sidecap}
+\usepackage{hyperref}
 \usepackage{cleveref}
 \crefname{section}{§}{§§}
 \Crefname{section}{§}{§§}
@@ -20,7 +21,6 @@
 \newlength\figwidth
 \setlength\figwidth{0.48\textwidth}
 \setlength\tabcolsep{0pt}
-\usepackage{hyperref}
 \newcommand\raiselabel[1]{\raisebox{0.39\figwidth}[-0.39\figwidth]{#1}}
 %\renewcommand{\baselinestretch}{1.3}
 \newcommand{\gt}{>}
@@ -122,13 +122,13 @@ tions from color–magnitude diagrams (CMD) and Gaia.
 \label{sec:gaia}
 
 \subsection{Pan-STARRS DR1}
-\label{sec:gaia}
+\label{sec:PS1}
 
 \subsection{LAMOST DR7}
-\label{sec:gaia}
+\label{sec:lamost}
 
 \section{Methodology}
-\label{sec:surveys}
+\label{sec:metho}
 
 At the beginning the idea was to identify for new planetary nebula in GAIA.
 I started to constructed possibles color-color diagrams to separate PNe from
@@ -178,16 +178,16 @@ Fig~\ref{fig:spectra} the spectra of the new PNe finding in the list of emission
 that the He II emission line is more strong than the the H$\beta$ line. Given the LAMOST spectra
 are not calibrated in flux but they are flux relative, then I think that some ratio line can be calculated. Could be?
 
-\begin{figure}
+\begin{figure*}
 \centering
   \includegraphics[width=0.9\linewidth]{../Spectra-lamostdr7/spec-56581-VB031N50V1_sp08-218.pdf}
   \caption{} 
   \label{fig:spectra}
-\end{figure}
+\end{figure*}
 
 The images of the PN called LAMOST J020808.63+491401.0 are shows in Fig~\ref{fig:image}.  \textit{Left panel} exhibits the PanSTARRS coloured images \footnote{This RGB images were made by implementing the python package \texttt{aplpy} \citep{aplpy:2019}}, which was performed by combining the $g$, $r$ and $i$ filters in the blue, green and red colour channels, respectively. The image shows clearly a central star surrounding for a nebulae component. \textit{Right panel} shows the WISE RGB image, with the filter W1, W2, and W4 in the blue, green and red channels, respectively.  
 
-\begin{figure}
+\begin{figure*}
   \centering
   \begin{tabular}{l l}
 \includegraphics[width=0.5\linewidth]{../image-panstarr/cutout_rings_v3_skycell_2294_031_stk_i_unconv-irg-RGB.pdf}
@@ -195,7 +195,22 @@ The images of the PN called LAMOST J020808.63+491401.0 are shows in Fig~\ref{fig
 \end{tabular}  
   \caption{} 
   \label{fig:image}
-\end{figure}
+\end{figure*}
+
+
+\section{Model}
+\label{sec:model}
+
+Despite the LAMOST spectra are not in physical flux unity, they have flux relative. This means it
+is possible compare it with other spectra in physical units. For that, I think, it is pertinent to
+compare the LAMOST spectra of our PN with models. Fig~\ref{fig:spectra-obs-model} shows a comparison between LAMOST spectra and a {\sc cloudy} modelled spectra from \citet{Gutierrez-Soto:2020}. Note that only is an example for illustrative intentions. This model was taken from a grid o models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches between the two spectra. I will a performed a grid of PN models that better reproduce the LAMOST spectra of our candidate. However, almost all the line are reproduce with this model, that could be interesting, because the temperature effective of this model is 130$\times10^3$K, indicating a very high excitation object. Maybe, it will be good idea estimate ratio lines to confirm that. 
+
+\begin{figure*}
+\centering
+  \includegraphics[width=0.89\linewidth]{../Spectra-lamostdr7/DdDm1_L4_T130_output_SED-E02-comparing-spectra}
+  \caption{} 
+  \label{fig:spectra-obs-model}
+\end{figure*}
 
 \bibliography{Ref-pne}
 

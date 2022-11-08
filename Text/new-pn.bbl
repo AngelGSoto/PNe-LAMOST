@@ -1,4 +1,4 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{4}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Gaia Collaboration} {et~al.}(2021){Gaia Collaboration}, {Smart},
@@ -74,6 +74,16 @@
   {Voutsinas}, {Weiler}, {Wevers}, {Wyrzykowski}, {Yoldas}, {Yvard}, {Zhao},
   {Zorec}, {Zucker}, {Zurbach}, \& {Zwitter}}]{Smart:2021}
 {Gaia Collaboration} {et~al.} 2021, \aap, 649, A6
+
+\bibitem[{{Guti{\'e}rrez-Soto} {et~al.}(2020){Guti{\'e}rrez-Soto},
+  {Gon{\c{c}}alves}, {Akras}, {Cortesi}, {L{\'o}pez-Sanjuan}, {Guerrero},
+  {Daflon}, {Borges Fernandes}, {Mendes de Oliveira}, {Ederoclite},
+  {Sodr{\'e}}, {Pereira}, {Kanaan}, {Werle}, {V{\'a}zquez Rami{\'o}},
+  {Alcaniz}, {Angulo}, {Cenarro}, {Crist{\'o}bal-Hornillos}, {Dupke},
+  {Hern{\'a}ndez-Monteagudo}, {Mar{\'\i}n-Franch}, {Moles}, {Varela},
+  {Ribeiro}, {Schoenell}, {Alvarez-Candal}, {Galbany}, {Jim{\'e}nez-Esteban},
+  {Logro{\~n}o-Garc{\'\i}a}, \& {Sobral}}]{Gutierrez-Soto:2020}
+{Guti{\'e}rrez-Soto}, L.~A., {et~al.} 2020, \aap, 633, A123
 
 \bibitem[{Robitaille(2019)}]{aplpy:2019}
 Robitaille, T. 2019, {APLpy v2.0: The Astronomical Plotting Library in Python}

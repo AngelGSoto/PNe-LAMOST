@@ -26,6 +26,7 @@ hdu = fits.open(file_)
 hdudata = hdu[0].data
 wl = hdudata[2]
 Flux = hdudata[0]
+Flux /=10e3
 
 # Emission lines
 wv_lin = [3869.76, 3967.46, 4101.74, 4340.471, 4542, 4685.71, 4711.26, 4740.120, 4861.33, 4958.92, 5006.8, 5411, 6562.82, 6879,  7005.87, 7113, 7135, 7751, 8236.79, 9001.27]
@@ -43,7 +44,7 @@ for i in wv_lin:
     k = i + 10
     mask = (j < wl) & (wl < k)
     wl_= wl[mask]
-    flux = Flux[mask]
+    flux = Flux[mask] 
     try:
         max_flux.append(np.max(flux))
     except ValueError:
@@ -54,11 +55,11 @@ n = np.linspace(1, len(wl), num=len(wl), dtype = int)
 fig, ax = plt.subplots(figsize=(11, 5))
 #ax.set_title(namefile)
 ax.set(xlim=[3600,9100])
-ax.set(ylim=[-500,4500])
+ax.set(ylim=[-0.05,0.45])
 #plt.ylim(ymin=0.0,ymax=500)
 ax.set(xlabel='Wavelength $(\AA)$')
-ax.set(ylabel='Flux')
-ax.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
+ax.set(ylabel='Normalised flux')
+ax.plot(wl, Flux , c = "blueviolet", linewidth=0.7, zorder=5)
 for wll in wv_lin:
     ax.axvline(wll, color='k', linewidth=0.4, alpha=0.5, linestyle='--')
 # ax.axvline(6560.28, color='k', linewidth=0.5, linestyle='--', label=r"H$\alpha$")
@@ -81,11 +82,11 @@ for label_, x, y in zip(em_lin, wv_lin, max_flux):
 ###########
 #zoom plot#
 ###########
-axins = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.43, 0.85),
+axins = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.41, 0.85),
                    bbox_transform=ax.figure.transFigure) # zoom = 6
 axins.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
 axins.set_xlim(4500, 4830) # Limit the region for zoom
-axins.set_ylim(-50, 1000)
+axins.set_ylim(-0.01, 0.1)
 
 for label_, x, y in zip(em_lin, wv_lin, max_flux):
     axins.annotate(label_, (x, y), alpha=1, size=5,
@@ -104,7 +105,7 @@ axins1 = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.73, 0.92),
                    bbox_transform=ax.figure.transFigure) # zoom = 6
 axins1.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
 axins1.set_xlim(6830, 7200) # Limit the region for zoom
-axins1.set_ylim(-50, 1000)
+axins1.set_ylim(-0.01, 0.1)
 
 for label_, x, y in zip(em_lin, wv_lin, max_flux):
     axins1.annotate(label_, (x, y), alpha=1, size=5,

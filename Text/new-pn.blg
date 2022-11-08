@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: new-pn.aux
 The style file: apj.bst
 Database file #1: Ref-pne.bib
-You've used 3 entries,
+You've used 4 entries,
             2988 wiz_defined-function locations,
-            670 strings with 13295 characters,
-and the built_in function-call counts, 6576 in all, are:
-= -- 97
-> -- 1315
+            676 strings with 14175 characters,
+and the built_in function-call counts, 7312 in all, are:
+= -- 131
+> -- 1412
 < -- 1
-+ -- 438
-- -- 435
-* -- 928
-:= -- 1477
-add.period$ -- 3
-call.type$ -- 3
-change.case$ -- 17
-chr.to.int$ -- 3
-cite$ -- 3
-duplicate$ -- 52
-empty$ -- 76
-format.name$ -- 443
-if$ -- 1057
++ -- 470
+- -- 466
+* -- 1017
+:= -- 1628
+add.period$ -- 4
+call.type$ -- 4
+change.case$ -- 22
+chr.to.int$ -- 4
+cite$ -- 4
+duplicate$ -- 70
+empty$ -- 104
+format.name$ -- 478
+if$ -- 1190
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 13
-num.names$ -- 12
-pop$ -- 15
+missing$ -- 3
+newline$ -- 16
+num.names$ -- 16
+pop$ -- 19
 preamble$ -- 1
-purify$ -- 17
+purify$ -- 22
 quote$ -- 0
-skip$ -- 45
+skip$ -- 62
 stack$ -- 0
-substring$ -- 53
+substring$ -- 77
 swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 27
+type$ -- 36
 warning$ -- 0
-while$ -- 9
+while$ -- 11
 width$ -- 0
-write$ -- 32
+write$ -- 42
