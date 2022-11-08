@@ -2,47 +2,45 @@ This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: new-pn.aux
 The style file: apj.bst
-I found no \citation commands---while reading file new-pn.aux
-I found no \bibdata command---while reading file new-pn.aux
-You've used 0 entries,
+Database file #1: Ref-pne.bib
+You've used 3 entries,
             2988 wiz_defined-function locations,
-            650 strings with 4589 characters,
-and the built_in function-call counts, 23 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 8
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+            670 strings with 13295 characters,
+and the built_in function-call counts, 6576 in all, are:
+= -- 97
+> -- 1315
+< -- 1
++ -- 438
+- -- 435
+* -- 928
+:= -- 1477
+add.period$ -- 3
+call.type$ -- 3
+change.case$ -- 17
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 52
+empty$ -- 76
+format.name$ -- 443
+if$ -- 1057
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 0
-newline$ -- 4
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 2
+newline$ -- 13
+num.names$ -- 12
+pop$ -- 15
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 17
 quote$ -- 0
-skip$ -- 1
+skip$ -- 45
 stack$ -- 0
-substring$ -- 0
+substring$ -- 53
 swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 27
 warning$ -- 0
-while$ -- 0
+while$ -- 9
 width$ -- 0
-write$ -- 3
-(There were 2 error messages)
+write$ -- 32

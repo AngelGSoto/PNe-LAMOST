@@ -76,14 +76,23 @@
 \section{Introduction}
 \label{sec:intro}
 
-Planetary nebulae (PNe) represent the last stage of evolution of low- and intermediate-mass stars (0.8$\msol$ - 8.0$\msol$). The PNe phase begin when gas is ejected from the red giant stars late in their lives and subsequently this gas is ionized by the radiation field coming from the remnant star resulted. An emission nebula expands, a glowing shell of ionized gas until lost in the interstellar medium. Then the dying star core becomes a white dwarf.
+Planetary nebulae (PNe) represent the last stage of evolution of low- and intermediate-mass stars
+(0.8$\msol$ - 8.0$\msol$). The PNe phase begin when gas is ejected from the red giant stars late
+in their lives and subsequently this gas is ionized by the radiation field coming from the remnant
+star resulted. An emission nebula expands, a glowing shell of ionized gas until lost in the
+interstellar medium. Then the dying star core becomes a white dwarf.
 
-The number of the PNe discovered in the galaxy is relatively low (\(\sim 3,500\)). However, this current number of PNe represents only about 15-30\% of the estimated
+The number of the PNe discovered in the galaxy is relatively low (\(\sim 3,500\)). However,
+this current number of PNe represents only about 15-30\% of the estimated
 total of Galactic PNe (Frew, 2008; Jacoby et al., 2010) showing that a small fraction
-of the PNe have been cataloged (Frew, 2017). This mean that the search for planetary nebulae becoming a important task, that eavery time is more dificult, due to many of the undiscovered PNe are probably
-the more distant and then the more the weak. And because many of them, probably, are located in nuvens of dust. And note that planetary nebulae only last for about 5,000-
+of the PNe have been cataloged (Frew, 2017). This mean that the search for planetary nebulae
+becoming a important task, that eavery time is more dificult, due to many of the undiscovered PNe are probably
+the more distant and then the more the weak. And because many of them, probably, are located
+in nuvens of dust. And note that planetary nebulae only last for about 5,000-
 25,000 yr (Badenes et al. 2015), making them a very short-lived part of the stellar life cycle.
-But is import to discovery new planetary nebula? the answer could be very obvious and is related with the idea that PNe provide vital clues for the understanding late-stage stellar evolution and Galactic chemical enrichment. Their strong emission lines allow the determina-
+But is import to discovery new planetary nebula? the answer could be very obvious and is
+related with the idea that PNe provide vital clues for the understanding late-stage stellar
+evolution and Galactic chemical enrichment. Their strong emission lines allow the determina-
 tion of abundances, expansion and radial velocities, and
 CSPN temperatures. PNe yield information on the nuclear
 burning, dredge up, and mass loss in the stellar progenitor
@@ -98,8 +107,10 @@ progenitor masses. The first problem has prospects of
 resolution via accurate Gaia CSPN distances, though many
 CSPNe remain too distant and faint for Gaia DR3 and correct
 CSPN identification remains an issue for some (Parker et al.
-2022). The second problem is being addressed by deep, narrow-band, wide-field surveys, e.g., Parker et al. (2005),
-Drew et al. (2005), and Drew et al. (2014). For the third problem of progenitor masses, these can only
+2022). The second problem is being addressed by deep, narrow-band,
+wide-field surveys, e.g., Parker et al. (2005),
+Drew et al. (2005), and Drew et al. (2014). For the third problem
+of progenitor masses, these can only
 be accurately determined for PNe in Galactic globular and
 open clusters (OCs). These allow precise distance determina-
 tions from color–magnitude diagrams (CMD) and Gaia.
@@ -119,13 +130,71 @@ tions from color–magnitude diagrams (CMD) and Gaia.
 \section{Methodology}
 \label{sec:surveys}
 
-At the beginning the idea was to identify for new planetary nebula in GAIA. I started to constructed possibles color-color diagrams to separate PNe from other emission lines objects and stars using GAIA only. The separation was not good because PNe and other emission line stars like CVs occupy the same region in the diagram. Then, I decided to move to Pan-STARRS and combining the two surveys Pan-STARRS and GAIA. I found one color diagram that isolate the PNe with, I suppose, strong \ha{} emission line. By using the \((G - r)\) versus \((G_{BP} - G_{RP})\) color-color
+At the beginning the idea was to identify for new planetary nebula in GAIA.
+I started to constructed possibles color-color diagrams to separate PNe from
+other emission lines objects and stars using GAIA only. The separation was not
+good because PNe and other emission line stars like CVs occupy the same region
+in the diagram. Then, I decided to move to Pan-STARRS and combining the two
+surveys Pan-STARRS and GAIA. I found one color diagram that isolate the PNe
+with, I suppose, strong \ha{} emission line. By using the \((G - r)\) versus \((G_{BP} - G_{RP})\)
+color-color is possible to separate those PNe excess in the in the $r$-broad-band
+filter as is possible to see in the Fig~\ref{fig:gaia-ps}. Fig~\ref{fig:gaia-ps}
+shows that the many of the PNe have value in the color \(G - r\) = 0, however several
+PNe cover the interval in this same color between 0 and 8, and span between -1 and 5.
+The orange contours represent other emission line objects that includes CV, SySt,
+YSOs, AeBe stars and SNRs. The contours becoming white at the outside indicating
+that the number of objects decrease significantly. And the blue contours signify
+stars from \citet{Smart:2021}. Where they occupy the region with \((G - r)\) = 0.
 
 \begin{figure}
 \centering
   \includegraphics[width=0.9\linewidth]{../Figs/color-diagram-ps-gaiaEDR3.pdf}
   \caption{} 
-  \label{fig:Viironen}
+  \label{fig:gaia-ps}
+\end{figure}
+
+All indicate that the PNe with strong \ha{} can be selected with this color criteria.
+Then, to see the possibility of using this color criterion to select these PNe, by
+testing and using the emission line catalog from  \citet{Skoda:2020}. First, they
+identify emission line objects from LAMOST DR? implementing a machine learning approach.
+They divided their final sample of emission line objects in tree subgroups. The \texttt{SIMBAD},
+Hue and new list. To texting the possibility to find for new PNe with the color criteria
+explained above, we applied it directly in the new list, which present objects not reported
+previously in the literature, which is a list with 1000 objects.
+
+\begin{figure}
+\centering
+  \includegraphics[width=0.9\linewidth]{../Figs/pn-candidates-gaiaDR3.pdf}
+  \caption{} 
+  \label{fig:gaia-ps-apply}
+\end{figure}
+
+Four objects met this  condition as is possible to see in the Fig~\ref{fig:gaia-ps-apply}.
+Tree objects of them display strong \ha{}, but are not display the other emission lines topically
+of PNe like [O III], He II, [S II], among other. But the three look likes as PNe.
+Because, it displays He II emission lines, the Balmer ones, [O III], among other.
+Fig~\ref{fig:spectra} the spectra of the new PNe finding in the list of emission line of
+\citet{Skoda:2020}. This PNe seen a very high ionization object, by eye is possible to see
+that the He II emission line is more strong than the the H$\beta$ line. Given the LAMOST spectra
+are not calibrated in flux but they are flux relative, then I think that some ratio line can be calculated. Could be?
+
+\begin{figure}
+\centering
+  \includegraphics[width=0.9\linewidth]{../Spectra-lamostdr7/spec-56581-VB031N50V1_sp08-218.pdf}
+  \caption{} 
+  \label{fig:spectra}
+\end{figure}
+
+The images of the PN called LAMOST J020808.63+491401.0 are shows in Fig~\ref{fig:image}.  \textit{Left panel} exhibits the PanSTARRS coloured images \footnote{This RGB images were made by implementing the python package \texttt{aplpy} \citep{aplpy:2019}}, which was performed by combining the $g$, $r$ and $i$ filters in the blue, green and red colour channels, respectively. The image shows clearly a central star surrounding for a nebulae component. \textit{Right panel} shows the WISE RGB image, with the filter W1, W2, and W4 in the blue, green and red channels, respectively.  
+
+\begin{figure}
+  \centering
+  \begin{tabular}{l l}
+\includegraphics[width=0.5\linewidth]{../image-panstarr/cutout_rings_v3_skycell_2294_031_stk_i_unconv-irg-RGB.pdf}
+\includegraphics[width=0.5\linewidth]{../image-wise/w4_ra32_035994_dec49_233615-421-RGB.pdf}
+\end{tabular}  
+  \caption{} 
+  \label{fig:image}
 \end{figure}
 
 \bibliography{Ref-pne}

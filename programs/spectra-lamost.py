@@ -1,3 +1,6 @@
+from mpl_toolkits.axes_grid1.inset_locator import zoomed_inset_axes
+from mpl_toolkits.axes_grid1.inset_locator import mark_inset
+#from mpl_toolkits.axes_grid1.inset_locator import mark_inset, inset_axes
 from astropy.io import ascii
 from astropy.table import Table
 import numpy as np
@@ -51,6 +54,7 @@ n = np.linspace(1, len(wl), num=len(wl), dtype = int)
 fig, ax = plt.subplots(figsize=(11, 5))
 #ax.set_title(namefile)
 ax.set(xlim=[3600,9100])
+ax.set(ylim=[-500,4500])
 #plt.ylim(ymin=0.0,ymax=500)
 ax.set(xlabel='Wavelength $(\AA)$')
 ax.set(ylabel='Flux')
@@ -71,9 +75,60 @@ for wll in wv_lin:
 
 bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
 for label_, x, y in zip(em_lin, wv_lin, max_flux):
-    ax.annotate(label_, (x, y), alpha=1, size=4,
-                   xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=100)
-    
+    ax.annotate(label_, (x, y), alpha=1, size=5,
+                   xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
+
+###########
+#zoom plot#
+###########
+axins = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.43, 0.85),
+                   bbox_transform=ax.figure.transFigure) # zoom = 6
+axins.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
+axins.set_xlim(4500, 4830) # Limit the region for zoom
+axins.set_ylim(-50, 1000)
+
+for label_, x, y in zip(em_lin, wv_lin, max_flux):
+    axins.annotate(label_, (x, y), alpha=1, size=5,
+                   xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
+
+plt.xticks(visible=False)  # Not present ticks
+plt.yticks(visible=False)
+#
+## draw a bbox of the region of the inset axes in the parent axes and
+## connecting lines between the bbox and the inset axes area
+mark_inset(ax, axins, loc1=2, loc2=4, fc="none",lw=1.2,  ec="0.6", zorder=1)
+
+###########
+#Zoom other region
+axins1 = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.73, 0.92),
+                   bbox_transform=ax.figure.transFigure) # zoom = 6
+axins1.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
+axins1.set_xlim(6830, 7200) # Limit the region for zoom
+axins1.set_ylim(-50, 1000)
+
+for label_, x, y in zip(em_lin, wv_lin, max_flux):
+    axins1.annotate(label_, (x, y), alpha=1, size=5,
+                   xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
+
+plt.xticks(visible=False)  # Not present ticks
+plt.yticks(visible=False)
+#
+## draw a bbox of the region of the inset axes in the parent axes and
+## connecting lines between the bbox and the inset axes area
+mark_inset(ax, axins1, loc1=2, loc2=4, fc="none",lw=1.2,  ec="0.6", zorder=1)
+
+# axins = inset_axes(ax, 1, 1, loc=2, bbox_to_anchor=(0.2, 0.55),
+#                   bbox_transform=ax.figure.transFigure)
+# axins.plot(x, y)
+# x1, x2 = .4, .6
+# y1, y2 = x1 ** 2, x2 ** 2
+
+# axins.set_xlim(x1, x2)
+# axins.set_ylim(y1, y2)
+
+# mark_inset(ax, axins, loc1=1, loc2=3, fc="none", ec="0.5")
+
+
 #ax.legend()
 plt.tight_layout()
 namefile = file_.replace(".fits", ".pdf")

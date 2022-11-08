@@ -1,4 +1,85 @@
-\begin{thebibliography}{0}
+\begin{thebibliography}{3}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Gaia Collaboration} {et~al.}(2021){Gaia Collaboration}, {Smart},
+  {Sarro}, {Rybizki}, {Reyl{\'e}}, {Robin}, {Hambly}, {Abbas}, {Barstow}, {de
+  Bruijne}, {Bucciarelli}, {Carrasco}, {Cooper}, {Hodgkin}, {Masana},
+  {Michalik}, {Sahlmann}, {Sozzetti}, {Brown}, {Vallenari}, {Prusti},
+  {Babusiaux}, {Biermann}, {Creevey}, {Evans}, {Eyer}, {Hutton}, {Jansen},
+  {Jordi}, {Klioner}, {Lammers}, {Lindegren}, {Luri}, {Mignard}, {Panem},
+  {Pourbaix}, {Randich}, {Sartoretti}, {Soubiran}, {Walton}, {Arenou},
+  {Bailer-Jones}, {Bastian}, {Cropper}, {Drimmel}, {Katz}, {Lattanzi}, {van
+  Leeuwen}, {Bakker}, {Casta{\~n}eda}, {De Angeli}, {Ducourant}, {Fabricius},
+  {Fouesneau}, {Fr{\'e}mat}, {Guerra}, {Guerrier}, {Guiraud}, {Jean-Antoine
+  Piccolo}, {Messineo}, {Mowlavi}, {Nicolas}, {Nienartowicz}, {Pailler},
+  {Panuzzo}, {Riclet}, {Roux}, {Seabroke}, {Sordo}, {Tanga}, {Th{\'e}venin},
+  {Gracia-Abril}, {Portell}, {Teyssier}, {Altmann}, {Andrae}, {Bellas-Velidis},
+  {Benson}, {Berthier}, {Blomme}, {Brugaletta}, {Burgess}, {Busso}, {Carry},
+  {Cellino}, {Cheek}, {Clementini}, {Damerdji}, {Davidson}, {Delchambre},
+  {Dell'Oro}, {Fern{\'a}ndez-Hern{\'a}ndez}, {Galluccio}, {Garc{\'\i}a-Lario},
+  {Garcia-Reinaldos}, {Gonz{\'a}lez-N{\'u}{\~n}ez}, {Gosset}, {Haigron},
+  {Halbwachs}, {Harrison}, {Hatzidimitriou}, {Heiter}, {Hern{\'a}ndez},
+  {Hestroffer}, {Holl}, {Jan{\ss}en}, {Jevardat de Fombelle}, {Jordan},
+  {Krone-Martins}, {Lanzafame}, {L{\"o}ffler}, {Lorca}, {Manteiga}, {Marchal},
+  {Marrese}, {Moitinho}, {Mora}, {Muinonen}, {Osborne}, {Pancino}, {Pauwels},
+  {Recio-Blanco}, {Richards}, {Riello}, {Rimoldini}, {Roegiers}, {Siopis},
+  {Smith}, {Ulla}, {Utrilla}, {van Leeuwen}, {van Reeven}, {Abreu Aramburu},
+  {Accart}, {Aerts}, {Aguado}, {Ajaj}, {Altavilla}, {{\'A}lvarez}, {{\'A}lvarez
+  Cid-Fuentes}, {Alves}, {Anderson}, {Anglada Varela}, {Antoja}, {Audard},
+  {Baines}, {Baker}, {Balaguer-N{\'u}{\~n}ez}, {Balbinot}, {Balog}, {Barache},
+  {Barbato}, {Barros}, {Bartolom{\'e}}, {Bassilana}, {Bauchet},
+  {Baudesson-Stella}, {Becciani}, {Bellazzini}, {Bernet}, {Bertone}, {Bianchi},
+  {Blanco-Cuaresma}, {Boch}, {Bombrun}, {Bossini}, {Bouquillon}, {Bragaglia},
+  {Bramante}, {Breedt}, {Bressan}, {Brouillet}, {Burlacu}, {Busonero},
+  {Butkevich}, {Buzzi}, {Caffau}, {Cancelliere}, {C{\'a}novas},
+  {Cantat-Gaudin}, {Carballo}, {Carlucci}, {Carnerero}, {Casamiquela},
+  {Castellani}, {Castro-Ginard}, {Castro Sampol}, {Chaoul}, {Charlot},
+  {Chemin}, {Chiavassa}, {Cioni}, {Comoretto}, {Cornez}, {Cowell}, {Crifo},
+  {Crosta}, {Crowley}, {Dafonte}, {Dapergolas}, {David}, {David}, {de Laverny},
+  {De Luise}, {De March}, {De Ridder}, {de Souza}, {de Teodoro}, {de Torres},
+  {del Peloso}, {del Pozo}, {Delgado}, {Delgado}, {Delisle}, {Di Matteo},
+  {Diakite}, {Diener}, {Distefano}, {Dolding}, {Eappachen}, {Edvardsson},
+  {Enke}, {Esquej}, {Fabre}, {Fabrizio}, {Faigler}, {Fedorets}, {Fernique},
+  {Fienga}, {Figueras}, {Fouron}, {Fragkoudi}, {Fraile}, {Franke}, {Gai},
+  {Garabato}, {Garcia-Gutierrez}, {Garc{\'\i}a-Torres}, {Garofalo}, {Gavras},
+  {Gerlach}, {Geyer}, {Giacobbe}, {Gilmore}, {Girona}, {Giuffrida}, {Gomel},
+  {Gomez}, {Gonzalez-Santamaria}, {Gonz{\'a}lez-Vidal}, {Granvik},
+  {Guti{\'e}rrez-S{\'a}nchez}, {Guy}, {Hauser}, {Haywood}, {Helmi}, {Hidalgo},
+  {Hilger}, {H{\l}adczuk}, {Hobbs}, {Holland}, {Huckle}, {Jasniewicz},
+  {Jonker}, {Juaristi Campillo}, {Julbe}, {Karbevska}, {Kervella}, {Khanna},
+  {Kochoska}, {Kontizas}, {Kordopatis}, {Korn}, {Kostrzewa-Rutkowska},
+  {Kruszy{\'n}ska}, {Lambert}, {Lanza}, {Lasne}, {Le Campion}, {Le Fustec},
+  {Lebreton}, {Lebzelter}, {Leccia}, {Leclerc}, {Lecoeur-Taibi}, {Liao},
+  {Licata}, {Lindstr{\o}m}, {Lister}, {Livanou}, {Lobel}, {Madrero Pardo},
+  {Managau}, {Mann}, {Marchant}, {Marconi}, {Marcos Santos}, {Marinoni},
+  {Marocco}, {Marshall}, {Martin Polo}, {Mart{\'\i}n-Fleitas}, {Masip},
+  {Massari}, {Mastrobuono-Battisti}, {Mazeh}, {McMillan}, {Messina}, {Millar},
+  {Mints}, {Molina}, {Molinaro}, {Moln{\'a}r}, {Montegriffo}, {Mor},
+  {Morbidelli}, {Morel}, {Morris}, {Mulone}, {Munoz}, {Muraveva}, {Murphy},
+  {Musella}, {Noval}, {Ord{\'e}novic}, {Orr{\`u}}, {Osinde}, {Pagani},
+  {Pagano}, {Palaversa}, {Palicio}, {Panahi}, {Pawlak}, {Pe{\~n}alosa
+  Esteller}, {Penttil{\"a}}, {Piersimoni}, {Pineau}, {Plachy}, {Plum},
+  {Poggio}, {Poretti}, {Poujoulet}, {Pr{\v{s}}a}, {Pulone}, {Racero},
+  {Ragaini}, {Rainer}, {Raiteri}, {Rambaux}, {Ramos}, {Ramos-Lerate}, {Re
+  Fiorentin}, {Regibo}, {Ripepi}, {Riva}, {Rixon}, {Robichon}, {Robin},
+  {Roelens}, {Rohrbasser}, {Romero-G{\'o}mez}, {Rowell}, {Royer}, {Rybicki},
+  {Sadowski}, {Sagrist{\`a} Sell{\'e}s}, {Salgado}, {Salguero}, {Samaras},
+  {Sanchez Gimenez}, {Sanna}, {Santove{\~n}a}, {Sarasso}, {Schultheis},
+  {Sciacca}, {Segol}, {Segovia}, {S{\'e}gransan}, {Semeux}, {Shahaf},
+  {Siddiqui}, {Siebert}, {Siltala}, {Slezak}, {Solano}, {Solitro}, {Souami},
+  {Souchay}, {Spagna}, {Spoto}, {Steele}, {Steidelm{\"u}ller}, {Stephenson},
+  {S{\"u}veges}, {Szabados}, {Szegedi-Elek}, {Taris}, {Tauran}, {Taylor},
+  {Teixeira}, {Thuillot}, {Tonello}, {Torra}, {Torra}, {Turon}, {Unger},
+  {Vaillant}, {van Dillen}, {Vanel}, {Vecchiato}, {Viala}, {Vicente},
+  {Voutsinas}, {Weiler}, {Wevers}, {Wyrzykowski}, {Yoldas}, {Yvard}, {Zhao},
+  {Zorec}, {Zucker}, {Zurbach}, \& {Zwitter}}]{Smart:2021}
+{Gaia Collaboration} {et~al.} 2021, \aap, 649, A6
+
+\bibitem[{Robitaille(2019)}]{aplpy:2019}
+Robitaille, T. 2019, {APLpy v2.0: The Astronomical Plotting Library in Python}
+
+\bibitem[{{{\v{S}}koda} {et~al.}(2020){{\v{S}}koda}, {Podsztavek}, \&
+  {Tvrd{\'\i}k}}]{Skoda:2020}
+{{\v{S}}koda}, P., {Podsztavek}, O., \& {Tvrd{\'\i}k}, P. 2020, \aap, 643, A122
 
 \end{thebibliography}
