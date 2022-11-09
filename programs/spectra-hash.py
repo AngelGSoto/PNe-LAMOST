@@ -22,11 +22,14 @@ parser.add_argument("source", type=str,
 cmd_args = parser.parse_args()
 file_ = cmd_args.source + ".fits"
 
-hdu = fits.open(file_)
-hdudata = hdu[0].data
-wl = hdudata[2]
-Flux = hdudata[0]
-Flux /=10e3
+# Data of the spectra
+hdulist = fits.open(file_)
+hdu = hdulist[0]
+nx, wav0, i0, dwav = [hdu.header[k] for k in ("NAXIS1", "CRVAL1", "CRPIX1", "CDELT1")]
+wl = wav0 + (np.arange(nx) - (i0 - 1))*dwav
+
+Flux = hdulist[0].data
+#Flux /=10e3
 
 # Emission lines
 wv_lin = [3869.76, 3967.46, 4101.74, 4340.471, 4542, 4685.71, 4711.26, 4740.120, 4861.33, 4958.92, 5006.8, 5411, 6562.82, 6879,  7005.87, 7113, 7135, 7751, 8236.79, 9001.27]
@@ -55,7 +58,7 @@ n = np.linspace(1, len(wl), num=len(wl), dtype = int)
 fig, ax = plt.subplots(figsize=(11, 5))
 #ax.set_title(namefile)
 ax.set(xlim=[3600,9100])
-ax.set(ylim=[-0.05,0.5])
+#ax.set(ylim=[-0.05,0.45])
 #plt.ylim(ymin=0.0,ymax=500)
 ax.set(xlabel='Wavelength $(\AA)$')
 ax.set(ylabel='Normalised flux')
@@ -82,41 +85,41 @@ for label_, x, y in zip(em_lin, wv_lin, max_flux):
 ###########
 #zoom plot#
 ###########
-axins = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.41, 0.85),
-                   bbox_transform=ax.figure.transFigure) # zoom = 6
-axins.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
-axins.set_xlim(4500, 4830) # Limit the region for zoom
-axins.set_ylim(-0.01, 0.1)
+# axins = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.41, 0.85),
+#                    bbox_transform=ax.figure.transFigure) # zoom = 6
+# axins.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
+# axins.set_xlim(4500, 4830) # Limit the region for zoom
+# axins.set_ylim(-0.01, 0.1)
 
-for label_, x, y in zip(em_lin, wv_lin, max_flux):
-    axins.annotate(label_, (x, y), alpha=1, size=5,
-                   xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
+# for label_, x, y in zip(em_lin, wv_lin, max_flux):
+#     axins.annotate(label_, (x, y), alpha=1, size=5,
+#                    xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
 
-plt.xticks(visible=False)  # Not present ticks
-plt.yticks(visible=False)
-#
-## draw a bbox of the region of the inset axes in the parent axes and
-## connecting lines between the bbox and the inset axes area
-mark_inset(ax, axins, loc1=2, loc2=4, fc="none",lw=1.2,  ec="0.6", zorder=1)
+# plt.xticks(visible=False)  # Not present ticks
+# plt.yticks(visible=False)
+# #
+# ## draw a bbox of the region of the inset axes in the parent axes and
+# ## connecting lines between the bbox and the inset axes area
+# mark_inset(ax, axins, loc1=2, loc2=4, fc="none",lw=1.2,  ec="0.6", zorder=1)
 
-###########
-#Zoom other region
-axins1 = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.73, 0.92),
-                   bbox_transform=ax.figure.transFigure) # zoom = 6
-axins1.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
-axins1.set_xlim(6830, 7200) # Limit the region for zoom
-axins1.set_ylim(-0.01, 0.1)
+# ###########
+# #Zoom other region
+# axins1 = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.73, 0.92),
+#                    bbox_transform=ax.figure.transFigure) # zoom = 6
+# axins1.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
+# axins1.set_xlim(6830, 7200) # Limit the region for zoom
+# axins1.set_ylim(-0.01, 0.1)
 
-for label_, x, y in zip(em_lin, wv_lin, max_flux):
-    axins1.annotate(label_, (x, y), alpha=1, size=5,
-                   xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
+# for label_, x, y in zip(em_lin, wv_lin, max_flux):
+#     axins1.annotate(label_, (x, y), alpha=1, size=5,
+#                    xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
 
-plt.xticks(visible=False)  # Not present ticks
-plt.yticks(visible=False)
-#
-## draw a bbox of the region of the inset axes in the parent axes and
-## connecting lines between the bbox and the inset axes area
-mark_inset(ax, axins1, loc1=2, loc2=4, fc="none",lw=1.2,  ec="0.6", zorder=1)
+# plt.xticks(visible=False)  # Not present ticks
+# plt.yticks(visible=False)
+# #
+# ## draw a bbox of the region of the inset axes in the parent axes and
+# ## connecting lines between the bbox and the inset axes area
+# mark_inset(ax, axins1, loc1=2, loc2=4, fc="none",lw=1.2,  ec="0.6", zorder=1)
 
 # axins = inset_axes(ax, 1, 1, loc=2, bbox_to_anchor=(0.2, 0.55),
 #                   bbox_transform=ax.figure.transFigure)
@@ -134,47 +137,3 @@ mark_inset(ax, axins1, loc1=2, loc2=4, fc="none",lw=1.2,  ec="0.6", zorder=1)
 plt.tight_layout()
 namefile = file_.replace(".fits", ".pdf")
 plt.savefig(namefile)
-ra = hdu[0].header["RA"]
-dec = hdu[0].header["DEC"]
-print("Nome file:", namefile, "=>", "RA and DEC:", ra, dec)
-
-############################################################
-#----------------------------------------------------------#
-############################################################
-fig, ax = plt.subplots(figsize=(11, 5))
-#ax.set_title(namefile)
-ax.set(xlim=[3600,9100])
-plt.ylim(ymin=-200,ymax=1500)
-ax.set(xlabel='Wavelength $(\AA)$')
-ax.set(ylabel='Flux')
-ax.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
-for wll in wv_lin:
-    ax.axvline(wll, color='k', linewidth=0.4, alpha=0.5, linestyle='--')
-
-bbox_props = dict(boxstyle="round", fc="w", ec="0.78", alpha=0.6, pad=0.1)
-for label_, x, y in zip(em_lin, wv_lin, max_flux):
-    ax.annotate(label_, (x, y), alpha=1, size=4,
-                   xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=100)
-    
-#ax.legend()
-plt.tight_layout()
-namefile0 = file_.replace(".fits", "-zoom.pdf")
-plt.savefig(namefile0)
-
-
-############################################################
-#----------------------------------------------------------#
-############################################################
-fig1, ax1 = plt.subplots(figsize=(12, 10))
-#ax.set_title(namefile)
-ax1.set(xlim=[6560.28-100, 6560.28+100])
-#plt.ylim(ymin=0.0,ymax=500)
-ax1.set(xlabel='Wavelength $(\AA)$')
-ax1.set(ylabel='Flux')
-ax1.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
-
-    
-#ax.legend()
-plt.tight_layout()
-namefile1 = file_.replace(".fits", "-Halpha.pdf")
-plt.savefig(namefile1)

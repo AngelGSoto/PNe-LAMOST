@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.25)  8 NOV 2022 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.25)  9 NOV 2022 01:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -324,7 +324,14 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count272
 \l__pdf_internal_box=\box48
 )
-(./new-pn.aux)
+(./new-pn.aux
+
+LaTeX Warning: Label `fig:spectra-obs-model' multiply defined.
+
+
+LaTeX Warning: Label `fig:spectra-obs-model@cref' multiply defined.
+
+)
 \openout1 = `new-pn.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
@@ -343,8 +350,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count273
 \scratchdimen=\dimen163
@@ -460,7 +466,7 @@ might try typing `S' now just to see what is salvageable.
 
 Underfull \vbox (badness 1515) has occurred while \output is active []
 
-<../Figs/color-diagram-ps-gaiaEDR3.pdf, id=36, 867.24pt x 722.7pt>
+<../Figs/color-diagram-ps-gaiaEDR3.pdf, id=44, 867.24pt x 722.7pt>
 File: ../Figs/color-diagram-ps-gaiaEDR3.pdf Graphic file (type pdf)
 <use ../Figs/color-diagram-ps-gaiaEDR3.pdf>
 Package pdftex.def Info: ../Figs/color-diagram-ps-gaiaEDR3.pdf  used on input l
@@ -470,13 +476,13 @@ ine 151.
 
 
 ]
-<../Figs/pn-candidates-gaiaDR3.pdf, id=55, 867.24pt x 722.7pt>
+<../Figs/pn-candidates-gaiaDR3.pdf, id=63, 867.24pt x 722.7pt>
 File: ../Figs/pn-candidates-gaiaDR3.pdf Graphic file (type pdf)
 <use ../Figs/pn-candidates-gaiaDR3.pdf>
 Package pdftex.def Info: ../Figs/pn-candidates-gaiaDR3.pdf  used on input line 
 167.
 (pdftex.def)             Requested size: 206.88834pt x 172.40393pt.
-<../Spectra-lamostdr7/spec-56581-VB031N50V1_sp08-218.pdf, id=60, 794.97pt x 361
+<../Spectra-lamostdr7/spec-56581-VB031N50V1_sp08-218.pdf, id=68, 794.97pt x 361
 .35pt>
 File: ../Spectra-lamostdr7/spec-56581-VB031N50V1_sp08-218.pdf Graphic file (typ
 e pdf)
@@ -496,7 +502,7 @@ ft
  []
 
 <../image-panstarr/cutout_rings_v3_skycell_2294_031_stk_i_unconv-irg-RGB.pdf, i
-d=65, 617.11865pt x 551.06206pt>
+d=73, 617.11865pt x 551.06206pt>
 File: ../image-panstarr/cutout_rings_v3_skycell_2294_031_stk_i_unconv-irg-RGB.p
 df Graphic file (type pdf)
 <use ../image-panstarr/cutout_rings_v3_skycell_2294_031_stk_i_unconv-irg-RGB.pd
@@ -504,7 +510,7 @@ f>
 Package pdftex.def Info: ../image-panstarr/cutout_rings_v3_skycell_2294_031_stk
 _i_unconv-irg-RGB.pdf  used on input line 193.
 (pdftex.def)             Requested size: 234.8775pt x 209.73369pt.
-<../image-wise/w4_ra32_035994_dec49_233615-421-RGB.pdf, id=66, 617.11865pt x 54
+<../image-wise/w4_ra32_035994_dec49_233615-421-RGB.pdf, id=74, 617.11865pt x 54
 3.89197pt>
 File: ../image-wise/w4_ra32_035994_dec49_233615-421-RGB.pdf Graphic file (type 
 pdf)
@@ -517,11 +523,7 @@ Overfull \hbox (3.33333pt too wide) in paragraph at lines 192--196
  [][] 
  []
 
-
-LaTeX Warning: Reference `fig:spectra-obs-model' on page 2 undefined on input l
-ine 206.
-
-<../Spectra-lamostdr7/DdDm1_L4_T130_output_SED-E02-comparing-spectra.jpg, id=69
+<../Spectra-lamostdr7/DdDm1_L4_T130_output_SED-E02-comparing-spectra.jpg, id=78
 , 794.97pt x 361.35pt>
 File: ../Spectra-lamostdr7/DdDm1_L4_T130_output_SED-E02-comparing-spectra.jpg G
 raphic file (type jpg)
@@ -529,8 +531,18 @@ raphic file (type jpg)
 Package pdftex.def Info: ../Spectra-lamostdr7/DdDm1_L4_T130_output_SED-E02-comp
 aring-spectra.jpg  used on input line 210.
 (pdftex.def)             Requested size: 418.08168pt x 190.04242pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--218
+[]\OT1/cmr/bx/n/14.4 Comparing with an-other
+ []
+
+<../Figs/spectra-compare.pdf, id=79, 867.24pt x 867.24pt>
+File: ../Figs/spectra-compare.pdf Graphic file (type pdf)
+<use ../Figs/spectra-compare.pdf>
+Package pdftex.def Info: ../Figs/spectra-compare.pdf  used on input line 223.
+(pdftex.def)             Requested size: 418.08168pt x 418.0834pt.
 (./new-pn.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
  [2 <../Figs/color-diagram-ps-gaiaEDR3.pdf> <../Figs/pn-candidates-gaiaDR3.pdf
 
 pdfTeX warning: pdflatex (file ../Figs/pn-candidates-gaiaDR3.pdf): PDF inclusio
@@ -546,49 +558,45 @@ uded in a single page
 pdfTeX warning: pdflatex (file ../image-wise/w4_ra32_035994_dec49_233615-421-RG
 B.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <../Spectra-lamostdr7/DdDm1_L4_T130_output_SED-E02-comparing-spectra.jpg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
-
-(./new-pn.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
+[4 <../Figs/spectra-compare.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
+ (./new-pn.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
 Package rerunfilecheck Info: File `new-pn.out' has not changed.
-(rerunfilecheck)             Checksum: C9BC8343374FA150EA3973CA996B055D;355.
+(rerunfilecheck)             Checksum: 3E4EBE07EDBF70E3F724C31A5CFF7823;462.
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
  ) 
 Here is how much of TeX's memory you used:
- 9464 strings out of 481239
- 154381 string characters out of 5920377
+ 9478 strings out of 481239
+ 154661 string characters out of 5920377
  456637 words of memory out of 5000000
- 24549 multiletter control sequences out of 15000+600000
- 538704 words of font info for 47 fonts, out of 8000000 for 9000
+ 24559 multiletter control sequences out of 15000+600000
+ 538396 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,11n,35p,5274b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on new-pn.pdf (3 pages, 488358 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on new-pn.pdf (4 pages, 597448 bytes).
 PDF statistics:
- 380 PDF objects out of 1000 (max. 8388607)
- 184 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
- 87 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 209 compressed objects within 3 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 
