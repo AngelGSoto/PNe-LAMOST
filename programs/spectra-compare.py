@@ -20,7 +20,7 @@ wl0 = wav00 + (np.arange(nx0) - (i00 - 1))*dwav0
 
 Flux0 = hdulist0[0].data
 Flux0 /=10e-14
-Flux0 +=0.5
+Flux0 +=0.8
 
 hdulist1 = fits.open("known-pn/NGC4361/StenholmAcker_pn_g294_1+43_6_id910.fits")
 hdu1 = hdulist1[0]
@@ -29,7 +29,7 @@ wl1 = wav01 + (np.arange(nx1) - (i01 - 1))*dwav1
 
 Flux1 = hdulist1[0].data
 Flux1 /=10e2
-Flux1 +=1.5
+Flux1 +=1.6
 
 hdulist2 = fits.open("known-pn/PNPRTM1/SAAO2016_PrTm1_SA061116_id797.fits")
 hdu2 = hdulist2[0]
@@ -38,7 +38,7 @@ wl2 = wav02 + (np.arange(nx2) - (i02 - 1))*dwav2
 
 Flux2 = hdulist2[0].data
 Flux2 /=10e-14 
-Flux2 += 2.
+Flux2 += 2.3
 # New object
 hdu = fits.open("Spectra-lamostdr7/spec-56581-VB031N50V1_sp08-218.fits")
 hdudata = hdu[0].data
@@ -56,14 +56,14 @@ em_lin = [r"[Ne III] 3869", "[Ne III] + H7 3968", r"H$\delta$", r"H$\gamma$", "H
 #new_flux = Flux[m].max()
 #print(new_flux)
 
-max_flux = [2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5]
+max_flux = [2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74, 2.74]
                
 # PLOT
 n = np.linspace(1, len(wl), num=len(wl), dtype = int)
 fig, ax = plt.subplots(figsize=(12, 12))
 #ax.set_title(namefile)
 ax.set(xlim=[3600,9100])
-ax.set(ylim=[-0.07,2.7])
+ax.set(ylim=[-0.07,3.0])
 #plt.ylim(ymin=0.0,ymax=500)
 ax.set(xlabel='Wavelength $(\AA)$')
 ax.set(ylabel='Normalised flux')
@@ -87,7 +87,7 @@ plt.text(0.85, 0.1, 'Our PN',
 plt.text(0.85, 0.35, 'NGC 2242',
          transform=ax.transAxes, c="g", weight='bold', fontsize=12.8, bbox=bbox_props)
 
-plt.text(0.85, 0.65, 'NGC 4361',
+plt.text(0.85, 0.6, 'NGC 4361',
          transform=ax.transAxes, c="orange", weight='bold', fontsize=12.8, bbox=bbox_props)
 
 plt.text(0.85, 0.85, 'PN PRTM 1',

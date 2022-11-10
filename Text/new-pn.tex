@@ -87,7 +87,7 @@ this current number of PNe represents only about 15-30\% of the estimated
 total of Galactic PNe (\citealp{Frew:2008}; \citealp{Jacoby:2010}) showing that a small fraction
 of the PNe have been cataloged \citep{Frew:2017}. If this is true, there will be a much larger
 number of PNe in the Galaxy than if a special condition
-is required. The models of Moe & De Marco (2006), for
+is required. The models of \citet{Moe:2006}, for
 example, predict that there are 46 000 ± 22 000 for the general case,
 but only ∼6600 (De Marco & Moe 2005) if
 close binaries (e.g. common-envelope phase) are required.
@@ -119,14 +119,14 @@ supernovae when the Galaxy was young.
 PN studies have been hampered by three problems:
 (i) the previous lack of accurate distances to most Galactic
 PNe; (ii) obtaining representative PNe samples of the true
-population diversity (Parker 2022), and (iii) their unknown
+population diversity \citep{Parker:2022}, and (iii) their unknown
 progenitor masses. The first problem has prospects of
 resolution via accurate Gaia CSPN distances, though many
 CSPNe remain too distant and faint for Gaia DR3 and correct
 CSPN identification remains an issue for some (Parker et al.
 2022). The second problem is being addressed by deep, narrow-band,
-wide-field surveys, e.g., Parker et al. (2005),
-Drew et al. (2005), and Drew et al. (2014). For the third problem
+wide-field surveys, e.g., \citet{Parker:2005},
+\citet{Drew:2005}, and Drew et al. (2014). For the third problem
 of progenitor masses, these can only
 be accurately determined for PNe in Galactic globular and
 open clusters (OCs). These allow precise distance determinations
@@ -141,8 +141,21 @@ from color–magnitude diagrams (CMD) and Gaia \citep{Fragkou:2022}.
 \subsection{Pan-STARRS DR1}
 \label{sec:PS1}
 
-\subsection{LAMOST DR7}
+\subsection{LAMOST}
 \label{sec:lamost}
+
+The Large Sky Area Multi-Object Fiber Spectroscopic Telescope
+(LAMOST, also named Guoshoujing Telescope) is a
+telescope dedicated for spectroscopic sky survey.
+There are 4000 fibers within a diameter of 1.75 meters (corresponding
+to 5$^{\circ}$ in the sky) at the focal surface \citep{Cui:2012}.
+The Low-Resolution Spectroscopic Survey (LRS) of LAMOST
+began in October 2011, with a spectral resolving power ($R = \lambda/\Delta\lambda$)
+of about 1800 and a wavelength coverage of
+3700-9100~\AA \citep{Zhao:2012}. The first year observation was
+for the pilot survey (Luo et al. 2012; Zhao et al. 2012),
+and the regular survey began in September 2012
+
 
 \section{Methodology}
 \label{sec:metho}
@@ -150,7 +163,7 @@ from color–magnitude diagrams (CMD) and Gaia \citep{Fragkou:2022}.
 At the beginning the idea was to identify for new planetary nebula in GAIA.
 I started to constructed possibles color-color diagrams to separate PNe from
 other emission lines objects and stars using GAIA only. The separation was not
-good because PNe and other emission line stars like CVs occupy the same region
+good because PNe, normal stars and other emission line stars like CVs occupy the same region
 in the diagram. Then, I decided to move to Pan-STARRS and combining the two
 surveys Pan-STARRS and GAIA. I found one color diagram that isolate the PNe
 with, I suppose, strong \ha{} emission line. By using the \((G - r)\) versus \((G_{BP} - G_{RP})\)
@@ -170,12 +183,11 @@ stars from \citet{Smart:2021}. Where they occupy the region with \((G - r)\) = 0
   \label{fig:gaia-ps}
 \end{figure}
 
-All indicate that the PNe with strong \ha{} can be selected with this color criteria.
+All indicate that the PNe with strong \ha{} can be selected with this color criteria?.
 Then, to see the possibility of using this color criterion to select these PNe, by
 testing and using the emission line catalog from  \citet{Skoda:2020}. First, they
-identify emission line objects from LAMOST DR? implementing a machine learning approach.
-They divided their final sample of emission line objects in tree subgroups. The \texttt{SIMBAD},
-Hue and new list. To texting the possibility to find for new PNe with the color criteria
+identify emission line objects from LAMOST  implementing a machine learning approach.
+Then, they divided their final sample of emission line objects in tree subgroups. Those with \texttt{SIMBAD} coincidences, those that are listed by \citet{Hou:2016} and another list that are neither cross-matched with SIMBAD nor listed by  \citet{Hou:2016}. To texting the possibility to find for new PNe with the color criteria
 explained above, we applied it directly in the new list, which present objects not reported
 previously in the literature, which is a list with 1000 objects.
 
@@ -187,12 +199,13 @@ previously in the literature, which is a list with 1000 objects.
 \end{figure}
 
 Four objects met this  condition as is possible to see in the Fig~\ref{fig:gaia-ps-apply}.
+We downloaded the low resolution spectra of these objects. 
 Tree objects of them display strong \ha{}, but are not display the other emission lines topically
 of PNe like [O III], He II, [S II], among other. But the three look likes as PNe.
-Because, it displays He II emission lines, the Balmer ones, [O III], among other.
-Fig~\ref{fig:spectra} the spectra of the new PNe finding in the list of emission line of
-\citet{Skoda:2020}. This PNe seen a very high ionization object, by eye is possible to see
-that the He II emission line is more strong than the the H$\beta$ line. Given the LAMOST spectra
+Because, it displays He II emission lines, the Balmer ones, [O III], among others.
+Fig~\ref{fig:spectra} the spectra of the new PN finding in the list of emission line of
+\citet{Skoda:2020}. This PNe seem a very high ionization object, by eye is possible to see
+that the He II emission line is as strong as the H$\beta$ line. Given the LAMOST spectra
 are not calibrated in flux but they are flux relative, then I think that some ratio line can be calculated. Could be?
 
 \begin{figure*}
@@ -202,7 +215,16 @@ are not calibrated in flux but they are flux relative, then I think that some ra
   \label{fig:spectra}
 \end{figure*}
 
-The images of the PN called LAMOST J020808.63+491401.0 are shows in Fig~\ref{fig:image}.  \textit{Left panel} exhibits the PanSTARRS coloured images \footnote{This RGB images were made by implementing the python package \texttt{aplpy} \citep{aplpy:2019}}, which was performed by combining the $g$, $r$ and $i$ filters in the blue, green and red colour channels, respectively. The image shows clearly a central star surrounding for a nebulae component. \textit{Right panel} shows the WISE RGB image, with the filter W1, W2, and W4 in the blue, green and red channels, respectively.  
+The images of the PN called LAMOST J020808.63+491401.0 are shows in Fig~\ref{fig:image}.
+\textit{Left panel} exhibits the PanSTARRS coloured
+images \footnote{This RGB images were made by implementing
+the python package \texttt{aplpy} \citep{aplpy:2019}}, which
+was performed by combining the $g$, $r$ and $i$ filters in
+the blue, green and red colour channels, respectively.
+The image shows clearly a nebular component surrounding 
+a central star. \textit{Right panel} shows the
+WISE RGB image, with the filter W1, W2, and W4 in
+the blue, green and red channels, respectively.  
 
 \begin{figure*}
   \centering
@@ -220,7 +242,7 @@ The images of the PN called LAMOST J020808.63+491401.0 are shows in Fig~\ref{fig
 
 Despite the LAMOST spectra are not in physical flux unity, they have flux relative. This means it
 is possible compare it with other spectra in physical units. For that, I think, it is pertinent to
-compare the LAMOST spectra of our PN with models. Fig~\ref{fig:spectra-obs-model} shows a comparison between LAMOST spectra and a {\sc cloudy} modelled spectra from \citet{Gutierrez-Soto:2020}. Note that only is an example for illustrative intentions. This model was taken from a grid o models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches between the two spectra. I will a performed a grid of PN models that better reproduce the LAMOST spectra of our candidate. However, almost all the line are reproduce with this model, that could be interesting, because the temperature effective of this model is 130$\times10^3$K, indicating a very high excitation object. Maybe, it will be good idea estimate ratio lines to confirm that. 
+compare the LAMOST spectra of our PN with models. Fig~\ref{fig:spectra-obs-model} shows a comparison between LAMOST spectra and a {\sc cloudy} modelled spectra from \citet{Gutierrez-Soto:2020}. Note that only is an example for illustrative intentions. This model was taken from a grid o models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches between the two spectra. I will a performed a grid of PN models that better reproduce the LAMOST spectra of our candidate. However, almost all the line are reproduce with this model, that could be interesting, because the temperature effective of this model is 130$\times10^3$K, indicating a very high excitation object. Maybe, it will be good idea estimate ratio lines to confirm that! is it possible with this spectrum?
 
 \begin{figure*}
 \centering
@@ -229,19 +251,16 @@ compare the LAMOST spectra of our PN with models. Fig~\ref{fig:spectra-obs-model
   \label{fig:spectra-obs-model}
 \end{figure*}
 
-\section{Abundances?}
-\label{sec:abun}
-
-\section{Comparing with another PNe}
+\section{Comparing with other PNe}
 \label{sec:comp}
 
+\newpage
 \begin{figure*}
 \centering
-  \includegraphics[width=0.89\linewidth]{../Figs/spectra-compare.pdf}
-  \caption{} 
-  \label{fig:spectra-obs-model}
+  \includegraphics[width=0.8\linewidth]{../Figs/spectra-compare.pdf}
+  \caption{Comparing the new PNe with other high halo palnetary nebulae...} 
+  \label{fig:compare-spectra}
 \end{figure*}
-
 
 \bibliography{Ref-pne}
 

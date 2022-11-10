@@ -25,7 +25,7 @@ parser.add_argument("--debug", action="store_true",
 #dat = Table.read("DdDm1_L4_T200_output_SED.dat.tere_E0.2", format="ascii")
 
 cmd_args = parser.parse_args()
-asciifile = cmd_args.source + ".dat.tere_E0.1"
+asciifile = cmd_args.source + ".dat.tere_E0.2"
 
 dat = Table.read(asciifile, format="ascii")
 
@@ -59,8 +59,8 @@ ax.set(xlim=[3600,9100])
 #plt.ylim(ymin=0.0,ymax=500)
 ax.set(xlabel='Wavelength $(\AA)$')
 ax.set(ylabel='Flux')
-ax.plot(wl, flux, c = "blueviolet", linewidth=0.7, zorder=5, label="Model")
-ax.plot(wl_o, Flux_o*factor, c = "red", linewidth=0.7, zorder=5, label="Obs")
+ax.plot(wl, flux, c = "darkolivegreen", linewidth=0.7, zorder=5, label="Model")
+ax.plot(wl_o, Flux_o*factor, c = "blueviolet", linewidth=0.7, zorder=5, label="Obs")
 
 ax.legend()
 plt.tight_layout()
@@ -70,8 +70,8 @@ if cmd_args.debug:
 
 
 # Creates The JSON files with the magnitudes
-pdffile = asciifile.replace(".dat.tere_E0.1", 
-                  "-E01-comparing-spectra.jpg")
+pdffile = asciifile.replace(".dat.tere_E0.2", 
+                  "-E02-comparing-spectra.jpg")
 
 
 plt.savefig(pdffile)

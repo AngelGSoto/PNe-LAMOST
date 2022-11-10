@@ -1,5 +1,28 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{17}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Badenes} {et~al.}(2015){Badenes}, {Maoz}, \&
+  {Ciardullo}}]{Badenes:2015}
+{Badenes}, C., {Maoz}, D., \& {Ciardullo}, R. 2015, \apjl, 804, L25
+
+\bibitem[{{Cui} {et~al.}(2012){Cui}, {Zhao}, {Chu}, {Li}, {Li}, {Zhang}, {Su},
+  {Yao}, {Wang}, {Xing}, {Li}, {Zhu}, {Wang}, {Gu}, {Luo}, {Xu}, {Zhang},
+  {Liu}, {Zhang}, {Yang}, {Cao}, {Chen}, {Chen}, {Chen}, {Chen}, {Chu}, {Feng},
+  {Gong}, {Hou}, {Hu}, {Hu}, {Hu}, {Jia}, {Jiang}, {Jiang}, {Jiang}, {Jin},
+  {Li}, {Li}, {Li}, {Liu}, {Liu}, {Lu}, {Mao}, {Men}, {Qi}, {Qi}, {Shi},
+  {Tang}, {Tao}, {Wang}, {Wang}, {Wang}, {Wang}, {Wang}, {Wang}, {Wang},
+  {Wang}, {Wang}, {Wang}, {Wang}, {Wang}, {Xu}, {Xu}, {Yang}, {Yu}, {Yuan},
+  {Yuan}, {Zhai}, {Zhang}, {Zhang}, {Zhang}, {Zhao}, {Zhou}, {Zhou}, {Zhu}, \&
+  {Zou}}]{Cui:2012}
+{Cui}, X.-Q., {et~al.} 2012, Research in Astronomy and Astrophysics, 12, 1197
+
+\bibitem[{{Drew} {et~al.}(2005){Drew}, {Greimel}, {Irwin}, {Aungwerojwit},
+  {Barlow}, {Corradi}, {Drake}, {G{\"a}nsicke}, {Groot}, {Hales}, {Hopewell},
+  {Irwin}, {Knigge}, {Leisy}, {Lennon}, {Mampaso}, {Masheder}, {Matsuura},
+  {Morales-Rueda}, {Morris}, {Parker}, {Phillipps}, {Rodriguez-Gil}, {Roelofs},
+  {Skillen}, {Sokoloski}, {Steeghs}, {Unruh}, {Viironen}, {Vink}, {Walton},
+  {Witham}, {Wright}, {Zijlstra}, \& {Zurita}}]{Drew:2005}
+{Drew}, J.~E., {et~al.} 2005, \mnras, 362, 753
 
 \bibitem[{{Fragkou} {et~al.}(2022){Fragkou}, {Parker}, {Zijlstra},
   {V{\'a}zquez}, {Sabin}, \& {Rechy-Garcia}}]{Fragkou:2022}
@@ -99,6 +122,10 @@
   {Logro{\~n}o-Garc{\'\i}a}, \& {Sobral}}]{Gutierrez-Soto:2020}
 {Guti{\'e}rrez-Soto}, L.~A., {et~al.} 2020, \aap, 633, A123
 
+\bibitem[{{Hou} {et~al.}(2016){Hou}, {Luo}, {Hu}, {Yang}, {Du}, {Liu}, {Lee},
+  {Lin}, {Wang}, {Zhang}, {Cao}, \& {Hou}}]{Hou:2016}
+{Hou}, W., {et~al.} 2016, Research in Astronomy and Astrophysics, 16, 138
+
 \bibitem[{{Jacoby} {et~al.}(2010){Jacoby}, {Kronberger}, {Patchick}, {Teutsch},
   {Saloranta}, {Howell}, {Crisp}, {Riddle}, {Acker}, {Frew}, \&
   {Parker}}]{Jacoby:2010}
@@ -107,11 +134,28 @@
 \bibitem[{{Kwitter} \& {Henry}(2022)}]{Kwitter:2022}
 {Kwitter}, K.~B., \& {Henry}, R.~B.~C. 2022, \pasp, 134, 022001
 
+\bibitem[{{Moe} \& {De Marco}(2006)}]{Moe:2006}
+{Moe}, M., \& {De Marco}, O. 2006, \apj, 650, 916
+
+\bibitem[{{Parker} {et~al.}(2022){Parker}, {Xiang}, \& {Ritter}}]{Parker:2022}
+{Parker}, Q.~A., {Xiang}, Z., \& {Ritter}, A. 2022, Galaxies, 10, 32
+
+\bibitem[{{Parker} {et~al.}(2005){Parker}, {Phillipps}, {Pierce}, {Hartley},
+  {Hambly}, {Read}, {MacGillivray}, {Tritton}, {Cass}, {Cannon}, {Cohen},
+  {Drew}, {Frew}, {Hopewell}, {Mader}, {Malin}, {Masheder}, {Morgan}, {Morris},
+  {Russeil}, {Russell}, \& {Walker}}]{Parker:2005}
+{Parker}, Q.~A., {et~al.} 2005, \mnras, 362, 689
+
 \bibitem[{Robitaille(2019)}]{aplpy:2019}
 Robitaille, T. 2019, {APLpy v2.0: The Astronomical Plotting Library in Python}
 
 \bibitem[{{{\v{S}}koda} {et~al.}(2020){{\v{S}}koda}, {Podsztavek}, \&
   {Tvrd{\'\i}k}}]{Skoda:2020}
 {{\v{S}}koda}, P., {Podsztavek}, O., \& {Tvrd{\'\i}k}, P. 2020, \aap, 643, A122
+
+\bibitem[{{Zhao} {et~al.}(2012){Zhao}, {Zhao}, {Chu}, {Jing}, \&
+  {Deng}}]{Zhao:2012}
+{Zhao}, G., {Zhao}, Y.-H., {Chu}, Y.-Q., {Jing}, Y.-P., \& {Deng}, L.-C. 2012,
+  Research in Astronomy and Astrophysics, 12, 723
 
 \end{thebibliography}
