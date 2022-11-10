@@ -84,13 +84,13 @@ for label_, x, y in zip(em_lin, wv_lin, max_flux):
 plt.text(0.85, 0.1, 'Our PN',
          transform=ax.transAxes, c="blueviolet", weight='bold', fontsize=12.8, bbox=bbox_props)
 
-plt.text(0.85, 0.4, 'NGC 2242',
+plt.text(0.85, 0.35, 'NGC 2242',
          transform=ax.transAxes, c="g", weight='bold', fontsize=12.8, bbox=bbox_props)
 
-plt.text(0.85, 0.6, 'NGC 4361',
+plt.text(0.85, 0.65, 'NGC 4361',
          transform=ax.transAxes, c="orange", weight='bold', fontsize=12.8, bbox=bbox_props)
 
-plt.text(0.85, 0.9, 'PN PRTM 1',
+plt.text(0.85, 0.85, 'PN PRTM 1',
          transform=ax.transAxes, c="red", weight='bold', fontsize=12.8, bbox=bbox_props)
 #ax.legend()
 plt.tight_layout()

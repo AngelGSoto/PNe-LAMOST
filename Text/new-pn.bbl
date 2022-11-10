@@ -1,5 +1,19 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{9}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Fragkou} {et~al.}(2022){Fragkou}, {Parker}, {Zijlstra},
+  {V{\'a}zquez}, {Sabin}, \& {Rechy-Garcia}}]{Fragkou:2022}
+{Fragkou}, V., {Parker}, Q.~A., {Zijlstra}, A.~A., {V{\'a}zquez}, R., {Sabin},
+  L., \& {Rechy-Garcia}, J.~S. 2022, \apjl, 935, L35
+
+\bibitem[{{Frew}(2008)}]{Frew:2008}
+{Frew}, D.~J. 2008, PhD thesis, Department of Physics, Macquarie University,
+  NSW 2109, Australia
+
+\bibitem[{{Frew}(2017)}]{Frew:2017}
+{Frew}, D.~J. 2017, in IAU Symposium, Vol. 323, Planetary Nebulae:
+  Multi-Wavelength Probes of Stellar and Galactic Evolution, ed. X.~{Liu},
+  L.~{Stanghellini}, \& A.~{Karakas}, 11--19
 
 \bibitem[{{Gaia Collaboration} {et~al.}(2021){Gaia Collaboration}, {Smart},
   {Sarro}, {Rybizki}, {Reyl{\'e}}, {Robin}, {Hambly}, {Abbas}, {Barstow}, {de
@@ -84,6 +98,14 @@
   {Ribeiro}, {Schoenell}, {Alvarez-Candal}, {Galbany}, {Jim{\'e}nez-Esteban},
   {Logro{\~n}o-Garc{\'\i}a}, \& {Sobral}}]{Gutierrez-Soto:2020}
 {Guti{\'e}rrez-Soto}, L.~A., {et~al.} 2020, \aap, 633, A123
+
+\bibitem[{{Jacoby} {et~al.}(2010){Jacoby}, {Kronberger}, {Patchick}, {Teutsch},
+  {Saloranta}, {Howell}, {Crisp}, {Riddle}, {Acker}, {Frew}, \&
+  {Parker}}]{Jacoby:2010}
+{Jacoby}, G.~H., {et~al.} 2010, \pasa, 27, 156
+
+\bibitem[{{Kwitter} \& {Henry}(2022)}]{Kwitter:2022}
+{Kwitter}, K.~B., \& {Henry}, R.~B.~C. 2022, \pasp, 134, 022001
 
 \bibitem[{Robitaille(2019)}]{aplpy:2019}
 Robitaille, T. 2019, {APLpy v2.0: The Astronomical Plotting Library in Python}
