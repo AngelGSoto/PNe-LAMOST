@@ -6,7 +6,7 @@
 
 
 I found a new PN Candidate (32.035994 49.233615), by using synthetic fotometry based on Lamost spectra of objects
-catalog as emission lines objects. See the [[https://github.com/AngelGSoto/python-notebooks/blob/master/Lamost%20and%20emission%20line%20objects.ipynb][notebook]].
+catalog as emission lines objects. See the [[https://github.com/AngelGSoto/python-notebooks/blob/master/Lamost%20and%20emission%20line%20objects.ipynb][notebook].
 
 + Papers:
 
@@ -399,3 +399,159 @@ catalog as emission lines objects. See the [[https://github.com/AngelGSoto/pytho
 
 ** Making the b vs l diagram
    I put all the HASH and Halo and new discovery together in the l versus b diagram.
+
+** Tracks evolution
+
+#+BEGIN_SRC abstract
+   J/ApJS/92/125                 Post-AGB evolution            (Vassiliadis+, 1994)
+================================================================================
+Post-asymptotic giant branch evolution of low- to intermediate-mass stars
+       VASSILIADIS E., WOOD P.R.
+      <Astrophys. J. Suppl. Ser. 92, 125 (1994)>
+      =1994ApJS...92..125V      (SIMBAD/NED Reference)
+================================================================================
+ADC_Keywords: Models, evolutionary; Mass loss; Nebulae, planetary
+Keywords:  Magellanic Clouds - planetary nebulae: general - stars: evolution -
+           stars: interiors
+
+Abstract:
+  In this paper, we present the results for the post-AGB phases of
+  stellar evolutionary sequences, complete from the main-sequence phase,
+  through the AGB phase, and on into the planetary nebula and white
+  dwarf regimes. Mass loss has been included using an empirical
+  formalism derived from observed mass-loss rates of planetary nebula
+  nuclei available in the literature and from radiation-pressure-driven
+  stellar wind theory. Models are calculated for initial masses 0.89,
+  0.95, 1.0, 1.5, 2.0, 2.5, 3.5, and 5.0M_{sun}_, and metallicities
+  0.016, 0.008, 0.004, and 0.001. These abundance and mass values were
+  chosen to allow comparison with Galactic, and Magellanic Cloud planetary
+  nebulae and their nuclei. The post-AGB evolutionary sequences fall
+  into two distinct groups depending on when the planetary nebula nuclei
+  leave the AGB: one group where helium-shell burning is dominant, and
+  the other group where hydrogen-shell burning is dominant. Of the 27
+  computed sequences: 17 are hydrogen-burners, and 10 are helium-burners.
+  In only five cases was any effort made to control the phase of departure
+  from the AGB. Lower mass models are more likely to leave the AGB burning
+  helium, as the preceding AGB evolution has a mass-loss rate which is
+  greatest immediately prior to a helium-shell flash. The calculations
+  are compared with the large observational database that has developed
+  over recent years for the Large Magellanic Cloud. These calculations
+  will be useful for determining the planetary nebula luminosity function,
+  and for the study of the ultraviolet excess observed in elliptical
+  galaxies.
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName    Lrecl    Records    Explanations
+--------------------------------------------------------------------------------
+ReadMe          80          .    This file
+table.tex       87       1014    LaTeX version of the tables
+table3          41        720    H-Burning PNN Evolutionary Models
+table4          41        401    He-Burning PNN Evolutionary Models
+table5          41         45    H-Like He-Burning PNN Evolutionary Model
+#+END_SRC
+
+*** Other evolutionary track
+#+BEGIN_SRC abstract
+    J/A+A/588/A25  Post-AGB and CSPNe evolutionary models   (Miller Bertolami, 2016)
+================================================================================
+New models for the evolution of post-asymptotic giant branch stars and central
+stars of planetary nebulae.
+    Miller Bertolami M.M.
+    <Astron. Astrophys. 588, A25 (2016)>
+    =2016A&A...588A..25M        (SIMBAD/NED BibCode)
+================================================================================
+ADC_Keywords: Models, evolutionary ; Stars, giant ; Planetary nebulae
+Keywords: stars: AGB and post-AGB - stars: low-mass - stars: evolution -
+          planetary nebulae: general
+
+Abstract:
+    The post-asymptotic giant branch (AGB) phase is arguably one of the
+    least understood phases of the evolution of low- and intermediate-
+    mass stars. The two grids of models presently available are based on
+    outdated micro- and macrophysics and do not agree with each other.
+    Studies of the central stars of planetary nebulae (CSPNe) and post-AGB
+    stars in different stellar populations point to significant
+    discrepancies with the theoretical predictions of post-AGB models.
+
+    We study the timescales of post-AGB and CSPNe in the context of our
+    present understanding of the micro- and macrophysics of stars. We want
+    to assess whether new post-AGB models, based on the latter
+    improvements in TP-AGB modeling, can help us to understand the
+    discrepancies between observation and theory and within theory itself.
+    In addition, we aim to understand the impact of the previous AGB
+    evolution for post-AGB phases.
+
+    We computed a grid of post-AGB full evolutionary sequences that
+    include all previous evolutionary stages from the zero age main
+    sequence to the white dwarf phase. We computed models for initial
+    masses between 0.8 and 4M_{sun}_ and for a wide range of initial
+    metallicities (Z_0_= 0.02, 0.01, 0.001, 0.0001). This allowed us to
+    provide post-AGB timescales and properties for H-burning post-AGB
+    objects with masses in the relevant range for the formation of
+    planetary nebulae (~0,5-0,8M_{sun}_). We included an updated treatment
+    of the constitutive microphysics and included an updated description
+    of the mixing processes and winds that play a key role during the
+    thermal pulses (TP) on the AGB phase.
+
+Description:
+    We compute a grid of post-AGB full evolutionary sequences that are
+    derived from full evolutionary models which include all previous
+    evolutionary stages from the Zero Age Main Sequence to the White Dwarf
+    phase. Models are computed for initial masses between 0.8 and
+    4M_{sun}_ and for a wide range of initial metallicities. Two grids of
+    post-AGB models are provided. The main grid of 24 H-burning post-AGB
+    sequences corresponds to the sequences presented in table 3 of the
+    article. Each file contains all the sequences with a given initial
+    metallicity and are named as 0200_T03.dat, 0100_T03.dat 0010_T03.dat
+    and 0001_T03.dat (corresponding to metallicities Z=0.02, 0.01, 0.001
+    and 0.0001 in table 3).
+
+    The second grid corresponds to the sequences presented in Appendix B,
+    table B.2 (originally presented in Miller Bertolami, M. M. 2015, in
+    ASPCS, Vol. 493, 83) and are named as 0100_TB2.dat and 0010_TB2.dat
+    (corresponding to metallicities Z=0.01 and 0.001 in table B2)
+
+    All sequences are presented at equivalent evolutionary points to allow
+    easy interpolation:
+
+    Sequences are presented until their luminosity drops to 1 solar
+    luminosity or until a late helium flash develops.
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName      Lrecl  Records   Explanations
+--------------------------------------------------------------------------------
+ReadMe            80        .   This file
+list.dat         102        6   List of models
+models/*           .        6  *Individual files
+--------------------------------------------------------------------------------
+Note on models/*: Inside each file each sequence is started with a short header
+  (7 lines) indicating the nature of the model (post-AGB, H-burner),
+  composition and the initial and final masses of the original simulation.
+  Different evolutionary sequences are separated by 2 empty lines.
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: list.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1- 12  A12   ---     FileName  Name of the table in subdirectory models
+  14-102  A89   ---     Title     Title of the table
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file (#): models/*
+--------------------------------------------------------------------------------
+   Bytes Format Units     Label       Explanations
+--------------------------------------------------------------------------------
+   1-  5  I5    ---       N           Track point number
+   7- 15  F9.6  [Lsun]    logL        logarithm of the stellar luminosity
+  17- 25  F9.6  [K]       logTeff     logarithm of the effective temperature
+  27- 35  F9.6  [cm/s2]   logg        logarithm of the surface gravity
+  40- 51  F12.4 yr        t           Age since the point at LogTeff=3.85
+  53- 61  F9.6  ---       Menv        Fractional mass of the envelope
+  63- 71  F9.6  Msun      Mstar       Total mass of the star
+  73- 82  F10.6 [Msun/yr] log(-dM/dt)  Logarithm of the Mass Loss Rate,
+                                       log(-dMstar/dt)
+--------------------------------------------------------------------------------
+#+END_SRC

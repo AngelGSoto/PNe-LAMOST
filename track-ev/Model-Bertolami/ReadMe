@@ -1,0 +1,107 @@
+J/A+A/588/A25  Post-AGB and CSPNe evolutionary models   (Miller Bertolami, 2016)
+================================================================================
+New models for the evolution of post-asymptotic giant branch stars and central
+stars of planetary nebulae.
+    Miller Bertolami M.M.
+    <Astron. Astrophys. 588, A25 (2016)>
+    =2016A&A...588A..25M        (SIMBAD/NED BibCode)
+================================================================================
+ADC_Keywords: Models, evolutionary ; Stars, giant ; Planetary nebulae
+Keywords: stars: AGB and post-AGB - stars: low-mass - stars: evolution -
+          planetary nebulae: general
+
+Abstract:
+    The post-asymptotic giant branch (AGB) phase is arguably one of the
+    least understood phases of the evolution of low- and intermediate-
+    mass stars. The two grids of models presently available are based on
+    outdated micro- and macrophysics and do not agree with each other.
+    Studies of the central stars of planetary nebulae (CSPNe) and post-AGB
+    stars in different stellar populations point to significant
+    discrepancies with the theoretical predictions of post-AGB models.
+
+    We study the timescales of post-AGB and CSPNe in the context of our
+    present understanding of the micro- and macrophysics of stars. We want
+    to assess whether new post-AGB models, based on the latter
+    improvements in TP-AGB modeling, can help us to understand the
+    discrepancies between observation and theory and within theory itself.
+    In addition, we aim to understand the impact of the previous AGB
+    evolution for post-AGB phases.
+
+    We computed a grid of post-AGB full evolutionary sequences that
+    include all previous evolutionary stages from the zero age main
+    sequence to the white dwarf phase. We computed models for initial
+    masses between 0.8 and 4M_{sun}_ and for a wide range of initial
+    metallicities (Z_0_= 0.02, 0.01, 0.001, 0.0001). This allowed us to
+    provide post-AGB timescales and properties for H-burning post-AGB
+    objects with masses in the relevant range for the formation of
+    planetary nebulae (~0,5-0,8M_{sun}_). We included an updated treatment
+    of the constitutive microphysics and included an updated description
+    of the mixing processes and winds that play a key role during the
+    thermal pulses (TP) on the AGB phase.
+
+Description:
+    We compute a grid of post-AGB full evolutionary sequences that are
+    derived from full evolutionary models which include all previous
+    evolutionary stages from the Zero Age Main Sequence to the White Dwarf
+    phase. Models are computed for initial masses between 0.8 and
+    4M_{sun}_ and for a wide range of initial metallicities. Two grids of
+    post-AGB models are provided. The main grid of 24 H-burning post-AGB
+    sequences corresponds to the sequences presented in table 3 of the
+    article. Each file contains all the sequences with a given initial
+    metallicity and are named as 0200_T03.dat, 0100_T03.dat 0010_T03.dat
+    and 0001_T03.dat (corresponding to metallicities Z=0.02, 0.01, 0.001
+    and 0.0001 in table 3).
+
+    The second grid corresponds to the sequences presented in Appendix B,
+    table B.2 (originally presented in Miller Bertolami, M. M. 2015, in
+    ASPCS, Vol. 493, 83) and are named as 0100_TB2.dat and 0010_TB2.dat
+    (corresponding to metallicities Z=0.01 and 0.001 in table B2)
+
+    All sequences are presented at equivalent evolutionary points to allow
+    easy interpolation:
+
+    Sequences are presented until their luminosity drops to 1 solar
+    luminosity or until a late helium flash develops.
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName      Lrecl  Records   Explanations
+--------------------------------------------------------------------------------
+ReadMe            80        .   This file
+list.dat         102        6   List of models
+models/*           .        6  *Individual files
+--------------------------------------------------------------------------------
+Note on models/*: Inside each file each sequence is started with a short header
+  (7 lines) indicating the nature of the model (post-AGB, H-burner),
+  composition and the initial and final masses of the original simulation.
+  Different evolutionary sequences are separated by 2 empty lines.
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: list.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1- 12  A12   ---     FileName  Name of the table in subdirectory models
+  14-102  A89   ---     Title     Title of the table
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file (#): models/*
+--------------------------------------------------------------------------------
+   Bytes Format Units     Label       Explanations
+--------------------------------------------------------------------------------
+   1-  5  I5    ---       N           Track point number
+   7- 15  F9.6  [Lsun]    logL        logarithm of the stellar luminosity
+  17- 25  F9.6  [K]       logTeff     logarithm of the effective temperature
+  27- 35  F9.6  [cm/s2]   logg        logarithm of the surface gravity
+  40- 51  F12.4 yr        t           Age since the point at LogTeff=3.85
+  53- 61  F9.6  ---       Menv        Fractional mass of the envelope
+  63- 71  F9.6  Msun      Mstar       Total mass of the star
+  73- 82  F10.6 [Msun/yr] log(-dM/dt)  Logarithm of the Mass Loss Rate,
+                                       log(-dMstar/dt)
+--------------------------------------------------------------------------------
+
+Acknowledgements:
+     Marcelo Miguel Miller Bertolami, marcelo(at)MPA-Garching.MPG.DE
+
+================================================================================
+(End)                                        Patricia Vannier [CDS]  11-Jan-2016
