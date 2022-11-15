@@ -555,3 +555,9 @@ Byte-by-byte Description of file (#): models/*
                                        log(-dMstar/dt)
 --------------------------------------------------------------------------------
 #+END_SRC
+
+** WISE images
+
+   Size of the images dowloaded from WISE:
+
+  -  PNPRTM1 => 70arcsec 

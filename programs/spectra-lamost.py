@@ -76,20 +76,20 @@ for wll in wv_lin:
 
 bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
 for label_, x, y in zip(em_lin, wv_lin, max_flux):
-    ax.annotate(label_, (x, y), alpha=1, size=5,
+    ax.annotate(label_, (x, y), alpha=1, size=6,
                    xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
-
+sn.despine()
 ###########
 #zoom plot#
 ###########
-axins = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.41, 0.85),
+axins = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.41, 0.89),
                    bbox_transform=ax.figure.transFigure) # zoom = 6
 axins.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
 axins.set_xlim(4500, 4830) # Limit the region for zoom
-axins.set_ylim(-0.01, 0.1)
+axins.set_ylim(-0.01, 0.13)
 
 for label_, x, y in zip(em_lin, wv_lin, max_flux):
-    axins.annotate(label_, (x, y), alpha=1, size=5,
+    axins.annotate(label_, (x, y), alpha=1, size=6,
                    xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
 
 plt.xticks(visible=False)  # Not present ticks
@@ -101,14 +101,14 @@ mark_inset(ax, axins, loc1=2, loc2=4, fc="none",lw=1.2,  ec="0.6", zorder=1)
 
 ###########
 #Zoom other region
-axins1 = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.73, 0.92),
+axins1 = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.73, 0.94),
                    bbox_transform=ax.figure.transFigure) # zoom = 6
 axins1.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
 axins1.set_xlim(6830, 7200) # Limit the region for zoom
-axins1.set_ylim(-0.01, 0.1)
+axins1.set_ylim(-0.01, 0.13)
 
 for label_, x, y in zip(em_lin, wv_lin, max_flux):
-    axins1.annotate(label_, (x, y), alpha=1, size=5,
+    axins1.annotate(label_, (x, y), alpha=1, size=6,
                    xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
 
 plt.xticks(visible=False)  # Not present ticks

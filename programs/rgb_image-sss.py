@@ -1,18 +1,18 @@
 '''
-Making RGB images from PLUS .fits
+Making RGB images from panstarrs.fits
 Based on original: rgb_image.py
 Autor: L. A. Gutiérrez Soto
 02/09/20
 '''
-
 from __future__ import print_function
 import aplpy
 import numpy
 import sys
+from fits_utils import get_image_hdu
 from astropy import coordinates as coord
 from astropy import units as u
-from astropy import wcs
 from astropy.coordinates import SkyCoord
+from astropy import wcs
 import argparse
 import matplotlib.pyplot as plt
 from astropy.io import fits
@@ -70,37 +70,17 @@ image_g = cmd_args.image_g + ".fits"
 image_b = cmd_args.image_b + ".fits"
 
 hdul_r = fits.open(image_r)
-instrument_r = hdul_r[0].header['FILTER'].split('.')[0]
+#instrument_r = hdul_r[0].header['BANDPASS']
 hdul_g = fits.open(image_g)
-instrument_g = hdul_g[0].header['FILTER'].split('.')[0]
+#instrument_g = hdul_g[0].header['BANDPASS']
 hdul_b = fits.open(image_b)
-instrument_b = hdul_b[0].header['FILTER'].split('.')[0]
+#instrument_b = hdul_b[0].header['BANDPASS']
 
-# reading
-r1 = hdul_r[0].data
-g1 = hdul_g[0].data
-b1 = hdul_b[0].data
 
-del hdul_r[0].header['MJD-OBS']
-hdul_r[0].header['RADESYSa'] = hdul_r[0].header['RADECSYS']
-del hdul_r[0].header['RADECSYS']
-hdul_r[0].header
-wcs.WCS(hdul_r[0].header, naxis=(1,2))
-
-hdu_r = fits.PrimaryHDU(r1, header=hdul_r[0].header)
-hdulist_r = fits.HDUList([hdu_r])
-hdulist_r.writeto('r.fits', overwrite=True)
-hdu_g = fits.PrimaryHDU(g1, header=hdul_g[0].header)
-hdulist_g = fits.HDUList([hdu_g])
-hdulist_g.writeto('g.fits', overwrite=True)
-hdu_b = fits.PrimaryHDU(b1, header=hdul_b[0].header)
-hdulist_b = fits.HDUList([hdu_b])
-hdulist_b.writeto('b.fits', overwrite=True)
 #aplpy.make_rgb_cube(['1000001-JPLUS-01485-v2_iSDSS_swp-crop.fits', '1000001-JPLUS-01485-v2_rSDSS_swp-crop.fits',
                      #'1000001-JPLUS-01485-v2_gSDSS_swp-crop.fits'], 'JPLUS_cube.fits')
 
-
-#aplpy.make_rgb_cube(['r.fits', 'g.fits', 'b.fits'],  image_r.replace('.fits', '_cube.fits'))
+aplpy.make_rgb_cube([image_r, image_g, image_b], output=image_r.replace('.fits', '_cube.fits'), north=True)
 
 # aplpy.make_rgb_image(image_r.replace('.fits', '_cube.fits'),
 #                               image_r.replace('.fits', '_rgb.png'),
@@ -150,8 +130,8 @@ hdulist_b.writeto('b.fits', overwrite=True)
 # #img.axis_labels.hide_x()
 # img.axis_labels.set_ytext('Dec (J2000)')
 # img.axis_labels.set_font(size=18, weight='medium', stretch='normal', family='sans-serif', style='normal', variant='normal')
-# img.axis_labels.hide()
-# img.axis_labels.hide_y()
+# #img.axis_labels.hide()
+# #img.axis_labels.hide_y()
 
 # img.tick_labels.set_font(size=18, weight='medium', stretch='normal', family='sans-serif', style='normal', variant='normal')
 # #img.axis_labels.set_yposition('right')
@@ -171,12 +151,12 @@ hdulist_b.writeto('b.fits', overwrite=True)
 # img.add_label(0.1, 0.9, str(instrument_b) + "+" + str(instrument_g) + "+" + str(instrument_r), color="white",
 #               horizontalalignment='left',
 #               weight='bold', size=20, relative=True, zorder=1000)
-# dx, dy = 0.001, -0.001
-# img.add_label(0.7+dx, 0.89+dy, "PN PRTM 1", color="white", alpha=0.9,
-#               horizontalalignment='left',
-#               bbox={"facecolor": "black", "edgecolor": "none",# "pad": 20,
-#                     "alpha": 0.5, "boxstyle": "round, pad=0.5"},
-#               weight='bold', size=18, relative=True, zorder=999)
+# # dx, dy = 0.001, -0.001
+# # img.add_label(0.7+dx, 0.89+dy, "NGC 4361", color="white", alpha=0.9,
+# #               horizontalalignment='left',
+# #               bbox={"facecolor": "black", "edgecolor": "none",# "pad": 20,
+# #                     "alpha": 0.5, "boxstyle": "round, pad=0.5"},
+# #               weight='bold', size=18, relative=True, zorder=999)
 
 # try:
 #     img.show_regions(position)
