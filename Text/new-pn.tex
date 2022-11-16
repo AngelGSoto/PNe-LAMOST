@@ -134,6 +134,7 @@ from color–magnitude diagrams (CMD) and Gaia \citep{Fragkou:2022}.
 
 \section{Surveys}
 \label{sec:surveys}
+{\sc No sé si todo esto es necesario!}
 
 \subsection{GAIA EDR3}
 \label{sec:gaia}
@@ -183,11 +184,13 @@ stars from \citet{Smart:2021}. Where they occupy the region with \((G - r)\) = 0
   \label{fig:gaia-ps}
 \end{figure}
 
-All indicate that the PNe with strong \ha{} can be selected with this color criteria?.
+All indicate that the PNe with strong \ha{} can be selected with this color criteria??? What indicate the $G$-magnitude?.
 Then, to see the possibility of using this color criterion to select these PNe, by
 testing and using the emission line catalog from  \citet{Skoda:2020}. First, they
 identify emission line objects from LAMOST  implementing a machine learning approach.
-Then, they divided their final sample of emission line objects in tree subgroups. Those with \texttt{SIMBAD} coincidences, those that are listed by \citet{Hou:2016} and another list that are neither cross-matched with SIMBAD nor listed by  \citet{Hou:2016}. To texting the possibility to find for new PNe with the color criteria
+Then, they divided their final sample of emission line objects in tree subgroups. Those with \texttt{SIMBAD}
+coincidences, those that are listed by \citet{Hou:2016} and another list that are neither cross-matched with
+SIMBAD nor listed by  \citet{Hou:2016}. To texting the possibility to find for new PNe with the color criteria
 explained above, we applied it directly in the new list, which present objects not reported
 previously in the literature, which is a list with 1000 objects.
 
@@ -203,28 +206,39 @@ We downloaded the low resolution spectra of these objects.
 Tree objects of them display strong \ha{}, but are not display the other emission lines topically
 of PNe like [O III], He II, [S II], among other. But the three look likes as PNe.
 Because, it displays He II emission lines, the Balmer ones, [O III], among others.
-Fig~\ref{fig:spectra} the spectra of the new PN finding in the list of emission line of
+Fig~\ref{fig:spectra} the spectrum of the new PN finding in the list of emission line of
 \citet{Skoda:2020}. This PNe seem a very high ionization object, by eye is possible to see
-that the He II emission line is as strong as the H$\beta$ line. Given the LAMOST spectra
+that the He II emission line is as strong as the H$\beta$ line. No lines of ions in low stages
+of ionization were detected, lines as [N II] and [O II].
+
+
+Given the LAMOST spectra
 are not calibrated in flux but they are flux relative, then I think that some ratio line can be calculated. Could be?
 
 \begin{figure*}
 \centering
   \includegraphics[width=0.9\linewidth]{../Spectra-lamostdr7/spec-56581-VB031N50V1_sp08-218.pdf}
-  \caption{} 
+  \caption{Low resolution spectrum from LAMOST of the new PN.} 
   \label{fig:spectra}
 \end{figure*}
 
-The images of the PN called LAMOST J020808.63+491401.0 are shows in Fig~\ref{fig:image}.
+The images of the PN called LAMOST J020808.63+491401.0 in LAMOST are showed
+in Fig~\ref{fig:image}.
 \textit{Left panel} exhibits the PanSTARRS coloured
-images \footnote{This RGB images were made by implementing
+images \footnote{These RGB images were made by implementing
 the python package \texttt{aplpy} \citep{aplpy:2019}}, which
 was performed by combining the $g$, $r$ and $i$ filters in
 the blue, green and red colour channels, respectively.
 The image shows clearly a nebular component surrounding 
 a central star. \textit{Right panel} shows the
 WISE RGB image, with the filter W1, W2, and W4 in
-the blue, green and red channels, respectively.  
+the blue, green and red channels, respectively.
+ The WISE image show that the object is W4 wright.
+At 22$\mu$ (W4-filter) it appears as an almost
+circular (but slightly elongated in the north-south direction)
+diffuse halo (of angular diameter of $\simeq$ 50 arcsec) surrounding
+a core of bright emission centred around  J020808.63+491401.0. 
+
 
 \begin{figure*}
   \centering
@@ -232,9 +246,15 @@ the blue, green and red channels, respectively.
 \includegraphics[width=0.5\linewidth]{../image-panstarr/cutout_rings_v3_skycell_2294_031_stk_i_unconv-irg-RGB.pdf}
 \includegraphics[width=0.5\linewidth]{../image-wise/w4_ra32_035994_dec49_233615-421-RGB.pdf}
 \end{tabular}  
-  \caption{} 
+  \caption{Panstarr optical coloured image (\textit{left}) and WISE IR coloured image of the new PN. } 
   \label{fig:image}
 \end{figure*}
+
+\subsection{Why is not a supernova?}
+\label{sec:snr}
+
+Given supernovas are also high-ionization sources....
+
 
 
 \section{Model}
@@ -242,8 +262,15 @@ the blue, green and red channels, respectively.
 
 Despite the LAMOST spectra are not in physical flux unity, they have flux relative. This means it
 is possible compare it with other spectra in physical units. For that, I think, it is pertinent to
-compare the LAMOST spectra of our PN with models. Fig~\ref{fig:spectra-obs-model} shows a comparison between LAMOST spectra and a {\sc cloudy} modelled spectra from \citet{Gutierrez-Soto:2020}. Note that only is an example for illustrative intentions. This model was taken from a grid o models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches between the two spectra. I will a performed a grid of PN models that better reproduce the LAMOST spectra of our candidate. However, almost all the line are reproduce with this model, that could be interesting, because the temperature effective of this model is 130$\times10^3$K, indicating a very high excitation object. Maybe, it will be good idea estimate ratio lines to confirm that! is it possible with this spectrum?
-{\cs Voy a crear modelos CLOUDY para intetentar reproducir este espectro.}
+compare the LAMOST spectra of our PN with models. Fig~\ref{fig:spectra-obs-model} shows a comparison
+between LAMOST spectra and a {\sc cloudy} modelled spectra from \citet{Gutierrez-Soto:2020}.
+Note that only is an example for illustrative intentions. This model was taken from a grid of
+models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches between
+the two spectra. I will a performed a grid of PN models that better reproduce the LAMOST spectra of our candidate.
+However, almost all the line are reproduce with this model, that could be interesting, because the
+temperature effective of this model is 130$\times10^3$K, indicating a very high excitation object.
+Maybe, it will be good idea estimate ratio lines to confirm that! is it possible with this spectrum?
+{\cs Voy a crear modelos CLOUDY para intetentar reproducir este espectro. El de la figura~\ref{fig:spectra-obs-model} es sólo un ejemplo. Quería ver si en el grid de modelos que tengo alguna reproducía este espectro.}
 
 \begin{figure*}
 \centering
@@ -252,7 +279,7 @@ compare the LAMOST spectra of our PN with models. Fig~\ref{fig:spectra-obs-model
   \label{fig:spectra-obs-model}
 \end{figure*}
 
-\section{Comparing with other PNe}
+\section{Comparing with other high-ionization PNe}
 \label{sec:comp}
 
 \newpage
@@ -263,6 +290,8 @@ compare the LAMOST spectra of our PN with models. Fig~\ref{fig:spectra-obs-model
   \label{fig:compare-spectra}
 \end{figure*}
 
+In Fig~\ref{fig:compare-spectra} we are compare our PNe with other high-ionization PNe (NGC 2242, NGC 4361 and PRTM 1). Note that all three PNe are objects located at high latitudes, this means that they belong to the halo Galactic. All four spectra are very similar with the same Balmer lines, the high-ionization lines and lacked the low-ionization lines.
+
 \begin{figure}
   \centering
   \begin{tabular}{l l}
@@ -270,15 +299,35 @@ compare the LAMOST spectra of our PN with models. Fig~\ref{fig:spectra-obs-model
 \includegraphics[width=0.5\linewidth]{../known-pn/NGC2242/0979p454_ac51-w4-int-3_ra98.53061791727998_dec44.77716333248_asec200.000-421-RGB.pdf}\\
 \includegraphics[width=0.52\linewidth]{../known-pn/NGC4361/cutout_rings.v3.skycell.0924.030.stk.i.unconv-irg-RGB.pdf}
 \includegraphics[width=0.5\linewidth]{../known-pn/NGC4361/1855m182_ac51-w4-int-3_ra186.12812938647002_dec-18.78487981564_asec200.000-421-RGB}\\
-\includegraphics[width=0.52\linewidth, trim=280 10 350 10, clip]{../known-pn/PNPRTM1/dss_search_red.pdf}
-\includegraphics[width=0.5\linewidth, trim=8 5 5 5, clip]{../known-pn/PNPRTM1/0754m394_ac51-w4-int-3_ra75.75721626934_dec-39.76236833917_asec150.000-421-RGB.pdf}\\
+\includegraphics[width=0.535\linewidth, trim=280 10 340 10, clip]{../known-pn/PNPRTM1/dss_search_red.pdf}
+\includegraphics[width=0.47\linewidth, trim=58 0 0 0]{../known-pn/PNPRTM1/0754m394_ac51-w4-int-3_ra75.75721626934_dec-39.76236833917_asec150.000-421-RGB.pdf}\\
 
 \end{tabular}  
-  \caption{Other high ionization PNe in the optical (\textit{right}) and IR (\textit{left}). For comparison. } 
+  \caption{Optical (\textit{right}) and IR (\textit{left}) images of the other high-ionization PNe.. For comparison. } 
   \label{fig:images-known}
 \end{figure}
 
 Fig~\ref{fig:images-known}
+
+\section{Comparison with post-AGB stellar evolution tracks}
+\label{sec:tracks}
+
+\begin{figure}
+\centering
+  \includegraphics[width=\linewidth]{../track-ev/hr-planetarieNebula}
+  \caption{HR diagram of PN central stars, showing the observed luminosity
+and effective temperature of the new PN, compared with
+post-AGB evolutionary tracks from \citet{Miller:2016} (solid lines,
+labelled with initial stellar mass in solar masses). Small star symbols show
+an evolutionary time along each track equal to the kinematic age of the
+intermediate shell of NGC 2242, with blue shading indicating 50 per cent
+variation about this value.  Filled symbols shows the known PN showed in section~\ref{}
+that have been selected to be  similar to the new PNe. {\sc Ok! falta colocar la nueva nebulosa}.} 
+  \label{fig:track-evolutive}
+\end{figure}
+
+Fig~\ref{fig:track-evolutive} shows... Post-AGB stellar evolutionary tracks for
+approximately solar metallicity \citep{Miller:2016} are indicated
 
 \bibliography{Ref-pne}
 

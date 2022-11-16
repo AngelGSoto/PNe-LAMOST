@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Badenes} {et~al.}(2015){Badenes}, {Maoz}, \&
@@ -133,6 +133,9 @@
 
 \bibitem[{{Kwitter} \& {Henry}(2022)}]{Kwitter:2022}
 {Kwitter}, K.~B., \& {Henry}, R.~B.~C. 2022, \pasp, 134, 022001
+
+\bibitem[{{Miller Bertolami}(2016)}]{Miller:2016}
+{Miller Bertolami}, M.~M. 2016, \aap, 588, A25
 
 \bibitem[{{Moe} \& {De Marco}(2006)}]{Moe:2006}
 {Moe}, M., \& {De Marco}, O. 2006, \apj, 650, 916

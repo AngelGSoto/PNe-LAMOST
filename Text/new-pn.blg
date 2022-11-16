@@ -4,54 +4,54 @@ The top-level auxiliary file: new-pn.aux
 The style file: apj.bst
 Database file #1: Ref-pne.bib
 Warning--string name "july" is undefined
---line 342 of file Ref-pne.bib
-Repeated entry---line 513 of file Ref-pne.bib
+--line 360 of file Ref-pne.bib
+Repeated entry---line 531 of file Ref-pne.bib
  : @article{Drew:2005
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1327 of file Ref-pne.bib
+Repeated entry---line 1345 of file Ref-pne.bib
  : @article{Parker:2005
  :                     ,
 I'm skipping whatever remains of this entry
-You've used 17 entries,
+You've used 18 entries,
             2988 wiz_defined-function locations,
-            773 strings with 19329 characters,
-and the built_in function-call counts, 14638 in all, are:
-= -- 611
-> -- 2141
-< -- 6
-+ -- 712
-- -- 695
-* -- 1763
-:= -- 3063
-add.period$ -- 17
-call.type$ -- 17
-change.case$ -- 102
-chr.to.int$ -- 17
-cite$ -- 17
-duplicate$ -- 316
-empty$ -- 467
-format.name$ -- 752
-if$ -- 2576
+            779 strings with 19498 characters,
+and the built_in function-call counts, 14981 in all, are:
+= -- 642
+> -- 2153
+< -- 7
++ -- 716
+- -- 698
+* -- 1785
+:= -- 3129
+add.period$ -- 18
+call.type$ -- 18
+change.case$ -- 107
+chr.to.int$ -- 18
+cite$ -- 18
+duplicate$ -- 333
+empty$ -- 494
+format.name$ -- 756
+if$ -- 2646
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 14
-newline$ -- 55
-num.names$ -- 69
-pop$ -- 101
+missing$ -- 15
+newline$ -- 58
+num.names$ -- 73
+pop$ -- 104
 preamble$ -- 1
-purify$ -- 102
+purify$ -- 107
 quote$ -- 0
-skip$ -- 275
+skip$ -- 292
 stack$ -- 0
-substring$ -- 359
+substring$ -- 380
 swap$ -- 8
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 153
+type$ -- 162
 warning$ -- 0
-while$ -- 54
+while$ -- 58
 width$ -- 0
-write$ -- 172
+write$ -- 182
 (There were 2 error messages)
