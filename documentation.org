@@ -561,3 +561,9 @@ Byte-by-byte Description of file (#): models/*
    Size of the images dowloaded from WISE:
 
   -  PNPRTM1 => 70arcsec 
+
+** Distance GAIA of new
+   Distance in parsec, Estimating distances from parallaxes (1467744818 sources) ( Bailer-Jones C.A.L., Rybizki J., Fouesneau M., Demleitner M., Andrae R .)
+   =rgeo=2313.00952=
+   =rpgeo=2324.19312=
+   
