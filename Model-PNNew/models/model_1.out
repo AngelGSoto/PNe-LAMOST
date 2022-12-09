@@ -1,0 +1,977 @@
+                                                          Cloudy 22.00
+                                                         www.nublado.org
+
+                                                  PRNG seed: 0x11ada62c56062366
+
+                       **************************************13Jun01**************************************
+                       *                                                                                 *
+                       * title model 1                                                                   *
+                       * set punch prefix "model_1"                                                      *
+                       * Blackbody 130000.000000                                                         *
+                       * q(H) = 37.584                                                                   *
+                       * radius = 16.903                                                                 *
+                       * hden = 3.477                                                                    *
+                       * filling factor = 1.0                                                            *
+                       * element abundance helium -1.020                                                 *
+                       * element abundance carbon -4.800                                                 *
+                       * element abundance nitrogen -4.410                                               *
+                       * element abundance oxygen 3.880                                                  *
+ Please check the abundance of this element.  It seems high to me.
+                       * element abundance neon -4.800                                                   *
+                       * element abundance silicon -5.000                                                *
+                       * element abundance sulphur -5.400                                                *
+                       * element abundance argon -6.230                                                  *
+                       * element abundance iron -20.000                                                  *
+                       * element abundance chlorine -20.000                                              *
+                       * distance = 2313.00952 parsecs linear                                            *
+                       * no molecules                                                                    *
+                       * no level2 lines                                                                 *
+                       * no fine opacities                                                               *
+                       * atom h-like levels small                                                        *
+                       * atom he-like levels small                                                       *
+                       * COSMIC RAY BACKGROUND                                                           *
+                       * element limit off -8                                                            *
+                       * print line optical depth                                                        *
+                       * set save resolving power 1800                                                   *
+                       * iterate                                                                         *
+                       * sphere                                                                          *
+                       * save last radius ".rad"                                                         *
+                       * save last continuum ".cont"                                                     *
+                       * save last physical conditions ".phy"                                            *
+                       * save last overview ".ovr"                                                       *
+                       * save last heating ".heat"                                                       *
+                       * save last cooling ".cool"                                                       *
+                       * save last optical depth ".opd"                                                  *
+                       * save last element hydrogen ".ele_H"                                             *
+                       * save last element helium ".ele_He"                                              *
+                       * save last element carbon ".ele_C"                                               *
+                       * save last element nitrogen ".ele_N"                                             *
+                       * save last element oxygen ".ele_O"                                               *
+                       * save last element argon ".ele_Ar"                                               *
+                       * save last element neon ".ele_Ne"                                                *
+                       * save last element sulphur ".ele_S"                                              *
+                       * save last element chlorin ".ele_Cl"                                             *
+                       * save last element iron ".ele_Fe"                                                *
+                       * save last element silicon ".ele_Si"                                             *
+                       * save last lines emissivity  ".emis"                                             *
+                       *                                                                                 *
+                       ***********************************************************************************
+
+
+
+ NOTE Setcon: continuum has zero intensity starting at  8.3392e+01 Ryd.
+  2030 cells in the incident continuum have zero intensity.  Problems???
+
+           9244CellPeak2.32E+00   Lo 3.04e-09=  29.98m   Hi-Con:7.13E+06 Ryd   E(hi):7.35E+06Ryd     E(hi):     100.00 MeV
+           L(nu>1ryd):  27.3417   Average nu:2.626E+00   L( X-ray):  19.9651   L(BalC):  26.1104     Q(Balmer C):  36.9455
+           Q(1.0-1.8):  37.0949   Q(1.8-4.0):  37.3103   Q(4.0-20):  36.7401   Q(20--):  29.2957     Ion pht flx:4.773E+02
+           L(gam ray):   0.0000   Q(gam ray):   0.0000   L(Infred):  24.4735   Alf(ox):   0.0000     Total lumin:  27.3670
+           log L/Lsun:  -6.2160   Abs bol mg:  20.2799   Abs V mag:  27.4411   Bol cor:  -7.1612     nuFnu(Bbet):  24.5762
+           U(1.0----):5.308E-12   U(4.0----):7.605E-13   T(En-Den):1.063E-01   T(Comp):1.245E+05     nuJnu(912A):4.096E-09
+           Occ(FarIR):1.209E-16   Occ(H n=6):1.305E-23   Occ(1Ryd):1.888E-25   Occ(4R):3.472E-27     Occ (Nu-hi):0.000E+00
+           Tbr(FarIR):5.812E-20   Tbr(H n=6):5.714E-20   Tbr(1Ryd):2.981E-20   Tbr(4R):2.196E-21     Tbr (Nu-hi):0.000E+00
+  
+                                                  Gas Phase Chemical Composition
+        H :  0.0000  He: -1.0200  C : -4.8000  N : -4.4100  O :  3.8800  F : -7.5200  Ne: -4.8000  Na: -5.6696  Mg: -4.4597
+        Al: -5.5302  Si: -5.0000  P : -6.4949  S : -5.4000  Ar: -6.2300  K : -6.8794  Ca: -5.6402  Ti: -6.9788  V : -8.0000
+                             Cr: -6.3298  Mn: -6.5406  Co: -7.0799  Ni: -5.7496  Cu: -7.7905  Zn: -7.4001
+ 
+ PROBLEM  ConvFail 1,  ionization not converged iteration 1 zone 1 fnzone 21.31 reason iso/ion accel BadConvIoniz0:0 [1]=6.74435
+ ####  1  Te:1.978E+01 Hden:2.999E+03 Ne:6.562E+01 R:7.998E+16 R-R0:2.573E+06 dR:5.145E+06 NTR:2032 Htot:3.509E-18 T912: 1.00e+08###
+ Hydrogen      9.86e-01 1.39e-02 H+o/Hden 1.00e+00 0.00e+00 H-    H2 0.00e+00 0.00e+00 H2+ HeH+ 0.00e+00 Ho+ ColD 1.52e+10 2.14e+08
+ Helium        1.00e+00 5.30e-09 2.07e-16 HeI 2s3S 3.84e-13 Comp H,C 1.06e-34 1.68e-38 Fill Fac 1.00e+00 Gam1/tot 7.43e-01
+ He singlet n  1.00e+00 8.81e-20 2.44e-25 2.05e-26 1.95e-25 7.45e-26 He tripl 3.84e-13 3.88e-24 4.83e-26 7.10e-25 2.04e-25
+ Pressure      NgasTgas 4.50e+08 P(total) 6.21e-08 P( gas ) 6.21e-08 P(Radtn) 0.00e+00 Rad accl 2.53e-13 ForceMul 3.63e+12
+ Texc(La)      2.68e+03 T(I con) 1.06e-01 T(D con) 1.88e-02 T(U tot) 1.06e-01 nT (c+d) 3.02e+04 Prad/Gas 0.00e+00 Pmag/Gas 0.00e+00
+ Lithium       0.00e+00 0.00e+00 0.00e+00 0.00e+00 Berylliu 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 sec ion: 2.02e-16
+ Carbon        1.00e+00 1.66e-06 1.67e-13 0.00e+00 0.00e+00 0.00e+00 0.00e+00 H2O+/O   0.00e+00 OH+/Otot 0.00e+00 Hex(tot) 0.00e+00
+ Nitrogen      1.00e+00 5.04e-07 3.46e-15 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 O2/Ototl 0.00e+00 O2+/Otot 0.00e+00
+ Oxygen        1.00e+00 1.05e-06 5.62e-15 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Fluorine      1.00e+00 1.19e-06 2.03e-13 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Neon          1.00e+00 1.52e-06 1.68e-13 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Sodium        7.95e-01 2.05e-01 1.28e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Magnesium     1.00e+00 1.41e-06 3.70e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Aluminium  0  9.79e-03 9.90e-01 4.34e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Silicon    0  1.00e+00 1.09e-05 6.99e-12 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Phosphorus 0  2.66e-01 7.34e-01 3.54e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Sulphur    0  1.00e+00 2.71e-04 2.97e-11 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Argon      0  1.00e+00 5.14e-06 3.52e-13 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Potassium  0  9.50e-01 4.96e-02 9.06e-09 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Calcium    0  1.00e+00 5.46e-07 4.27e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Titanium   0  1.77e-02 9.82e-01 2.89e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Vanadium   0  1.00e+00 1.35e-06 2.96e-09 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Chromium   0  1.00e+00 3.19e-06 3.02e-09 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Manganese  0  1.91e-02 9.81e-01 3.10e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Cobalt     0  1.00e+00 1.42e-06 9.13e-11 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Nickel     0  1.55e-02 9.85e-01 2.51e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Copper     0  1.00e+00 2.37e-06 1.46e-09 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Zinc       0  1.00e+00 1.70e-06 4.03e-10 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+   model 1  
+   Calculation stopped because lowest Te reached. Iteration 1 of 2
+   The geometry is plane-parallel.
+  !Some input lines contained underscores, these were changed to spaces.
+  !Suprathermal collisional ionization of H reached 25.65% of the local H ionization rate.
+  !Charge transfer H => H+ reached 1108115203.3% of the local H ionization rate.
+  !Charge transfer heating reached 58.68% of the local heating.
+  !Continuum zero at some energies.
+  !AGE: Cloud age was not set.  Longest timescale was 2.65e+10 s = 8.40e+02 years.
+  !A physical process has been disabled.
+  !The excitation temp of Lya exceeded the electron temp, largest value was 2.68e+03K (gas temp there was 1.98e+01K, zone 1)
+  !Incident radiation field energy density is less than 2.7K.  Add background with CMB command.
+  !The CMB was not included.  This is added with the CMB command.
+  !The intensity of the incident radiation field is less than 10 times the Habing diffuse ISM field.  Is this OK?
+  !   Consider adding diffuse ISM emission with TABLE ISM command.
+  !The level2 lines are disabled.  UV pumping of excited levels within ground terms is not treated.
+   Te-ne bounds of Case B lookup table exceeded, H I Case B line intensities set to zero.
+   Te-ne bounds of Case B lookup table exceeded, He II Case B line intensities set to zero.
+   The density is too low to l-mix the lowest H  I collapsed level.  More resolved levels are needed for accurate line ratios.
+   The density is too low to l-mix the lowest He I collapsed level.  More resolved levels are needed for accurate line ratios.
+   Grains were not present but might survive in this environment (energy density temperature was 1.06e-01K)
+   Compton cooling equilibrium timescale (3.85e+19 s) is longer than Hubble time.
+
+                       *********************************> Cloudy 22.00 <**********************************
+                       * title model 1                                                                   *
+                       * set punch prefix "model_1"                                                      *
+                       * Blackbody 130000.000000                                                         *
+                       * q(H) = 37.584                                                                   *
+                       * radius = 16.903                                                                 *
+                       * hden = 3.477                                                                    *
+                       * filling factor = 1.0                                                            *
+                       * element abundance helium -1.020                                                 *
+                       * element abundance carbon -4.800                                                 *
+                       * element abundance nitrogen -4.410                                               *
+                       * element abundance oxygen 3.880                                                  *
+                       * element abundance neon -4.800                                                   *
+                       * element abundance silicon -5.000                                                *
+                       * element abundance sulphur -5.400                                                *
+                       * element abundance argon -6.230                                                  *
+                       * element abundance iron -20.000                                                  *
+                       * element abundance chlorine -20.000                                              *
+                       * distance = 2313.00952 parsecs linear                                            *
+                       * no molecules                                                                    *
+                       * no level2 lines                                                                 *
+                       * no fine opacities                                                               *
+                       * atom h-like levels small                                                        *
+                       * atom he-like levels small                                                       *
+                       * COSMIC RAY BACKGROUND                                                           *
+                       * element limit off -8                                                            *
+                       * print line optical depth                                                        *
+                       * set save resolving power 1800                                                   *
+                       * iterate                                                                         *
+                       * sphere                                                                          *
+                       * save last radius ".rad"                                                         *
+                       * save last continuum ".cont"                                                     *
+                       * save last physical conditions ".phy"                                            *
+                       * save last overview ".ovr"                                                       *
+                       * save last heating ".heat"                                                       *
+                       * save last cooling ".cool"                                                       *
+                       * save last optical depth ".opd"                                                  *
+                       * save last element hydrogen ".ele_H"                                             *
+                       * save last element helium ".ele_He"                                              *
+                       * save last element carbon ".ele_C"                                               *
+                       * save last element nitrogen ".ele_N"                                             *
+                       * save last element oxygen ".ele_O"                                               *
+                       * save last element argon ".ele_Ar"                                               *
+                       * save last element neon ".ele_Ne"                                                *
+                       * save last element sulphur ".ele_S"                                              *
+                       * save last element chlorin ".ele_Cl"                                             *
+                       * save last element iron ".ele_Fe"                                                *
+                       * save last element silicon ".ele_Si"                                             *
+                       * save last lines emissivity  ".emis"                                             *
+                       * H  1  4861.33A                                                                  *
+                       * H  1  6562.81A                                                                  *
+                       * Ca B  5875.64A                                                                  *
+                       * N  2  6583.45A                                                                  *
+                       * O  1  6300.30A                                                                  *
+                       * O  2  3726.03A                                                                  *
+                       * O  2  3728.81A                                                                  *
+                       * O  3  5006.84A                                                                  *
+                       * BLND  4363.00A                                                                  *
+                       * S  2  6716.44A                                                                  *
+                       * S  2  6730.82A                                                                  *
+                       * Cl 3  5517.71A                                                                  *
+                       * Cl 3  5537.87A                                                                  *
+                       * O  1  63.1679m                                                                  *
+                       * O  1  145.495m                                                                  *
+                       * C  2  157.636m                                                                  *
+                       * end of lines                                                                    *
+                       *********************************> Log(U):-11.28 <*********************************
+
+                     Emission Line Spectrum.   Constant  Density Model.  Closed geometry.  Iteration 1 of 2.
+                                    Luminosity (erg/s) emitted by a shell with full coverage.
+
+
+                                                   Intrinsic line intensities
+general properties.............................      nFnu                4.11370m   19.174    0.0026      H  1                2431.34A   22.487    5.3743
+Inci                      0    27.367 407754.88      nInu                4.11370m   21.840    1.2121      H  1                1215.67A   23.252   31.2753
+TotH                      0    24.162  254.1943      nFnu                2.32440m   19.894    0.0137      H  1                1025.72A   22.591    6.8244
+TotC                      0    24.163  254.6938      nInu                2.32440m   22.578    6.6312      H  1                972.537A   22.167    2.5746
+TotM                      0    24.028  186.7779      nFnu                1.64313m   20.952    0.1569      H  1                949.743A   21.857    1.2609
+CT H                      0    23.466   51.2421      nInu                1.64313m   23.025   18.5730      H  1                937.803A   22.203    2.7934
+CR H                      0    22.965   16.1736      nFnu                1.48022m   20.434    0.0476      H  1                930.748A   22.087    2.1394
+H FB                      0    19.844    0.0122      nInu                1.48022m   23.159   25.2282      H  1                926.226A   21.992    1.7205
+HFBc                      0    19.844    0.0122      nFnu                1.43649m   20.932    0.1497      H  1                923.150A   21.915    1.4391
+O  1c                     0    24.163  254.6726      nInu                1.43649m   23.197   27.5720      H  1                920.963A   21.852    1.2469
+continua.......................................      nFnu                1.11867m   20.751    0.0987      H  1                919.351A   21.806    1.1199
+Bac                 3646.00A   24.573  655.7994      nInu                1.11867m   23.518   57.7213      H  1                6562.80A   22.196    2.7508
+nFnu                3645.00A   24.574  657.2726      nFnu                8329.68A   21.076    0.2084      H  1                4861.32A   21.757    1.0000
+nFnu                3647.00A   21.925    1.4732      nInu                8329.68A   23.897  138.1210      H  1                4340.46A   21.434    0.4753
+cout                3646.00A   24.573  655.7994      nFnu                8078.61A   21.109    0.2252      H  1                4101.73A   21.334    0.3779
+thin                3646.00A   24.573  655.7994      nInu                8078.61A   23.935  150.8143      H  1                3970.07A   21.220    0.2908
+Inci                4860.00A   24.576  660.2693      nFnu                6209.66A   21.389    0.4292      H  1                3889.05A   21.127    0.2345
+Inci                1367.00A   26.092 21657.000      nInu                6209.66A   24.269  325.3105      H  1                3835.38A   21.050    0.1965
+Inci                2066.00A   25.620 7302.4761      nFnu                4885.36A   21.636    0.7577      H  1                3797.90A   20.988    0.1704
+Inci                1215.00A   26.220 29078.994      nInu                4885.36A   24.571  651.7769      H  1                3770.63A   20.942    0.1532
+Ba C                      0    22.098    2.1929      nFnu                3704.34A   21.910    1.4239      H  1                1.87510m   21.399    0.4385
+PA C                      0    21.748    0.9802      nInu                3704.34A   24.915 1439.2943      H  1                1.28181m   21.104    0.2227
+FIR                 83.0000m   24.163  254.7327      nFnu                3587.67A   21.939    1.5220      H  1                1.09381m   20.811    0.1133
+TIR                 1800.00m   18.936    0.0015      nInu                3587.67A   24.952 1567.3010      H  1                1.00494m   20.701    0.0879
+NIRa                2.85000m   23.671   82.1408      nFnu                2430.05A   22.298    3.4793      H  1                9545.97A   20.609    0.0712
+NIRb                3.00000m   23.222   29.2273      nInu                2430.05A   25.426 4668.9956      H  1                9229.02A   20.533    0.0598
+MIRa                15.0000m   21.614    0.7203      nFnu                2392.03A   22.312    3.5956      H  1                9014.91A   20.472    0.0520
+MIRb                22.5000m   21.623    0.7346      nInu                2392.03A   25.446 4888.1685      H  1                8862.79A   20.427    0.0468
+NMIR                21.7500m   23.671   82.1408      nFnu                2071.34A   22.432    4.7321      H  1                4.05115m   20.777    0.1047
+TFIR                611.250m   20.740    0.0963      nInu                2071.34A   25.616 7229.1543      H  1                2.62515m   20.427    0.0468
+TALL                10000.0A   27.367 407777.31      nFnu                2052.68A   22.440    4.8189      H  1                2.16553m   20.324    0.0369
+F12                 12.0000m   20.871    0.1302      nInu                2052.68A   25.627 7427.5308      H  1                1.94456m   20.236    0.0302
+F25                 25.0000m   21.060    0.2012      nFnu                1793.44A   22.537    6.0257      H  1                1.81741m   20.162    0.0254
+F60                 60.0000m   24.163  254.6361      nInu                1793.44A   25.783 10622.384      H  1                1.73621m   20.102    0.0222
+F100                100.000m   18.829    0.0012      nFnu                1585.12A   22.604    7.0378      H  1                1.68065m   20.057    0.0200
+MIPS                24.0000m   19.821    0.0116      nInu                1585.12A   25.928 14831.449      H  1                7.45782m   20.097    0.0219
+MIPS                70.0000m   24.163  254.6339      nFnu                1458.33A   22.615    7.2252      H  1                4.65251m   20.021    0.0184
+MIPS                160.000m   20.718    0.0914      nInu                1458.33A   26.022 18405.424      H  1                3.73954m   19.941    0.0153
+IRAC                3.60000m   21.523    0.5833      nFnu                1356.96A   22.574    6.5722      H  1                3.29609m   19.870    0.0130
+IRAC                4.50000m   21.379    0.4192      nInu                1356.96A   26.099 22009.281      H  1                3.03837m   19.812    0.0114
+IRAC                5.80000m   21.069    0.2054      nFnu                1297.29A   22.462    5.0688      H  1                2.87221m   19.768    0.0103
+IRAC                8.00000m   21.004    0.1769      nInu                1297.29A   26.150 24761.387      H  1                12.3685m   19.743    0.0097
+PAC1                70.0000m   24.163  254.6339      nFnu                1262.79A   22.284    3.3704      H  1                7.50045m   19.690    0.0086
+PAC2                100.000m   18.829    0.0012      nInu                1262.79A   26.179 26471.873      H  1                5.90660m   19.627    0.0074
+PAC3                160.000m   20.732    0.0944      nInu                1218.08A   26.219 28999.318      H  1                5.12726m   19.572    0.0065
+PAH                 3.30000m   20.963    0.1610      nInu                1196.33A   26.237 30218.746      H  1                4.67124m   19.530    0.0059
+PAHC                3.23000m   20.444    0.0487      nInu                1175.06A   26.255 31484.191      H  1                19.0567m   19.448    0.0049
+PAHC                3.37000m   20.266    0.0323      nInu                1143.64A   26.287 33882.398      H  1                11.3056m   19.411    0.0045
+PAH                 6.20000m   20.395    0.0435      nInu                1113.22A   26.315 36149.711      H  1                8.75768m   19.364    0.0041
+PAHC                5.65000m   20.794    0.1090      nInu                1103.23A   26.322 36737.199      H  1                7.50606m   19.326    0.0037
+PAH                 7.90000m   20.634    0.0753      nInu                1073.86A   26.350 39172.555      H  1                27.7958m   19.196    0.0027
+PAHC                6.90000m   20.588    0.0678      nInu                1064.34A   26.360 40121.871      H  1                16.2047m   19.175    0.0026
+PAH                 11.3000m   19.576    0.0066      nInu                1035.92A   26.388 42752.781      H  1                12.3838m   19.144    0.0024
+PAHC                10.9000m   19.934    0.0150      nInu                1000.00A   26.425 46615.293      H  1                38.8593m   18.980    0.0017
+PAH                 11.8000m   19.260    0.0032      nInu                925.144A   26.502 55671.422      H  1                22.3344m   18.975    0.0017
+PAHC                12.6500m   20.111    0.0226      nInu                897.800A   26.532 59620.824      H  1                52.5206m   18.796    0.0011
+PAH                 13.3000m   19.721    0.0092      nInu                760.023A   26.690 85700.727      He-like iso-sequence...........................
+PAHC                14.1000m   19.337    0.0038      nInu                701.514A   26.760 100881.82      extra Lyman....................................
+Bcon                3640.00A   26.112 22671.254      nInu                608.160A   26.880 132729.64      database lines.................................
+Pcon                5000.00A   24.439  480.7698      nInu                575.146A   26.923 146845.05      O  1                1025.76A   20.460    0.0505
+O3bn                5007.00A   22.908   14.1794      nInu                511.948A   27.007 178025.27      O  1                1025.76A   19.547    0.0062
+SX                  25.0000A   19.250    0.0031      nInu                496.874A   27.027 186374.53      O  1                1027.43A   18.918    0.0014
+HFFc                      0    19.075    0.0021      nInu                399.153A   27.149 247059.53      O  1                1027.43A   20.022    0.0184
+H FF                      0    18.875    0.0013      RRC............................................      O  1                1028.16A   19.042    0.0019
+MeFB                      0    19.531    0.0059      H  1                911.753A   22.963   16.0733      O  1                1039.23A   20.427    0.0468
+ToFF                      0    19.071    0.0021      H  1                3645.98A   21.524    0.5856      O  1                1040.94A   20.203    0.0279
+nInu                41.2152m   18.840    0.0012      H  1                3645.98A   21.963    1.6076      O  1                1041.69A   19.725    0.0093
+nInu                30.8695m   19.218    0.0029      H  1                8203.57A   20.698    0.0874      O  1                1302.17A   20.661    0.0802
+nInu                24.7829m   19.504    0.0056      H  1                8203.57A   21.190    0.2711      O  1                1304.86A   20.435    0.0476
+nInu                24.2998m   19.531    0.0059      H  1                8203.57A   21.253    0.3136      O  1                1306.03A   19.957    0.0158
+nInu                22.8302m   19.609    0.0071      H  1                1.45842m   20.120    0.0231      O  1                8446.36A   19.301    0.0035
+nInu                21.4199m   19.691    0.0086      H  1                1.45842m   20.621    0.0732      O  1                8446.76A   18.908    0.0014
+nInu                21.1235m   19.713    0.0090      H  1                1.45842m   20.800    0.1106      O  1                1.12869m   19.024    0.0018
+nFnu                19.6199m   21.892    1.3644      H  1                1.45842m   20.673    0.0824      O  1                63.1679m   24.162  254.5523
+nInu                19.6199m   19.808    0.0113      H  1                2.27878m   19.675    0.0083      O  1                145.495m   20.717    0.0912
+nFnu                17.6534m   21.091    0.2159      H  1                2.27878m   20.177    0.0263      level 1 lines..................................
+nInu                17.6534m   19.943    0.0153      H  1                2.27878m   20.394    0.0434      recombination..................................
+nFnu                17.3700m   20.798    0.1101      H  1                2.27878m   20.424    0.0465      O  1                8447.00A   20.901    0.1394
+nInu                17.3700m   19.964    0.0161      H  1                2.27878m   20.162    0.0255      O  1                7773.00A   22.162    2.5405
+nFnu                15.6901m   18.883    0.0013      H  1                3.28145m   20.698    0.0874      O  1                9264.00A   21.993    1.7229
+nInu                15.6901m   20.099    0.0220      H  1                4.46642m   20.501    0.0555      O  1                3947.00A   20.695    0.0868
+nFnu                14.6036m   20.300    0.0350      H  1                5.83369m   20.329    0.0373      O  1                1357.00A   22.971   16.3723
+nInu                14.6036m   20.190    0.0271      H  1                7.38326m   20.177    0.0263      level2 lines...................................
+nFnu                12.4300m   20.202    0.0279      H  1                9.11514m   20.041    0.0193      hyperfine structure............................
+nInu                12.4300m   20.402    0.0442      H  1                11.0293m   19.918    0.0145      inner shell....................................
+nInu                11.4000m   20.515    0.0573      H  1                13.1258m   19.806    0.0112      molecules......................................
+nFnu                10.4600m   20.151    0.0248      H  1                15.4046m   19.703    0.0088      bands..........................................
+nInu                10.4600m   20.628    0.0743      H  1                17.8657m   19.607    0.0071      miscellaneous..................................
+nInu                9.48002m   20.754    0.0993      H  1                20.5091m   21.034    0.1896      Blnd                8446.00A   19.470    0.0052
+nInu                9.32488m   20.775    0.1044      grains.........................................      Blnd                1304.00A   20.914    0.1437
+nInu                8.21035m   20.940    0.1525      H-like iso-sequence............................      Blnd                1039.00A   20.681    0.0840
+nInu                7.58000m   21.044    0.1937      Q(H)                4861.32A   25.261 3192.1047      Blnd                1.13000m   19.217    0.0029
+nFnu                7.05026m   20.153    0.0249      Q(H)                1215.67A   26.797 109810.59      O 2H                3727.00A   22.886   13.4761
+nInu                7.05026m   21.139    0.2413      CaBo                4861.32A   21.845    1.2256      O 2H                7325.00A   22.332    3.7631
+
+                                                    Emergent line intensities
+ Caution: emergent intensities are not reliable on the first iteration.
+general properties.............................      H-like iso-sequence............................      H  1                5.12726m   19.572    0.0065
+continua.......................................      H  1                1215.67A   23.252   31.2753      H  1                4.67124m   19.530    0.0059
+FIR                 83.0000m   24.163  254.7327      H  1                1025.72A   22.591    6.8244      H  1                19.0567m   19.448    0.0049
+TIR                 1800.00m   18.936    0.0015      H  1                972.537A   22.167    2.5746      H  1                11.3056m   19.411    0.0045
+NIRa                2.85000m   23.671   82.1408      H  1                949.743A   21.857    1.2609      H  1                8.75768m   19.364    0.0041
+NIRb                3.00000m   23.222   29.2273      H  1                937.803A   22.203    2.7934      H  1                7.50606m   19.326    0.0037
+MIRa                15.0000m   21.614    0.7203      H  1                930.748A   22.087    2.1394      H  1                27.7958m   19.196    0.0027
+MIRb                22.5000m   21.623    0.7346      H  1                926.226A   21.992    1.7205      H  1                16.2047m   19.175    0.0026
+NMIR                21.7500m   23.671   82.1408      H  1                923.150A   21.915    1.4391      H  1                12.3838m   19.144    0.0024
+TFIR                611.250m   20.740    0.0963      H  1                920.963A   21.852    1.2469      H  1                38.8593m   18.980    0.0017
+TALL                10000.0A   27.367 407777.31      H  1                919.351A   21.806    1.1199      H  1                22.3344m   18.975    0.0017
+F12                 12.0000m   20.871    0.1302      H  1                6562.80A   22.196    2.7508      H  1                52.5206m   18.796    0.0011
+F25                 25.0000m   21.060    0.2012      H  1                4861.32A   21.757    1.0000      He-like iso-sequence...........................
+F60                 60.0000m   24.163  254.6361      H  1                4340.46A   21.434    0.4753      extra Lyman....................................
+F100                100.000m   18.829    0.0012      H  1                4101.73A   21.334    0.3779      database lines.................................
+MIPS                24.0000m   19.821    0.0116      H  1                3970.07A   21.220    0.2908      O  1                1025.76A   20.460    0.0505
+MIPS                70.0000m   24.163  254.6339      H  1                3889.05A   21.127    0.2345      O  1                1025.76A   19.547    0.0062
+MIPS                160.000m   20.718    0.0914      H  1                3835.38A   21.050    0.1965      O  1                1027.43A   18.918    0.0014
+IRAC                3.60000m   21.523    0.5833      H  1                3797.90A   20.988    0.1704      O  1                1027.43A   20.022    0.0184
+IRAC                4.50000m   21.379    0.4192      H  1                3770.63A   20.942    0.1532      O  1                1028.16A   19.042    0.0019
+IRAC                5.80000m   21.069    0.2054      H  1                1.87510m   21.399    0.4385      O  1                1039.23A   20.427    0.0468
+IRAC                8.00000m   21.004    0.1769      H  1                1.28181m   21.104    0.2227      O  1                1040.94A   20.203    0.0279
+PAC1                70.0000m   24.163  254.6339      H  1                1.09381m   20.811    0.1133      O  1                1041.69A   19.725    0.0093
+PAC2                100.000m   18.829    0.0012      H  1                1.00494m   20.701    0.0879      O  1                1302.17A   20.661    0.0802
+PAC3                160.000m   20.732    0.0944      H  1                9545.97A   20.609    0.0712      O  1                1304.86A   20.435    0.0476
+PAH                 3.30000m   20.963    0.1610      H  1                9229.02A   20.533    0.0598      O  1                1306.03A   19.957    0.0158
+PAHC                3.23000m   20.444    0.0487      H  1                9014.91A   20.472    0.0520      O  1                8446.36A   19.301    0.0035
+PAHC                3.37000m   20.266    0.0323      H  1                8862.79A   20.427    0.0468      O  1                8446.76A   18.908    0.0014
+PAH                 6.20000m   20.395    0.0435      H  1                4.05115m   20.777    0.1047      O  1                1.12869m   19.024    0.0018
+PAHC                5.65000m   20.794    0.1090      H  1                2.62515m   20.427    0.0468      O  1                63.1679m   24.162  254.5523
+PAH                 7.90000m   20.634    0.0753      H  1                2.16553m   20.324    0.0369      O  1                145.495m   20.717    0.0912
+PAHC                6.90000m   20.588    0.0678      H  1                1.94456m   20.236    0.0302      level 1 lines..................................
+PAH                 11.3000m   19.576    0.0066      H  1                1.81741m   20.162    0.0254      recombination..................................
+PAHC                10.9000m   19.934    0.0150      H  1                1.73621m   20.102    0.0222      level2 lines...................................
+PAH                 11.8000m   19.260    0.0032      H  1                1.68065m   20.057    0.0200      hyperfine structure............................
+PAHC                12.6500m   20.111    0.0226      H  1                7.45782m   20.097    0.0219      inner shell....................................
+PAH                 13.3000m   19.721    0.0092      H  1                4.65251m   20.021    0.0184      molecules......................................
+PAHC                14.1000m   19.337    0.0038      H  1                3.73954m   19.941    0.0153      bands..........................................
+Bcon                3640.00A   26.112 22671.254      H  1                3.29609m   19.870    0.0130      miscellaneous..................................
+Pcon                5000.00A   24.439  480.7698      H  1                3.03837m   19.812    0.0114      Blnd                8446.00A   19.470    0.0052
+O3bn                5007.00A   22.908   14.1794      H  1                2.87221m   19.768    0.0103      Blnd                1304.00A   20.914    0.1437
+SX                  25.0000A   19.250    0.0031      H  1                12.3685m   19.743    0.0097      Blnd                1039.00A   20.681    0.0840
+RRC............................................      H  1                7.50045m   19.690    0.0086      Blnd                1.13000m   19.217    0.0029
+grains.........................................      H  1                5.90660m   19.627    0.0074
+
+
+
+ model 1  
+ Cooling:  O  1c                     0 :1.000  
+ Heating:  TotM                      0 :0.735 CT H                      0 :0.202 CR H                      0 :0.064  
+
+ These are some of the most important databases used by Cloudy:
+ Many recombination coefficients were taken from http://amdpp.phys.strath.ac.uk/tamoc/RR/ and http://amdpp.phys.strath.ac.uk/tamoc/DR/
+      and are based on the following papers:
+        Badnell N. R., et al., A&A 406, 1151 (2003) [http://adsabs.harvard.edu/abs/2003A%26A...406.1151B]
+        Badnell N. R., ApJS 167, 334 (2006) [http://adsabs.harvard.edu/abs/2006ApJS..167..334B]
+ Much of the molecular emission data is from LAMDA as accessed on June 30, 2015. This database is described in:
+        Schoeier F.L., et al., A&A 432, 369 (2005) [http://adsabs.harvard.edu/abs/2005A%26A...432..369S]
+      This database is in part based on the work of the following groups:
+        JPL: Pickett H. M. et al., JQSRT, 60, 883 (1998). [http://adsabs.harvard.edu/abs/1998JQSRT..60..883P]
+        CDMS: Mueller H. S. et al., A&A 370, L49 (2001). [http://adsabs.harvard.edu/abs/2001A%26A...370L..49M]
+              Mueller H. S. et al., J. Mol. Struct. 742, 215 (2005). [http://adsabs.harvard.edu/abs/2005JMoSt.742..215M]
+ Some of the ionic emission data is from version 10.0.1 of CHIANTI. CHIANTI is a collaborative project involving the NRL (USA), the
+      Universities of Florence (Italy) and Cambridge (UK), and George Mason University (USA). These papers describe Chianti:
+        Dere K. P., et al., A&AS, 125, 149 (1997) [http://adsabs.harvard.edu/abs/1997A%26AS..125..149D]
+        Landi E., et al., ApJ, 744, 99 (2012) [http://adsabs.harvard.edu/abs/2012ApJ...744...99L]
+ Much of the H_2 data is from this web site: http://molat.obspm.fr/index.php?page=pages/Molecules/H2/H2can94.php. These data are
+      described in:
+        Abgrall H. et al., Can. J. Phys., 72, 856 (1994) [http://adsabs.harvard.edu/abs/1994CaJPh..72..856A]
+        Wrathmall S. A. & Flower D. R., J. Phys. B, 40, 3221 (2007) [http://adsabs.harvard.edu/abs/2007JPhB...40.3221W]
+ The Case A and Case B recombination predictions for one-electron systems are from
+	Storey, P.J. & Hummer, D.G., 1995, MNRAS 272, 41 http://adsabs.harvard.edu/abs/1995MNRAS.272...41S
+ The He I recombination predictions are from
+	Porter, R. L.; Ferland, G. J.; Storey, P. J.; Detisch, M. J., 2012, MNRAS, 425, 28p http://adsabs.harvard.edu/abs/2012MNRAS.425L..28P
+		http://adsabs.harvard.edu/abs/2013MNRAS.433L..89P
+
+ If you find some process or data set to be particularly critical to a result, please follow the trail of references back to the
+ original source and cite that.  This will support and encourage atomic, molecular, and chemical physicists to continue their
+ valuable work.
+
+ IONIZE PARMET:  U(1-)-11.2750  U(4-):-12.1189  U(sp):-11.28  Q(ion):   37.584  L(ion) 27.341    Q(low): 37.749    L(low) 26.128
+ ENERGY BUDGET:  Heat:  24.162  Coolg:  24.163  Error:  0.2%  Rec Lin:  23.176  F-F  H  0.000    P(rad/tot)max     0.00E+00    R(F Con):1.737e+05
+
+     Col(Heff):      0.000E+00  snd travl time  5.07E+02 sec  Te-low: 1.98E+01  Te-hi: 1.98E+01  G0TH85: 9.10E-07  G0DB96:1.54E-06
+  Emiss Measure    n(e)n(p) dl       1.407E+10  n(e)n(He+)dl         5.125E+02  En(e)n(He++) dl         2.005E-05  ne nC+:2.66E+01
+ He/Ha:7.48E-07  =   0.00*true  Lthin:4.13E+05  itr/zn:2032.00  H2 itr/zn:  0.00  File Opacity: F  MassTot 2.50e+26  (gm)
+   Temps(21 cm)   T(21cm/Ly a)  1.85E+01        T(<nH/Tkin>)  1.98E+01          T(<nH/Tspin>)    1.98E+01          TB21cm:0.00E+00
+                   N(H0/Tspin)  7.69E+08        N(OH/Tkin)    0.00E+00          B(21cm)          0.00E+00
+   <a>:2.53E-13  erdeFe0.0E+00  Tcompt3.85E+19  Tthr2.65E+10  <Tden>: 1.98E+01  <dens>:6.04E-16  <MolWgt>1.60E+01
+     Mean Jeans  l(cm)2.83E+15  M(sun)3.60E-03  smallest:     len(cm):2.83E+15  M(sun):3.60E-03  a_ox tran:  0.00
+ Rion:7.998E+16  Dist:7.14E+21  Diam:4.623E+00
+ Hatom level 25  HatomType: add  HInducImp  F  He tot level: 23  He2 level:   25  ExecTime    42.0
+ ConvrgError(%)  <eden>  0.171  MaxEden  0.171  <H-C>   0.20  Max(H-C)    0.20  <Press>   0.000  MaxPrs er  0.000
+  Continuity(%)  chng Te   0.0  elec den   0.0  n(H2)    0.0  n(CO)        0.0
+
+                                                        Averaged Quantities
+             Te      Te(Ne)   Te(NeNp)  Te(NeHe+)Te(NeHe2+) Te(NeO+)  Te(NeO2+)  Te(H2)     N(H)     Ne(O2+)   Ne(Np)
+ Radius:  1.98e+01  1.98e+01  1.98e+01  1.98e+01  1.98e+01  1.98e+01  1.98e+01  0.00e+00  3.00e+03  6.56e+01  6.56e+01
+ 
+ Peimbert T(OIIIr)1.00E+10 T(Bac)6.67E+01 T(Hth)0.00E+00 t2(Hstrc) 0.00e+00 T(O3-BAC)8.50E+10 t2(O3-BC) 5.88e-01 t2(O3str) 0.00e+00
+
+ Contin Optical Depths: COMP: 2.25e-16    H-: 0.00e+00 R(1300): 1.02e-13  H2+: 0.00e+00  Bra:1.12E-16
+                          Pa: 1.12e-16    Ba: 1.13e-16      Hb: 1.14e-16   La: 2.15e-11     1r:5.004E+07  1.8:1.18E+07 4.:1.715E+06
+
+
+                                                 Mean Line Optical Depths
+Species Wavelength  Total     Single        Species Wavelength  Total     Single        Species Wavelength  Total     Single        
+O  1                1025.76A  3.76e+01  3.76e+01      O  1                1025.76A  6.70e+00  6.70e+00
+O  1                1025.76A  4.44e-01  4.44e-01      O  1                1039.23A  2.06e+01  2.06e+01
+O  1                1302.17A  1.47e+02  1.47e+02      
+
+ Old, new H  1 continuum optical depths:
+     1 1.00e+08     2 0.00e+00     3 0.00e+00     4 0.00e+00     5 0.00e+00     6 0.00e+00     7 0.00e+00     8 0.00e+00
+     9 0.00e+00    10 0.00e+00    11 0.00e+00    12 0.00e+00    13 0.00e+00    14 0.00e+00
+     1 5.00e+07     2 2.09e-20     3 2.93e-25     4 2.93e-25     5 2.93e-25     6 1.48e-24     7 1.48e-24     8 1.48e-24
+     9 1.48e-24    10 5.42e-24    11 5.42e-24    12 5.42e-24    13 5.42e-24    14 5.42e-24
+
+ Old, new H  1 mean line optical depths:
+  2- 1 2.34e+16  3- 2 2.77e-14  4- 3 0.00e+00  5- 4 0.00e+00  6- 5 0.00e+00  7- 6 0.00e+00  8- 7 0.00e+00
+  9- 8 0.00e+00 10- 9 0.00e+00 11-10 0.00e+00 12-11 0.00e+00 13-12 0.00e+00 14-13 0.00e+00 15-14 0.00e+00
+  2- 1 5.31e-03  3- 2 3.77e-14  4- 3 4.34e-20  5- 4 6.49e-20  6- 5 6.44e-19  7- 6-9.94e-19  8- 7-2.67e-18
+  9- 8-6.52e-18 10- 9-1.50e-17 11-10-3.39e-17 12-11-7.82e-17 13-12-1.99e-16 14-13-6.63e-16 15-14-2.43e-14
+
+ Old, new He 2 continuum optical depths:
+     1 3.43e+06     2 9.96e+07     3 0.00e+00     4 0.00e+00     5 0.00e+00     6 0.00e+00     7 0.00e+00     8 0.00e+00
+     9 0.00e+00    10 0.00e+00    11 0.00e+00    12 0.00e+00    13 0.00e+00    14 0.00e+00
+     1 1.72e+06     2 4.98e+07     3 1.10e-14     4 1.10e-14     5 1.10e-14     6 2.09e-20     7 2.09e-20     8 2.09e-20
+     9 2.09e-20    10 1.00e-25    11 1.00e-25    12 1.00e-25    13 1.00e-25    14 1.00e-25
+
+ Old, new He 2 mean line optical depths:
+  2- 1 2.23e+15  3- 2 2.65e-15  4- 3 0.00e+00  5- 4 0.00e+00  6- 5 0.00e+00  7- 6 0.00e+00  8- 7 0.00e+00
+  9- 8 0.00e+00 10- 9 0.00e+00 11-10 0.00e+00 12-11 0.00e+00 13-12 0.00e+00 14-13 0.00e+00 15-14 0.00e+00
+  2- 1 9.14e-12  3- 2 2.80e-30  4- 3 2.36e-36  5- 4 1.28e-35  6- 5 1.08e-34  7- 6-1.82e-34  8- 7-5.24e-34
+  9- 8-1.32e-33 10- 9-3.13e-33 11-10-7.25e-33 12-11-1.72e-32 13-12-4.49e-32 14-13-1.53e-31 15-14-5.66e-30
+
+ Old He Is optical depths:    1 2.36e+07    2 0.00e+00    3 0.00e+00    4 0.00e+00    5 0.00e+00
+ New He Is optical depths:    1 1.18e+07    2 1.05e-16    3 1.51e-20    4 1.83e-20    5 1.83e-20
+          Old He Is Lines:  584 0.00e+00 3889 0.00e+00 5016 0.00e+00 5876 0.00e+00
+          New He Is Lines:  584 2.20e-03 3889 1.32e-15 5016 1.32e-15 5876 1.32e-15
+model 1  
+
+
+          Start Iteration Number 2                                                                     model 1  
+
+
+ PROBLEM  ConvFail 1,  ionization not converged iteration 2 zone 1 fnzone 21.65 reason iso/ion accel BadConvIoniz0:0 [1]=6.76425
+WARNING: no exact matching lines found for "H  1" 4861.33A
+Taking best match as "H  1                4861.32A"
+WARNING: no exact matching lines found for "H  1" 6562.81A
+Taking best match as "H  1                6562.80A"
+WARNING: no exact matching lines found for "BLND" 4363.00A
+WARNING: Line with incorrect label found close "O 3R                4363.00A"
+WARNING: Line with incorrect label found close "O 3C                4363.00A"
+Taking best match as "Blnd                4368.00A"
+ ####  1  Te:1.978E+01 Hden:2.999E+03 Ne:6.562E+01 R:7.998E+16 R-R0:2.573E+06 dR:5.145E+06 NTR:2066 Htot:3.511E-18 T912: 2.86e-08###
+ Hydrogen      9.86e-01 1.39e-02 H+o/Hden 1.00e+00 0.00e+00 H-    H2 0.00e+00 0.00e+00 H2+ HeH+ 0.00e+00 Ho+ ColD 1.52e+10 2.14e+08
+ Helium        1.00e+00 5.30e-09 2.07e-16 HeI 2s3S 3.85e-13 Comp H,C 1.06e-34 1.68e-38 Fill Fac 1.00e+00 Gam1/tot 7.43e-01
+ He singlet n  1.00e+00 8.81e-20 2.44e-25 2.05e-26 1.95e-25 7.45e-26 He tripl 3.85e-13 3.88e-24 4.83e-26 7.10e-25 2.04e-25
+ Pressure      NgasTgas 4.50e+08 P(total) 6.21e-08 P( gas ) 6.21e-08 P(Radtn) 0.00e+00 Rad accl 2.53e-13 ForceMul 3.63e+12
+ Texc(La)      2.64e+03 T(I con) 1.06e-01 T(D con) 1.88e-02 T(U tot) 1.06e-01 nT (c+d) 3.02e+04 Prad/Gas 0.00e+00 Pmag/Gas 0.00e+00
+ Lithium       0.00e+00 0.00e+00 0.00e+00 0.00e+00 Berylliu 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 sec ion: 2.02e-16
+ Carbon        1.00e+00 1.66e-06 1.67e-13 0.00e+00 0.00e+00 0.00e+00 0.00e+00 H2O+/O   0.00e+00 OH+/Otot 0.00e+00 Hex(tot) 0.00e+00
+ Nitrogen      1.00e+00 5.04e-07 3.47e-15 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 O2/Ototl 0.00e+00 O2+/Otot 0.00e+00
+ Oxygen        1.00e+00 1.05e-06 5.64e-15 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Fluorine      1.00e+00 1.19e-06 2.03e-13 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Neon          1.00e+00 1.52e-06 1.68e-13 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Sodium        7.96e-01 2.04e-01 1.28e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Magnesium     1.00e+00 1.30e-06 3.70e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Aluminium  0  9.80e-03 9.90e-01 4.34e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Silicon    0  1.00e+00 9.02e-06 7.01e-12 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Phosphorus 0  2.66e-01 7.34e-01 3.54e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Sulphur    0  1.00e+00 2.71e-04 2.96e-11 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Argon      0  1.00e+00 5.14e-06 3.52e-13 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Potassium  0  9.50e-01 4.95e-02 9.05e-09 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Calcium    0  1.00e+00 3.91e-07 4.27e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Titanium   0  1.77e-02 9.82e-01 2.89e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Vanadium   0  1.00e+00 1.35e-06 2.96e-09 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Chromium   0  1.00e+00 2.09e-06 3.03e-09 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Manganese  0  1.92e-02 9.81e-01 3.10e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Cobalt     0  1.00e+00 1.38e-06 9.15e-11 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Nickel     0  1.55e-02 9.85e-01 2.52e-08 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Copper     0  1.00e+00 2.35e-06 1.46e-09 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ Zinc       0  1.00e+00 1.52e-06 4.03e-10 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+   model 1  
+   Calculation stopped because lowest Te reached. Iteration 2 of 2
+   The geometry is plane-parallel.
+  !Some input lines contained underscores, these were changed to spaces.
+  !Suprathermal collisional ionization of H reached 25.65% of the local H ionization rate.
+  !Charge transfer H => H+ reached 1110324851.2% of the local H ionization rate.
+  !Charge transfer heating reached 58.69% of the local heating.
+  !Continuum zero at some energies.
+  !AGE: Cloud age was not set.  Longest timescale was 2.65e+10 s = 8.40e+02 years.
+  !A physical process has been disabled.
+  !The excitation temp of Lya exceeded the electron temp, largest value was 2.64e+03K (gas temp there was 1.98e+01K, zone 1)
+  !Incident radiation field energy density is less than 2.7K.  Add background with CMB command.
+  !The CMB was not included.  This is added with the CMB command.
+  !The intensity of the incident radiation field is less than 10 times the Habing diffuse ISM field.  Is this OK?
+  !   Consider adding diffuse ISM emission with TABLE ISM command.
+  !The level2 lines are disabled.  UV pumping of excited levels within ground terms is not treated.
+   Te-ne bounds of Case B lookup table exceeded, H I Case B line intensities set to zero.
+   Te-ne bounds of Case B lookup table exceeded, He II Case B line intensities set to zero.
+   The density is too low to l-mix the lowest H  I collapsed level.  More resolved levels are needed for accurate line ratios.
+   The density is too low to l-mix the lowest He I collapsed level.  More resolved levels are needed for accurate line ratios.
+   Grains were not present but might survive in this environment (energy density temperature was 1.06e-01K)
+   Compton cooling equilibrium timescale (3.85e+19 s) is longer than Hubble time.
+
+                       *********************************> Cloudy 22.00 <**********************************
+                       * title model 1                                                                   *
+                       * set punch prefix "model_1"                                                      *
+                       * Blackbody 130000.000000                                                         *
+                       * q(H) = 37.584                                                                   *
+                       * radius = 16.903                                                                 *
+                       * hden = 3.477                                                                    *
+                       * filling factor = 1.0                                                            *
+                       * element abundance helium -1.020                                                 *
+                       * element abundance carbon -4.800                                                 *
+                       * element abundance nitrogen -4.410                                               *
+                       * element abundance oxygen 3.880                                                  *
+                       * element abundance neon -4.800                                                   *
+                       * element abundance silicon -5.000                                                *
+                       * element abundance sulphur -5.400                                                *
+                       * element abundance argon -6.230                                                  *
+                       * element abundance iron -20.000                                                  *
+                       * element abundance chlorine -20.000                                              *
+                       * distance = 2313.00952 parsecs linear                                            *
+                       * no molecules                                                                    *
+                       * no level2 lines                                                                 *
+                       * no fine opacities                                                               *
+                       * atom h-like levels small                                                        *
+                       * atom he-like levels small                                                       *
+                       * COSMIC RAY BACKGROUND                                                           *
+                       * element limit off -8                                                            *
+                       * print line optical depth                                                        *
+                       * set save resolving power 1800                                                   *
+                       * iterate                                                                         *
+                       * sphere                                                                          *
+                       * save last radius ".rad"                                                         *
+                       * save last continuum ".cont"                                                     *
+                       * save last physical conditions ".phy"                                            *
+                       * save last overview ".ovr"                                                       *
+                       * save last heating ".heat"                                                       *
+                       * save last cooling ".cool"                                                       *
+                       * save last optical depth ".opd"                                                  *
+                       * save last element hydrogen ".ele_H"                                             *
+                       * save last element helium ".ele_He"                                              *
+                       * save last element carbon ".ele_C"                                               *
+                       * save last element nitrogen ".ele_N"                                             *
+                       * save last element oxygen ".ele_O"                                               *
+                       * save last element argon ".ele_Ar"                                               *
+                       * save last element neon ".ele_Ne"                                                *
+                       * save last element sulphur ".ele_S"                                              *
+                       * save last element chlorin ".ele_Cl"                                             *
+                       * save last element iron ".ele_Fe"                                                *
+                       * save last element silicon ".ele_Si"                                             *
+                       * save last lines emissivity  ".emis"                                             *
+                       * H  1  4861.33A                                                                  *
+                       * H  1  6562.81A                                                                  *
+                       * Ca B  5875.64A                                                                  *
+                       * N  2  6583.45A                                                                  *
+                       * O  1  6300.30A                                                                  *
+                       * O  2  3726.03A                                                                  *
+                       * O  2  3728.81A                                                                  *
+                       * O  3  5006.84A                                                                  *
+                       * BLND  4363.00A                                                                  *
+                       * S  2  6716.44A                                                                  *
+                       * S  2  6730.82A                                                                  *
+                       * Cl 3  5517.71A                                                                  *
+                       * Cl 3  5537.87A                                                                  *
+                       * O  1  63.1679m                                                                  *
+                       * O  1  145.495m                                                                  *
+                       * C  2  157.636m                                                                  *
+                       * end of lines                                                                    *
+                       *********************************> Log(U):-11.28 <*********************************
+
+                     Emission Line Spectrum.   Constant  Density Model.  Closed geometry.  Iteration 2 of 2.
+                                    Luminosity (erg/s) emitted by a shell with full coverage.
+
+
+                                                   Intrinsic line intensities
+general properties.............................      nInu                4.11370m   21.840    1.2134      H  1                1025.72A   22.590    6.8236
+Inci                      0    27.367 408175.94      nFnu                2.32440m   19.894    0.0137      H  1                972.537A   22.167    2.5744
+TotH                      0    24.162  254.5857      nInu                2.32440m   22.578    6.6380      H  1                949.743A   21.857    1.2608
+TotC                      0    24.163  254.9904      nFnu                1.64313m   20.952    0.1570      H  1                937.803A   22.202    2.7932
+TotM                      0    24.028  186.9708      nInu                1.64313m   23.025   18.5921      H  1                930.748A   22.086    2.1393
+CT H                      0    23.467   51.4239      nFnu                1.48022m   20.434    0.0476      H  1                926.226A   21.992    1.7204
+CR H                      0    22.965   16.1903      nInu                1.48022m   23.159   25.2543      H  1                923.150A   21.914    1.4390
+H FB                      0    19.844    0.0122      nFnu                1.43649m   20.931    0.1497      H  1                920.963A   21.852    1.2469
+HFBc                      0    19.844    0.0122      nInu                1.43649m   23.197   27.6005      H  1                919.351A   21.805    1.1199
+O  1c                     0    24.163  254.9692      nFnu                1.11867m   20.750    0.0987      H  1                6562.80A   22.196    2.7508
+continua.......................................      nInu                1.11867m   23.518   57.7809      H  1                4861.32A   21.756    1.0000
+Bac                 3646.00A   24.573  655.7855      nFnu                8329.68A   21.075    0.2085      H  1                4340.46A   21.433    0.4753
+nFnu                3645.00A   24.574  657.2589      nInu                8329.68A   23.897  138.2636      H  1                4101.73A   21.334    0.3779
+nFnu                3647.00A   21.924    1.4734      nFnu                8078.61A   21.109    0.2252      H  1                3970.07A   21.220    0.2908
+cout                3646.00A   24.573  655.7855      nInu                8078.61A   23.935  150.9701      H  1                3889.05A   21.126    0.2345
+thin                3646.00A   24.573  655.7855      nFnu                6209.66A   21.389    0.4292      H  1                3835.38A   21.049    0.1965
+Inci                4860.00A   24.576  660.9511      nInu                6209.66A   24.269  325.6464      H  1                3797.90A   20.988    0.1704
+Inci                1367.00A   26.092 21679.363      nFnu                4885.36A   21.636    0.7578      H  1                3770.63A   20.941    0.1532
+Inci                2066.00A   25.620 7310.0171      nInu                4885.36A   24.571  652.4500      H  1                1.87510m   21.398    0.4385
+Inci                1215.00A   26.220 29109.021      nFnu                3704.34A   21.910    1.4240      H  1                1.28181m   21.104    0.2227
+Ba C                      0    22.097    2.1928      nInu                3704.34A   24.915 1440.7806      H  1                1.09381m   20.811    0.1133
+PA C                      0    21.747    0.9802      nFnu                3587.67A   21.939    1.5222      H  1                1.00494m   20.700    0.0879
+FIR                 83.0000m   24.163  255.0301      nInu                3587.67A   24.952 1568.9194      H  1                9545.97A   20.609    0.0712
+TIR                 1800.00m   18.936    0.0015      nFnu                2430.05A   22.298    3.4797      H  1                9229.02A   20.533    0.0598
+NIRa                2.85000m   23.671   82.2312      nInu                2430.05A   25.426 4673.8174      H  1                9014.91A   20.472    0.0520
+NIRb                3.00000m   23.222   29.2612      nFnu                2392.03A   22.312    3.5960      H  1                8862.79A   20.426    0.0468
+MIRa                15.0000m   21.614    0.7205      nInu                2392.03A   25.446 4893.2158      H  1                4.05115m   20.776    0.1047
+MIRb                22.5000m   21.622    0.7348      nFnu                2071.34A   22.431    4.7327      H  1                2.62515m   20.426    0.0468
+NMIR                21.7500m   23.671   82.2312      nInu                2071.34A   25.616 7236.6196      H  1                2.16553m   20.324    0.0369
+TFIR                611.250m   20.741    0.0965      nFnu                2052.68A   22.439    4.8194      H  1                1.94456m   20.236    0.0302
+TALL                10000.0A   27.367 408198.34      nInu                2052.68A   25.627 7435.2012      H  1                1.81741m   20.162    0.0254
+F12                 12.0000m   20.871    0.1302      nFnu                1793.44A   22.536    6.0264      H  1                1.73621m   20.102    0.0222
+F25                 25.0000m   21.060    0.2012      nInu                1793.44A   25.783 10633.353      H  1                1.68065m   20.057    0.0200
+F60                 60.0000m   24.163  254.9333      nFnu                1585.12A   22.604    7.0386      H  1                7.45782m   20.097    0.0219
+F100                100.000m   18.828    0.0012      nInu                1585.12A   25.928 14846.765      H  1                4.65251m   20.021    0.0184
+MIPS                24.0000m   19.820    0.0116      nFnu                1458.33A   22.615    7.2260      H  1                3.73954m   19.940    0.0153
+MIPS                70.0000m   24.163  254.9312      nInu                1458.33A   26.022 18424.430      H  1                3.29609m   19.870    0.0130
+MIPS                160.000m   20.718    0.0916      nFnu                1356.96A   22.574    6.5729      H  1                3.03837m   19.812    0.0114
+IRAC                3.60000m   21.522    0.5837      nInu                1356.96A   26.099 22032.008      H  1                2.87221m   19.768    0.0103
+IRAC                4.50000m   21.379    0.4194      nFnu                1297.29A   22.461    5.0694      H  1                12.3685m   19.743    0.0097
+IRAC                5.80000m   21.069    0.2055      nInu                1297.29A   26.150 24786.957      H  1                7.50045m   19.689    0.0086
+IRAC                8.00000m   21.004    0.1770      nFnu                1262.79A   22.284    3.3708      H  1                5.90660m   19.626    0.0074
+PAC1                70.0000m   24.163  254.9312      nInu                1262.79A   26.179 26499.209      H  1                5.12726m   19.572    0.0065
+PAC2                100.000m   18.828    0.0012      nInu                1218.08A   26.219 29029.264      H  1                4.67124m   19.529    0.0059
+PAC3                160.000m   20.732    0.0946      nInu                1196.33A   26.237 30249.951      H  1                19.0567m   19.447    0.0049
+PAH                 3.30000m   20.963    0.1610      nInu                1175.06A   26.255 31516.703      H  1                11.3056m   19.411    0.0045
+PAHC                3.23000m   20.444    0.0487      nInu                1143.64A   26.287 33917.387      H  1                8.75768m   19.364    0.0041
+PAHC                3.37000m   20.266    0.0324      nInu                1113.22A   26.315 36187.039      H  1                7.50606m   19.325    0.0037
+PAH                 6.20000m   20.395    0.0435      nInu                1103.23A   26.322 36775.133      H  1                27.7958m   19.195    0.0027
+PAHC                5.65000m   20.794    0.1090      nInu                1073.86A   26.350 39213.008      H  1                16.2047m   19.175    0.0026
+PAH                 7.90000m   20.633    0.0754      nInu                1064.34A   26.360 40163.301      H  1                12.3838m   19.144    0.0024
+PAHC                6.90000m   20.588    0.0679      nInu                1035.92A   26.388 42796.930      H  1                38.8593m   18.980    0.0017
+PAH                 11.3000m   19.576    0.0066      nInu                1000.00A   26.425 46663.430      H  1                22.3344m   18.975    0.0017
+PAHC                10.9000m   19.934    0.0150      nInu                925.144A   26.502 55728.910      H  1                52.5206m   18.796    0.0011
+PAH                 11.8000m   19.260    0.0032      nInu                897.800A   26.532 59682.391      He-like iso-sequence...........................
+PAHC                12.6500m   20.111    0.0226      nInu                760.023A   26.690 85789.227      extra Lyman....................................
+PAH                 13.3000m   19.721    0.0092      nInu                701.514A   26.760 100985.99      database lines.................................
+PAHC                14.1000m   19.337    0.0038      nInu                608.160A   26.880 132866.70      O  1                1025.76A   21.039    0.1920
+Bcon                3640.00A   26.112 22694.590      nInu                575.146A   26.923 146996.69      O  1                1025.76A   20.164    0.0256
+Pcon                5000.00A   24.439  481.2578      nInu                511.948A   27.007 178209.11      O  1                1027.43A   19.690    0.0086
+O3bn                5007.00A   22.908   14.1940      nInu                496.874A   27.027 186566.98      O  1                1027.43A   20.897    0.1382
+SX                  25.0000A   19.250    0.0031      nInu                399.153A   27.149 247314.66      O  1                1028.16A   19.814    0.0114
+HFFc                      0    19.075    0.0021      RRC............................................      O  1                1039.23A   20.257    0.0317
+H FF                      0    18.874    0.0013      H  1                911.753A   22.962   16.0716      O  1                1040.94A   20.322    0.0368
+MeFB                      0    19.532    0.0060      H  1                3645.98A   21.524    0.5855      O  1                1041.69A   19.844    0.0123
+ToFF                      0    19.071    0.0021      H  1                3645.98A   21.962    1.6076      O  1                1302.17A   20.832    0.1192
+nInu                41.2152m   18.840    0.0012      H  1                8203.57A   20.698    0.0874      O  1                1304.86A   20.905    0.1409
+nInu                30.8695m   19.218    0.0029      H  1                8203.57A   21.189    0.2711      O  1                1306.03A   20.427    0.0469
+nInu                24.7829m   19.504    0.0056      H  1                8203.57A   21.253    0.3136      O  1                8446.36A   20.094    0.0218
+nInu                24.2998m   19.531    0.0059      H  1                1.45842m   20.120    0.0231      O  1                8446.76A   19.650    0.0078
+nInu                22.8302m   19.609    0.0071      H  1                1.45842m   20.621    0.0732      O  1                1.12863m   19.465    0.0051
+nInu                21.4199m   19.691    0.0086      H  1                1.45842m   20.800    0.1106      O  1                1.12869m   19.898    0.0139
+nInu                21.1235m   19.713    0.0090      H  1                1.45842m   20.672    0.0824      O  1                1.12870m   18.988    0.0017
+nFnu                19.6199m   21.891    1.3644      H  1                2.27878m   19.675    0.0083      O  1                63.1679m   24.162  254.8495
+nInu                19.6199m   19.808    0.0113      H  1                2.27878m   20.176    0.0263      O  1                145.495m   20.717    0.0914
+nFnu                17.6534m   21.090    0.2159      H  1                2.27878m   20.393    0.0434      level 1 lines..................................
+nInu                17.6534m   19.943    0.0154      H  1                2.27878m   20.423    0.0465      recombination..................................
+nFnu                17.3700m   20.798    0.1101      H  1                2.27878m   20.162    0.0255      O  1                8447.00A   20.902    0.1398
+nInu                17.3700m   19.964    0.0162      H  1                3.28145m   20.698    0.0874      O  1                7773.00A   22.162    2.5483
+nFnu                15.6901m   18.882    0.0013      H  1                4.46642m   20.500    0.0555      O  1                9264.00A   21.994    1.7282
+nInu                15.6901m   20.099    0.0220      H  1                5.83369m   20.328    0.0373      O  1                3947.00A   20.696    0.0870
+nFnu                14.6036m   20.300    0.0350      H  1                7.38326m   20.177    0.0263      O  1                1357.00A   22.972   16.4225
+nInu                14.6036m   20.190    0.0271      H  1                9.11514m   20.041    0.0193      level2 lines...................................
+nFnu                12.4300m   20.201    0.0279      H  1                11.0293m   19.918    0.0145      hyperfine structure............................
+nInu                12.4300m   20.402    0.0443      H  1                13.1258m   19.806    0.0112      inner shell....................................
+nInu                11.4000m   20.515    0.0574      H  1                15.4046m   19.702    0.0088      molecules......................................
+nFnu                10.4600m   20.150    0.0248      H  1                17.8657m   19.606    0.0071      bands..........................................
+nInu                10.4600m   20.628    0.0744      H  1                20.5091m   21.034    0.1896      miscellaneous..................................
+nInu                9.48002m   20.754    0.0994      grains.........................................      Blnd                8446.00A   20.239    0.0304
+nInu                9.32488m   20.775    0.1045      H-like iso-sequence............................      Blnd                1304.00A   21.243    0.3070
+nInu                8.21035m   20.940    0.1527      Q(H)                4861.32A   25.261 3195.4009      Blnd                1039.00A   20.663    0.0807
+nInu                7.58000m   21.044    0.1939      Q(H)                1215.67A   26.797 109923.99      Blnd                1.31000m   18.799    0.0011
+nFnu                7.05026m   20.152    0.0249      CaBo                4861.32A   21.844    1.2255      Blnd                1.13000m   20.087    0.0214
+nInu                7.05026m   21.139    0.2415      H  1                2431.34A   22.487    5.3749      O 2H                3727.00A   22.886   13.4899
+nFnu                4.11370m   19.173    0.0026      H  1                1215.67A   23.251   31.2747      O 2H                7325.00A   22.332    3.7670
+
+                                                    Emergent line intensities
+general properties.............................      H  1                1215.67A   23.251   31.2747      H  1                19.0567m   19.447    0.0049
+continua.......................................      H  1                1025.72A   22.590    6.8236      H  1                11.3056m   19.411    0.0045
+FIR                 83.0000m   24.163  255.0301      H  1                972.537A   22.167    2.5744      H  1                8.75768m   19.364    0.0041
+TIR                 1800.00m   18.936    0.0015      H  1                949.743A   21.857    1.2608      H  1                7.50606m   19.325    0.0037
+NIRa                2.85000m   23.671   82.2312      H  1                937.803A   22.202    2.7932      H  1                27.7958m   19.195    0.0027
+NIRb                3.00000m   23.222   29.2612      H  1                930.748A   22.086    2.1393      H  1                16.2047m   19.175    0.0026
+MIRa                15.0000m   21.614    0.7205      H  1                926.226A   21.992    1.7204      H  1                12.3838m   19.144    0.0024
+MIRb                22.5000m   21.622    0.7348      H  1                923.150A   21.914    1.4390      H  1                38.8593m   18.980    0.0017
+NMIR                21.7500m   23.671   82.2312      H  1                920.963A   21.852    1.2469      H  1                22.3344m   18.975    0.0017
+TFIR                611.250m   20.741    0.0965      H  1                919.351A   21.805    1.1199      H  1                52.5206m   18.796    0.0011
+TALL                10000.0A   27.367 408198.34      H  1                6562.80A   22.196    2.7508      He-like iso-sequence...........................
+F12                 12.0000m   20.871    0.1302      H  1                4861.32A   21.756    1.0000      extra Lyman....................................
+F25                 25.0000m   21.060    0.2012      H  1                4340.46A   21.433    0.4753      database lines.................................
+F60                 60.0000m   24.163  254.9333      H  1                4101.73A   21.334    0.3779      O  1                1025.76A   21.039    0.1920
+F100                100.000m   18.828    0.0012      H  1                3970.07A   21.220    0.2908      O  1                1025.76A   20.164    0.0256
+MIPS                24.0000m   19.820    0.0116      H  1                3889.05A   21.126    0.2345      O  1                1027.43A   19.690    0.0086
+MIPS                70.0000m   24.163  254.9312      H  1                3835.38A   21.049    0.1965      O  1                1027.43A   20.897    0.1382
+MIPS                160.000m   20.718    0.0916      H  1                3797.90A   20.988    0.1704      O  1                1028.16A   19.814    0.0114
+IRAC                3.60000m   21.522    0.5837      H  1                3770.63A   20.941    0.1532      O  1                1039.23A   20.257    0.0317
+IRAC                4.50000m   21.379    0.4194      H  1                1.87510m   21.398    0.4385      O  1                1040.94A   20.322    0.0368
+IRAC                5.80000m   21.069    0.2055      H  1                1.28181m   21.104    0.2227      O  1                1041.69A   19.844    0.0123
+IRAC                8.00000m   21.004    0.1770      H  1                1.09381m   20.811    0.1133      O  1                1302.17A   20.832    0.1192
+PAC1                70.0000m   24.163  254.9312      H  1                1.00494m   20.700    0.0879      O  1                1304.86A   20.905    0.1409
+PAC2                100.000m   18.828    0.0012      H  1                9545.97A   20.609    0.0712      O  1                1306.03A   20.427    0.0469
+PAC3                160.000m   20.732    0.0946      H  1                9229.02A   20.533    0.0598      O  1                8446.36A   20.094    0.0218
+PAH                 3.30000m   20.963    0.1610      H  1                9014.91A   20.472    0.0520      O  1                8446.76A   19.650    0.0078
+PAHC                3.23000m   20.444    0.0487      H  1                8862.79A   20.426    0.0468      O  1                1.12863m   19.465    0.0051
+PAHC                3.37000m   20.266    0.0324      H  1                4.05115m   20.776    0.1047      O  1                1.12869m   19.898    0.0139
+PAH                 6.20000m   20.395    0.0435      H  1                2.62515m   20.426    0.0468      O  1                1.12870m   18.988    0.0017
+PAHC                5.65000m   20.794    0.1090      H  1                2.16553m   20.324    0.0369      O  1                63.1679m   24.162  254.8495
+PAH                 7.90000m   20.633    0.0754      H  1                1.94456m   20.236    0.0302      O  1                145.495m   20.717    0.0914
+PAHC                6.90000m   20.588    0.0679      H  1                1.81741m   20.162    0.0254      level 1 lines..................................
+PAH                 11.3000m   19.576    0.0066      H  1                1.73621m   20.102    0.0222      recombination..................................
+PAHC                10.9000m   19.934    0.0150      H  1                1.68065m   20.057    0.0200      level2 lines...................................
+PAH                 11.8000m   19.260    0.0032      H  1                7.45782m   20.097    0.0219      hyperfine structure............................
+PAHC                12.6500m   20.111    0.0226      H  1                4.65251m   20.021    0.0184      inner shell....................................
+PAH                 13.3000m   19.721    0.0092      H  1                3.73954m   19.940    0.0153      molecules......................................
+PAHC                14.1000m   19.337    0.0038      H  1                3.29609m   19.870    0.0130      bands..........................................
+Bcon                3640.00A   26.112 22694.590      H  1                3.03837m   19.812    0.0114      miscellaneous..................................
+Pcon                5000.00A   24.439  481.2578      H  1                2.87221m   19.768    0.0103      Blnd                8446.00A   20.239    0.0304
+O3bn                5007.00A   22.908   14.1940      H  1                12.3685m   19.743    0.0097      Blnd                1304.00A   21.243    0.3070
+SX                  25.0000A   19.250    0.0031      H  1                7.50045m   19.689    0.0086      Blnd                1039.00A   20.663    0.0807
+RRC............................................      H  1                5.90660m   19.626    0.0074      Blnd                1.31000m   18.799    0.0011
+grains.........................................      H  1                5.12726m   19.572    0.0065      Blnd                1.13000m   20.087    0.0214
+H-like iso-sequence............................      H  1                4.67124m   19.529    0.0059
+
+
+
+ model 1  
+ Cooling:  O  1c                     0 :1.000  
+ Heating:  TotM                      0 :0.734 CT H                      0 :0.202 CR H                      0 :0.064  
+
+ These are some of the most important databases used by Cloudy:
+ Many recombination coefficients were taken from http://amdpp.phys.strath.ac.uk/tamoc/RR/ and http://amdpp.phys.strath.ac.uk/tamoc/DR/
+      and are based on the following papers:
+        Badnell N. R., et al., A&A 406, 1151 (2003) [http://adsabs.harvard.edu/abs/2003A%26A...406.1151B]
+        Badnell N. R., ApJS 167, 334 (2006) [http://adsabs.harvard.edu/abs/2006ApJS..167..334B]
+ Much of the molecular emission data is from LAMDA as accessed on June 30, 2015. This database is described in:
+        Schoeier F.L., et al., A&A 432, 369 (2005) [http://adsabs.harvard.edu/abs/2005A%26A...432..369S]
+      This database is in part based on the work of the following groups:
+        JPL: Pickett H. M. et al., JQSRT, 60, 883 (1998). [http://adsabs.harvard.edu/abs/1998JQSRT..60..883P]
+        CDMS: Mueller H. S. et al., A&A 370, L49 (2001). [http://adsabs.harvard.edu/abs/2001A%26A...370L..49M]
+              Mueller H. S. et al., J. Mol. Struct. 742, 215 (2005). [http://adsabs.harvard.edu/abs/2005JMoSt.742..215M]
+ Some of the ionic emission data is from version 10.0.1 of CHIANTI. CHIANTI is a collaborative project involving the NRL (USA), the
+      Universities of Florence (Italy) and Cambridge (UK), and George Mason University (USA). These papers describe Chianti:
+        Dere K. P., et al., A&AS, 125, 149 (1997) [http://adsabs.harvard.edu/abs/1997A%26AS..125..149D]
+        Landi E., et al., ApJ, 744, 99 (2012) [http://adsabs.harvard.edu/abs/2012ApJ...744...99L]
+ Much of the H_2 data is from this web site: http://molat.obspm.fr/index.php?page=pages/Molecules/H2/H2can94.php. These data are
+      described in:
+        Abgrall H. et al., Can. J. Phys., 72, 856 (1994) [http://adsabs.harvard.edu/abs/1994CaJPh..72..856A]
+        Wrathmall S. A. & Flower D. R., J. Phys. B, 40, 3221 (2007) [http://adsabs.harvard.edu/abs/2007JPhB...40.3221W]
+ The Case A and Case B recombination predictions for one-electron systems are from
+	Storey, P.J. & Hummer, D.G., 1995, MNRAS 272, 41 http://adsabs.harvard.edu/abs/1995MNRAS.272...41S
+ The He I recombination predictions are from
+	Porter, R. L.; Ferland, G. J.; Storey, P. J.; Detisch, M. J., 2012, MNRAS, 425, 28p http://adsabs.harvard.edu/abs/2012MNRAS.425L..28P
+		http://adsabs.harvard.edu/abs/2013MNRAS.433L..89P
+
+ If you find some process or data set to be particularly critical to a result, please follow the trail of references back to the
+ original source and cite that.  This will support and encourage atomic, molecular, and chemical physicists to continue their
+ valuable work.
+
+ IONIZE PARMET:  U(1-)-11.2750  U(4-):-12.1189  U(sp):-11.28  Q(ion):   37.584  L(ion) 27.341    Q(low): 37.749    L(low) 26.128
+ ENERGY BUDGET:  Heat:  24.162  Coolg:  24.163  Error:  0.2%  Rec Lin:  23.176  F-F  H  0.000    P(rad/tot)max     0.00E+00    R(F Con):1.737e+05
+
+     Col(Heff):      6.871E+16  snd travl time  5.07E+02 sec  Te-low: 1.98E+01  Te-hi: 1.98E+01  G0TH85: 9.10E-07  G0DB96:1.54E-06
+  Emiss Measure    n(e)n(p) dl       1.405E+10  n(e)n(He+)dl         5.125E+02  En(e)n(He++) dl         2.005E-05  ne nC+:2.66E+01
+ He/Ha:7.49E-07  =   0.00*true  Lthin:4.13E+05  itr/zn:2066.00  H2 itr/zn:  0.00  File Opacity: F  MassTot 2.50e+26  (gm)
+   Temps(21 cm)   T(21cm/Ly a)  1.85E+01        T(<nH/Tkin>)  1.98E+01          T(<nH/Tspin>)    1.98E+01          TB21cm:0.00E+00
+                   N(H0/Tspin)  7.69E+08        N(OH/Tkin)    0.00E+00          B(21cm)          0.00E+00
+   <a>:2.53E-13  erdeFe0.0E+00  Tcompt3.85E+19  Tthr2.65E+10  <Tden>: 1.98E+01  <dens>:6.04E-16  <MolWgt>1.60E+01
+     Mean Jeans  l(cm)2.83E+15  M(sun)3.60E-03  smallest:     len(cm):2.83E+15  M(sun):3.60E-03  a_ox tran:  0.00
+ Rion:7.998E+16  Dist:7.14E+21  Diam:4.623E+00
+ Hatom level 25  HatomType: add  HInducImp  F  He tot level: 23  He2 level:   25  ExecTime    72.7
+ ConvrgError(%)  <eden>  0.172  MaxEden  0.172  <H-C>   0.16  Max(H-C)    0.16  <Press>   0.000  MaxPrs er  0.000
+  Continuity(%)  chng Te   0.0  elec den   0.0  n(H2)    0.0  n(CO)        0.0
+
+                                                        Averaged Quantities
+             Te      Te(Ne)   Te(NeNp)  Te(NeHe+)Te(NeHe2+) Te(NeO+)  Te(NeO2+)  Te(H2)     N(H)     Ne(O2+)   Ne(Np)
+ Radius:  1.98e+01  1.98e+01  1.98e+01  1.98e+01  1.98e+01  1.98e+01  1.98e+01  0.00e+00  3.00e+03  6.56e+01  6.56e+01
+ 
+ Peimbert T(OIIIr)1.00E+10 T(Bac)6.67E+01 T(Hth)0.00E+00 t2(Hstrc) 0.00e+00 T(O3-BAC)8.50E+10 t2(O3-BC) 5.88e-01 t2(O3str) 0.00e+00
+
+ Contin Optical Depths: COMP: 2.25e-16    H-: 0.00e+00 R(1300): 1.02e-13  H2+: 0.00e+00  Bra:2.25E-16
+                          Pa: 2.25e-16    Ba: 2.25e-16      Hb: 2.27e-16   La: 4.30e-11     1r:1.430E-08  1.8:1.44E-03 4.:5.847E-04
+
+
+                                                 Mean Line Optical Depths
+Species Wavelength  Total     Single        Species Wavelength  Total     Single        Species Wavelength  Total     Single        
+O  1                1025.76A  3.76e+01  3.76e+01
+O  1                1025.76A  6.70e+00  6.70e+00      O  1                1025.76A  4.44e-01  4.44e-01
+O  1                1039.23A  2.06e+01  2.06e+01      O  1                1302.17A  1.47e+02  1.47e+02
+
+ Old, new H  1 continuum optical depths:
+     1 1.43e-08     2 4.18e-20     3 5.86e-25     4 5.86e-25     5 5.86e-25     6 2.96e-24     7 2.96e-24     8 2.96e-24
+     9 2.96e-24    10 1.08e-23    11 1.08e-23    12 1.08e-23    13 1.08e-23    14 1.08e-23
+     1 1.43e-08     2 4.18e-20     3 5.86e-25     4 5.86e-25     5 5.86e-25     6 2.96e-24     7 2.96e-24     8 2.96e-24
+     9 2.96e-24    10 1.08e-23    11 1.08e-23    12 1.08e-23    13 1.08e-23    14 1.08e-23
+
+ Old, new H  1 mean line optical depths:
+  2- 1 5.31e-03  3- 2 3.77e-14  4- 3 4.34e-20  5- 4 6.49e-20  6- 5 6.44e-19  7- 6-9.94e-19  8- 7-2.67e-18
+  9- 8-6.52e-18 10- 9-1.50e-17 11-10-3.39e-17 12-11-7.82e-17 13-12-1.99e-16 14-13-6.63e-16 15-14-2.43e-14
+  2- 1 5.29e-03  3- 2 3.77e-14  4- 3 4.33e-20  5- 4 6.48e-20  6- 5 6.44e-19  7- 6-9.93e-19  8- 7-2.67e-18
+  9- 8-6.52e-18 10- 9-1.50e-17 11-10-3.38e-17 12-11-7.81e-17 13-12-1.99e-16 14-13-6.62e-16 15-14-2.42e-14
+
+ Old, new He 2 continuum optical depths:
+     1 5.85e-04     2 3.24e-04     3 2.20e-14     4 2.20e-14     5 2.20e-14     6 4.18e-20     7 4.18e-20     8 4.18e-20
+     9 4.18e-20    10 2.01e-25    11 2.01e-25    12 2.01e-25    13 2.01e-25    14 2.01e-25
+     1 5.85e-04     2 3.24e-04     3 2.20e-14     4 2.20e-14     5 2.20e-14     6 4.18e-20     7 4.18e-20     8 4.18e-20
+     9 4.18e-20    10 2.01e-25    11 2.01e-25    12 2.01e-25    13 2.01e-25    14 2.01e-25
+
+ Old, new He 2 mean line optical depths:
+  2- 1 9.14e-12  3- 2 2.80e-30  4- 3 2.36e-36  5- 4 1.28e-35  6- 5 1.08e-34  7- 6-1.82e-34  8- 7-5.24e-34
+  9- 8-1.32e-33 10- 9-3.13e-33 11-10-7.25e-33 12-11-1.72e-32 13-12-4.49e-32 14-13-1.53e-31 15-14-5.66e-30
+  2- 1 9.14e-12  3- 2 2.80e-30  4- 3 2.36e-36  5- 4 1.28e-35  6- 5 1.08e-34  7- 6-1.82e-34  8- 7-5.24e-34
+  9- 8-1.32e-33 10- 9-3.13e-33 11-10-7.25e-33 12-11-1.72e-32 13-12-4.49e-32 14-13-1.53e-31 15-14-5.66e-30
+
+ Old He Is optical depths:    1 1.44e-03    2 2.10e-16    3 3.03e-20    4 3.66e-20    5 3.66e-20
+ New He Is optical depths:    1 1.44e-03    2 2.10e-16    3 3.03e-20    4 3.66e-20    5 3.66e-20
+          Old He Is Lines:  584 2.20e-03 3889 1.32e-15 5016 1.32e-15 5876 1.32e-15
+          New He Is Lines:  584 2.20e-03 3889 1.32e-15 5016 1.32e-15 5876 1.32e-15
+
+
+               1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17
+
+ Hydrogen   10.182  8.331-30.000 (H2)                Log10 Column density (cm^-2)
+ Helium      9.168  0.893 -6.515
+ Carbon      5.388 -0.392 -7.388-30.000-30.000-30.000-30.000
+ Nitrogen    5.778 -0.519 -8.682-30.000-30.000-30.000-30.000-30.000
+ Oxygen     14.068  8.089 -0.180-30.000-30.000-30.000-30.000-30.000-30.000
+ Fluorine    2.668 -3.255-10.025-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Neon        5.388 -0.428 -7.387-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Sodium      4.419  3.829 -3.374-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Magnesium   5.729 -0.158 -1.703-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Aluminium   2.649  4.654 -2.704-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Silicon     5.188  0.144 -5.966-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Phosphorus  3.119  3.559 -3.758-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Sulphur     4.788  1.221 -5.740-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Argon       3.958 -1.331 -8.495-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+-30.000-30.000
+ Potassium   3.287  2.004 -4.734-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+-30.000-30.000-30.000
+ Calcium     4.548 -1.860 -2.821-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+-30.000-30.000-30.000-30.000
+ Titanium    1.457  3.202 -4.329-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+-30.000-30.000-30.000-30.000-30.000-30.000
+ Vanadium    2.188 -3.682 -6.340-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Chromium    3.859 -1.821 -4.660-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Manganese   1.930  3.639 -3.861-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Cobalt      3.109 -2.751 -6.930-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Nickel      2.629  4.432 -3.160-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Copper      2.398 -3.231 -6.436-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+ Zinc        2.788 -3.031 -6.606-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000-30.000
+
+
+ Hydrogen   -0.006 -1.858-30.000 (H2)                 Log10 Mean Ionisation (over radius)
+ Helium      0.000 -8.276-15.683
+ Carbon     -0.000 -5.780-12.777
+ Nitrogen   -0.000 -6.298-14.460
+ Oxygen     -0.000 -5.979-14.248
+ Fluorine   -0.000 -5.923-12.693
+ Neon       -0.000 -5.817-12.776
+ Sodium     -0.099 -0.689 -7.892
+ Magnesium  -0.000 -5.887 -7.432
+ Aluminium  -2.009 -0.004 -7.363
+ Silicon    -0.000 -5.045-11.154
+ Phosphorus -0.574 -0.135 -7.451
+ Sulphur    -0.000 -3.567-10.528
+ Argon      -0.000 -5.289-12.453
+ Potassium  -0.022 -1.305 -8.043
+ Calcium    -0.000 -6.408 -7.369
+ Titanium   -1.752 -0.008 -7.539
+ Vanadium   -0.000 -5.870 -8.528
+ Chromium   -0.000 -5.680 -8.519
+ Manganese  -1.718 -0.008 -7.508
+ Cobalt     -0.000 -5.859-10.038
+ Nickel     -1.810 -0.007 -7.599
+ Copper     -0.000 -5.629 -8.834
+ Zinc       -0.000 -5.819 -9.394
+
+               1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17
+
+ Hydrogen   -0.006 -1.858-30.000 (H2)         Log10 Mean Ionisation (over radius*electron density)
+ Helium      0.000 -8.276-15.683
+ Carbon     -0.000 -5.780-12.777
+ Nitrogen   -0.000 -6.298-14.460
+ Oxygen     -0.000 -5.979-14.248
+ Fluorine   -0.000 -5.923-12.693
+ Neon       -0.000 -5.817-12.776
+ Sodium     -0.099 -0.689 -7.892
+ Magnesium  -0.000 -5.887 -7.432
+ Aluminium  -2.009 -0.004 -7.363
+ Silicon    -0.000 -5.045-11.154
+ Phosphorus -0.574 -0.135 -7.451
+ Sulphur    -0.000 -3.567-10.528
+ Argon      -0.000 -5.289-12.453
+ Potassium  -0.022 -1.305 -8.043
+ Calcium    -0.000 -6.408 -7.369
+ Titanium   -1.752 -0.008 -7.539
+ Vanadium   -0.000 -5.870 -8.528
+ Chromium   -0.000 -5.680 -8.519
+ Manganese  -1.718 -0.008 -7.508
+ Cobalt     -0.000 -5.859-10.038
+ Nickel     -1.810 -0.007 -7.599
+ Copper     -0.000 -5.629 -8.834
+ Zinc       -0.000 -5.819 -9.394
+
+               1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17
+
+ Hydrogen    1.296  1.296-30.000 (H2)                  Log10 Mean Temperature (over radius)
+ Helium      1.296  1.296  1.296
+ Carbon      1.296  1.296  1.296
+ Nitrogen    1.296  1.296  1.296
+ Oxygen      1.296  1.296  1.296
+ Fluorine    1.296  1.296  1.296
+ Neon        1.296  1.296  1.296
+ Sodium      1.296  1.296  1.296
+ Magnesium   1.296  1.296  1.296
+ Aluminium   1.296  1.296  1.296
+ Silicon     1.296  1.296  1.296
+ Phosphorus  1.296  1.296  1.296
+ Sulphur     1.296  1.296  1.296
+ Argon       1.296  1.296  1.296
+ Potassium   1.296  1.296  1.296
+ Calcium     1.296  1.296  1.296
+ Titanium    1.296  1.296  1.296
+ Vanadium    1.296  1.296  1.296
+ Chromium    1.296  1.296  1.296
+ Manganese   1.296  1.296  1.296
+ Cobalt      1.296  1.296  1.296
+ Nickel      1.296  1.296  1.296
+ Copper      1.296  1.296  1.296
+ Zinc        1.296  1.296  1.296
+
+               1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17
+
+ Hydrogen    1.296  1.296-30.000 (H2)          Log10 Mean Temperature (over radius*electron density)
+ Helium      1.296  1.296  1.296
+ Carbon      1.296  1.296  1.296
+ Nitrogen    1.296  1.296  1.296
+ Oxygen      1.296  1.296  1.296
+ Fluorine    1.296  1.296  1.296
+ Neon        1.296  1.296  1.296
+ Sodium      1.296  1.296  1.296
+ Magnesium   1.296  1.296  1.296
+ Aluminium   1.296  1.296  1.296
+ Silicon     1.296  1.296  1.296
+ Phosphorus  1.296  1.296  1.296
+ Sulphur     1.296  1.296  1.296
+ Argon       1.296  1.296  1.296
+ Potassium   1.296  1.296  1.296
+ Calcium     1.296  1.296  1.296
+ Titanium    1.296  1.296  1.296
+ Vanadium    1.296  1.296  1.296
+ Chromium    1.296  1.296  1.296
+ Manganese   1.296  1.296  1.296
+ Cobalt      1.296  1.296  1.296
+ Nickel      1.296  1.296  1.296
+ Copper      1.296  1.296  1.296
+ Zinc        1.296  1.296  1.296
+
+               1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17
+model 1  
+
+---------------Convergence statistics---------------
+      9.83 mean iterations/state convergence
+         3 mean cx acceleration loops/iteration
+      1.12 mean iso convergence loops/ion solve
+         1 mean steps/chemistry solve
+         1 mean step length searches/chemistry step
+----------------------------------------------------
+
+ Cloudy ends: 1 zone, 2 iterations. Failures: 0 thermal, 0 pressure, 1 ionization, 0 electron density. (single thread) ExecTime(s) 72.70
+ [Stop in cdMain at maincl.cpp:593, Cloudy exited OK]

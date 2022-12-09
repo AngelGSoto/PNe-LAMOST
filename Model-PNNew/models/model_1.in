@@ -1,0 +1,59 @@
+#####################################
+title model_1
+#####################################
+set punch prefix "model_1"
+Blackbody 130000.000000
+q(H) = 37.584
+radius = 16.903
+hden = 3.477
+filling factor = 1.0
+element abundance helium -1.020
+element abundance carbon -4.800
+element abundance nitrogen -4.410
+element abundance oxygen 3.880
+element abundance neon -4.800
+element abundance silicon -5.000
+element abundance sulphur -5.400
+element abundance argon -6.230
+element abundance iron -20.000
+element abundance chlorine -20.000
+distance = 2313.00952 parsecs linear
+set save resolving power 1800
+iterate
+sphere
+save last radius ".rad"
+save last continuum ".cont"
+save last physical conditions ".phy"
+save last overview ".ovr"
+save last heating ".heat"
+save last cooling ".cool"
+save last optical depth ".opd"
+save last element hydrogen ".ele_H"
+save last element helium ".ele_He"
+save last element carbon ".ele_C"
+save last element nitrogen ".ele_N"
+save last element oxygen ".ele_O"
+save last element argon ".ele_Ar"
+save last element neon ".ele_Ne"
+save last element sulphur ".ele_S"
+save last element chlorin ".ele_Cl"
+save last element iron ".ele_Fe"
+save last element silicon ".ele_Si"
+save last lines emissivity  ".emis"
+H  1  4861.33A
+H  1  6562.81A
+Ca B  5875.64A
+N  2  6583.45A
+O  1  6300.30A
+O  2  3726.03A
+O  2  3728.81A
+O  3  5006.84A
+BLND  4363.00A
+S  2  6716.44A
+S  2  6730.82A
+Cl 3  5517.71A
+Cl 3  5537.87A
+O  1  63.1679m
+O  1  145.495m
+C  2  157.636m
+end of lines

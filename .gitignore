@@ -12,6 +12,7 @@ programs/fits_utils.py
 match_gaia_tap/star-Smart.csv
 match_gaia_tap/PN_gaia.csv
 Model-PN/*
+Cloudy/*
 known-pn/PNPRTM1/.fuse_h*
 *.pyc
 *.csv
