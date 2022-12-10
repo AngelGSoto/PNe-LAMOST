@@ -2,22 +2,17 @@
 title model_1
 #####################################
 set punch prefix "model_1"
-Blackbody 130000.000000
-q(H) = 37.584
-radius = 16.903
-hden = 3.477
-filling factor = 1.0
-element abundance helium -1.020
-element abundance carbon -4.800
-element abundance nitrogen -4.410
-element abundance oxygen 3.880
-element abundance neon -4.800
-element abundance silicon -5.000
-element abundance sulphur -5.400
-element abundance argon -6.230
-element abundance iron -20.000
-element abundance chlorine -20.000
 distance = 2313.00952 parsecs linear
+blackbody 130.e3 linear
+luminosity 37.5842
+abundances he=-1.02 li=-20 be=-20 b=-20 c=-4.8
+continue n=-4.41 o=-3.88 f=-20 ne=-4.8
+continue na=-20 mg=-20 al=-20 si=-5 p=-20
+continue s=-5.4 cl=-20 ar=-6.23 k=-20 ca=-20
+continue sc=-20 ti=-20 v=-20 cr=-20 mn=-20
+continue fe=-20 co=-20 ni=-20 cu=-20 zn=-20
+hden 3.4771212547196626
+radius 16.9030 17.35
 set save resolving power 1800
 iterate
 sphere
@@ -39,21 +34,3 @@ save last element sulphur ".ele_S"
 save last element chlorin ".ele_Cl"
 save last element iron ".ele_Fe"
 save last element silicon ".ele_Si"
-save last lines emissivity  ".emis"
-H  1  4861.33A
-H  1  6562.81A
-Ca B  5875.64A
-N  2  6583.45A
-O  1  6300.30A
-O  2  3726.03A
-O  2  3728.81A
-O  3  5006.84A
-BLND  4363.00A
-S  2  6716.44A
-S  2  6730.82A
-Cl 3  5517.71A
-Cl 3  5537.87A
-O  1  63.1679m
-O  1  145.495m
-C  2  157.636m
-end of lines
