@@ -566,4 +566,14 @@ Byte-by-byte Description of file (#): models/*
    Distance in parsec, Estimating distances from parallaxes (1467744818 sources) ( Bailer-Jones C.A.L., Rybizki J., Fouesneau M., Demleitner M., Andrae R .)
    =rgeo=2313.00952=
    =rpgeo=2324.19312=
-   
+
+
+** Cloudy models
+
+   Now I got to construct the Cloudy model of the object. I construct the input using [[https://github.com/AngelGSoto/PNe-LAMOST/blob/main/notebook/Creating-grid-models.ipynb][pyCluody]].
+   To run in a grid  cloudy is only necessary:
+
+   : for f in *.in; do cloudy ${f%.in}; done
+
+   - I also generate the 1D spectra using pyCloudy:
+     : for f in *.in; do python ../../../programs/outdata-pyCludy.py ${f%.in}; done
