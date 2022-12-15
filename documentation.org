@@ -577,3 +577,15 @@ Byte-by-byte Description of file (#): models/*
 
    - I also generate the 1D spectra using pyCloudy:
      : for f in *.in; do python ../../../programs/outdata-pyCludy.py ${f%.in}; done
+
+   - I include the reddening, Ev = [0, 0.1, 0.2.. 1.0].
+     
+*** First comments
+    - Dens 3000 -> The model N2242 _130000_37.51. Seem the best fit.
+    -  Dens 3000 ->  DdDm1 _130000 _37.48. But two line apperars in 6400 and 6500 A.
+
+    - I drop out of the power law for the resolution, the improvement was quite better.
+      Naw I think that the best fit is, N2242_120000_37.58.
+    - Now change the He abundance in He of N2242, I used -0.8. Very nice improvement see model_140000_37.57.
+
+

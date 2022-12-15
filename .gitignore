@@ -17,6 +17,7 @@ Model-PNNew/*
 Model-PNNew/models/DdDm1_L4/*
 !Model-PNNew/models/DdDm1_L4/*.jpg
 known-pn/PNPRTM1/.fuse_h*
+!Model-PNNew/models/N2242_Npow_He08_d3000/model_140000_37.57.jpg
 *.pyc
 *.csv
 *.fits
