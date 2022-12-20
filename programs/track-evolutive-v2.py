@@ -54,6 +54,7 @@ import seaborn as sns
 sns.set_context("talk")
 sns.set_color_codes()
 
+
 #Plot of effective temperature versus gravity, which we compare with the turtle observed values.
 
 def extract_masses(data):
@@ -176,6 +177,10 @@ print("times=", times)
 # ## HR diagram with the high ionization nebula
 weidmantab = Table.read("../PN-high-ion-weidman.dat", format="ascii")
 
+###
+# Teff and L of our PN after modeling with Cloudy.
+logTeff = np.log10(14e4)
+logLpn = np.log10(3.7238299999999735e+37/3.839e33)
 
 fig, ax = plt.subplots(figsize=(8, 8))
 #ax.axvspan(4.7, 5.0, 0.6, 0.9, color="k", alpha=0.1)
@@ -254,7 +259,16 @@ ax.scatter(
 bbox_props1 = dict(boxstyle="round", fc="w", ec="0.78", alpha=0.6, pad=0.2)
 for label_, x, y in zip(weidmantab["Name_2"], weidmantab["logTeff"], weidmantab["logL"]):
     ax.annotate(label_, (x, y), alpha=1, size=10,
-                   xytext=(45.0, -17), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props1, zorder=-100)   
+                   xytext=(45.0, -17), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props1, zorder=-100)
+
+#Our PN
+
+ax.scatter(logTeff, logLpn, 
+    color="#377eb8", marker="*", s=550, label="Triple",
+    edgecolors="k")
+
+ax.annotate("LAMOST J020808.63+491401.0", (logTeff, logLpn), alpha=1, size=10,
+                   xytext=(175.0, -5), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props1, zorder=-100)
 #ax.legend()
 ax.set(
     ylabel="$\log_{10}\, L/L_\odot$",

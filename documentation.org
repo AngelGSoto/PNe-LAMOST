@@ -585,7 +585,7 @@ Byte-by-byte Description of file (#): models/*
     -  Dens 3000 ->  DdDm1 _130000 _37.48. But two line apperars in 6400 and 6500 A.
 
     - I drop out of the power law for the resolution, the improvement was quite better.
-      Naw I think that the best fit is, N2242_120000_37.58.
+      Now I think that the best fit is, N2242_120000_37.58.
     - Now change the He abundance in He of N2242, I used -0.8. Very nice improvement see model_140000_37.57.
-
+    - Change Ar = -6.24.
 
