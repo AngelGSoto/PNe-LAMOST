@@ -100,7 +100,7 @@ $^{3}$Another Department, Different Institution, Street Address, City Postal Cod
 % Select between one and six entries from the list of approved keywords.
 % Don't make up new ones.
 \begin{keywords}
-keyword1 -- keyword2 -- keyword3
+planetary nebulae: general -- ISM: lines and bands -- surveys
 \end{keywords}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -273,7 +273,7 @@ the blue, green and red channels, respectively.
 At 22$\mu$ (W4-filter) it appears as an almost
 circular (but slightly elongated in the north-south direction)
 diffuse halo (of angular diameter of $\simeq$ 50 arcsec) surrounding
-a core of bright emission centred around  J020808.63+491401.0. 
+a core of bright emission centred around J020808.63+491401.0. 
 
 
 \begin{figure*}
@@ -290,6 +290,9 @@ a core of bright emission centred around  J020808.63+491401.0.
 \label{sec:snr}
 
 Given supernovas are also high-ionization sources....
+
+\section{Modeling the observed spectra}
+\label{sec:model}
 
 % Example table
 \begin{table}
@@ -319,16 +322,42 @@ Given supernovas are also high-ionization sources....
 	\end{tabular}
 \end{table}
 
-
-\section{Model}
-\label{sec:model}
-
+Given the small number of observational constraints, weadopt a very simple model of a planetary nebula whichconsists of a homogeneous gaseous sphere surrounding ahot star radiating as a blackbod.
 Despite the LAMOST spectra are not in physical flux unity, they have flux relative. This means it
 is possible compare it with other spectra in physical units. For that, I think, it is pertinent to
 compare the LAMOST spectra of our PN with models.
 
-The spectrum was modelled by using the {\sc cloudy} photo-ionization code version
-c22.01 \citep{Ferland:2017}. The code uses a set of input parameters to compute the
+The observed spectrum was modelled by using the {\sc cloudy} photo-ionization code version
+c22.01 \citep{Ferland:2017}. This
+code is based on detailed microphysics to simulate the physical
+conditions of nonequilibrium gas clouds exposed to an external
+radiation field. It solves the thermal, statistical, and chemical
+equilibrium equations self-consistently. Currently, it uses 625
+species including atoms, ions, and molecules and five distinct
+databases: H-like and He-like isoelectronic sequences (Porter
+et al. 2012), Stout (Lykins et al. 2015), CHIANTI (Landi et al.
+2012), LAMDA (Schöier et al. 2005), and the H2 molecule
+(Shaw et al. 2005) to model the spectral lines. All the known
+important ionization processes, e.g., photo, Auger, collisional
+and charge transfer and recombination process, namely,
+radiative, dielectronic, three-body recombination, and charge
+transfer are included self-consistently. {\sc cloudy} predicts both
+the intensities and column densities of a very large number
+(∼104) of spectral lines covering the whole electromagnetic
+range, from non–local thermodynamic equilibrium (NLTE),
+illuminated gas clouds by solving the equations of thermal and
+statistical equilibrium for a given set of input parameters. More
+details about CLOUDY could be found in Ferland et al. (2013);
+Shaw et al. (2020), and references therein (Pandey et al. 2022).
+In the past, \citet{Vejar:2019} used {\sc cloudy} to produce
+synthetic spectra of PNe to simulate the  Broadband photometry
+of Large Synoptic Survey Telescope(LSST). In the same way, a grid of modelled
+halo galactic PNe were performed to simulate the J-PLUS and S-PLUS photometry
+to developed new color criteria to find for PNe in these surveys by \citet{Gutierrez-Soto:2020}.
+We used {\sc pyCloudy} \citep{Morisset:2013} a package python\footnote{\url{https://sites.google.com/site/pycloudy/home}} which is a set of tools to deal with photoionization code {\sc cloudy} (\url{www.nublado.org}), which was used to create a set of input of model and lead with the  output files.
+
+
+The code uses a set of input parameters to compute the
 ionization, thermal, and chemical state of a non-equilibrium gas cloud, illuminated
 by a central source and predict the resulting spectra. 
 
@@ -342,9 +371,9 @@ However, almost all the line are reproduce with this model, that could be intere
 temperature effective of this model is 130$\times10^3$K, indicating a very high excitation object.
 Maybe, it will be good idea estimate ratio lines to confirm that! is it possible with this spectrum?
 The observed spectrum and the modeled spectrum were
-matched using fluxes relative to the H{$\beta$} emission line..
-{\cs Voy a crear modelos CLOUDY para intetentar reproducir este espectro. El de la figura~\ref{fig:spectra-obs-model}
-  es sólo un ejemplo. Quería ver si en el grid de modelos que tengo alguna reproducía este espectro.}
+matched using fluxes relative to the H{$\beta$} emission line.
+
+
 
 \begin{figure*}
 \centering
