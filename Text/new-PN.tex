@@ -294,17 +294,28 @@ Given supernovas are also high-ionization sources....
 % Example table
 \begin{table}
 	\centering
-	\caption{This is an example table. Captions appear above each table.
-	Remember to define the quantities, symbols and units used.}
+	\caption{Best-fit {\sc cloudy} model parameters for LAMOST J020808.63+491401.0.}
 	\label{tab:example_table}
 	\begin{tabular}{lccr} % four columns, alignment for each
 		\hline
-		A & B & C & D\\
+		Parameter & Value \\
 		\hline
-		1 & 2 & 3 & 4\\
-		2 & 4 & 6 & 8\\
-		3 & 5 & 7 & 9\\
-		\hline
+		$\log(T_{\mathrm{BB}}) (\mathrm{K})$  & 5.146 \\
+		$\log(\mathrm{luminosity) (erg~s^{-1})}$ & 37.571 \\
+		  $\log(\mathrm{Hden) (cm^{-3})} $ & 3.477 \\
+                  $\log(\mathrm{R_{in}) (cm)}$ & 16.903 \\
+                $\log(\mathrm{R_{out}) (cm)}$ & 17.350 \\
+                 Distance (pc) & 2313.01 \\
+                  $\log(\mathrm{He/H})$ & -0.80 \\
+                $\log(\mathrm{C/H})$ & -4.15 \\
+                $\log(\mathrm{N/H})$ & -4.72 \\
+                $\log(\mathrm{O/H})$ & -3.81 \\
+                $\log(\mathrm{Ne/H})$ & -4.58 \\
+                $\log(\mathrm{Si/H})$ & -5.00 \\
+                $\log(\mathrm{S/H})$ & -6.00 \\
+                $\log(\mathrm{Ar/H})$ & -6.24 \\
+                
+                \hline
 	\end{tabular}
 \end{table}
 
@@ -314,15 +325,26 @@ Given supernovas are also high-ionization sources....
 
 Despite the LAMOST spectra are not in physical flux unity, they have flux relative. This means it
 is possible compare it with other spectra in physical units. For that, I think, it is pertinent to
-compare the LAMOST spectra of our PN with models. Fig~\ref{fig:spectra-obs-model} shows a comparison
+compare the LAMOST spectra of our PN with models.
+
+The spectrum was modelled by using the {\sc cloudy} photo-ionization code version
+c22.01 \citep{Ferland:2017}. The code uses a set of input parameters to compute the
+ionization, thermal, and chemical state of a non-equilibrium gas cloud, illuminated
+by a central source and predict the resulting spectra. 
+
+
+Fig~\ref{fig:spectra-obs-model} shows a comparison
 between LAMOST spectra and a {\sc cloudy} modelled spectra from \citet{Gutierrez-Soto:2020}.
 Note that only is an example for illustrative intentions. This model was taken from a grid of
 models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches between
-the two spectra. I will a performed a grid of PN models that better reproduce the LAMOST spectra of our candidate.
+the two spectra. I will a perform a grid of PN models that better reproduce the LAMOST spectra of our candidate.
 However, almost all the line are reproduce with this model, that could be interesting, because the
 temperature effective of this model is 130$\times10^3$K, indicating a very high excitation object.
 Maybe, it will be good idea estimate ratio lines to confirm that! is it possible with this spectrum?
-{\cs Voy a crear modelos CLOUDY para intetentar reproducir este espectro. El de la figura~\ref{fig:spectra-obs-model} es sólo un ejemplo. Quería ver si en el grid de modelos que tengo alguna reproducía este espectro.}
+The observed spectrum and the modeled spectrum were
+matched using fluxes relative to the H{$\beta$} emission line..
+{\cs Voy a crear modelos CLOUDY para intetentar reproducir este espectro. El de la figura~\ref{fig:spectra-obs-model}
+  es sólo un ejemplo. Quería ver si en el grid de modelos que tengo alguna reproducía este espectro.}
 
 \begin{figure*}
 \centering
@@ -331,14 +353,14 @@ Maybe, it will be good idea estimate ratio lines to confirm that! is it possible
   \label{fig:spectra-obs-model}
 \end{figure*}
 
-\section{Comparing with other high-ionization PNe}
+\section{Comparing with other high-ionization PNe. }
 \label{sec:comp}
 
 \newpage
 \begin{figure*}
 \centering
 \includegraphics[width=0.89\linewidth]{Figs/spectra-compare.pdf}
-  \caption{Comparing the new PNe with other high halo palnetary nebulae...} 
+  \caption{Comparing the new PNe with other high halo palnetary nebulae... The spectra were normalised to H{$\beta$}.} 
   \label{fig:compare-spectra}
 \end{figure*}
 

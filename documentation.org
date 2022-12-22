@@ -186,6 +186,14 @@ catalog as emission lines objects. See the [[https://github.com/AngelGSoto/pytho
 + SySt -> [[https://ui.adsabs.harvard.edu/abs/2019ApJS..240...21A/abstract][Akras et. al]]
 + Near stars GAIA -> [[https://ui.adsabs.harvard.edu/abs/2021A%26A...649A...6G/abstract][ Smart, R. L. et al.]].
 
+**** Paper using CLOUDY
+    - [[https://arxiv.org/pdf/2207.10473.pdf][Pandey et al.]]
+    - [[https://ui.adsabs.harvard.edu/abs/2018MNRAS.474.4211M/abstract][Mondal et al.]]
+    - [[https://ui.adsabs.harvard.edu/abs/2019A%26A...622A.126P/abstract][Pavana et al.]]
+    - [[https://ui.adsabs.harvard.edu/abs/2020MNRAS.492.2326M/abstract][Mondal el al.]]
+    - [[https://ui.adsabs.harvard.edu/abs/2022ApJ...925..187P/abstract][Pandey et al.]]
+    - [[https://arxiv.org/pdf/1807.01787.pdf][Barria et al.]]
+
 ** How measurement of the emission lines ratios?
 *** Tools
    + The STAR- MELT PYTHON package for emission-line analysis of YSOs, [[https://ui.adsabs.harvard.edu/abs/2021MNRAS.507.3331C/abstract][Campbell-White, Justyn et. al. 2021]].
@@ -579,6 +587,7 @@ Byte-by-byte Description of file (#): models/*
      : for f in *.in; do python ../../../programs/outdata-pyCludy.py ${f%.in}; done
 
    - I include the reddening, Ev = [0, 0.1, 0.2.. 1.0].
+     : for f in *.in; do python ../../../programs/redenned.py ${f%.in}; done
      
 *** First comments
     - Dens 3000 -> The model N2242 _130000_37.51. Seem the best fit.
@@ -589,3 +598,4 @@ Byte-by-byte Description of file (#): models/*
     - Now change the He abundance in He of N2242, I used -0.8. Very nice improvement see model_140000_37.57.
     - Change Ar = -6.24.
 
+** 
