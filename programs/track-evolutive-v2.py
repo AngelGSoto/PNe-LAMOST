@@ -180,7 +180,7 @@ weidmantab = Table.read("../PN-high-ion-weidman.dat", format="ascii")
 ###
 # Teff and L of our PN after modeling with Cloudy.
 logTeff = np.log10(14e4)
-logLpn = np.log10(3.7238299999999735e+37/3.839e33)
+logLpn = np.log10(7.29410000000006e+36/3.839e33) #36.86297171307024, 3.7238299999999735e+37
 
 fig, ax = plt.subplots(figsize=(8, 8))
 #ax.axvspan(4.7, 5.0, 0.6, 0.9, color="k", alpha=0.1)

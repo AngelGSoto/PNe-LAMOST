@@ -597,5 +597,5 @@ Byte-by-byte Description of file (#): models/*
       Now I think that the best fit is, N2242_120000_37.58.
     - Now change the He abundance in He of N2242, I used -0.8. Very nice improvement see model_140000_37.57.
     - Change Ar = -6.24.
+    - Using radius 16.6030 17.05, very similar result: 140000_36.86
 
-** 

@@ -349,24 +349,35 @@ illuminated gas clouds by solving the equations of thermal and
 statistical equilibrium for a given set of input parameters. More
 details about CLOUDY could be found in Ferland et al. (2013);
 Shaw et al. (2020), and references therein (Pandey et al. 2022).
+The code uses a set of input parameters to compute the
+ionization, thermal, and chemical state of a non-equilibrium gas cloud, illuminated
+by a central source and predict the resulting spectra. 
 In the past, \citet{Vejar:2019} used {\sc cloudy} to produce
 synthetic spectra of PNe to simulate the  Broadband photometry
 of Large Synoptic Survey Telescope(LSST). In the same way, a grid of modelled
 halo galactic PNe were performed to simulate the J-PLUS and S-PLUS photometry
 to developed new color criteria to find for PNe in these surveys by \citet{Gutierrez-Soto:2020}.
-We used {\sc pyCloudy} \citep{Morisset:2013} a package python\footnote{\url{https://sites.google.com/site/pycloudy/home}} which is a set of tools to deal with photoionization code {\sc cloudy} (\url{www.nublado.org}), which was used to create a set of input of model and lead with the  output files.
+We used {\sc pyCloudy} \citep{Morisset:2013} a package python\footnote{\url{https://sites.google.com/site/pycloudy/home}} which is a set of tools to deal with photoionization code {\sc cloudy} (\url{www.nublado.org}), which was used to create a set of input of model and lead with the  output files. 
 
-
-The code uses a set of input parameters to compute the
-ionization, thermal, and chemical state of a non-equilibrium gas cloud, illuminated
-by a central source and predict the resulting spectra. 
+We consider a central ionizing source surrounded by a spherically symmetric
+gaseous material on which dimensions are determined by the inner ($R_{\mathrm{in}}$) and outer ($R_{\mathrm{out}}$)
+radii (cm).  The central ionizing radiation is assumed to have a
+black-body shape with temperature T$_{\mathrm{BB}}$ (K) and luminosity L
+(ergs$^-1$). We assume spherical geometry for the nebula, a uniform filling factor of unity.
+Many models were generated with the intention of finding the best fit.
+In agreement with the LAMOST spectra and similarity with theses high-ionization PNe (see \ref{fig:compare-spectra})
+we considered a set of effective temperature between 10$\times10^4$ and 20$\times10^4$
+in step of 10$\times10^3$ and luminosities from 400$L_{\odot}$ to 10100$L_{\odot}$ in steps
+of 300$L_{\odot}$. We also considered several hydrogen density (500, 1000, 3000 and 6000cm$^{-3}$).
+We note that the spectra of LAMOST J020808.63+491401.0 is particularly quiet similar to the
+spectrum of NGC 2242, so we first adopted the abundances of it and after we change the value of He and Ar to get a  better match with the observed spectra. We also adopter inner and outer radius
+of that showed very good. For the distance we implemented the distance estimated by \citet{Bailer:2021} based on
+the parallax of GAIA of 2313 pc. 
 
 
 Fig~\ref{fig:spectra-obs-model} shows a comparison
-between LAMOST spectra and a {\sc cloudy} modelled spectra from \citet{Gutierrez-Soto:2020}.
-Note that only is an example for illustrative intentions. This model was taken from a grid of
-models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches between
-the two spectra. I will a perform a grid of PN models that better reproduce the LAMOST spectra of our candidate.
+between LAMOST spectra and a {\sc cloudy}. This model was taken from a grid of
+models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches between the two spectra. I will a perform a grid of PN models that better reproduce the LAMOST spectra of our candidate.
 However, almost all the line are reproduce with this model, that could be interesting, because the
 temperature effective of this model is 130$\times10^3$K, indicating a very high excitation object.
 Maybe, it will be good idea estimate ratio lines to confirm that! is it possible with this spectrum?
@@ -378,7 +389,7 @@ matched using fluxes relative to the H{$\beta$} emission line.
 \begin{figure*}
 \centering
   \includegraphics[width=0.89\linewidth]{Figs/model_140000_37.57.jpg}
-  \caption{} 
+  \caption{The spectra were normalised to H{$\beta$}} 
   \label{fig:spectra-obs-model}
 \end{figure*}
 
@@ -389,7 +400,7 @@ matched using fluxes relative to the H{$\beta$} emission line.
 \begin{figure*}
 \centering
 \includegraphics[width=0.89\linewidth]{Figs/spectra-compare.pdf}
-  \caption{Comparing the new PNe with other high halo palnetary nebulae... The spectra were normalised to H{$\beta$}.} 
+  \caption{Comparing the new PNe with other high halo palnetary nebulae... .} 
   \label{fig:compare-spectra}
 \end{figure*}
 
@@ -425,12 +436,13 @@ labelled with initial stellar mass in solar masses). Small star symbols show
 an evolutionary time along each track equal to the kinematic age of the
 intermediate shell of NGC 2242, with blue shading indicating 50 per cent
 variation about this value.  Filled symbols shows the known PN showed in section~\ref{}
-that have been selected to be  similar to the new PNe. {\sc Ok! falta colocar la nueva nebulosa}.} 
+that have been selected to be  similar to the new PNe.} 
  \label{fig:track-evolutive}
 \end{figure}
 
-Fig~\ref{fig:track-evolutive} shows... Post-AGB stellar evolutionary tracks for
-approximately solar metallicity \citep{Miller:2016} are indicated
+Fig~\ref{fig:track-evolutive} shows the position of the new PN (blue stars) in the luminosity versus effective temperature diagram. The position of the three PNe on which we have used to compare with the new one are also shown (orange circles). Post-AGB stellar evolutionary tracks for
+approximately solar metallicity \citep{Miller:2016} are indicated for the continue lines. I mean for stars with M = 1, 1.25, 1.5, 2.0, 2.5 and 3M$_{\odot}$. In agreement with the position of LAMOST
+J020808.63+491401.0 in the diagram the mas of the progenitor star is between 2.5 and 3.0M$_{\odot}$.
 
 \section*{Acknowledgements}
 
