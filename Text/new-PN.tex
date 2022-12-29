@@ -68,15 +68,16 @@
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
 \author[Guti\'errez-Soto et al.]{
-L. A. Guti\'errez-Soto,$^{1,2}$\thanks{E-mail: gsoto.angel@gmail.com}
-A. N. Other,$^{2}$
-Third Author$^{2,3}$
-and Fourth Author$^{3}$
+  L. A. Guti\'errez-Soto$^{1,2}$
+  \thanks{E-mail: gsoto.angel@gmail.com}
+%A. N. Other,$^{2}$
+%Third Author$^{2,3}$
+%and Fourth Author$^{3}$
 \\
 % List of institutions
 $^{1}$Instituto de Astrof\'{i}sica de La Plata (CCT La Plata - CONICET - UNLP), B1900FWA, La Plata, Argentina\\
 $^{2}$Departamento de Astronomia, IAG, Universidade de S\~{a}o Paulo, Rua do Mat\~{a}o, 1226, 05509-900, S\~{a}o Paulo, Brazil\\
-$^{3}$Another Department, Different Institution, Street Address, City Postal Code, Country
+%$^{3}$Another Department, Different Institution, Street Address, City Postal Code, Country
 }
 
 % These dates will be filled out by the publisher
@@ -93,8 +94,13 @@ $^{3}$Another Department, Different Institution, Street Address, City Postal Cod
 
 % Abstract of the paper
 \begin{abstract}
-  We report the identification of a new planetary nebula foun in the catalog of
-  emission line objects created by  \citet{Skoda:2020} based in LAMOST data...
+  We report the identification of a new planetary nebula found in the catalog of
+  emission line objects created by \citet{Skoda:2020} based in LAMOST data. The PN is a very
+  high excitation planetary nebula. I found the best-fit {\sc cloudy} model obtained a
+  effective temperature of 14$\times10^{4}$ K. Other parameters such as luminosity
+  and abundances were determined by comparing with the model.
+  Comparing with evolution track of post-AGB i found that the mass
+  of the progenitor star is 1.25 M{$\odot$}. 
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -370,9 +376,9 @@ we considered a set of effective temperature between 10$\times10^4$ and 20$\time
 in step of 10$\times10^3$ and luminosities from 400$L_{\odot}$ to 10100$L_{\odot}$ in steps
 of 300$L_{\odot}$. We also considered several hydrogen density (500, 1000, 3000 and 6000cm$^{-3}$).
 We note that the spectra of LAMOST J020808.63+491401.0 is particularly quiet similar to the
-spectrum of NGC 2242, so we first adopted the abundances of it and after we change the value of He and Ar to get a  better match with the observed spectra. We also adopter inner and outer radius
-of that showed very good. For the distance we implemented the distance estimated by \citet{Bailer:2021} based on
-the parallax of GAIA of 2313 pc. 
+spectrum of NGC 2242, so we first adopted the abundances of it and after we change the value of He and Ar to get a better match with the observed spectra. We also adopted inner and outer radius
+of that showed very good. For the distance we implemented the distance of the central star of the PNe estimated by \citet{Bailer:2021} based on
+the parallax of GAIA of 2.313 kpc. Note that this is the geometrical distances estimated for them. 
 
 
 Fig~\ref{fig:spectra-obs-model} shows a comparison

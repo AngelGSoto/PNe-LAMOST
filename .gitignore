@@ -41,6 +41,8 @@ Text/new-PN.out
 Text/new-PN.log
 Text/new-PN.blg
 Text/new-PN.aux
+Text/.#new-PN.tex
+notebook/.ipynb*
 *.pyc
 *.csv
 *.fits
