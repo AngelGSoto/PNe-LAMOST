@@ -55,18 +55,16 @@ def closest(lst, K):
     return lst[idx]
 
 # Model
-wl_hbeta = closest(data_mask["Wl"], 4861.333)
-MaskHbeta = data_mask["Wl"] == wl_hbeta
+MaskHbeta = (data_mask["Wl"] >= 4863 - 50) & (data_mask["Wl"] <= 4863 + 50)
 HBeta = data_mask[MaskHbeta]
-flux_m = data_mask["Flux"] / HBeta["Flux"]
-
+max_HBeta = HBeta["Flux"].max()
+flux_m = data_mask["Flux"] / max_HBeta
 
 # Our PN
-wl_hbeta_our = closest(wl, 4861.333)
-
-MaskHbeta_our = wl == wl_hbeta_our
-flux_HBeta_our = Flux[MaskHbeta_our]
-flux_our = Flux / flux_HBeta_our
+MaskHbeta_our = (wl >= 4863 - 50) & (wl <= 4863 + 50)
+HBeta_our = Flux[MaskHbeta_our]
+max_HBeta_our = HBeta_our.max()
+flux_our = Flux / max_HBeta_our
 
 fig, ax = plt.subplots(figsize=(11, 5))
 #ax.set_title(namefile)

@@ -15,6 +15,7 @@ match_gaia_tap/PN_gaia.csv
 Model-PN/*
 Cloudy/*
 Model-PNNew/*
+programs/.#*
 Model-PNNew/models/DdDm1_L4/*
 !Model-PNNew/models/DdDm1_L4/*.jpg
 known-pn/PNPRTM1/.fuse_h*
