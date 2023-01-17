@@ -35,3 +35,10 @@ Dec 27  9:20 [spec-56581-VB031N50V1_sp08-218.fits[*,1]]:
 Dec 29  1:19 [spec-56581-VB031N50V1_sp08-218.fits[*,1]]: 
     center      cont      flux       eqw      core     gfwhm     lfwhm
   6562.295  138.1612   19871.7    -143.8   4286.09     4.356        0.
+
+Jan 13 17:07 [spec-56581-VB031N50V1_sp08-218.fits[*,1]]: 
+    center      cont      flux       eqw      core     gfwhm     lfwhm
+   6562.25  134.4285   21367.8    -159.3
+
+Jan 13 17:10 [spec-56581-VB031N50V1_sp08-218.fits[*,1]]: 
+  6562.312  148.6245   19664.2    -132.1

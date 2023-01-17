@@ -44,7 +44,7 @@ flux = Mod.get_cont_y(cont = 'total', unit = 'esAc')
 wll, flux = zip(*sorted(zip(wl, flux)))
 
 data = Table([wll, flux], names=('Wl', 'Flux'), meta={'name': 'first table'})
-mask = (data["Wl"] > 3000) & (data["Flux"] < 9000)
+mask = (data["Wl"] > 3000) & (data["Wl"] < 9000)
 data_mask = data[mask]
 
 # OUR PN

@@ -44,7 +44,7 @@ flux = Mod.get_cont_y(cont = 'total', unit = 'esAc')
 wll, flux = zip(*sorted(zip(wl, flux)))
 
 data = Table([wll, flux], names=('Wl', 'Flux'), meta={'name': 'first table'})
-mask = (data["Wl"] > 3000) & (data["Flux"] < 9000)
+mask = (data["Wl"] > 3000) & (data["Wl"] < 9000)
 data_mask = data[mask]
 
 # OUR PN
@@ -61,14 +61,14 @@ def closest(lst, K):
     return lst[idx]
 
 # Model
-MaskHbeta = (data_mask["Wl"] >= 4863 - 50) & (data_mask["Wl"] <= 4863 + 50)
+MaskHbeta = (data_mask["Wl"] >= (4863 - 50)) & (data_mask["Wl"] <= (4863 + 50))
 HBeta = data_mask[MaskHbeta]
 max_HBeta = HBeta["Flux"].max()
 flux_m = data_mask["Flux"] / max_HBeta
 
 
 # Our PN
-MaskHbeta_our = (wl >= 4863 - 50) & (wl <= 4863 + 50)
+MaskHbeta_our = (wl >= (4863 - 50)) & (wl <= (4863 + 50))
 HBeta_our = Flux[MaskHbeta_our]
 max_HBeta_our = HBeta_our.max()
 flux_our = Flux / max_HBeta_our
