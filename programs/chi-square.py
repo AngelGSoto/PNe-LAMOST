@@ -4,7 +4,7 @@ Author: Luis A. Gutiérrez Soto
 26/12/2022
 '''
 import numpy as np
-from astropy.table import Table
+from astropy.table import Table, QTable
 import matplotlib.pyplot as plt
 import os
 import pyCloudy as pc
@@ -54,7 +54,8 @@ dir_ = '../Model-PNNew/models/N2242_Npow_He091O382Ar624_itere_R166R1705_d3000/'
 model_name = file_
 
 # Reading the Cloudy outputs in the Mod CloudyModel object
-Mod = pc.CloudyModel(os.path.join(dir_, model_name))
+Mod = pc.CloudyModel(model_name)
+#Mod = pc.CloudyModel(os.path.join(dir_, model_name))
 #Mod = pc.CloudyModel(model_name)
 
 # print(dir(Mod)) # This is the online answering way
@@ -122,8 +123,8 @@ def measurent_line(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec, NameL
     #Integrating along the fit 1D-Gaussian
     gauss = Spectrum1D(spectral_axis=lamb, flux=y_fit_line) 
     sub_gauss = extract_region(gauss, line_region_)
-    min_lamb = line_para_line.mean.value - 3*line_para_line.stddev.value
-    max_lamb = line_para_line.mean.value + 3*line_para_line.stddev.value
+    min_lamb = line_para_line.mean.value - 5*line_para_line.stddev.value
+    max_lamb = line_para_line.mean.value + 5*line_para_line.stddev.value
     sub_region_int = SpectralRegion(min_lamb * u.AA,  max_lamb * u.AA)
     sub_gauss_int = extract_region(gauss, sub_region_int)
     flux_line = np.trapz(sub_gauss_int.flux, sub_gauss_int.spectral_axis) 
@@ -163,8 +164,8 @@ def measurent_line_model(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec,
     #Integrating along the fit 1D-Gaussian
     gauss = Spectrum1D(spectral_axis=lamb, flux=y_fit_line) 
     sub_gauss = extract_region(gauss, line_region_)
-    min_lamb = line_para_line.mean.value - 3*line_para_line.stddev.value
-    max_lamb = line_para_line.mean.value + 3*line_para_line.stddev.value
+    min_lamb = line_para_line.mean.value - 8*line_para_line.stddev.value
+    max_lamb = line_para_line.mean.value + 8*line_para_line.stddev.value
     sub_region_int = SpectralRegion(min_lamb * u.AA,  max_lamb * u.AA)
     sub_gauss_int = extract_region(gauss, sub_region_int)
     flux_line = np.trapz(sub_gauss_int.flux, sub_gauss_int.spectral_axis) 
@@ -180,7 +181,7 @@ def measurent_line_model(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec,
         plt.text(0.1, 0.9, NameLine,
              transform=ax.transAxes, c="black", weight='bold', fontsize=24.8, bbox=bbox_props)
         ax.legend()
-        plt.savefig(type_spec+ "_" + NameLine + ".pdf")
+        plt.savefig(type_spec + "_" + NameLine + ".pdf")
         plt.close()
     else:
         pass
@@ -210,7 +211,7 @@ def npx_errcont(wl_vacuum, spec):
     line_spec_mask = find_line(wl_vacuum,  spec)
     min_lamb = line_spec_mask['line_center'] - 5 * u.AA
     max_lamb = line_spec_mask['line_center'] + 5 * u.AA
-    sub_region_int = SpectralRegion(min_lamb,  max_lamb)
+    sub_region_int = SpectralRegion(min_lamb, max_lamb)
     sub_spect_int = extract_region(spec, sub_region_int)
     line_para_line = estimate_line_parameters(sub_spect_int, models.Gaussian1D())
     min_lamb_ = line_para_line.mean.value - 3*line_para_line.stddev.value
@@ -258,8 +259,23 @@ D = 1.0002302850208247
 #print(spec.spectral_axis)
 
 # Emission lines
-lines = {"[NeIII]": 3868.760,
-         "[NeIII]H7": 3967.470,
+# lines = {"[NeIII]": 3868.760,
+#          "[NeIII]H7": 3967.470,
+#          "Hdelta": 4101.742,
+#          "Hgamma": 4340.471,
+#          "HeII": 4685.99,
+#          "Hbeta": 4861.333,
+#          "[OIII]4958": 4958.911,
+#          "[OIII]5006": 5006.843,
+#          "[FeIII]": 5412.12,
+#          "Halpha": 6564.614,
+#          "[ArV]": 7005.87,
+#          "[ArIII]7135": 7135.80,
+#          "[ArIII]7751": 7751.06,
+#          "HeII8236": 8236.8
+#          }
+
+lines = {"[NeIII]H7": 3967.470,
          "Hdelta": 4101.742,
          "Hgamma": 4340.471,
          "HeII": 4685.99,
@@ -268,61 +284,63 @@ lines = {"[NeIII]": 3868.760,
          "[OIII]5006": 5006.843,
          "[FeIII]": 5412.12,
          "Halpha": 6564.614,
-         "[ArV]": 7005.87,
-         "[ArIII]7135": 7135.80,
-         "[ArIII]7751": 7751.06,
-         "HeII8236": 8236.8
          }
 
+nlines_ = []
+lines_ = []
 flux_lines = []
 err_lines = []
-# for v, t in lines.items():
-#     flux_lines.append(measurent_line(t, spec, lamb, wl, Flux, rel_flux, "Obs", v, saveplot = "y").value)
-#     err_lines.append(err_line(t, spec, D=D))
-# print(flux_lines)
+EW = []
+for v, t in lines.items():
+    flux_lines.append(measurent_line(t, spec, lamb, wl, Flux, rel_flux, "Obs", v, saveplot = "n").value)
+    err_lines.append(err_line(t, spec, D = D))
+    EW.append(ew(t, spec))
+    lines_.append(t)
+    nlines_.append(v)
 
-# Model
+Hbeta = flux_lines[5]
+ratio_lines = flux_lines / Hbeta
+
+# And the error
+err_Hbeta = err_lines[5]
+err_ratio_lines = np.sqrt((ratio_lines**2) * ((np.array(err_lines) / np.array(flux_lines))**2 + (err_Hbeta / Hbeta)**2))
+
+#creating table and save it
+table = QTable([nlines_, lines_,  ratio_lines, err_ratio_lines, EW],
+           names=('Line', 'Lambda', 'Flux', 'Sigma', "EW"),
+           meta={'name': 'first table'})
+#save the table
+table.write("parameters-lamost-pn-selec-lines.ecsv", format="ascii.ecsv", overwrite=True)
+
+#################################################################################
+# Model  ########################################################################
+#################################################################################
 lamb_model = data_mask["Wl"] * u.AA 
 flux_model = data_mask["Flux"] *  u.Unit('erg cm-2 s-1 AA-1') 
 spec_model = Spectrum1D(spectral_axis=lamb_model, flux=flux_model)
 
-#Estoamating the flux line for the models
+#Estimating the flux line for the models
 flux_lines_models = []
 for vv, tt in lines.items():
-    flux_lines_models.append(measurent_line_model(tt, spec_model, lamb_model, data_mask["Wl"], data_mask["Flux"],  u.Unit('erg cm-2 s-1 AA-1'), "Model", vv, saveplot = "y").value)
+    flux_lines_models.append(measurent_line_model(tt, spec_model, lamb_model, data_mask["Wl"], data_mask["Flux"],  u.Unit('erg cm-2 s-1 AA-1'), "Model", vv, saveplot = "n").value)
 
-# print(flux_lines_models)
 
-# # Our PN
-# wl_hbeta_our = closest(wl, 4861.333)
+Hbeta_models = flux_lines_models[5]
+ratio_lines_models = flux_lines_models / Hbeta_models
 
-# MaskHbeta_our = wl == wl_hbeta_our
-# flux_HBeta_our = Flux[MaskHbeta_our]
-# flux_our = Flux / flux_HBeta_our
+# Estimating the chi-square
+chi = (ratio_lines_models - ratio_lines)**2 / err_ratio_lines**2
+chi_sum = chi.sum()
 
-# # Estimating chi-square
-# #{\displaystyle \chi ^{2}=\sum _{i=1}^{n}{\frac {(O_{i}-E_{i})^{2}}{E_{i}}}}
+# Estimating the degree freedom
+n = 9
+np = 3
+vv = n - np
+chi_sum_red = chi_sum / vv
 
-# # mask for the wavelenght model
-# mask_wlm = (data_mask["Wl"] >= 4000) & (data_mask["Wl"] <= 5700)
-# wlm = data_mask["Wl"][mask_wlm]
-# print("Number of wavelenths of model:", len(wlm))
+if chi_sum_red <= 2:
+    tab = QTable([model_name, hi_sum_red],
+           names=('Name model', 'Chi red'),
+           meta={'name': 'first table'})
+    tab.write("better-models-chisquera.ecsv", format="ascii.ecsv", overwrite=True)
 
-# # mask for the wavelenght observed
-# mask_wlo = (wl >= 4000) & (wl <= 5700)
-# wlo = wl[mask_wlo]
-# print("Number of wavelenths of observed:", len(wlo))
-
-# fig, ax = plt.subplots(figsize=(11, 5))
-# #ax.set_title(namefile)
-# ax.set(xlim=[3600,9100])
-# #plt.ylim(ymin=-200,ymax=1500)
-# ax.set(xlabel='Wavelength $(\AA)$')
-# ax.set(ylabel='Flux')
-# plt.plot(wlm, flux_m[mask_wlm],  c = "darkolivegreen", linewidth=0.7, label = 'Model')
-# plt.plot(wlo, flux_our[mask_wlo], c = "blueviolet", linewidth=0.7, label = 'Our PN')
-
-# ax.legend(loc="upper right")
-# sn.despine()
-# plt.tight_layout()
-# plt.savefig(model_name + "limited.jpg")

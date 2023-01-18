@@ -1,0 +1,26 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: Line, datatype: string}
+# - {name: Lambda, datatype: float64}
+# - {name: Flux, datatype: float64}
+# - {name: Sigma, datatype: float64}
+# - {name: EW, unit: Angstrom, datatype: float64}
+# meta:
+#   __serialized_columns__:
+#     EW:
+#       __class__: astropy.units.quantity.Quantity
+#       unit: !astropy.units.Unit {unit: Angstrom}
+#       value: !astropy.table.SerializedColumn {name: EW}
+#   name: first table
+# schema: astropy-2.0
+Line Lambda Flux Sigma EW
+[NeIII]H7 3967.47 0.5889737083512379 0.15764977961883433 -17.91832804107252
+Hdelta 4101.742 0.6717483900504287 0.12524102293290532 -21.903522999077193
+Hgamma 4340.471 1.0911261557535947 0.11704453704885041 -38.88706632397382
+HeII 4685.99 2.391625604184817 0.17505821807148436 -90.3732375597185
+Hbeta 4861.333 2.289651681703986 0.16136621113443875 -82.31127943520343
+[OIII]4958 4958.911 1.0 0.08313883303439121 -30.26071217235896
+[OIII]5006 5006.843 2.7819024182584 0.18491618140796648 -97.51854815644356
+[FeIII] 5412.12 0.3063738407911463 0.038287667692284755 -0.25103954598758427
+Halpha 6564.614 5.335635289730922 0.3234402764519409 -141.78159625502462
