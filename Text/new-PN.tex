@@ -217,8 +217,6 @@ YSOs, AeBe stars and SNRs. The contours becoming white at the outside indicating
 that the number of objects decrease significantly. And the blue contours signify
 stars from \citet{Smart:2021}. Where they occupy the region with \((G - r)\) = 0.
 
-
-
 \begin{figure}
 \centering
   \includegraphics[width=0.9\linewidth]{Figs/color-diagram-ps-gaiaEDR3.pdf}
@@ -254,8 +252,8 @@ that the He II emission line is as strong as the H$\beta$ line. No lines of ions
 of ionization were detected, lines as [N II] and [O II].
 
 
-Given the LAMOST spectra
-are not calibrated in flux but they are flux relative, then I think that some ratio line can be calculated. Could be?
+Given the LAMOST spectra are not calibrated in flux but they are flux relative,
+then I think that some ratio line can be calculated. Could be?
 
 \begin{figure*}
 \centering
@@ -328,7 +326,8 @@ Given supernovas are also high-ionization sources....
 	\end{tabular}
 \end{table}
 
-Given the small number of observational constraints, weadopt a very simple model of a planetary nebula whichconsists of a homogeneous gaseous sphere surrounding ahot star radiating as a blackbod.
+Given the small number of observational constraints, weadopt a very simple model of a planetary nebula which
+consists of a homogeneous gaseous sphere surrounding ahot star radiating as a blackbod.
 Despite the LAMOST spectra are not in physical flux unity, they have flux relative. This means it
 is possible compare it with other spectra in physical units. For that, I think, it is pertinent to
 compare the LAMOST spectra of our PN with models.
@@ -349,7 +348,7 @@ and charge transfer and recombination process, namely,
 radiative, dielectronic, three-body recombination, and charge
 transfer are included self-consistently. {\sc cloudy} predicts both
 the intensities and column densities of a very large number
-(∼104) of spectral lines covering the whole electromagnetic
+($\sim 10^{4}$) of spectral lines covering the whole electromagnetic
 range, from non–local thermodynamic equilibrium (NLTE),
 illuminated gas clouds by solving the equations of thermal and
 statistical equilibrium for a given set of input parameters. More
@@ -363,7 +362,10 @@ synthetic spectra of PNe to simulate the  Broadband photometry
 of Large Synoptic Survey Telescope(LSST). In the same way, a grid of modelled
 halo galactic PNe were performed to simulate the J-PLUS and S-PLUS photometry
 to developed new color criteria to find for PNe in these surveys by \citet{Gutierrez-Soto:2020}.
-We used {\sc pyCloudy} \citep{Morisset:2013} a package python\footnote{\url{https://sites.google.com/site/pycloudy/home}} which is a set of tools to deal with photoionization code {\sc cloudy} (\url{www.nublado.org}), which was used to create a set of input of model and lead with the  output files. 
+We used {\sc pyCloudy} \citep{Morisset:2013} a
+package python\footnote{\url{https://sites.google.com/site/pycloudy/home}} which
+is a set of tools to deal with photoionization code {\sc cloudy} (\url{www.nublado.org}),
+which was used to create a set of input of model and lead with the  output files. 
 
 We consider a central ionizing source surrounded by a spherically symmetric
 gaseous material on which dimensions are determined by the inner ($R_{\mathrm{in}}$) and outer ($R_{\mathrm{out}}$)
@@ -371,24 +373,45 @@ radii (cm).  The central ionizing radiation is assumed to have a
 black-body shape with temperature T$_{\mathrm{BB}}$ (K) and luminosity L
 (ergs$^-1$). We assume spherical geometry for the nebula, a uniform filling factor of unity.
 Many models were generated with the intention of finding the best fit.
-In agreement with the LAMOST spectra and similarity with theses high-ionization PNe (see \ref{fig:compare-spectra})
+In agreement with the LAMOST spectra and similarity with theses high-ionization PNe
+(see \ref{fig:compare-spectra})
 we considered a set of effective temperature between 10$\times10^4$ and 20$\times10^4$
 in step of 10$\times10^3$ and luminosities from 400$L_{\odot}$ to 10100$L_{\odot}$ in steps
 of 300$L_{\odot}$. We also considered several hydrogen density (500, 1000, 3000 and 6000cm$^{-3}$).
+(We varied TBB in the
+range of 104 - 106 K, L in the range of 1036 - 1038 erg s-1, n(H)
+in the range of 108 - 1012 cm−3, simultaneously with the elemental abundances.)
 We note that the spectra of LAMOST J020808.63+491401.0 is particularly quiet similar to the
-spectrum of NGC 2242, so we first adopted the abundances of it and after we change the value of He and Ar to get a better match with the observed spectra. We also adopted inner and outer radius
-of that showed very good. For the distance we implemented the distance of the central star of the PNe estimated by \citet{Bailer:2021} based on
+spectrum of NGC2242, so we first adopted the abundances of it and after we change the
+value of He and Ar to get a better match with the observed spectra. We also adopted inner
+and outer radius
+of that showed very good. For the distance we implemented the distance of the central star
+of the PNe estimated by \citet{Bailer:2021} based on
 the parallax of GAIA of 2.313 kpc. Note that this is the geometrical distances estimated for them. 
-
-
 Fig~\ref{fig:spectra-obs-model} shows a comparison
 between LAMOST spectra and a {\sc cloudy}. This model was taken from a grid of
-models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches between the two spectra. I will a perform a grid of PN models that better reproduce the LAMOST spectra of our candidate.
+models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches between the two spectra.
+I will a perform a grid of PN models that better reproduce the LAMOST spectra of our candidate.
 However, almost all the line are reproduce with this model, that could be interesting, because the
 temperature effective of this model is 130$\times10^3$K, indicating a very high excitation object.
 Maybe, it will be good idea estimate ratio lines to confirm that! is it possible with this spectrum?
 The observed spectrum and the modeled spectrum were
 matched using fluxes relative to the H{$\beta$} emission line.
+
+\subsection{The best fit model}
+\label{sec:best-fit}
+In order to chose the final model
+after many iterations of multiple test models based on
+varying the input parameter show before. For that
+I compare the model-generated lines with the fluxes of the observed lines.
+This allows determined automatically the goodness of fit by
+calculating $\chi^{2}$, and  $\chi^{2}_{r}$
+of the models given by the following relation,
+
+\begin{equation}
+  \chi^{2} = \sum^{n}_{i = 1} = \frac{(M_i - O_i)^2}{\sigma^{2}_i}
+  \label{eq:chi}
+\end{equation}
 
 
 
@@ -410,7 +433,9 @@ matched using fluxes relative to the H{$\beta$} emission line.
   \label{fig:compare-spectra}
 \end{figure*}
 
-In Fig~\ref{fig:compare-spectra} we are compare our PNe with other high-ionization PNe (NGC 2242, NGC 4361 and PRTM 1). Note that all three PNe are objects located at high latitudes, this means that they belong to the halo Galactic. All four spectra are very similar with the same Balmer lines, the high-ionization lines and lacked the low-ionization lines.
+In Fig~\ref{fig:compare-spectra} we are compare our PNe with other high-ionization PNe (NGC 2242, NGC 4361 and PRTM 1).
+Note that all three PNe are objects located at high latitudes, this means that they belong to the halo Galactic.
+All four spectra are very similar with the same Balmer lines, the high-ionization lines and lacked the low-ionization lines.
 
 \begin{figure}
   \centering
@@ -427,7 +452,10 @@ In Fig~\ref{fig:compare-spectra} we are compare our PNe with other high-ionizati
   \label{fig:images-known}
 \end{figure}
 
-Fig~\ref{fig:images-known}
+Fig~\ref{fig:images-known} show the optical and IR images of the known planetary nebulae
+presented in section ?? apparently all this PN have the same shape, e.g. are around like
+the Lamost PN. Also in all them the central star is clearly perceptible like the Lamost PN,
+indicating, probably, the high temperature nature on their central star.
 
 \section{Comparison with post-AGB stellar evolution tracks}
 \label{sec:tracks}
@@ -446,8 +474,11 @@ that have been selected to be  similar to the new PNe.}
  \label{fig:track-evolutive}
 \end{figure}
 
-Fig~\ref{fig:track-evolutive} shows the position of the new PN (blue stars) in the luminosity versus effective temperature diagram. The position of the three PNe on which we have used to compare with the new one are also shown (orange circles). Post-AGB stellar evolutionary tracks for
-approximately solar metallicity \citep{Miller:2016} are indicated for the continue lines. I mean for stars with M = 1, 1.25, 1.5, 2.0, 2.5 and 3M$_{\odot}$. In agreement with the position of LAMOST
+Fig~\ref{fig:track-evolutive} shows the position of the new PN (blue stars) in the luminosity
+versus effective temperature diagram. The position of the three PNe on which we have used to
+compare with the new one are also shown (orange circles). Post-AGB stellar evolutionary tracks for
+approximately solar metallicity \citep{Miller:2016} are indicated for the continue lines.
+I mean for stars with M = 1, 1.25, 1.5, 2.0, 2.5 and 3M$_{\odot}$. In agreement with the position of LAMOST
 J020808.63+491401.0 in the diagram the mas of the progenitor star is between 2.5 and 3.0M$_{\odot}$.
 
 \section*{Acknowledgements}
@@ -460,7 +491,12 @@ Try to keep it short.
 \section*{Data Availability}
 
  
-The inclusion of a Data Availability Statement is a requirement for articles published in MNRAS. Data Availability Statements provide a standardised format for readers to understand the availability of data underlying the research results described in the article. The statement may refer to original data generated in the course of the study or to third-party data analysed in the article. The statement should describe and provide means of access, where possible, by linking to the data or providing the required accession numbers for the relevant databases or DOIs.
+The inclusion of a Data Availability Statement is a requirement for articles published in MNRAS.
+Data Availability Statements provide a standardised format for readers to understand the availability
+of data underlying the research results described in the article. The statement may refer to original
+data generated in the course of the study or to third-party data analysed in the article.
+The statement should describe and provide means of access, where possible, by linking to the
+data or providing the required accession numbers for the relevant databases or DOIs.
 
 
 %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%

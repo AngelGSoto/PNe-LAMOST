@@ -187,6 +187,7 @@ catalog as emission lines objects. See the [[https://github.com/AngelGSoto/pytho
 + Near stars GAIA -> [[https://ui.adsabs.harvard.edu/abs/2021A%26A...649A...6G/abstract][ Smart, R. L. et al.]].
 
 **** Paper using CLOUDY
+    - [[https://iopscience.iop.org/article/10.1088/0004-6256/140/5/1347/pdf][Helton et al.]]
     - [[https://arxiv.org/pdf/2207.10473.pdf][Pandey et al.]]
     - [[https://ui.adsabs.harvard.edu/abs/2018MNRAS.474.4211M/abstract][Mondal et al.]]
     - [[https://ui.adsabs.harvard.edu/abs/2019A%26A...622A.126P/abstract][Pavana et al.]]

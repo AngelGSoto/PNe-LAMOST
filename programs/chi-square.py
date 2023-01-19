@@ -338,9 +338,17 @@ np = 3
 vv = n - np
 chi_sum_red = chi_sum / vv
 
+modell, chii, chii_red = [], [], [] 
 if chi_sum_red <= 2:
-    tab = QTable([model_name, hi_sum_red],
-           names=('Name model', 'Chi red'),
+    modell.append(model_name.split("0/")[-1])
+    chii.append(chi_sum)
+    chii_red.append(chi_sum_red)    
+print(chii)    
+tab = Table([modell, chii, chii_red],
+           names=('Name model', 'chi', 'Chi red'),
            meta={'name': 'first table'})
-    tab.write("better-models-chisquera.ecsv", format="ascii.ecsv", overwrite=True)
+try:
+    tab.write("better-models" + modell +".ecsv", format="ascii.ecsv", overwrite=True)
+except TypeError:
+    pass
 
