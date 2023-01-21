@@ -126,7 +126,7 @@ ax.set(
     xlim=[-100000, 100000],
     ylim=[3000, 3e5],
 )
-ax.set_xscale("symlog", linthreshx=100)
+ax.set_xscale("symlog")#, linthreshx=100)
 ax.set_yscale("log")
 axL.set(
     ylim=[0.0, 1.5e4],
@@ -179,8 +179,8 @@ weidmantab = Table.read("../PN-high-ion-weidman.dat", format="ascii")
 
 ###
 # Teff and L of our PN after modeling with Cloudy.
-logTeff = np.log10(14e4)
-logLpn = np.log10(7.29410000000006e+36/3.839e33) #36.86297171307024, 3.7238299999999735e+37
+logTeff = np.log10(16e4)
+logLpn = np.log10(6.142400000000004e+36/3.839e33) #36.86297171307024, 3.7238299999999735e+37
 
 fig, ax = plt.subplots(figsize=(8, 8))
 #ax.axvspan(4.7, 5.0, 0.6, 0.9, color="k", alpha=0.1)
@@ -340,7 +340,7 @@ ax2.set(
     xlim=[-10000, 10000],
     ylim=[3000, 3e5],
 )
-ax2.set_xscale("symlog", linthreshx=100)
+ax2.set_xscale("symlog")#, linthreshx=100)
 ax2.set_yscale("log")
 sns.despine()
 fig2.savefig("hr-tT-0100tb2.pdf")
@@ -402,7 +402,7 @@ ax4.set(
     xlim=[-10000, 10000],
     ylim=[3000, 3e5],
 )
-ax4.set_xscale("symlog", linthreshx=100)
+ax4.set_xscale("symlog")#, linthreshx=100)
 ax4.set_yscale("log")
 sns.despine()
 fig4.savefig("hr-tTeff-0100tb2.pdf")

@@ -347,8 +347,9 @@ print(chii)
 tab = Table([modell, chii, chii_red],
            names=('Name model', 'chi', 'Chi red'),
            meta={'name': 'first table'})
+
 try:
-    tab.write("better-models" + modell +".ecsv", format="ascii.ecsv", overwrite=True)
+    tab.write("better-models" + str(modell).split("['")[-1].split("']")[0] +".ecsv", format="ascii.ecsv", overwrite=True)
 except TypeError:
     pass
 

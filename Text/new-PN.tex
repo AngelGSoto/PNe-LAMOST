@@ -273,7 +273,7 @@ The image shows clearly a nebular component surrounding
 a central star. \textit{Right panel} shows the
 WISE RGB image, with the filter W1, W2, and W4 in
 the blue, green and red channels, respectively.
- The WISE image show that the object is W4 wright.
+ The WISE image shows that the object is W4 wright.  
 At 22$\mu$ (W4-filter) it appears as an almost
 circular (but slightly elongated in the north-south direction)
 diffuse halo (of angular diameter of $\simeq$ 50 arcsec) surrounding
@@ -293,7 +293,8 @@ a core of bright emission centred around J020808.63+491401.0.
 \subsection{Why is not a supernova?}
 \label{sec:snr}
 
-Given supernovas are also high-ionization sources....
+Given supernovas are also high-ionization sources the object could be
+a supernova, but the spectra don show broad lines as the classical supernova.
 
 \section{Modeling the observed spectra}
 \label{sec:model}
@@ -326,7 +327,7 @@ Given supernovas are also high-ionization sources....
 	\end{tabular}
 \end{table}
 
-Given the small number of observational constraints, weadopt a very simple model of a planetary nebula which
+Given the small number of observational constraints, readopt a very simple model of a planetary nebula which
 consists of a homogeneous gaseous sphere surrounding ahot star radiating as a blackbod.
 Despite the LAMOST spectra are not in physical flux unity, they have flux relative. This means it
 is possible compare it with other spectra in physical units. For that, I think, it is pertinent to
@@ -355,8 +356,8 @@ statistical equilibrium for a given set of input parameters. More
 details about CLOUDY could be found in Ferland et al. (2013);
 Shaw et al. (2020), and references therein (Pandey et al. 2022).
 The code uses a set of input parameters to compute the
-ionization, thermal, and chemical state of a non-equilibrium gas cloud, illuminated
-by a central source and predict the resulting spectra. 
+ionization, thermal, and chemical state of a non-equilibrium gas cloud,
+illuminated by a central source and predict the resulting spectra. 
 In the past, \citet{Vejar:2019} used {\sc cloudy} to produce
 synthetic spectra of PNe to simulate the  Broadband photometry
 of Large Synoptic Survey Telescope(LSST). In the same way, a grid of modelled
@@ -365,7 +366,7 @@ to developed new color criteria to find for PNe in these surveys by \citet{Gutie
 We used {\sc pyCloudy} \citep{Morisset:2013} a
 package python\footnote{\url{https://sites.google.com/site/pycloudy/home}} which
 is a set of tools to deal with photoionization code {\sc cloudy} (\url{www.nublado.org}),
-which was used to create a set of input of model and lead with the  output files. 
+which was used to create a set of inputs for the model and deal with the output files.
 
 We consider a central ionizing source surrounded by a spherically symmetric
 gaseous material on which dimensions are determined by the inner ($R_{\mathrm{in}}$) and outer ($R_{\mathrm{out}}$)
@@ -380,7 +381,7 @@ in step of 10$\times10^3$ and luminosities from 400$L_{\odot}$ to 10100$L_{\odot
 of 300$L_{\odot}$. We also considered several hydrogen density (500, 1000, 3000 and 6000cm$^{-3}$).
 (We varied TBB in the
 range of 104 - 106 K, L in the range of 1036 - 1038 erg s-1, n(H)
-in the range of 108 - 1012 cm−3, simultaneously with the elemental abundances.)
+in the range of 108 - 1012 $cm^{-3}$, simultaneously with the elemental abundances.)
 We note that the spectra of LAMOST J020808.63+491401.0 is particularly quiet similar to the
 spectrum of NGC2242, so we first adopted the abundances of it and after we change the
 value of He and Ar to get a better match with the observed spectra. We also adopted inner
@@ -400,20 +401,47 @@ matched using fluxes relative to the H{$\beta$} emission line.
 
 \subsection{The best fit model}
 \label{sec:best-fit}
-In order to chose the final model
+As \citet{Helton:2010, Mondal:2018, Pavana:2019, Mondal:2020, Pandey:2022a, Pandey:2022b} In order to chose the final model
 after many iterations of multiple test models based on
 varying the input parameter show before. For that
 I compare the model-generated lines with the fluxes of the observed lines.
 This allows determined automatically the goodness of fit by
-calculating $\chi^{2}$, and  $\chi^{2}_{r}$
+calculating $\chi^{2}$
 of the models given by the following relation,
 
 \begin{equation}
-  \chi^{2} = \sum^{n}_{i = 1} = \frac{(M_i - O_i)^2}{\sigma^{2}_i}
+  \chi^{2} = \sum^{n}_{i = 1}  \frac{(M_i - O_i)^2}{\sigma^{2}_i}
   \label{eq:chi}
 \end{equation}
 
+where $M_i$, $O_i$ and $\sigma^{2}_i$ are the modelled line flux ratios, the observed line flux
+ratios and uncertainty in the observed line flux ratios, respectively. I also used the $\chi^{2}$ to
+find the best-fitting model, which is given,
 
+\begin{equation}
+  \chi^{2}_{r} = \frac{\chi^{2}}{\nu}
+  \label{eq:chi-red}
+\end{equation}
+
+where $\nu$ is represents the number of degrees of freedom (DOF), which is estimate
+by implementing $\nu = n - n_p$, with $n$ and $n_p$ being the number of observed lines
+used to estimate $\chi^{2}$ and the number of parameters, respectively. Note that for a reasonably
+fit, the value of $\chi^{2} \sim \nu$. This means that the value of $\chi^{2}_r$ should be low,
+usually between 1 and 2. The flux lines of each line were measured  interactively by fitting a 1D Gaussian using the 10 $\AA$ centered on
+the line and integrate over this best fit Gaussian within more or less 3$\sigma$ interval. Being $\sigma$  the standard deviation of the individual line fit Gaussian. I found automatically the
+parameters to fit the best 1D Gaussian model using the function \texttt{estimate\_line\_parameters} from \texttt{Astropy specutils.fitting} package \footnote{\url{https://specutils.readthedocs.io/en/stable/index.html}}.
+
+The uncertainty in the flux ratios of the observed lines were computed following the
+equation presented by \citet{Tresse:1999}:
+
+\begin{equation}
+  \sigma_{F} = \sigma_{c} D \sqrt{2N_{\text{pix}} + \frac{\text{EW}}{D}
+  \label{eq:err-sigma}
+\end{equation}
+
+respectively, where $\sigma_{c}$ is the mean standard deviation per pixel of
+the continuum on each side of the line,$N_{\text{pix}}$ is the number of pixels
+under the line and $𝐷 = 1.0009 \AA$ pixel$^{-1}$ is the spectral dispersion. 
 
 \begin{figure*}
 \centering
@@ -422,7 +450,7 @@ of the models given by the following relation,
   \label{fig:spectra-obs-model}
 \end{figure*}
 
-\section{Comparing with other high-ionization PNe. }
+\section{Comparing with other high-ionization PNe.}
 \label{sec:comp}
 
 \newpage
@@ -444,7 +472,7 @@ All four spectra are very similar with the same Balmer lines, the high-ionizatio
 \includegraphics[width=0.5\linewidth]{Figs/0979p454_ac51-w4-int-3_ra98.53061791727998_dec44.77716333248_asec200.000-421-RGB.pdf}\\
 \includegraphics[width=0.52\linewidth]{Figs/cutout_rings.v3.skycell.0924.030.stk.i.unconv-irg-RGB.pdf}
 \includegraphics[width=0.5\linewidth]{Figs/1855m182_ac51-w4-int-3_ra186.12812938647002_dec-18.78487981564_asec200.000-421-RGB}\\
-\includegraphics[width=0.535\linewidth, trim=280 10 340 10, clip]{Figs/dss_search_red.pdf}
+\includegraphics[width=0.535\linewidth, trim=280 10 330 10, clip]{Figs/dss_search_red.pdf}
 \includegraphics[width=0.47\linewidth, trim=58 0 0 0]{Figs/0754m394_ac51-w4-int-3_ra75.75721626934_dec-39.76236833917_asec150.000-421-RGB.pdf}\\
 
 \end{tabular}  
@@ -490,7 +518,6 @@ Try to keep it short.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Data Availability}
 
- 
 The inclusion of a Data Availability Statement is a requirement for articles published in MNRAS.
 Data Availability Statements provide a standardised format for readers to understand the availability
 of data underlying the research results described in the article. The statement may refer to original
