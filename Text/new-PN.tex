@@ -410,13 +410,13 @@ calculating $\chi^{2}$
 of the models given by the following relation,
 
 \begin{equation}
-  \chi^{2} = \sum^{n}_{i = 1}  \frac{(M_i - O_i)^2}{\sigma^{2}_i}
+  \chi^{2} = \sum^{n}_{i = 1} \frac{(M_i - O_i)^2}{\sigma^{2}_i}
   \label{eq:chi}
 \end{equation}
 
 where $M_i$, $O_i$ and $\sigma^{2}_i$ are the modelled line flux ratios, the observed line flux
 ratios and uncertainty in the observed line flux ratios, respectively. I also used the $\chi^{2}$ to
-find the best-fitting model, which is given,
+find the best-fitting model, which is given by,
 
 \begin{equation}
   \chi^{2}_{r} = \frac{\chi^{2}}{\nu}
@@ -427,8 +427,10 @@ where $\nu$ is represents the number of degrees of freedom (DOF), which is estim
 by implementing $\nu = n - n_p$, with $n$ and $n_p$ being the number of observed lines
 used to estimate $\chi^{2}$ and the number of parameters, respectively. Note that for a reasonably
 fit, the value of $\chi^{2} \sim \nu$. This means that the value of $\chi^{2}_r$ should be low,
-usually between 1 and 2. The flux lines of each line were measured  interactively by fitting a 1D Gaussian using the 10 $\AA$ centered on
-the line and integrate over this best fit Gaussian within more or less 3$\sigma$ interval. Being $\sigma$  the standard deviation of the individual line fit Gaussian. I found automatically the
+usually between 1 and 2. 
+
+The flux lines of each line were measured  interactively by fitting a 1D Gaussian using the 10 $\AA$ centered on
+the line and integrate over this best fit Gaussian within more or less 3$\sigma$ interval. Being $\sigma$ the standard deviation of the individual line fit Gaussian. I found automatically the
 parameters to fit the best 1D Gaussian model using the function \texttt{estimate\_line\_parameters} from \texttt{Astropy specutils.fitting} package \footnote{\url{https://specutils.readthedocs.io/en/stable/index.html}}.
 
 The uncertainty in the flux ratios of the observed lines were computed following the
@@ -440,8 +442,45 @@ equation presented by \citet{Tresse:1999}:
 \end{equation}
 
 respectively, where $\sigma_{c}$ is the mean standard deviation per pixel of
-the continuum on each side of the line,$N_{\text{pix}}$ is the number of pixels
-under the line and $𝐷 = 1.0009 \AA$ pixel$^{-1}$ is the spectral dispersion. 
+the continuum on each side of the line, $N_{\text{pix}}$ is the number of pixels
+under the line and $D = 1.0009 \AA$ pixel$^{-1}$ is the spectral dispersion.
+
+% Example table
+\begin{table*}
+	\centering
+	\caption{ Observed and best-fit CLOUDY model line fluxes for LAMOST J020808.63+491401.0.}
+	\label{tab:abundances}
+	\begin{tabular}{lcccccccc} % four columns, alignment for each
+                \hline
+		\hline
+		$\lambda$(\AA) & Line ID & Observed Flux  & Model 1 Flux & $\chi^{2}$ & Model 2 Flux &  $\chi^{2}$ & Model 3 Flux &  $\chi^{2}$ \\
+		\hline
+		[Ne III] + H7  & 5.146 \\
+		H{$\delta$} & 37.571 \\
+		  $\log(\mathrm{Hden) (cm^{-3})} $ & 3.477 \\
+                  $\log(\mathrm{R_{in}) (cm)}$ & 16.903 \\
+                $\log(\mathrm{R_{out}) (cm)}$ & 17.350 \\
+                 Distance (pc) & 2313.01 \\
+                  $\log(\mathrm{He/H})$ & -0.80 \\
+                $\log(\mathrm{C/H})$ & -4.15 \\
+                $\log(\mathrm{N/H})$ & -4.72 \\
+                $\log(\mathrm{O/H})$ & -3.81 \\
+                $\log(\mathrm{Ne/H})$ & -4.58 \\
+                $\log(\mathrm{Si/H})$ & -5.00 \\
+                $\log(\mathrm{S/H})$ & -6.00 \\
+                $\log(\mathrm{Ar/H})$ & -6.24 \\
+                
+                \hline
+	\end{tabular}
+\end{table*}
+
+The low $\chi^{2}_{r}$
+red (< 2) values of the model in the present study indi-
+cates that the CLOUDY model generated spectra match well with
+the observed spectra. Even while our model reproduces a wide va-
+riety of observable effects, the phenomenology has certain limits.
+
+
 
 \begin{figure*}
 \centering
@@ -457,7 +496,7 @@ under the line and $𝐷 = 1.0009 \AA$ pixel$^{-1}$ is the spectral dispersion.
 \begin{figure*}
 \centering
 \includegraphics[width=0.89\linewidth]{Figs/spectra-compare.pdf}
-  \caption{Comparing the new PNe with other high halo palnetary nebulae... .} 
+  \caption{Spectra of the 3 known PNe and the new PN. The spectra have all been scaled and normalized for display purposes comparing the new PNe with other high halo palnetary nebulae....} 
   \label{fig:compare-spectra}
 \end{figure*}
 
