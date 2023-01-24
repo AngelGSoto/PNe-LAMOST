@@ -48,5 +48,6 @@ notebook/.ipynb*
 *.pyc
 *.csv
 *.fits
+*.gzip
 *~
 *#

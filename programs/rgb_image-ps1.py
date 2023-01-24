@@ -149,12 +149,12 @@ img.scalebar.set_font(size=45, weight='bold',
 img.add_label(0.1, 0.9, str(instrument_b) + "+" + str(instrument_g) + "+" + str(instrument_r), color="white",
               horizontalalignment='left',
               weight='bold', size=20, relative=True, zorder=1000)
-# dx, dy = 0.001, -0.001
-# img.add_label(0.7+dx, 0.89+dy, "NGC 4361", color="white", alpha=0.9,
-#               horizontalalignment='left',
-#               bbox={"facecolor": "black", "edgecolor": "none",# "pad": 20,
-#                     "alpha": 0.5, "boxstyle": "round, pad=0.5"},
-#               weight='bold', size=18, relative=True, zorder=999)
+dx, dy = 0.001, -0.001
+img.add_label(0.7+dx, 0.89+dy, "NGC 2242", color="white", alpha=0.9,
+              horizontalalignment='left',
+              bbox={"facecolor": "black", "edgecolor": "none",# "pad": 20,
+                    "alpha": 0.5, "boxstyle": "round, pad=0.5"},
+              weight='bold', size=18, relative=True, zorder=999)
 
 try:
     img.show_regions(position)

@@ -565,7 +565,9 @@ Byte-by-byte Description of file (#): models/*
 --------------------------------------------------------------------------------
 #+END_SRC
 
-** WISE images
+** images
+
+   - The panstarr image of the PN candiate is 29.062 arcsec.
 
    Size of the images dowloaded from WISE:
 
