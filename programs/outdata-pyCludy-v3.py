@@ -78,11 +78,21 @@ fig, ax = plt.subplots(figsize=(11, 5))
 ax.set(xlim=[3600,9100])
 #plt.ylim(ymin=-200,ymax=1500)
 ax.set(xlabel='Wavelength $(\AA)$')
-ax.set(ylabel='Flux')
-plt.plot(data_mask["Wl"], flux_m,  c = "darkolivegreen", linewidth=0.7, label = 'Model')
-plt.plot(wl, flux_our, c = "blueviolet", linewidth=0.7, label = 'Our PN')
+ax.set(ylabel='Normalised flux')
+plt.plot(data_mask["Wl"], flux_m,  c = "darkolivegreen", linewidth=0.7, label = 'Model 3')
+plt.plot(wl, flux_our, c = "blueviolet", linewidth=0.7, label = 'J020808.63+491401.0')
 
-ax.legend(loc="upper right")
+bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
+
+info_mod1 = [r"$\mathrm{T_{eff}=16\times10^{4}K}$", r"$\mathrm{L=1.6\times10^{3}L_{\odot}}$", r"$\chi^2=6.78$", r"$\chi^2_r=1.13$"]
+info_mod2 = [r"$\mathrm{T_{eff}=14\times10^{4}K}$", r"$\mathrm{L=1.9\times10^{3}L_{\odot}}$", r"$\chi^2=9.55$", r"$\chi^2_r=1.59$"]
+info_mod3 = [r"$\mathrm{T_{eff}=13\times10^{4}K}$", r"$\mathrm{L=2.2\times10^{3}L_{\odot}}$", r"$\chi^2=9.67$", r"$\chi^2_r=1.61$"]
+loc_text = [(0.75, 0.9), (0.75, 0.9-0.13), (0.75,  0.9-2*0.13), (0.75, 0.9-3*0.13)]
+for loc_, taxt in zip(loc_text, info_mod3):
+    ax.text(loc_[0], loc_[1], taxt, fontsize=19,
+            bbox=dict(facecolor='gray', alpha=0.0),
+            transform=ax.transAxes)
+ax.legend(loc="upper left", fontsize="x-small")
 sn.despine()
 plt.tight_layout()
-plt.savefig(model_name + ".jpg")
+plt.savefig(model_name + ".pdf")
