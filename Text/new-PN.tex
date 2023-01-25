@@ -370,7 +370,9 @@ since it has become ionized only within the past 20 years
 \begin{figure*}
 \centering
 \includegraphics[width=0.89\linewidth]{Figs/spectra-compare.pdf}
-  \caption{Spectra of the 3 known PNe and the new PN. The spectra have all been scaled and normalized for display purposes comparing the new PNe with other high halo palnetary nebulae....} 
+\caption{Spectra of the 3 known PNe and the new PN. The spectra have
+  all been scaled and normalized for display purposes comparing the
+  new PNe with other high halo palnetary nebulae....} 
   \label{fig:compare-spectra}
 \end{figure*}
 
@@ -528,7 +530,8 @@ of the models given by the following relation,
 \end{equation}
 
 where $M_i$, $O_i$ and $\sigma^{2}_i$ are the modelled line flux ratios, the observed line flux
-ratios and uncertainty in the observed line flux ratios, respectively. I also used the $\chi^{2}$ to find the best-fitting model, which is given by,
+ratios and uncertainty in the observed line flux ratios, respectively. I also used the $\chi^{2}$
+to find the best-fitting model, which is given by,
 
 \begin{equation}
   \chi^{2}_{r} = \frac{\chi^{2}}{\nu}
@@ -542,8 +545,10 @@ fit, the value of $\chi^{2} \sim \nu$. This means that the value of $\chi^{2}_r$
 usually between 1 and 2. 
 
 The flux lines of each line were measured  interactively by fitting a 1D Gaussian using the 10 $\AA$ centered on
-the line and integrate over this best fit Gaussian within more or less 3$\sigma$ interval. Being $\sigma$ the standard deviation of the individual line fit Gaussian. I found automatically the
-parameters to fit the best 1D Gaussian model using the function \texttt{estimate\_line\_parameters} from \texttt{Astropy specutils.fitting} package \footnote{\url{https://specutils.readthedocs.io/en/stable/index.html}}.
+the line and integrate over this best fit Gaussian within more or less 3$\sigma$ interval. Being $\sigma$ the
+standard deviation of the individual line fit Gaussian. I found automatically the
+parameters to fit the best 1D Gaussian model using the function \texttt{estimate\_line\_parameters} from \texttt{Astropy specutils.fitting}
+package \footnote{\url{https://specutils.readthedocs.io/en/stable/index.html}}.
 
 The uncertainty in the flux ratios of the observed lines were computed following the
 equation presented by \citet{Tresse:1999}:
@@ -589,8 +594,8 @@ In this sense, from the 10000 models generated only three models
 match very wells with the spectra of  LAMOST J020808.63+491401.0,
 the values of $\chi^{2}$ and $\chi^{2}_{r}$ of the three best-fit spectra
 are shown in the table~\ref{tab:abundances}. The three
-models have values of $\chi^{2}_{r}$ between 1 and 2, met
-the criteria to an acceptable fit. Being the best model-fit ($\chi^{2}_{r} = 1.2$)
+models have values of $\chi^{2}_{r}$ between 1 and 2, satisfying
+the criteria for an acceptable fit. Being the best model-fit ($\chi^{2}_{r} = 1.2$)
 those which is the  planetary nebula spectrum model with the
 most high effective temperature (T$_{\text{eff}}$ = 160$\times$10$^{4}$).
 
@@ -640,10 +645,45 @@ allowing confirmed the PN nature or not.
 
 \section*{Acknowledgements}
 
-The Acknowledgements section is not numbered. Here you can thank helpful
-colleagues, acknowledge funding agencies, telescopes and facilities used etc.
-Try to keep it short.
-
+LAG-S acknowledges funding for this work
+from  CONICET and
+FAPESP grants 2019/26412-0.
+The Pan-STARRS1 (PS1) Surveys and the PS1 public science
+archive have been made possible through contributions by the
+Institute for Astronomy, the University of Hawaii, the Pan-
+STARRS Project Office, the Max Planck Society and its
+participating institutes, the Max Planck Institute for Astronomy,
+Heidelberg, and the Max Planck Institute for Extraterrestrial
+Physics, Garching, the Johns Hopkins University, Durham
+University, the University of Edinburgh, the Queen’s University
+Belfast, the Harvard-Smithsonian Center for Astrophysics, the
+Las Cumbres Observatory Global Telescope Network Incorpo-
+rated, the National Central University of Taiwan, the Space
+Telescope Science Institute, the National Aeronautics and Space
+Administration under grant No. NNX08AR22G issued through
+the Planetary Science Division of the NASA Science Mission
+Directorate, National Science Foundation grant No. AST-1238877,
+the University of Maryland, Eotvos Lorand University
+(ELTE), the Los Alamos National Laboratory, and the Gordon
+and Betty Moore Foundation.
+This work presents results from the European Space Agency
+(ESA) space mission Gaia. Gaia data are being processed by
+the Gaia Data Processing and Analysis Consortium (DPAC).
+Funding for the DPAC is provided by national institutions, in
+particular the institutions participating in the Gaia MultiLat-
+eral Agreement (MLA). The Gaia mission website is \url{https:
+//www.cosmos.esa.int/gaia}. The Gaia archive website is
+\url{https://archives.esac.esa.int/gaia}.
+Guoshoujing Telescope (the Large Sky Area Multi-Object Fiber Spectroscopic
+Telescope LAMOST) is a National Major Scientific Project built by the Chinese
+Academy of Sciences. Funding for the project has been provided by the National
+Development and Reform Commission. LAMOST is operated and managed by the
+National Astronomical Observatories, Chinese Academy of Sciences.
+Scientific software
+and databases used in this work include 
+TOPCAT\footnote{\url{http://www.star.bristol.ac.uk/~mbt/topcat/}} \citep{Taylor:2005}, 
+simbad and vizier from Strasbourg Astronomical Data Center (CDS)\footnote{\url{https://cds.u-strasbg.fr/}} 
+and the following  python packages: numpy, astropy, specutils, APLpy, matplotlib, seaborn.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Data Availability}
 

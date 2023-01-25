@@ -179,8 +179,9 @@ weidmantab = Table.read("../PN-high-ion-weidman.dat", format="ascii")
 
 ###
 # Teff and L of our PN after modeling with Cloudy.
-logTeff = np.log10(16e4)
-logLpn = np.log10(6.142400000000004e+36/3.839e33) #36.86297171307024, 3.7238299999999735e+37
+logTeffpn = [np.log10(13e4), np.log10(14e4), np.log10(16e4)]
+logLpn = [np.log10(8.44579999999994e+36/3.839e33), np.log10(7.29410000000006e+36/3.839e33), np.log10(6.142400000000004e+36/3.839e33)]  #36.86297171307024, 3.7238299999999735e+37
+models_cloudy = ["Model 3", "Model 2", "Model 1"]
 
 fig, ax = plt.subplots(figsize=(8, 8))
 #ax.axvspan(4.7, 5.0, 0.6, 0.9, color="k", alpha=0.1)
@@ -263,12 +264,14 @@ for label_, x, y in zip(weidmantab["Name_2"], weidmantab["logTeff"], weidmantab[
 
 #Our PN
 
-ax.scatter(logTeff, logLpn, 
+ax.scatter(logTeffpn, logLpn, 
     color="#377eb8", marker="*", s=550, label="Triple",
     edgecolors="k")
 
-ax.annotate("LAMOST J020808.63+491401.0", (logTeff, logLpn), alpha=1, size=10,
-                   xytext=(175.0, -5), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props1, zorder=-100)
+for a, b, c in zip(models_cloudy, logTeffpn, logLpn):
+    print(a, b, c)
+    ax.annotate(a, (b, c), alpha=1, size=10,
+                       xytext=(-10.0, 8), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props1, zorder=-100)
 #ax.legend()
 ax.set(
     ylabel="$\log_{10}\, L/L_\odot$",

@@ -15,7 +15,6 @@ table3 = Table.read("table3.dat", format="ascii")
 table4 = Table.read("table4.dat", format="ascii")
 table5 = Table.read("table5.dat", format="ascii")
 
-
 m1 = (table3["M"] == 1) & (table3["Z"] == 0.016)
 T1 = table3["log(Teff)"][m1]
 L1 = table3["log(L)"][m1]
@@ -64,7 +63,6 @@ Lmax.append(L2.max())
 Lmax.append(L25.max())
 Lmax.append(L35.max())
 Lmax.append(L5.max())
-
 
 #Plotting
 lgd_kws = {'frameon': True, 'fancybox': True, 'shadow': True}
