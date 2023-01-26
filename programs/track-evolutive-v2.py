@@ -1,3 +1,6 @@
+'''
+Adapted from: https://github.com/will-henney/teresa-turtle/blob/master/cspn-notebook/Turtle%20CSPN%20Miller-Bertolami%20models.py
+'''
 import numpy as np
 from astropy.table import Table
 from pathlib import Path
@@ -207,13 +210,13 @@ for data in tabs:
     logL = np.interp(tkin + t0, data["t"], data["logL"])
     logTtkin.append(logT)
     logLtkin.append(logL)
-    ax.plot(logT, logL, "*", c="k")
+    #ax.plot(logT, logL, "*", c="k")
     m = (data["t"] > t0 + tkin/1.5) & (data["t"] < t0 + tkin*1.5)
-    ax.plot(
-        "logTeff", "logL",
-        data=data[m], label="_nolabel_",
-        zorder=-100, c="b", lw=7, alpha=0.4,
-    )
+    # ax.plot(
+    #     "logTeff", "logL",
+    #     data=data[m], label="_nolabel_",
+    #     zorder=-100, c="b", lw=7, alpha=0.4,
+    # )
     
     lw += 0.2
     Tmin = data["logTeff"].min()
@@ -248,11 +251,11 @@ def my_annotate(ax, s, xy_arr=[], *args, **kwargs):
         ans.append(an)
     return ans
     
-my_annotate(ax, r"$\mathrm{t_{evo} = 3500~yr \pm 50\%}$", xy_arr=[(logTtkin[0], logLtkin[0]), (logTtkin[1], logLtkin[1]), (logTtkin[2], logLtkin[2])], size=15, xycoords='data',
-            xytext=(-50, -100), textcoords='offset points',
-            arrowprops=dict(arrowstyle="->",
-                             connectionstyle="arc3,rad=-0.2"),
-                )
+# my_annotate(ax, r"$\mathrm{t_{evo} = 3500~yr \pm 50\%}$", xy_arr=[(logTtkin[0], logLtkin[0]), (logTtkin[1], logLtkin[1]), (logTtkin[2], logLtkin[2])], size=15, xycoords='data',
+#             xytext=(-50, -100), textcoords='offset points',
+#             arrowprops=dict(arrowstyle="->",
+#                              connectionstyle="arc3,rad=-0.2"),
+#                 )
 ax.scatter(
     "logTeff", "logL", data=weidmantab, 
     color="#ff7f0e", marker="o", s=130, label="Triple",
