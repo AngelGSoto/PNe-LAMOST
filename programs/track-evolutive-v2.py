@@ -185,6 +185,8 @@ weidmantab = Table.read("../PN-high-ion-weidman.dat", format="ascii")
 logTeffpn = [np.log10(13e4), np.log10(14e4), np.log10(16e4)]
 logLpn = [np.log10(8.44579999999994e+36/3.839e33), np.log10(7.29410000000006e+36/3.839e33), np.log10(6.142400000000004e+36/3.839e33)]  #36.86297171307024, 3.7238299999999735e+37
 models_cloudy = ["Model 3", "Model 2", "Model 1"]
+label_frac_x = 0.6, 0.40, 0.25 
+label_frac_y = 0.3, 0.4 , 0.4
 
 fig, ax = plt.subplots(figsize=(8, 8))
 #ax.axvspan(4.7, 5.0, 0.6, 0.9, color="k", alpha=0.1)
@@ -250,6 +252,14 @@ def my_annotate(ax, s, xy_arr=[], *args, **kwargs):
         an = ax.annotate(s, xy, alpha=0.0, xytext=(0,0), textcoords=an, **d)
         ans.append(an)
     return ans
+
+def my_annotate_ind(ax, s, x_, y_, label_frac_x, label_frac_y):
+    ax.annotate(s, 
+                xy=(x_-0.03,y_-0.03), xycoords='data', color='black', fontsize=13.5,
+      xytext=(label_frac_x, label_frac_y), textcoords='axes fraction',
+      arrowprops=dict(arrowstyle="->",
+                      connectionstyle="arc3,rad=0.2",
+                      ))
     
 # my_annotate(ax, r"$\mathrm{t_{evo} = 3500~yr \pm 50\%}$", xy_arr=[(logTtkin[0], logLtkin[0]), (logTtkin[1], logLtkin[1]), (logTtkin[2], logLtkin[2])], size=15, xycoords='data',
 #             xytext=(-50, -100), textcoords='offset points',
@@ -271,10 +281,9 @@ ax.scatter(logTeffpn, logLpn,
     color="#377eb8", marker="*", s=550, label="Triple",
     edgecolors="k")
 
-for a, b, c in zip(models_cloudy, logTeffpn, logLpn):
-    print(a, b, c)
-    ax.annotate(a, (b, c), alpha=1, size=10,
-                       xytext=(-10.0, 8), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props1, zorder=-100)
+for a, b, c, d, e in zip(models_cloudy, logTeffpn, logLpn, label_frac_x, label_frac_y):
+    my_annotate_ind(ax, a, b, c, d, e)
+    
 #ax.legend()
 ax.set(
     ylabel="$\log_{10}\, L/L_\odot$",
