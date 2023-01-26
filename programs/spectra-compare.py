@@ -67,10 +67,10 @@ ax.set(ylim=[-0.07,3.0])
 #plt.ylim(ymin=0.0,ymax=500)
 ax.set(xlabel='Wavelength $(\AA)$')
 ax.set(ylabel='Normalised flux')
-ax.plot(wl2, Flux2 , c = "red", linewidth=1, zorder=5)
-ax.plot(wl1, Flux1 , c = "#FFA500", linewidth=1, zorder=5)
-ax.plot(wl0, Flux0 , c = "green", linewidth=1, zorder=5)
-ax.plot(wl, Flux , c = "blueviolet", linewidth=1, zorder=5)
+ax.plot(wl2, Flux2 , c = "red", linewidth=2., zorder=5)
+ax.plot(wl1, Flux1 , c = "#FFA500", linewidth=2., zorder=5)
+ax.plot(wl0, Flux0 , c = "green", linewidth=2., zorder=5)
+ax.plot(wl, Flux , c = "blueviolet", linewidth=2., zorder=5)
 for wll in wv_lin:
     ax.axvline(wll, color='k', linewidth=0.4, alpha=0.5, linestyle='--')
 
@@ -81,7 +81,7 @@ for label_, x, y in zip(em_lin, wv_lin, max_flux):
     ax.annotate(label_, (x, y), alpha=1, size=6,
                    xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
 
-plt.text(0.85, 0.1, 'Our PN',
+plt.text(0.78, 0.1, 'J020808.63+491401.0',
          transform=ax.transAxes, c="blueviolet", weight='bold', fontsize=12.8, bbox=bbox_props)
 
 plt.text(0.85, 0.35, 'NGC 2242',
@@ -94,4 +94,4 @@ plt.text(0.85, 0.85, 'PN PRTM 1',
          transform=ax.transAxes, c="red", weight='bold', fontsize=12.8, bbox=bbox_props)
 #ax.legend()
 plt.tight_layout()
-plt.savefig("Figs/spectra-compare.pdf")
+plt.savefig("Text/Figs/spectra-compare.pdf")
