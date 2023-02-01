@@ -131,15 +131,16 @@ def measurent_line(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec, NameL
     #Ploting the lina and fit Gaussian
     if saveplot == "y":
         fig, ax = plt.subplots(figsize=(12, 12))
-        plt.plot(wl, Flux, linewidth=5, label = "Obs.")
-        plt.plot(wl, y_fit_line, label = "Model")
-        plt.tight_layout()
-        #plt.ylim(-100, (sub_spectrum_line.max() + 500*rel_flux))
-        plt.xlim((line_spec_mask['line_center'].value-30), (line_spec_mask['line_center'].value+30))
+        plt.plot(wl, Flux, linewidth=10, c = "blueviolet", label = "J020808.63+491401.0")
+        plt.plot(wl, y_fit_line, linewidth=10, c = "orange", linestyle='dashed', label = "1D Gaussian model")
+        plt.xlabel('Wavelength $(\AA)$')
+        plt.ylim(-100, (sub_spectrum_line.max() + 500*rel_flux))
+        plt.xlim((line_spec_mask['line_center'].value-15), (line_spec_mask['line_center'].value+15))
         bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
         plt.text(0.1, 0.9, NameLine,
              transform=ax.transAxes, c="black", weight='bold', fontsize=24.8, bbox=bbox_props)
-        ax.legend()
+        ax.legend(loc="upper right")
+        plt.tight_layout()
         plt.savefig(type_spec+ "_" + NameLine + ".pdf")
         plt.close()
     else:
@@ -172,15 +173,16 @@ def measurent_line_model(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec,
     #Ploting the lina and fit Gaussian
     if saveplot == "y":
         fig, ax = plt.subplots(figsize=(12, 12))
+        ax.xlabel('Wavelength $(\AA)$')
         plt.plot(wl, Flux, linewidth=5, label = "Obs.")
         plt.plot(wl, y_fit_line, label = "Model")
-        plt.tight_layout()
         #plt.ylim(-100, (sub_spectrum_line.max() + 500*rel_flux))
-        plt.xlim((line_spec_mask['line_center'].value-30), (line_spec_mask['line_center'].value+30))
+        plt.xlim((line_spec_mask['line_center'].value-20), (line_spec_mask['line_center'].value+20))
         bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
         plt.text(0.1, 0.9, NameLine,
              transform=ax.transAxes, c="black", weight='bold', fontsize=24.8, bbox=bbox_props)
         ax.legend()
+        plt.tight_layout()
         plt.savefig(type_spec + "_" + NameLine + ".pdf")
         plt.close()
     else:
@@ -275,7 +277,7 @@ D = 1.0002302850208247
 #          "HeII8236": 8236.8
 #          }
 
-lines = {"[NeIII]H7": 3967.470,
+lines = {"[NeIII]+H7": 3967.470,
          "Hdelta": 4101.742,
          "Hgamma": 4340.471,
          "HeII": 4685.99,
@@ -292,7 +294,7 @@ flux_lines = []
 err_lines = []
 EW = []
 for v, t in lines.items():
-    flux_lines.append(measurent_line(t, spec, lamb, wl, Flux, rel_flux, "Obs", v, saveplot = "n").value)
+    flux_lines.append(measurent_line(t, spec, lamb, wl, Flux, rel_flux, "Obs", v, saveplot = "y").value)
     err_lines.append(err_line(t, spec, D = D))
     EW.append(ew(t, spec))
     lines_.append(t)

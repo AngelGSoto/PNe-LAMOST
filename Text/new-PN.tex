@@ -676,9 +676,9 @@ most high effective temperature (T$_{\text{eff}}$ = 160$\times$10$^{4}$).
 
 \begin{figure*}
 \centering
-\includegraphics[width=0.89\linewidth, trim=10 90 10 10, clip]{Figs/model_160000_36.79.pdf}
-\includegraphics[width=0.89\linewidth, trim=10 90 10 10, clip]{Figs/model_140000_36.86.pdf}
-\includegraphics[width=0.89\linewidth, trim=10 10 10 10, clip]{Figs/model_130000_36.93.pdf}
+\includegraphics[width=0.89\linewidth, trim=10 90 10 10, clip]{Figs/model_140000_37.15_3.70.pdf}
+\includegraphics[width=0.89\linewidth, trim=10 90 10 10, clip]{Figs/model_150000_36.98_3.60.pdf}
+\includegraphics[width=0.89\linewidth, trim=10 10 10 10, clip]{Figs/model_140000_37.25_3.78.pdf}
 \caption{The three best fitted models, on which the $\chi^2_r$ value are 1.13, 1.59, 1.61.
   The spectra were normalised to H{$\beta$}} 
   \label{fig:spectra-obs-model}
@@ -792,11 +792,22 @@ data or providing the required accession numbers for the relevant databases or D
 %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
 
 \appendix
+\section{1D-Gaussian fitted to the emission lines}
+The 1D-Gaussian fitted to the emission lines of J020808.63+491401.0 used to measurement the flux lines and subsequently used to estimate the $\chi^2$ to
+find the best-fitted {\sc cloudy} models.
+\begin{table*}
+\centering
+  \caption{The best fitted models, on which the $\chi^{2}_r$ have value between 1 and 2. \label{tab:best-model12}}\
+  \begin{tabular}{l l l }
+  \includegraphics[width=0.3\linewidth, clip]{Figs/Obs_[NeIII]+H7.pdf} & \includegraphics[width=0.3\linewidth, clip]{Figs/Obs_Hdelta.pdf} & \includegraphics[width=0.3\linewidth, clip]{Figs/Obs_Hgamma.pdf} \\ \includegraphics[width=0.3\linewidth, clip]{Figs/Obs_HeII.pdf} &
+    \includegraphics[width=0.3\linewidth, clip]{Figs/Obs_Hbeta.pdf} & \includegraphics[width=0.3\linewidth, clip]{Figs/Obs_[OIII]4958.pdf} \\ \includegraphics[width=0.3\linewidth, clip]{Figs/Obs_[OIII]5006.pdf} & \includegraphics[width=0.3\linewidth, clip]{Figs/Obs_[FeIII].pdf} &
+    \includegraphics[width=0.3\linewidth, clip]{Figs/Obs_Halpha.pdf} \\
+\end{tabular}
+\end{table*}
 
-\section{Some extra material}
-
-If you want to present additional material which would interrupt the flow of the main paper,
-it can be placed in an Appendix which appears after the list of references.
+\section{The best fitted models}
+The Fig show the {\sc cloudy} models with value on the $\chi^{2}_r$ between 1 and 2.
+\input{models-spectra.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -609,4 +609,119 @@ Byte-by-byte Description of file (#): models/*
     What about of the uncertainty? Here some papers, [[https://articles.adsabs.harvard.edu/pdf/1999MNRAS.310..262T][Tresse et. al.]] and [[https://www.aanda.org/articles/aa/full/2002/47/aa2895/node3.html][this]].
 
     
+*** Better models
     
+#+BEGIN_SRC python :results output
+  from astropy.table import Table
+  import glob
+  
+  file_list = glob.glob("better-fitModel/*.ecsv")
+  for file_name in file_list:
+    tab = Table.read(file_name)
+    mask = tab["Chi red"] < 1.1
+    better_model = tab[mask]
+    print(better_model)
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+       Name model              chi             Chi red      
+----------------------- ----------------- ------------------
+model_140000_37.25_3.78 6.351445608928784 1.0585742681547974
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+       Name model              chi             Chi red      
+----------------------- ----------------- ------------------
+model_150000_36.98_3.60 6.160521968818245 1.0267536614697075
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+       Name model              chi              Chi red      
+----------------------- ------------------ ------------------
+model_150000_37.15_3.74 5.5743846614050705 0.9290641102341785
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+Name model chi Chi red
+---------- --- -------
+       Name model              chi             Chi red     
+----------------------- ----------------- -----------------
+model_140000_37.15_3.70 6.089861838352865 1.014976973058811
+Name model chi Chi red
+---------- --- -------
+#+end_example
+

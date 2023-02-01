@@ -2,8 +2,10 @@
 Adapted from: https://github.com/will-henney/teresa-turtle/blob/master/cspn-notebook/Turtle%20CSPN%20Miller-Bertolami%20models.py
 '''
 import numpy as np
-from astropy.table import Table
+import numpy.ma as ma
+from astropy.table import Table, QTable
 from pathlib import Path
+import glob
 
 datadir = Path("Model-Bertolami")
 
@@ -181,12 +183,77 @@ print("times=", times)
 weidmantab = Table.read("../PN-high-ion-weidman.dat", format="ascii")
 
 ###
-# Teff and L of our PN after modeling with Cloudy.
-logTeffpn = [np.log10(13e4), np.log10(14e4), np.log10(16e4)]
-logLpn = [np.log10(8.44579999999994e+36/3.839e33), np.log10(7.29410000000006e+36/3.839e33), np.log10(6.142400000000004e+36/3.839e33)]  #36.86297171307024, 3.7238299999999735e+37
-models_cloudy = ["Model 3", "Model 2", "Model 1"]
-label_frac_x = 0.6, 0.40, 0.25 
-label_frac_y = 0.3, 0.4 , 0.4
+
+# Getting the best models
+#Read de files
+pattern = "../better-fitModel/*.in"
+file_list = glob.glob(pattern)
+best_model = ["../better-fitModel/model_140000_37.15_3.70.in", "../better-fitModel/model_150000_36.98_3.60.in", "../better-fitModel/model_140000_37.25_3.78.in"]
+
+Te, Lu = [], []
+for model_name in best_model:
+    f = open(model_name, 'r')
+    header1 = f.readline()
+    header2 = f.readline()
+    header3 = f.readline()
+    header4 = f.readline()
+    header5 = f.readline()
+
+    for line in f:
+        line = line.strip()
+        columns = line.split()
+        T = (columns[0] == "blackbody") 
+        L = (columns[0] == "luminosity")
+        Te.append(columns[T])
+        Lu.append(columns[L])
+
+Teff = np.array(Te)
+L_ = np.array(Lu)
+mask_value_T = ((Teff != "luminosity") & (Teff != "abundances") & (Teff != "save") & (Teff != "continue") & (Teff != "hden") & (Teff != "radius") & (Teff != "iterate") & (Teff != "sphere"))
+mask_value_L = ((L_ != "blackbody") & (L_ != "abundances") & (L_ != "save") & (L_ != "continue") & (L_ != "hden") & (L_ != "radius") & (L_ != "iterate") & (L_ != "sphere"))
+
+Tf = Teff[mask_value_T]
+Lf = L_[mask_value_L]
+
+logTeffpn, logLpn = [], []
+for i, j in zip(Tf, Lf):
+    logTeffpn.append(np.log10(float(i)))
+    logLpn.append(np.log10((10**float(j)) / 3.839e33))
+ 
+models_cloudy = ["Model 1", "Model 2", "Model 3"]
+label_frac_x = 0.01, 0.3, 0.25 
+label_frac_y = 0.92, 0.4 , 0.93
+
+# Discard the best models
+others_files = list(set(file_list) - set(best_model))
+Te1, Lu1 = [], []
+for filename in others_files:
+    f1 = open(filename, 'r')
+    header1 = f1.readline()
+    header2 = f1.readline()
+    header3 = f1.readline()
+    header4 = f1.readline()
+    header5 = f1.readline()
+
+    for line1 in f1:
+        line1 = line1.strip()
+        columns1 = line1.split()
+        T1 = (columns1[0] == "blackbody") 
+        L1 = (columns1[0] == "luminosity")
+        Te1.append(columns1[T1])
+        Lu1.append(columns1[L1])
+
+Teff1 = np.array(Te1)
+L_1 = np.array(Lu1)
+mask_value_T1 = ((Teff1 != "luminosity") & (Teff1 != "abundances") & (Teff1 != "save") & (Teff1 != "continue") & (Teff1 != "hden") & (Teff1 != "radius") & (Teff1 != "iterate") & (Teff1 != "sphere"))
+mask_value_L1 = ((L_1 != "blackbody") & (L_1 != "abundances") & (L_1 != "save") & (L_1 != "continue") & (L_1 != "hden") & (L_1 != "radius") & (L_1 != "iterate") & (L_1 != "sphere"))
+Tf1 = Teff1[mask_value_T1]
+Lf1 = L_1[mask_value_L1]
+
+logTeffpn1, logLpn1 = [], []
+for ii, jj in zip(Tf1, Lf1):
+    logTeffpn1.append(np.log10(float(ii)))
+    logLpn1.append(np.log10((10**float(jj)) / 3.839e33))
 
 fig, ax = plt.subplots(figsize=(8, 8))
 #ax.axvspan(4.7, 5.0, 0.6, 0.9, color="k", alpha=0.1)
@@ -204,7 +271,7 @@ for data in tabs:
         continue
     ax.plot(
         "logTeff", "logL",
-        data=data, label=label,
+        data=data, label="_nolabel_",
         zorder=-100, c="k", lw=lw,
     )
     t0 = np.interp(logTion, data["logTeff"], data["t"])
@@ -255,7 +322,7 @@ def my_annotate(ax, s, xy_arr=[], *args, **kwargs):
 
 def my_annotate_ind(ax, s, x_, y_, label_frac_x, label_frac_y):
     ax.annotate(s, 
-                xy=(x_-0.03,y_-0.03), xycoords='data', color='black', fontsize=13.5,
+                xy=(x_+0.015, y_+0.015), xycoords='data', color='black', fontsize=13.5, zorder=100,
       xytext=(label_frac_x, label_frac_y), textcoords='axes fraction',
       arrowprops=dict(arrowstyle="->",
                       connectionstyle="arc3,rad=0.2",
@@ -268,8 +335,8 @@ def my_annotate_ind(ax, s, x_, y_, label_frac_x, label_frac_y):
 #                 )
 ax.scatter(
     "logTeff", "logL", data=weidmantab, 
-    color="#ff7f0e", marker="o", s=130, label="Triple",
-    edgecolors="k")
+    color="#ff7f0e", marker="o", s=130, label="Known PNe",
+    edgecolors="k", zorder=10,)
 bbox_props1 = dict(boxstyle="round", fc="w", ec="0.78", alpha=0.6, pad=0.2)
 for label_, x, y in zip(weidmantab["Name_2"], weidmantab["logTeff"], weidmantab["logL"]):
     ax.annotate(label_, (x, y), alpha=1, size=10,
@@ -278,12 +345,22 @@ for label_, x, y in zip(weidmantab["Name_2"], weidmantab["logTeff"], weidmantab[
 #Our PN
 
 ax.scatter(logTeffpn, logLpn, 
-    color="#377eb8", marker="*", s=550, label="Triple",
-    edgecolors="k")
+    color="#377eb8", marker="*", s=550,
+           edgecolors="k", zorder=11, label="Three best models")
+ax.scatter(logTeffpn1, logLpn1, 
+    color="white", marker="^", s=90, 
+           edgecolors="k", alpha=0.6, zorder=-200, label="Other best models")
 
 for a, b, c, d, e in zip(models_cloudy, logTeffpn, logLpn, label_frac_x, label_frac_y):
     my_annotate_ind(ax, a, b, c, d, e)
-    
+#get handles and labels
+handles, labels = plt.gca().get_legend_handles_labels()
+
+#specify order of items in legend
+order = [1,2,0]
+
+#add legend to plot
+plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order])     
 #ax.legend()
 ax.set(
     ylabel="$\log_{10}\, L/L_\odot$",
