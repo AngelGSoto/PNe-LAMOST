@@ -288,31 +288,10 @@ lines = {"[NeIII]+H7": 3967.470,
          "Halpha": 6564.614,
          }
 
-nlines_ = []
-lines_ = []
-flux_lines = []
-err_lines = []
-EW = []
-for v, t in lines.items():
-    flux_lines.append(measurent_line(t, spec, lamb, wl, Flux, rel_flux, "Obs", v, saveplot = "n").value)
-    err_lines.append(err_line(t, spec, D = D))
-    EW.append(ew(t, spec))
-    lines_.append(t)
-    nlines_.append(v)
 
-Hbeta = flux_lines[4]
-ratio_lines = flux_lines / Hbeta
-
-# And the error
-err_Hbeta = err_lines[4]
-err_ratio_lines = np.sqrt((ratio_lines**2) * ((np.array(err_lines) / np.array(flux_lines))**2 + (err_Hbeta / Hbeta)**2))
-
-#creating table and save it
-table = QTable([nlines_, lines_,  ratio_lines, err_ratio_lines, EW],
-           names=('Line', 'Lambda', 'Flux', 'Sigma', "EW"),
-           meta={'name': 'first table'})
-#save the table
-table.write("parameters-lamost-pn-selec-lines.ecsv", format="ascii.ecsv", overwrite=True)
+table = Table.read("parameters-lamost-pn-selec-lines.ecsv", format="ascii.ecsv")
+ratio_lines = table["Flux"]
+err_ratio_lines = table["Sigma"]
 
 #################################################################################
 # Model  ########################################################################
@@ -325,7 +304,6 @@ spec_model = Spectrum1D(spectral_axis=lamb_model, flux=flux_model)
 flux_lines_models = []
 for vv, tt in lines.items():
     flux_lines_models.append(measurent_line_model(tt, spec_model, lamb_model, data_mask["Wl"], data_mask["Flux"],  u.Unit('erg cm-2 s-1 AA-1'), "Model", vv, saveplot = "n").value)
-
 
 Hbeta_models = flux_lines_models[4]
 ratio_lines_models = flux_lines_models / Hbeta_models
@@ -354,4 +332,3 @@ try:
     tab.write("better-models" + str(modell).split("['")[-1].split("']")[0] +".ecsv", format="ascii.ecsv", overwrite=True)
 except TypeError:
     pass
-

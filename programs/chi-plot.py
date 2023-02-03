@@ -22,7 +22,7 @@ for file_name in file_list_escv:
 pattern = "*.in"
 file_list_in = glob.glob(pattern)
 
-Name_, Te, Lu = [], [], []
+Name_, Te, Lu, Denss = [], [], [], []
 for filename in file_list_in:
     Namee = filename.split(".in")[0]
     Name_.append(Namee)
@@ -38,36 +38,45 @@ for filename in file_list_in:
         columns = line.split()
         T = (columns[0] == "blackbody") 
         L = (columns[0] == "luminosity")
+        Dens = columns[0] == "hden"
         Te.append(columns[T])
         Lu.append(columns[L])
+        Denss.append(columns[Dens])
 
 Teff = np.array(Te)
 L_ = np.array(Lu)
+Dens_ = np.array(Denss)
 mask_value_T = ((Teff != "luminosity") & (Teff != "abundances") & (Teff != "save") & (Teff != "continue") & (Teff != "hden") & (Teff != "radius") & (Teff != "iterate") & (Teff != "sphere"))
 mask_value_L = ((L_ != "blackbody") & (L_ != "abundances") & (L_ != "save") & (L_ != "continue") & (L_ != "hden") & (L_ != "radius") & (L_ != "iterate") & (L_ != "sphere"))
+mask_value_dens = ((Teff != "luminosity") & (L_ != "blackbody") & (L_ != "abundances") & (L_ != "save") & (L_ != "continue") & (L_ != "radius") & (L_ != "iterate") & (L_ != "sphere"))
+
 Tf = Teff[mask_value_T]
 Lf = L_[mask_value_L]
+densf = Dens_[mask_value_dens]
 
-Teffpn, Lpn = [], []
-for ii, jj in zip(Tf, Lf):
+Teffpn, Lpn, densn = [], [], []
+for ii, jj, kk in zip(Tf, Lf, densf):
     Teffpn.append(np.log10(float(ii)))#/10**5)
     Lpn.append(np.log10(10**float(jj) / 3.839e33))
+    densn.append(10**float(kk))
 
-Nombre, X, TT, LL = [], [], [], []
+Nombre, X, TT, LL, denss = [], [], [], [], []
 for a, c in zip(Name, Chi):
-    for b, t, l in zip(Name_, Teffpn, Lpn):
+    for b, t, l, d in zip(Name_, Teffpn, Lpn, densn):
         if a==b:
             Nombre.append(a)
             X.append(c)
             TT.append(t)
             LL.append(l)
-print(Nombre, X, TT, LL)            
+            denss.append(d)
+print(Nombre, X, TT, LL, denss)
+print(len(LL), len(denss))  
 fig, ax = plt.subplots(figsize=(18, 8))
 #ax.axhline(62000, color="k", lw=0.5)
 #ax.axhline(75000, color="k", lw=0.5)
 #ax.axvline(0.0, color="k", lw=0.5)         
 scat = ax.scatter(X, TT,
-         c=LL, marker="o", s=130, label="The best CLOUDY models")
+         c=LL, marker="o", s=150, label="The best CLOUDY models")
 
 plt.text(0.05, 0.9, 'The 46 best CLOUDY models', horizontalalignment='left',
          verticalalignment='top', fontsize = 25, transform=ax.transAxes)

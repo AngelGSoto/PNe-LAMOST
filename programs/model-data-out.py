@@ -104,7 +104,7 @@ ax.set(xlim=[3600,9100])
 #plt.ylim(ymin=-200,ymax=1500)
 ax.set(xlabel='Wavelength $(\AA)$')
 ax.set(ylabel='Normalised flux')
-plt.plot(data_mask["Wl"], flux_m,  c = "darkolivegreen", linewidth=0.7, label = 'Model 3')
+plt.plot(data_mask["Wl"], flux_m,  c = "darkolivegreen", linewidth=0.7, label = 'Model ')
 plt.plot(wl, flux_our, c = "blueviolet", linewidth=0.7, label = 'J020808.63+491401.0')
 
 bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)

@@ -208,7 +208,7 @@ At the moment of this manuscript was written I perceived that the
 object now appear classified as galaxy in SIMBAD, but our analysis
 suggested that the source is in reality an high-excitation PN. 
 
-\section{Surveys}
+\section{Finding a new possible PN}
 \label{sec:surveys}
 
 In order to bring to the reader a small overview of the data used
@@ -224,24 +224,25 @@ on 2020 December, which contain which contains the first 34 months
 of data collection of the Gaia mission \citep{Brown:2018}.
 It consist of around 1.8 billion sources
 with precise astrometry as well as photometry in
-the $G$, $G_{BP}$ and $G_{RP}$ bands. aia EDR3 made
-significant improvements in precision and accuracy of photo-
-metric magnitudes, parallax, celestial positions, and proper
+the $G$, $G_{BP}$ and $G_{RP}$ bands. Gaia EDR3 made
+significant improvements in precision and accuracy of
+photometric magnitudes, parallax, celestial positions, and proper
 motions with respect to Gaia DR2. This means that it improved
 the efficiency of candidate selection of a variety of
-objects (SOME REFERENCE HERE).
+objects, for instance, recently,  \citet{Christy:2023} used features
+derived from GAIA photometry and other surveys to identify new variable stars.
 
 \subsection{Pan-STARRS DR1}
 \label{sec:PS1}
 
-Pan-STARRS1 (PS1)
-is a multi-wavelength, multi-epoch, optical imaging survey
+Pan-STARRS1 (PS1; \citealp{Kaiser:2010}) is a multi-wavelength, multi-epoch,
+optical imaging survey
 which covers $\approx$75\% of the sky. PS1 goes $\sim$1 mag fainter
-than SDSS in the z band (York et al. 2000). The survey’s five optical
-filters, gP1, rP1, iP1, zP1, and yP1, are described in Stubbs et al.
-(2010) and Tonry et al. (2012). At each epoch a single field
-is exposed for 60 s in gP1, 38 s in rP1, and 30 s in iP1, zP1,
-and yP1. The photometry and astrometry from each epoch
+than SDSS in the $z$-band \citep{York:2000}. The survey’s five optical
+filters, $g$P1, $r$P1, $i$P1, $z$P1, and $y$P1, are described in \citet{Stubbs:2010} and
+\citet{Tonry:2012}. At each epoch a single field
+is exposed for 60s in $g$P1, 38s in $r$P1, and 30s in $i$P1, $z$P1,
+and $y$P1. The photometry and astrometry from each epoch
 have been combined to obtain average magnitudes and proper
 motions.
 
@@ -249,36 +250,38 @@ motions.
 \label{sec:lamost}
 
 The Large Sky Area Multi-Object Fiber Spectroscopic Telescope
-(LAMOST, also named Guoshoujing Telescope) is a
-telescope dedicated for spectroscopic sky survey.
+(LAMOST, also named Guoshoujing Telescope) is 4 m quasi-meridian reflecting
+Schmidt telescope dedicated for spectroscopic sky survey.
 There are 4000 fibers within a diameter of 1.75 meters (corresponding
-to 5$^{\circ}$ in the sky) at the focal surface \citep{Cui:2012}.
+to 5$^{\circ}$ in the sky) at the focal surface \citep{Cui:2012}, LAMOST can
+obtain 4000 spectra in one exposure.
 The Low-Resolution Spectroscopic Survey (LRS) of LAMOST
 began in October 2011, with a spectral resolving power ($R = \lambda/\Delta\lambda$)
 of about 1800 and a wavelength coverage of
-3700-9100~\AA \citep{Zhao:2012}. The first year observation was
+3700-9100~\AA~\citep{Zhao:2012}. The first year observation was
 for the pilot survey \citep{Luo:2012, Zhao:2012},
 and the regular survey began in September 2012. And since then
 a larger amount  spectroscopic data are been produced for
 scientific propose.
-Each spectrum
-is spliced into the blue part and the red part. The integration
-time is 600, 1500, or 1800 s. All of the low-resolution spectra
-were generally classified into different types through the
-pipeline, including 9,231,057 stellar spectra, 177,270 galaxy
-spectra, 62,168 quasar spectra, and 440,842 spectra marked as
-unknown. The massive spectral database obtained by
+Each spectrum is spliced into the blue part and the red part.
+The integration time is 600, 1500, or 1800s. The massive spectral
+database obtained by
 LAMOST is a rich resource for us to identify different kinds
-of peculiar stars (Yongkang Sun et al. 2021).
+of stars, for instance CV \citep{Sun:2021}.
 
-\section{Methodology}
-\label{sec:metho}
+\subsection{The find}
+\label{sec:find}
 
-At the beginning the idea was to identify for new planetary nebula in GAIA.
+Many of broad-band surveys are covering a extensive area of the sky, that
+are covered by those narrow-band filters. This means, that many of emission lines
+could be observed for the broad-band survey and not for the narrow ones.
+Then, we thought that creating color-color diagram to select for these objects
+coul give a a ooprtunite for find new emission line objects, in particular PNe.
+At the beginning the idea was to identify for new planetary nebula in GAIA, only.
 I started to constructed possibles color-color diagrams to separate PNe from
 other emission lines objects and stars using GAIA only. The separation was not
-good because PNe, normal stars and other emission line stars like CVs occupy the same region
-in the diagram. Then, I decided to move to Pan-STARRS and combining the two
+good because PNe, normal stars and other emission line stars like CVs occupy the
+same region in the diagram. Then, I decided to move to Pan-STARRS and combining the two
 surveys; Pan-STARRS1 and GAIA EDR3. I found one color diagram that isolate the PNe
 with, I suppose, strong \ha{} emission line. By using the \((G - r)\) versus \((G_{BP} - G_{RP})\)
 color-color is possible to separate those PNe excess in the in the $r$-broad-band
@@ -294,19 +297,23 @@ stars from \citet{Smart:2021}. Where they occupy the region with \((G - r)\) = 0
 
 \begin{figure}
 \centering
-  \includegraphics[width=0.9\linewidth]{Figs/color-diagram-ps-gaiaEDR3.pdf}
+\includegraphics[width=0.9\linewidth]{Figs/color-diagram-ps-gaiaEDR3.pdf}
   \caption{} 
   \label{fig:gaia-ps}
 \end{figure}
 
-All indicate that the PNe with strong \ha{} can be selected with this color criteria??? What indicate the $G$-magnitude?.
+All indicate that the PNe with strong \ha{} can be selected with this color
+criteria??? What indicate the $G$-magnitude?.
 Then, to see the possibility of using this color criterion to select these PNe, by
 testing and using the emission line catalog from  \citet{Skoda:2020}. First, they
 identify emission line objects from LAMOST  implementing a machine learning approach.
-Then, they divided their final sample of emission line objects in tree subgroups. Those with \texttt{SIMBAD}
-coincidences, those that are listed by \citet{Hou:2016} and another list that are neither cross-matched with
-SIMBAD nor listed by  \citet{Hou:2016}. To texting the possibility to find for new PNe with the color criteria
-explained above, we applied it directly in the new list, which present objects not reported
+Then, they divided their final sample of emission line objects in tree subgroups.
+Those with \texttt{SIMBAD}
+coincidences, those that are listed by \citet{Hou:2016} and another
+list that are neither cross-matched with
+SIMBAD nor listed by  \citet{Hou:2016}. To texting the possibility to find
+for new PNe with the color criteria explained above, we applied it directly in the new list,
+which present objects not reported
 previously in the literature, which is a list with 1000 objects.
 
 \begin{figure}
@@ -489,23 +496,23 @@ needed \citep{Oliveira:2011}.
 		\hline
 		Parameter & & Value \\
                 \hline
-		$\log(T_{\mathrm{BB}}) (\mathrm{K})$  & 5.146 \\
-		$\log(\mathrm{luminosity) (erg~s^{-1})}$ & 37.571 \\
-		  $\log(\mathrm{Hden) (cm^{-3})} $ & 3.477 \\
-                  $\log(\mathrm{R_{in}) (cm)}$ & 16.903 \\
-                $\log(\mathrm{R_{out}) (cm)}$ & 17.350 \\
-                 Distance (pc) & 2313.01 \\
-                  $\log(\mathrm{He/H})$ & -0.80 \\
-                $\log(\mathrm{C/H})$ & -4.15 \\
-                $\log(\mathrm{N/H})$ & -4.72 \\
-                $\log(\mathrm{O/H})$ & -3.81 \\
-                $\log(\mathrm{Ne/H})$ & -4.58 \\
-                $\log(\mathrm{Si/H})$ & -5.00 \\
-                $\log(\mathrm{S/H})$ & -6.00 \\
-                $\log(\mathrm{Ar/H})$ & -6.24 \\
+		$\log(T_{\mathrm{BB}}) (\mathrm{K})$  & 5.15 & 5.18 & 5.15\\
+		$\log(\mathrm{luminosity) (erg~s^{-1})}$ & 37.15 & 36.98 & 37.25\\
+		$\log(\mathrm{Hden) (cm^{-3})} $ & 3.70 & 3.60 & 3.78 \\
+                 $\log(\mathrm{R_{in}) (cm)}$ & & 16.60 \\
+                $\log(\mathrm{R_{out}) (cm)}$ & & 17.05 \\
+                Distance (pc) &  &  2313.01\\
+                $\log(\mathrm{He/H})$ & & -0.92 \\
+                $\log(\mathrm{C/H})$ & &-4.15 \\
+                $\log(\mathrm{N/H})$ & &-4.72 \\
+                $\log(\mathrm{O/H})$ & &-3.83 \\ 
+                $\log(\mathrm{Ne/H})$ & & -4.58 \\
+                $\log(\mathrm{Si/H})$ & &-5.00\\ 
+                $\log(\mathrm{S/H})$ & &-6.00 \\ 
+                $\log(\mathrm{Ar/H})$ & & -6.24\\
                  \hline
-                 $\chi^2$ & 6.78 &9.55& 9.67& \\
-                 $\chi^2_r$ & 1.13 & 1.59&1.61& \\
+                 $\chi^2$ & 6.09 &6.16&  6.35 \\
+                 $\chi^2_r$ & 1.01 & 1.03&1.06 \\
                  
                 \hline
 	\end{tabular}
@@ -637,6 +644,13 @@ respectively, where $\sigma_{c}$ is the mean standard deviation per pixel of
 the continuum on each side of the line, $N_{\text{pix}}$ is the number of pixels
 under the line and $D = 1.0009 \AA$ pixel$^{-1}$ is the spectral dispersion.
 
+\begin{figure*}
+\centering
+  \includegraphics[width=\linewidth]{Figs/chi-temperature.pdf}
+  \caption{The effective temperature (in logarithm scale) versus $\chi^2$ plot. The 46 best fitted model on which the $\chi^2_r$ have between 1 and 2.} 
+  \label{fig:chi}
+\end{figure*}
+
 % Example table
 \begin{table*}
 	\centering
@@ -647,15 +661,15 @@ under the line and $D = 1.0009 \AA$ pixel$^{-1}$ is the spectral dispersion.
 		\hline
 		Line & $\lambda$(\AA) & Observed Flux  & Model 1 Flux & $\chi^{2}$ & Model 2 Flux &  $\chi^{2}$ & Model 3 Flux &  $\chi^{2}$ \\
 		\hline
-		[Ne III] + H7  & 5.146 \\
-		H{$\delta$} & 37.571 \\
-		H{$\gamma$}  & 3.477 \\
-                He II & 16.903 \\
-                H{$\beta$} & 17.350 \\
-                $[\text{O III}]$ & 2313.01 \\
-                $[\text{O III}]$ & -0.80 \\
-                $[\text{Fe III}]$ & -4.15 \\
-                H{$\alpha$} & -4.72 
+		[Ne III] + H7 3968  & 3967.46 & 0.26 $\pm$ 0.068\\
+		H{$\delta$} & 4101.74 & 0.29 $\pm$ 0.053\\
+		H{$\gamma$}  & 4340.71 & 0.48 $\pm$ 0.047 \\
+                He II & 4685.99 & 1.04 $\pm$ 0.061\\
+                H{$\beta$} & 4861.33& 1.00 $\pm$ 0.055 \\
+                $[\text{O III}]$ &4958.91 & 0.44 $\pm$ 0.031  \\
+                $[\text{O III}]$ & 5006.84& 1.21 $\pm$ 0.060 \\
+                $[\text{Fe III}]$ & 5412.12& 0.13 $\pm$ 0.016 \\
+                H{$\alpha$} & 6562.85& 2.33 $\pm$ 0.097
                 \hline
 	\end{tabular}
 \end{table*}
@@ -710,8 +724,12 @@ I mean for stars with M = 1, 1.25, 1.5, 2.0, 2.5 and 3M$_{\odot}$. In agreement 
 \section{Conclusions}
 \label{sec:conclu}
 
-In this manusncrpt, I want to report a new planatary nebula found
-in the catalog of emission line spectra of \citet{Skoda:2020}.
+In this manuscript, we want to report a new planatary nebula found
+in the catalog of emission line objects of \citet{Skoda:2020}.
+This catalog was created by using an active deep learning method
+in LAMOST. The object first was selected as PNe using the GAIA
+and Pan-STARRS photometry over the list of \citet{Skoda:2020}.
+
 The PN was found by applying color criteria based on panstarr
 and GAIA to the sample of emission objects.
 Given that the \citet{Skoda:2020} sample was constructed
@@ -763,11 +781,9 @@ and the following  python packages: numpy, astropy, specutils, APLpy, matplotlib
 \section*{Data Availability}
 
 The best fitted models are available in the GitHub repository:
-\url{https://github.com/AngelGSoto/PNe-LAMOST/tree/main/better-fitModel} 
+\url{https://github.com/AngelGSoto/PNe-LAMOST/tree/main/better-fitModel}. 
 The inclusion of a Data Availability Statement is a requirement for articles published in MNRAS.
-Data Availability Statements provide a standardised format for readers to understand the availability
-of data underlying the research results described in the article. The statement may refer to original
-data generated in the course of the study or to third-party data analysed in the article.
+Data Availability Statements provide a standardised format for readers to understand the availability of data underlying the research results described in the article. The statement may refer to original data generated in the course of the study or to third-party data analysed in the article.
 The statement should describe and provide means of access, where possible, by linking to the
 data or providing the required accession numbers for the relevant databases or DOIs.
 
@@ -807,9 +823,9 @@ find the best-fitted {\sc cloudy} models.
 \end{tabular}
 \end{table*}
 
-\section{The best fitted models}
-The Fig show the {\sc cloudy} models with value on the $\chi^{2}_r$ between 1 and 2.
-\input{models-spectra.tex}
+%% \section{The best fitted models}
+%% The Fig show the {\sc cloudy} models with value on the $\chi^{2}_r$ between 1 and 2.
+%% \input{models-spectra.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
