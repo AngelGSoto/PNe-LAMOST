@@ -187,7 +187,7 @@ sources such as PN from H {\sc ii} regions, SNRs and other objects.
 Diagnostic diagram based on the H{$\alpha$}/[N II] and H{$\alpha$}/[S II]
 emission-line ratios \citep{Sabbadin:1977, Fesen:1985, Riesgo:2006}.
 The selection criteria were empirically derived in theses diagrams,
-by using emission lines ratios observed in supernova remnants, PNe and H II regions.
+by using emission lines ratios observed in supernova remnants, PNe and H{\sc ii} regions.
 \citet{Viironen:2009a, Viironen:2009b} used two color-color diagrams based on IPHAS
 and 2MASS photometry to discriminate PNe from stellar and other emission lines sources
 in the Galactic context. 
@@ -219,8 +219,8 @@ surveys basis of this work.
 \label{sec:gaia}
 
 The early installment of the third
-GAIA data release (EDR3; \citealp{Brown:2021}) was made available to the public
-on 2020 December, which contain which contains the first 34 months
+GAIA data release (EDR3; \citealp{Brown:2021}) was made available to
+the public on 2020 December, which contain which contains the first 34 months
 of data collection of the Gaia mission \citep{Brown:2018}.
 It consist of around 1.8 billion sources
 with precise astrometry as well as photometry in
@@ -236,11 +236,10 @@ derived from GAIA photometry and other surveys to identify new variable stars.
 \label{sec:PS1}
 
 Pan-STARRS1 (PS1; \citealp{Kaiser:2010}) is a multi-wavelength, multi-epoch,
-optical imaging survey
-which covers $\approx$75\% of the sky. PS1 goes $\sim$1 mag fainter
-than SDSS in the $z$-band \citep{York:2000}. The survey’s five optical
-filters, $g$P1, $r$P1, $i$P1, $z$P1, and $y$P1, are described in \citet{Stubbs:2010} and
-\citet{Tonry:2012}. At each epoch a single field
+optical imaging survey which covers $\approx$75\% of the sky. PS1 goes $\sim$1 mag
+fainter than SDSS in the $z$-band \citep{York:2000}. The survey’s five optical
+filters, $g$P1, $r$P1, $i$P1, $z$P1, and $y$P1, are described in
+\citet{Stubbs:2010} and \citet{Tonry:2012}. At each epoch a single field
 is exposed for 60s in $g$P1, 38s in $r$P1, and 30s in $i$P1, $z$P1,
 and $y$P1. The photometry and astrometry from each epoch
 have been combined to obtain average magnitudes and proper
@@ -265,9 +264,8 @@ a larger amount  spectroscopic data are been produced for
 scientific propose.
 Each spectrum is spliced into the blue part and the red part.
 The integration time is 600, 1500, or 1800s. The massive spectral
-database obtained by
-LAMOST is a rich resource for us to identify different kinds
-of stars, for instance CV \citep{Sun:2021}.
+database obtained by LAMOST is a rich resource for us to identify
+different kinds of stars, for instance CV \citep{Sun:2021}.
 
 \subsection{The find}
 \label{sec:find}
@@ -286,10 +284,11 @@ surveys; Pan-STARRS1 and GAIA EDR3. I found one color diagram that isolate the P
 with, I suppose, strong \ha{} emission line. By using the \((G - r)\) versus \((G_{BP} - G_{RP})\)
 color-color is possible to separate those PNe excess in the in the $r$-broad-band
 filter as is possible to see in the Fig~\ref{fig:gaia-ps}. This plot include cataclysm variables
-\citep{Downes:2006}, supernova remnants \citep{Green:2019}, symbiotic starts from \citet{Akras:2019a}.  
-Fig~\ref{fig:gaia-ps}
-shows that the many of the PNe have value in the color \(G - r\) = 0, however several
-PNe cover the interval in this same color between 0 and 8, and span between -1 and 5.
+\citep{Downes:2006}, supernova remnants \citep{Green:2019}, symbiotic starts
+from \citet{Akras:2019a}.  
+Fig~\ref{fig:gaia-ps} shows that the many of the PNe have value in
+the color \(G - r\) = 0, however several PNe cover the interval in this
+same color between 0 and 8, and span between -1 and 5.
 The orange contours represent other emission line objects that includes CV, SySt,
 YSOs, AeBe stars and SNRs. The contours becoming white at the outside indicating
 that the number of objects decrease significantly. And the blue contours signify
@@ -331,7 +330,7 @@ Because, it displays He II emission lines, the Balmer ones, [O III], among other
 Fig~\ref{fig:spectra} the spectrum of the new PN finding in the list of emission line of
 \citet{Skoda:2020}. This PNe seem a very high ionization object, by eye is possible to see
 that the He II emission line is as strong as the H$\beta$ line. No lines of ions in low stages
-of ionization were detected, lines as [N II] and [O II].
+of ionization were detected, lines such as [N II] and [O II].
 
 
 Given the LAMOST spectra are not calibrated in flux but they are flux relative,
@@ -458,7 +457,7 @@ the high-ionization lines and lacked the low-ionization lines.
 
 Fig~\ref{fig:images-known} show the optical and IR images of the known planetary nebulae
 presented in section ?? apparently all this PN have the same shape, e.g. are around like
-the Lamost PN. Also in all them the central star is clearly perceptible like the Lamost PN,
+the Lamost PN. Also in all them the central star is clearly perceptible like the LAMOST PN,
 indicating, probably, the high temperature nature on their central star.
 
 \subsection{Why is not a supernova?}
@@ -482,7 +481,7 @@ discovered only at mid-infrared wavelengths. To distinguish be-
 tween these two possibilities, further spectroscopy on OL17 was
 needed \citep{Oliveira:2011}.
 
-\section{Modeling the observed spectra}
+\section{Modeling the observed LAMOST spectra}
 \label{sec:model}
 
 % Example table
@@ -490,48 +489,54 @@ needed \citep{Oliveira:2011}.
 	\centering
 	\caption{Best-fit {\sc cloudy} model parameters for LAMOST J020808.63+491401.0.}
 	\label{tab:example_table}
-	\begin{tabular}{lcccc} % four columns, alignment for each
+	\begin{tabular}{lc} % four columns, alignment for each
                 \hline
-                & Model 1 &  Model 2 &  Model 3\\  
 		\hline
-		Parameter & & Value \\
+		Parameter & Value \\
                 \hline
-		$\log(T_{\mathrm{BB}}) (\mathrm{K})$  & 5.15 & 5.18 & 5.15\\
-		$\log(\mathrm{luminosity) (erg~s^{-1})}$ & 37.15 & 36.98 & 37.25\\
-		$\log(\mathrm{Hden) (cm^{-3})} $ & 3.70 & 3.60 & 3.78 \\
-                 $\log(\mathrm{R_{in}) (cm)}$ & & 16.60 \\
-                $\log(\mathrm{R_{out}) (cm)}$ & & 17.05 \\
-                Distance (pc) &  &  2313.01\\
-                $\log(\mathrm{He/H})$ & & -0.92 \\
-                $\log(\mathrm{C/H})$ & &-4.15 \\
-                $\log(\mathrm{N/H})$ & &-4.72 \\
-                $\log(\mathrm{O/H})$ & &-3.83 \\ 
-                $\log(\mathrm{Ne/H})$ & & -4.58 \\
-                $\log(\mathrm{Si/H})$ & &-5.00\\ 
-                $\log(\mathrm{S/H})$ & &-6.00 \\ 
-                $\log(\mathrm{Ar/H})$ & & -6.24\\
+		$\log(T_{\mathrm{BB}}) (\mathrm{K})$  & 05.15  \\
+		$\log(\mathrm{luminosity) (erg~s^{-1})}$ & 36.79 \\
+		$\log(\mathrm{Hden) (cm^{-3})} $ & 03.40  \\
+                 $\log(\mathrm{R_{in}) (cm)}$ &  16.60\\
+                $\log(\mathrm{R_{out}) (cm)}$ & 17.05 \\
+                Distance (kpc) & 02.31  \\
+                $\log(\mathrm{He/H})$ & -0.92 \\
+                $\log(\mathrm{C/H})$ & -4.15 \\
+                $\log(\mathrm{N/H})$ & -4.72 \\
+                $\log(\mathrm{O/H})$ &  -3.83\\ 
+                $\log(\mathrm{Ne/H})$ & -4.58 \\
+                $\log(\mathrm{Si/H})$ & -5.00\\ 
+                $\log(\mathrm{S/H})$ &  -6.00\\ 
+                $\log(\mathrm{Ar/H})$ & -6.24\\
                  \hline
-                 $\chi^2$ & 6.09 &6.16&  6.35 \\
-                 $\chi^2_r$ & 1.01 & 1.03&1.06 \\
+                 $\chi^2_{\text{min}}$ & 18.10  \\
                  
-                \hline
+                 \hline
 	\end{tabular}
 \end{table}
 
 Given the small number of observational constraints, readopt a very
-simple model of a planetary nebula which
-consists of a homogeneous gaseous sphere surrounding ahot star radiating as a blackbod.
+simple model of a planetary nebula which consists of a homogeneous
+gaseous sphere surrounding an hot star radiating as a black body,
+to the best of our
+knowledge, this seems to be the first attempt to model spectra
+of any dusty nova using CLOUDY , incorporating dust grains in
+the ejecta shells .
 Despite the LAMOST spectra are not in physical flux unity, they have flux relative.
 This means itis possible compare it with other spectra in physical units.
-For that, I think, it is pertinent to
+For that, we thought, it is pertinent to
 compare the LAMOST spectra of our PN with models.
 
+
 The observed spectrum was modelled by using the {\sc cloudy}
-photo-ionization code version c22.01 \citep{Ferland:2017}. This
-code is based on detailed microphysics to simulate the physical
-conditions of nonequilibrium gas clouds exposed to an external
+photo-ionization code version c22.01 \citep{Ferland:2017}. {\sc cloudy}
+has been applied to derive the physical characteristics and elemental
+abundances of the PN, on which were considered by comparing with known high-ionization
+PNe. This code is based on detailed microphysics to simulate the physical
+conditions of non equilibrium gas clouds exposed to an external
 radiation field. It solves the thermal, statistical, and chemical
-equilibrium equations self-consistently. Currently, it uses 625
+equilibrium equations self-consistently, from non-local thermodynamic
+equilibrium (NLTE), illuminated gas clouds.. Currently, it uses 625
 species including atoms, ions, and molecules and five distinct
 databases: H-like and He-like isoelectronic sequences \citep{Porter:2012},
 Stout \citep{Lykins:2015}, CHIANTI \citep{Landi:2012},
@@ -597,11 +602,9 @@ matched using fluxes relative to the H{$\beta$} emission line.
 \citet{Helton:2010, Mondal:2018, Pavana:2019, Mondal:2020, Pandey:2022a, Pandey:2022b}
 implemented the $\chi^2$ and subsequently $\chi^2_r$ to compare observed spectroscopic data,
 mainly novas sources, with modelled {\sc cloudy} spectra to find the
-fit models.
-Following these authors, I chose the final models
-after many iterations of multiple test models based on
-varying the input parameter show before. For that
-I compare the model-generated lines with the fluxes of the observed lines.
+fit models. Following these authors, I chose the final models
+after many iterations of multiple test models based on varying the input parameter
+show before. For that, I compare the model-generated lines with the fluxes of the observed lines.
 This allows determined automatically the goodness of fit by
 calculating $\chi^{2}$
 of the models given by the following relation,
@@ -656,20 +659,20 @@ under the line and $D = 1.0009 \AA$ pixel$^{-1}$ is the spectral dispersion.
 	\centering
 	\caption{Observed and best-fit {\sc cloudy}  model line fluxes for LAMOST J020808.63+491401.0.}
 	\label{tab:abundances}
-	\begin{tabular}{lcccccccc} % four columns, alignment for each
+	\begin{tabular}{lcccc} % four columns, alignment for each
                 \hline
 		\hline
-		Line & $\lambda$(\AA) & Observed Flux  & Model 1 Flux & $\chi^{2}$ & Model 2 Flux &  $\chi^{2}$ & Model 3 Flux &  $\chi^{2}$ \\
+		Line & $\lambda$(\AA) & Observed Flux  & Model  Flux & $\chi^{2}$  \\
 		\hline
-		[Ne III] + H7 3968  & 3967.46 & 0.26 $\pm$ 0.068\\
-		H{$\delta$} & 4101.74 & 0.29 $\pm$ 0.053\\
-		H{$\gamma$}  & 4340.71 & 0.48 $\pm$ 0.047 \\
-                He II & 4685.99 & 1.04 $\pm$ 0.061\\
-                H{$\beta$} & 4861.33& 1.00 $\pm$ 0.055 \\
-                $[\text{O III}]$ &4958.91 & 0.44 $\pm$ 0.031  \\
-                $[\text{O III}]$ & 5006.84& 1.21 $\pm$ 0.060 \\
-                $[\text{Fe III}]$ & 5412.12& 0.13 $\pm$ 0.016 \\
-                H{$\alpha$} & 6562.85& 2.33 $\pm$ 0.097
+		[Ne III] + H7 3968  & 3967.46 & 0.26 $\pm$ 0.068 & 0.29 & 0.27\\
+		H{$\delta$} & 4101.74 & 0.29 $\pm$ 0.053 & 0.35 & 1.02\\
+		H{$\gamma$}  & 4340.71 & 0.48 $\pm$ 0.047 & 0.58 & 5.37 \\
+                He II & 4685.99 & 1.04 $\pm$ 0.061 & 1.05 & 0.01\\
+                H{$\beta$} & 4861.33& 1.00 $\pm$ 0.055 & 1.00 & 0.00\\
+                $[\text{O III}]$ &4958.91 & 0.44 $\pm$ 0.031 & 0.48 & 1.63  \\
+                $[\text{O III}]$ & 5006.84& 1.21 $\pm$ 0.060 & 1.20 & 0.09 \\
+                $[\text{Fe III}]$ & 5412.12& 0.13 $\pm$ 0.016 & 0.17 & 4.32\\
+                H{$\alpha$} & 6562.85& 2.33 $\pm$ 0.097 & 2.56& 5.39
                 \hline
 	\end{tabular}
 \end{table*}
@@ -690,9 +693,7 @@ most high effective temperature (T$_{\text{eff}}$ = 160$\times$10$^{4}$).
 
 \begin{figure*}
 \centering
-\includegraphics[width=0.89\linewidth, trim=10 90 10 10, clip]{Figs/model_140000_37.15_3.70.pdf}
-\includegraphics[width=0.89\linewidth, trim=10 90 10 10, clip]{Figs/model_150000_36.98_3.60.pdf}
-\includegraphics[width=0.89\linewidth, trim=10 10 10 10, clip]{Figs/model_140000_37.25_3.78.pdf}
+\includegraphics[width=\linewidth, trim=10 90 10 10, clip]{Figs/model_140000_36.79_3.40.pdf}
 \caption{The three best fitted models, on which the $\chi^2_r$ value are 1.13, 1.59, 1.61.
   The spectra were normalised to H{$\beta$}} 
   \label{fig:spectra-obs-model}

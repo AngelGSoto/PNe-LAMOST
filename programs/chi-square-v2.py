@@ -319,8 +319,8 @@ vv = n - np
 chi_sum_red = chi_sum / vv
 
 modell, chii, chii_red = [], [], [] 
-if chi_sum_red <= 4:
-    modell.append(model_name.split("0/")[-1])
+if chi_sum_red <= 400000:
+    modell.append(model_name.split("l/")[-1])
     chii.append(chi_sum)
     chii_red.append(chi_sum_red)    
 print(chii, chii_red)    
@@ -329,6 +329,6 @@ tab = Table([modell, chii, chii_red],
            meta={'name': 'first table'})
 
 try:
-    tab.write("better-models" + str(modell).split("['")[-1].split("']")[0] +".ecsv", format="ascii.ecsv", overwrite=True)
+    tab.write("better-" + str(modell).split("['")[-1].split("']")[0] +".ecsv", format="ascii.ecsv", overwrite=True)
 except TypeError:
     pass

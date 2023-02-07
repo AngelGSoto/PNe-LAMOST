@@ -307,12 +307,6 @@ ratio_lines = flux_lines / Hbeta
 err_Hbeta = err_lines[4]
 err_ratio_lines = np.sqrt((ratio_lines**2) * ((np.array(err_lines) / np.array(flux_lines))**2 + (err_Hbeta / Hbeta)**2))
 
-#creating table and save it
-table = QTable([nlines_, lines_,  ratio_lines, err_ratio_lines, EW],
-           names=('Line', 'Lambda', 'Flux', 'Sigma', "EW"),
-           meta={'name': 'first table'})
-#save the table
-table.write("parameters-lamost-pn-selec-lines.ecsv", format="ascii.ecsv", overwrite=True)
 
 #################################################################################
 # Model  ########################################################################
@@ -334,6 +328,13 @@ ratio_lines_models = flux_lines_models / Hbeta_models
 chi = (ratio_lines_models - ratio_lines)**2 / err_ratio_lines**2
 chi_sum = chi.sum()
 
+#creating table and save it
+table = QTable([nlines_, lines_,  ratio_lines, err_ratio_lines, EW, ratio_lines_models, chi],
+           names=('Line', 'Lambda', 'Flux', 'Sigma', "EW", "Flux model", "chi"),
+           meta={'name': 'first table'})
+#save the table
+table.write("parameters-lamost-pn-" + str(model_name).split("['")[-1].split("']")[0] + "-selec-lines.ecsv", format="ascii.ecsv", overwrite=True)
+
 # Estimating the degree freedom
 n = 9
 np = 3
@@ -342,7 +343,7 @@ chi_sum_red = chi_sum / vv
 
 modell, chii, chii_red = [], [], [] 
 if chi_sum_red <= 4:
-    modell.append(model_name.split("0/")[-1])
+    modell.append(model_name.split("l/")[-1])
     chii.append(chi_sum)
     chii_red.append(chi_sum_red)    
 print(chii, chii_red)    

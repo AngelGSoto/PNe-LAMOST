@@ -580,6 +580,8 @@ Byte-by-byte Description of file (#): models/*
 
 
 ** Cloudy models
+   *** Some paper modeling PN
+   [[https://www.aanda.org/articles/aa/pdf/2013/01/aa19263-12.pdf][S.-J. Lee and S. Hyung]]
 
    Now I got to construct the Cloudy model of the object. I construct the input using [[https://github.com/AngelGSoto/PNe-LAMOST/blob/main/notebook/Creating-grid-models.ipynb][pyCluody]].
    To run in a grid  cloudy is only necessary:
@@ -618,7 +620,7 @@ Byte-by-byte Description of file (#): models/*
   file_list = glob.glob("better-fitModel/*.ecsv")
   for file_name in file_list:
     tab = Table.read(file_name)
-    mask = tab["Chi red"] < 1.1
+    mask = tab["Chi red"] < 3.15
     better_model = tab[mask]
     print(better_model)
 #+END_SRC
@@ -637,6 +639,9 @@ Name model chi Chi red
 ---------- --- -------
 Name model chi Chi red
 ---------- --- -------
+       Name model              chi              Chi red      
+----------------------- ------------------ ------------------
+model_140000_36.79_3.40 18.103044981508784 3.0171741635847975
 Name model chi Chi red
 ---------- --- -------
 Name model chi Chi red
@@ -655,29 +660,13 @@ Name model chi Chi red
 ---------- --- -------
 Name model chi Chi red
 ---------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-       Name model              chi             Chi red      
------------------------ ----------------- ------------------
-model_140000_37.25_3.78 6.351445608928784 1.0585742681547974
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-       Name model              chi             Chi red      
------------------------ ----------------- ------------------
-model_150000_36.98_3.60 6.160521968818245 1.0267536614697075
 Name model chi Chi red
 ---------- --- -------
 Name model chi Chi red
 ---------- --- -------
        Name model              chi              Chi red      
 ----------------------- ------------------ ------------------
-model_150000_37.15_3.74 5.5743846614050705 0.9290641102341785
+model_130000_37.03_3.54 18.709241505549578 3.1182069175915963
 Name model chi Chi red
 ---------- --- -------
 Name model chi Chi red
@@ -694,33 +683,15 @@ Name model chi Chi red
 ---------- --- -------
 Name model chi Chi red
 ---------- --- -------
+       Name model              chi              Chi red      
+----------------------- ------------------ ------------------
+model_120000_37.41_3.78 18.571363931363564 3.0952273218939275
 Name model chi Chi red
 ---------- --- -------
 Name model chi Chi red
 ---------- --- -------
 Name model chi Chi red
 ---------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-       Name model              chi             Chi red     
------------------------ ----------------- -----------------
-model_140000_37.15_3.70 6.089861838352865 1.014976973058811
 Name model chi Chi red
 ---------- --- -------
 #+end_example

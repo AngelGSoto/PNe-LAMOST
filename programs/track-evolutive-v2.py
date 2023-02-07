@@ -188,7 +188,8 @@ weidmantab = Table.read("../PN-high-ion-weidman.dat", format="ascii")
 #Read de files
 pattern = "../better-fitModel/*.in"
 file_list = glob.glob(pattern)
-best_model = ["../better-fitModel/model_140000_37.15_3.70.in", "../better-fitModel/model_150000_36.98_3.60.in", "../better-fitModel/model_140000_37.25_3.78.in"]
+#best_model = ["../better-fitModel/model_140000_37.15_3.70.in", "../better-fitModel/model_150000_36.98_3.60.in", "../better-fitModel/model_140000_37.25_3.78.in"]
+best_model = ["../better-fitModel/model_140000_36.79_3.40.in"]
 
 Te, Lu = [], []
 for model_name in best_model:
@@ -346,18 +347,18 @@ for label_, x, y in zip(weidmantab["Name_2"], weidmantab["logTeff"], weidmantab[
 
 ax.scatter(logTeffpn, logLpn, 
     color="#377eb8", marker="*", s=550,
-           edgecolors="k", zorder=11, label="Three best models")
-ax.scatter(logTeffpn1, logLpn1, 
-    color="white", marker="^", s=90, 
-           edgecolors="k", alpha=0.6, zorder=-200, label="Other best models")
+           edgecolors="k", zorder=11, label="The best CLOUDY model")
+# ax.scatter(logTeffpn1, logLpn1, 
+#     color="white", marker="^", s=90, 
+#            edgecolors="k", alpha=0.6, zorder=-200, label="Other best models")
 
-for a, b, c, d, e in zip(models_cloudy, logTeffpn, logLpn, label_frac_x, label_frac_y):
-    my_annotate_ind(ax, a, b, c, d, e)
+# for a, b, c, d, e in zip(models_cloudy, logTeffpn, logLpn, label_frac_x, label_frac_y):
+#     my_annotate_ind(ax, a, b, c, d, e)
 #get handles and labels
 handles, labels = plt.gca().get_legend_handles_labels()
 
 #specify order of items in legend
-order = [1,2,0]
+order = [1,0]
 
 #add legend to plot
 plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order])     
