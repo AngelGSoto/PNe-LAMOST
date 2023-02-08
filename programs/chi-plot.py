@@ -19,12 +19,12 @@ for file_name in file_list_escv:
         Name.append(Namee)
         Chi.append(chi)
 
-pattern = "*.in"
+pattern = "../Model-PNNew/models/N2242_He091O382Ar624_itere_R166R1705_final/*.in"
 file_list_in = glob.glob(pattern)
 
 Name_, Te, Lu, Denss = [], [], [], []
 for filename in file_list_in:
-    Namee = filename.split(".in")[0]
+    Namee = filename.split("final/")[-1].split(".in")[0]
     Name_.append(Namee)
     f = open(filename, 'r')
     header1 = f.readline()
@@ -69,17 +69,35 @@ for a, c in zip(Name, Chi):
             TT.append(t)
             LL.append(l)
             denss.append(d)
-print(Nombre, X, TT, LL, denss)
-print(len(LL), len(denss))  
+
+#Getting the x-square min:
+X_TT = np.array(list(zip(X, TT)), dtype=object)
+
+m_Xmin = X_TT[:,0] == X_TT[:,0].min()
+X_TT_min = X_TT[m_Xmin]
+print(X_TT[m_Xmin])
+   
+#print(Nombre, X, TT, LL, denss)
+print(len(LL), len(denss))
+#print("Minimum chi-square and Teff:", X_TT[:, 1])
 fig, ax = plt.subplots(figsize=(18, 8))
 #ax.axhline(62000, color="k", lw=0.5)
 #ax.axhline(75000, color="k", lw=0.5)
-#ax.axvline(0.0, color="k", lw=0.5)         
+#ax.axvline(0.0, color="k", lw=0.5)
 scat = ax.scatter(X, TT,
          c=LL, marker="o", s=150, label="The best CLOUDY models")
 
-plt.text(0.05, 0.9, 'The 46 best CLOUDY models', horizontalalignment='left',
+ax.scatter(X_TT_min[:,0], X_TT_min[:,1], s=280, lw=1.5, facecolors='none', edgecolors='r')
+
+plt.text(0.7, 0.95, 'CLOUDY models', horizontalalignment='left',
          verticalalignment='top', fontsize = 25, transform=ax.transAxes)
+
+ax.annotate(r"$\mathrm{T_{eff}= 1.4\times10^5}K,~ \mathrm{L=1.6\times10^3L_{\odot}}, ~ \chi^2_{\mathrm{min}}=18.10$", 
+    xy=(X_TT_min[:,0], X_TT_min[:,1]), xycoords='data', color='red', fontsize=16.5, zorder=100,
+      xytext=(0.2, 0.52), textcoords='axes fraction',
+      arrowprops=dict(arrowstyle="->",
+                      connectionstyle="arc3,rad=0.2",  color='red',
+                      ))
     
 #ax.legend()
 ax.set(

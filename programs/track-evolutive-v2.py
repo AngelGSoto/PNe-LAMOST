@@ -336,7 +336,7 @@ def my_annotate_ind(ax, s, x_, y_, label_frac_x, label_frac_y):
 #                 )
 ax.scatter(
     "logTeff", "logL", data=weidmantab, 
-    color="#ff7f0e", marker="o", s=130, label="Known PNe",
+    color="#ff7f0e", marker="o", s=190, label="Known PNe",
     edgecolors="k", zorder=10,)
 bbox_props1 = dict(boxstyle="round", fc="w", ec="0.78", alpha=0.6, pad=0.2)
 for label_, x, y in zip(weidmantab["Name_2"], weidmantab["logTeff"], weidmantab["logL"]):
@@ -346,7 +346,7 @@ for label_, x, y in zip(weidmantab["Name_2"], weidmantab["logTeff"], weidmantab[
 #Our PN
 
 ax.scatter(logTeffpn, logLpn, 
-    color="#377eb8", marker="*", s=550,
+    color="#377eb8", marker="*", s=900,
            edgecolors="k", zorder=11, label="The best CLOUDY model")
 # ax.scatter(logTeffpn1, logLpn1, 
 #     color="white", marker="^", s=90, 
