@@ -105,13 +105,13 @@ def find_line(wl_vacuum, spec):
         line_spec_mask = line_spec
     return line_spec_mask
 
-def measurent_line(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec, NameLine, saveplot = "y"):
+def measurent_line(wl_vacuum, spec, lamb, units_flux, type_spec, NameLine, saveplot = "y"):
     '''
     Meassurent the flux line
     '''
     line_spec_mask = find_line(wl_vacuum,  spec)
     #Extract again the region using the lice center found
-    line_region_ = SpectralRegion(line_spec_mask['line_center'] - 5 * u.AA, line_spec_mask['line_center'] + 5 * u.AA)
+    line_region_ = SpectralRegion(line_spec_mask['line_center'] - 3.5 * u.AA, line_spec_mask['line_center'] + 3.5 * u.AA)
     sub_spectrum_line = extract_region(spec, line_region_)
     line_para_line = estimate_line_parameters(sub_spectrum_line, models.Gaussian1D())
     print("Parameters of the 1D-Gaussin:", line_para_line)
@@ -131,8 +131,8 @@ def measurent_line(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec, NameL
     #Ploting the lina and fit Gaussian
     if saveplot == "y":
         fig, ax = plt.subplots(figsize=(12, 12))
-        plt.plot(wl, Flux, linewidth=10, c = "blueviolet", label = "J020808.63+491401.0")
-        plt.plot(wl, y_fit_line, linewidth=10, c = "orange", linestyle='dashed', label = "1D Gaussian model")
+        plt.plot(spec.spectral_axis, spec.flux, linewidth=10, c = "blueviolet", label = "J020808.63+491401.0")
+        plt.plot(spec.spectral_axis, y_fit_line, linewidth=10, c = "orange", linestyle='dashed', label = "1D Gaussian model")
         plt.xlabel('Wavelength $(\AA)$')
         plt.ylim(-100, (sub_spectrum_line.max() + 500*rel_flux))
         plt.xlim((line_spec_mask['line_center'].value-15), (line_spec_mask['line_center'].value+15))
@@ -147,14 +147,14 @@ def measurent_line(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec, NameL
         pass
     return flux_line
 
-def measurent_line_model(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec, NameLine, saveplot = "y"):
+def measurent_line_model(wl_vacuum, spec_, spec, lamb, units_flux, type_spec, NameLine, saveplot = "y"):
     '''
     Meassurent the flux line
     '''
-    line_spec_mask = find_line(wl_vacuum,  spec)
+    line_spec_mask = find_line(wl_vacuum,  spec_)
     #Extract again the region using the lice center found
     line_region_ = SpectralRegion(line_spec_mask['line_center'] - 30 * u.AA, line_spec_mask['line_center'] + 30 * u.AA)
-    sub_spectrum_line = extract_region(spec, line_region_)
+    sub_spectrum_line = extract_region(spec_, line_region_)
     line_para_line = estimate_line_parameters(sub_spectrum_line, models.Gaussian1D())
     print("Parameters of the 1D-Gaussin:", line_para_line)
     # Fit the spectrum and calculate the fitted flux values (``y_fit``)
@@ -167,20 +167,21 @@ def measurent_line_model(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec,
     sub_gauss = extract_region(gauss, line_region_)
     min_lamb = line_para_line.mean.value - 8*line_para_line.stddev.value
     max_lamb = line_para_line.mean.value + 8*line_para_line.stddev.value
+
     sub_region_int = SpectralRegion(min_lamb * u.AA,  max_lamb * u.AA)
     sub_gauss_int = extract_region(gauss, sub_region_int)
     flux_line = np.trapz(sub_gauss_int.flux, sub_gauss_int.spectral_axis) 
     #Ploting the lina and fit Gaussian
     if saveplot == "y":
         fig, ax = plt.subplots(figsize=(12, 12))
-        ax.xlabel('Wavelength $(\AA)$')
-        plt.plot(wl, Flux, linewidth=5, label = "Obs.")
-        plt.plot(wl, y_fit_line, label = "Model")
+        plt.xlabel('Wavelength $(\AA)$')
+        plt.plot(spec.spectral_axis, spec.flux, linewidth=5, label = "CLOUDY")
+        plt.plot(spec.spectral_axis, y_fit_line, label = "1D Gaussian model")
         #plt.ylim(-100, (sub_spectrum_line.max() + 500*rel_flux))
-        plt.xlim((line_spec_mask['line_center'].value-20), (line_spec_mask['line_center'].value+20))
+        plt.xlim((line_spec_mask['line_center'].value-35), (line_spec_mask['line_center'].value+35))
         bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
         plt.text(0.1, 0.9, NameLine,
-             transform=ax.transAxes, c="black", weight='bold', fontsize=24.8, bbox=bbox_props)
+             transform=ax.transAxes, c="black", weight="bold", fontsize=24.8, bbox=bbox_props)
         ax.legend()
         plt.tight_layout()
         plt.savefig(type_spec + "_" + NameLine + ".pdf")
@@ -256,6 +257,27 @@ flux = Flux * rel_flux
 Sigma = StdDevUncertainty(sigma * rel_flux)
 spec = Spectrum1D(spectral_axis=lamb, flux=flux, uncertainty=Sigma)
 
+#Spliting the spectrum en blue and red part
+sub_region_blue = SpectralRegion(spec.spectral_axis.min(),  5800*u.AA)
+sub_region_red = SpectralRegion(5800*u.AA, spec.spectral_axis.max())
+sub_spectrum_blue = extract_region(spec, sub_region_blue)
+sub_spectrum_red = extract_region(spec, sub_region_red)
+
+# Subtracting the continuum
+with warnings.catch_warnings():  # Ignore warnings
+    warnings.simplefilter('ignore')
+    g1_fit_blue = fit_generic_continuum(sub_spectrum_blue)
+    g1_fit_red = fit_generic_continuum(sub_spectrum_red)
+y_continuum_fitted_blue = g1_fit_blue(sub_spectrum_blue.spectral_axis)
+spec_sub_blue = sub_spectrum_blue - y_continuum_fitted_blue
+y_continuum_fitted_red = g1_fit_red(sub_spectrum_red.spectral_axis)
+spec_sub_red = sub_spectrum_red - y_continuum_fitted_red
+
+spec_subtrated =  np.concatenate([spec_sub_blue.flux.value, spec_sub_red.flux.value])
+flux_sub = spec_subtrated * rel_flux
+spec_sub = Spectrum1D(spectral_axis=lamb, flux=flux_sub, uncertainty=Sigma)
+
+
 # dispersion per pixel 
 D = 1.0002302850208247
 #print(spec.spectral_axis)
@@ -294,7 +316,7 @@ flux_lines = []
 err_lines = []
 EW = []
 for v, t in lines.items():
-    flux_lines.append(measurent_line(t, spec, lamb, wl, Flux, rel_flux, "Obs", v, saveplot = "n").value)
+    flux_lines.append(measurent_line(t, spec_sub, lamb, rel_flux, "Obs", v, saveplot = "n").value)
     err_lines.append(err_line(t, spec, D = D))
     EW.append(ew(t, spec))
     lines_.append(t)
@@ -307,7 +329,6 @@ ratio_lines = flux_lines / Hbeta
 err_Hbeta = err_lines[4]
 err_ratio_lines = np.sqrt((ratio_lines**2) * ((np.array(err_lines) / np.array(flux_lines))**2 + (err_Hbeta / Hbeta)**2))
 
-
 #################################################################################
 # Model  ########################################################################
 #################################################################################
@@ -315,10 +336,17 @@ lamb_model = data_mask["Wl"] * u.AA
 flux_model = data_mask["Flux"] *  u.Unit('erg cm-2 s-1 AA-1') 
 spec_model = Spectrum1D(spectral_axis=lamb_model, flux=flux_model)
 
+# Subtracting the continuum
+with warnings.catch_warnings():  # Ignore warnings
+    warnings.simplefilter('ignore')
+    g1_fit_model = fit_generic_continuum(spec_model)
+y_continuum_fitted_model = g1_fit_model(lamb_model)
+spec_sub_model = spec_model - y_continuum_fitted_model
+
 #Estimating the flux line for the models
 flux_lines_models = []
 for vv, tt in lines.items():
-    flux_lines_models.append(measurent_line_model(tt, spec_model, lamb_model, data_mask["Wl"], data_mask["Flux"],  u.Unit('erg cm-2 s-1 AA-1'), "Model", vv, saveplot = "n").value)
+    flux_lines_models.append(measurent_line_model(tt, spec_model, spec_sub_model, lamb_model, u.Unit('erg cm-2 s-1 AA-1'), "Model", vv, saveplot = "y").value)
 
 
 Hbeta_models = flux_lines_models[4]
@@ -329,8 +357,8 @@ chi = (ratio_lines_models - ratio_lines)**2 / err_ratio_lines**2
 chi_sum = chi.sum()
 
 #creating table and save it
-table = QTable([nlines_, lines_,  ratio_lines, err_ratio_lines, EW, ratio_lines_models, chi],
-           names=('Line', 'Lambda', 'Flux', 'Sigma', "EW", "Flux model", "chi"),
+table = QTable([nlines_, lines_, flux_lines, ratio_lines, err_ratio_lines, EW, ratio_lines_models, chi],
+           names=('Line', 'Lambda', 'Flux', 'Ratio Flux', 'Sigma', "EW", "Flux model", "chi"),
            meta={'name': 'first table'})
 #save the table
 table.write("parameters-lamost-pn-" + str(model_name).split("['")[-1].split("']")[0] + "-selec-lines.ecsv", format="ascii.ecsv", overwrite=True)

@@ -620,79 +620,42 @@ Byte-by-byte Description of file (#): models/*
   file_list = glob.glob("better-fitModel/*.ecsv")
   for file_name in file_list:
     tab = Table.read(file_name)
-    mask = tab["Chi red"] < 3.15
+    mask = tab["Chi red"] < 4
     better_model = tab[mask]
     print(better_model)
 #+END_SRC
 
 #+RESULTS:
 #+begin_example
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
+       Name model              chi              Chi red     
+----------------------- ------------------ -----------------
+model_130000_37.03_3.54 23.485306363271494 3.914217727211916
        Name model              chi              Chi red      
 ----------------------- ------------------ ------------------
-model_140000_36.79_3.40 18.103044981508784 3.0171741635847975
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
+model_130000_37.12_3.60 23.904325009487284 3.9840541682478805
+       Name model              chi              Chi red     
+----------------------- ------------------ -----------------
+model_130000_37.22_3.70 23.070701698849014 3.845116949808169
+       Name model              chi              Chi red     
+----------------------- ------------------ -----------------
+model_130000_37.27_3.74 22.620381864506573 3.770063644084429
        Name model              chi              Chi red      
 ----------------------- ------------------ ------------------
-model_130000_37.03_3.54 18.709241505549578 3.1182069175915963
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
+model_130000_37.32_3.78 22.411742734577704 3.7352904557629505
+       Name model              chi              Chi red     
+----------------------- ------------------ -----------------
+model_140000_37.15_3.70 23.857530904674757 3.976255150779126
        Name model              chi              Chi red      
 ----------------------- ------------------ ------------------
-model_120000_37.41_3.78 18.571363931363564 3.0952273218939275
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
-Name model chi Chi red
----------- --- -------
+model_140000_37.22_3.74 23.178786493244182 3.8631310822073637
+       Name model              chi              Chi red      
+----------------------- ------------------ ------------------
+model_140000_37.27_3.78 23.923062736725495 3.9871771227875823
+       Name model              chi             Chi red      
+----------------------- ----------------- ------------------
+model_150000_37.22_3.78 23.85684015614496 3.9761400260241597
 #+end_example
 
+** About the LMAOST spectra
+   A paper that apeak about the blue and red arm of the LAMOST spectra:
+   [[https://iopscience.iop.org/article/10.3847/0004-6256/152/2/45/pdf][Bingqiu Chen et al]]

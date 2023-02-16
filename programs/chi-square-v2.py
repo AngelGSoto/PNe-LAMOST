@@ -147,14 +147,14 @@ def measurent_line(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec, NameL
         pass
     return flux_line
 
-def measurent_line_model(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec, NameLine, saveplot = "y"):
+def measurent_line_model(wl_vacuum, spec_, spec, lamb, units_flux, type_spec, NameLine, saveplot = "y"):
     '''
     Meassurent the flux line
     '''
-    line_spec_mask = find_line(wl_vacuum,  spec)
+    line_spec_mask = find_line(wl_vacuum,  spec_)
     #Extract again the region using the lice center found
     line_region_ = SpectralRegion(line_spec_mask['line_center'] - 30 * u.AA, line_spec_mask['line_center'] + 30 * u.AA)
-    sub_spectrum_line = extract_region(spec, line_region_)
+    sub_spectrum_line = extract_region(spec_, line_region_)
     line_para_line = estimate_line_parameters(sub_spectrum_line, models.Gaussian1D())
     print("Parameters of the 1D-Gaussin:", line_para_line)
     # Fit the spectrum and calculate the fitted flux values (``y_fit``)
@@ -167,20 +167,21 @@ def measurent_line_model(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec,
     sub_gauss = extract_region(gauss, line_region_)
     min_lamb = line_para_line.mean.value - 8*line_para_line.stddev.value
     max_lamb = line_para_line.mean.value + 8*line_para_line.stddev.value
+
     sub_region_int = SpectralRegion(min_lamb * u.AA,  max_lamb * u.AA)
     sub_gauss_int = extract_region(gauss, sub_region_int)
     flux_line = np.trapz(sub_gauss_int.flux, sub_gauss_int.spectral_axis) 
     #Ploting the lina and fit Gaussian
     if saveplot == "y":
         fig, ax = plt.subplots(figsize=(12, 12))
-        ax.xlabel('Wavelength $(\AA)$')
-        plt.plot(wl, Flux, linewidth=5, label = "Obs.")
-        plt.plot(wl, y_fit_line, label = "Model")
-        #plt.ylim(-100, (sub_spectrum_line.max() + 500*rel_flux))
-        plt.xlim((line_spec_mask['line_center'].value-20), (line_spec_mask['line_center'].value+20))
+        plt.xlabel('Wavelength $(\AA)$')
+        plt.plot(spec.spectral_axis, spec.flux/1e-13, linewidth=5, label = "CLOUDY")
+        plt.plot(spec.spectral_axis, y_fit_line/1e-13, label = "1D Gaussian model")
+        #plt.ylim(-0.3, ((sub_spectrum_line.flux/1e-13).max() + 0.1*u.Unit('erg cm-2 s-1 AA-1')))
+        plt.xlim((line_spec_mask['line_center'].value-35), (line_spec_mask['line_center'].value+35))
         bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
         plt.text(0.1, 0.9, NameLine,
-             transform=ax.transAxes, c="black", weight='bold', fontsize=24.8, bbox=bbox_props)
+             transform=ax.transAxes, c="black", weight="bold", fontsize=24.8, bbox=bbox_props)
         ax.legend()
         plt.tight_layout()
         plt.savefig(type_spec + "_" + NameLine + ".pdf")
@@ -288,9 +289,8 @@ lines = {"[NeIII]+H7": 3967.470,
          "Halpha": 6564.614,
          }
 
-
-table = Table.read("parameters-lamost-pn-selec-lines.ecsv", format="ascii.ecsv")
-ratio_lines = table["Flux"]
+table = Table.read("parameters-lamost-pn-model_130000_37.12_3.60-selec-lines.ecsv", format="ascii.ecsv")
+ratio_lines = table["Ratio Flux"]
 err_ratio_lines = table["Sigma"]
 
 #################################################################################
@@ -300,10 +300,17 @@ lamb_model = data_mask["Wl"] * u.AA
 flux_model = data_mask["Flux"] *  u.Unit('erg cm-2 s-1 AA-1') 
 spec_model = Spectrum1D(spectral_axis=lamb_model, flux=flux_model)
 
+# Subtracting the continuum
+with warnings.catch_warnings():  # Ignore warnings
+    warnings.simplefilter('ignore')
+    g1_fit_model = fit_generic_continuum(spec_model)
+y_continuum_fitted_model = g1_fit_model(lamb_model)
+spec_sub_model = spec_model - y_continuum_fitted_model
+
 #Estimating the flux line for the models
 flux_lines_models = []
 for vv, tt in lines.items():
-    flux_lines_models.append(measurent_line_model(tt, spec_model, lamb_model, data_mask["Wl"], data_mask["Flux"],  u.Unit('erg cm-2 s-1 AA-1'), "Model", vv, saveplot = "n").value)
+    flux_lines_models.append(measurent_line_model(tt, spec_model, spec_sub_model, lamb_model,  u.Unit('erg cm-2 s-1 AA-1'), "Model", vv, saveplot = "n").value)
 
 Hbeta_models = flux_lines_models[4]
 ratio_lines_models = flux_lines_models / Hbeta_models
@@ -319,7 +326,7 @@ vv = n - np
 chi_sum_red = chi_sum / vv
 
 modell, chii, chii_red = [], [], [] 
-if chi_sum_red <= 400000:
+if chi_sum_red <= 4:
     modell.append(model_name.split("l/")[-1])
     chii.append(chi_sum)
     chii_red.append(chi_sum_red)    
