@@ -46,6 +46,14 @@ wl = hdudata[2]
 Flux = hdudata[0]
 Flux /=10e3
 
+#spliting the spectra in the blue and red arms
+m_blue = (wl >= min(wl)) & (wl <= 5800)
+m_red = (wl >= 6300) & (wl <= max(wl))
+wl_blue = wl[m_blue]
+wl_red = wl[m_red]
+Flux_blue = Flux[m_blue]
+Flux_red = Flux[m_red]
+
 # Emission lines
 wv_lin = [3869.76, 3967.46, 4101.74, 4340.471, 4542, 4685.71, 4711.26, 4740.120, 4861.33, 4958.92, 5006.8, 5411, 6562.82, 6879,  7005.87, 7113, 7135, 7751, 8236.79, 9001.27]
 #em_lin = [r"[Ne III]" + "\n" + "3869", "[Ne III] + H7" + "\n" + "3968", r"H$\delta$", r"H$\gamma$", "He II", "He II", "[Ar IV]" + "\n" + "4711", "[Ar IV]" + "\n" + "4740", r"H$\beta$", "[O III]" + "\n" + "4958", "[O III]" + "\n" + "5007", "He II" + "\n" + "5411", "[N II]", r"H$\alpha$", "[N II]", "[S II]" + "\n" + "6731", "[Ar V]" + "\n" + "7005", "?" + "\n" + "7113", "[Ar III]" + "\n" + "7135", "[Ar III]" + "\n" + "7751", "He II" + "\n" + "8236", "[S III]" + "\n" + "9069"]
@@ -70,7 +78,9 @@ ax.set(ylabel='Normalised flux')
 ax.plot(wl2, Flux2 , c = "red", linewidth=2., zorder=5)
 ax.plot(wl1, Flux1 , c = "#FFA500", linewidth=2., zorder=5)
 ax.plot(wl0, Flux0 , c = "green", linewidth=2., zorder=5)
-ax.plot(wl, Flux , c = "blueviolet", linewidth=2., zorder=5)
+ax.plot(wl, Flux , c = "white", linewidth=2., zorder=5)
+ax.plot(wl_blue, Flux_blue, c = "blueviolet", linewidth=2, zorder=5)
+ax.plot(wl_red, Flux_red, c = "blueviolet", linewidth=2, zorder=5)
 for wll in wv_lin:
     ax.axvline(wll, color='k', linewidth=0.4, alpha=0.5, linestyle='--')
 

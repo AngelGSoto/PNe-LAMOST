@@ -34,12 +34,14 @@ from specutils.analysis import gaussian_sigma_width, gaussian_fwhm, fwhm, fwzi
 from specutils.analysis import centroid
 from specutils.fitting.continuum import fit_continuum
 from specutils.fitting import fit_generic_continuum
+from dust_extinction.parameter_averages import F99
 import warnings
 with warnings.catch_warnings():  # Ignore warnings
     warnings.simplefilter('ignore')
 quantity_support()
 sn.set_context("poster")
 
+# Some definitions
 def closest(lst, K):
     '''find the closest number'''
     lst = np.array(lst)
@@ -65,13 +67,13 @@ def find_line(wl_vacuum, spec):
         line_spec_mask = line_spec
     return line_spec_mask
 
-def measurent_line(wl_vacuum, spec, lamb, units_flux, type_spec, NameLine, saveplot = "y"):
+def measurent_line(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec, NameLine, saveplot = "y"):
     '''
     Meassurent the flux line
     '''
     line_spec_mask = find_line(wl_vacuum,  spec)
     #Extract again the region using the lice center found
-    line_region_ = SpectralRegion(line_spec_mask['line_center'] - 3.5 * u.AA, line_spec_mask['line_center'] + 3.5 * u.AA)
+    line_region_ = SpectralRegion(line_spec_mask['line_center'] - 5 * u.AA, line_spec_mask['line_center'] + 5 * u.AA)
     sub_spectrum_line = extract_region(spec, line_region_)
     line_para_line = estimate_line_parameters(sub_spectrum_line, models.Gaussian1D())
     print("Parameters of the 1D-Gaussin:", line_para_line)
@@ -91,8 +93,8 @@ def measurent_line(wl_vacuum, spec, lamb, units_flux, type_spec, NameLine, savep
     #Ploting the lina and fit Gaussian
     if saveplot == "y":
         fig, ax = plt.subplots(figsize=(12, 12))
-        plt.plot(spec.spectral_axis, spec.flux, linewidth=10, c = "blueviolet", label = "J020808.63+491401.0")
-        plt.plot(spec.spectral_axis, y_fit_line, linewidth=10, c = "orange", linestyle='dashed', label = "1D Gaussian model")
+        plt.plot(wl, Flux, linewidth=10, c = "blueviolet", label = "J020808.63+491401.0")
+        plt.plot(wl, y_fit_line, linewidth=10, c = "orange", linestyle='dashed', label = "1D Gaussian model")
         plt.xlabel('Wavelength $(\AA)$')
         plt.ylim(-100, (sub_spectrum_line.max() + 500*rel_flux))
         plt.xlim((line_spec_mask['line_center'].value-15), (line_spec_mask['line_center'].value+15))
@@ -106,7 +108,6 @@ def measurent_line(wl_vacuum, spec, lamb, units_flux, type_spec, NameLine, savep
     else:
         pass
     return flux_line
-
 
 def ew(wl_vacuum, spec):
     '''
@@ -165,15 +166,7 @@ def err_line(wl_vacuum, spec, D=1.0002302850208247):
     npixel, err_cont = npx_errcont(wl_vacuum, spec) #number of pixel and error continuum
     err_line = err_cont * D * np.sqrt((2 * npixel) + (np.abs(ew1.value) / D))
     return err_line
-
-# OUR PN
-hdu = fits.open("spec-56581-VB031N50V1_sp08-218.fits")
-hdudata = hdu[0].data
-wl = hdudata[2]
-Flux = hdudata[0]
-inve_var = hdudata[1]
-sigma = 1 / np.sqrt(inve_var)
-
+    
 #testing
 # Defining units astropy
 rel_flux = u.def_unit('Relative~flux')
@@ -182,36 +175,6 @@ lamb = wl * u.AA
 flux = Flux * rel_flux
 Sigma = StdDevUncertainty(sigma * rel_flux)
 spec = Spectrum1D(spectral_axis=lamb, flux=flux, uncertainty=Sigma)
-
-#Spliting the spectrum en blue and red part
-sub_region_blue = SpectralRegion(spec.spectral_axis.min(),  5800*u.AA)
-sub_region_red = SpectralRegion(6300*u.AA, spec.spectral_axis.max())
-sub_spectrum_blue = extract_region(spec, sub_region_blue)
-sub_spectrum_red = extract_region(spec, sub_region_red)
-
-# Subtracting the continuum
-with warnings.catch_warnings():  # Ignore warnings
-    warnings.simplefilter('ignore')
-    g1_fit_blue = fit_generic_continuum(sub_spectrum_blue)
-    g1_fit_red = fit_generic_continuum(sub_spectrum_red)
-y_continuum_fitted_blue = g1_fit_blue(sub_spectrum_blue.spectral_axis)
-spec_sub_blue = sub_spectrum_blue - y_continuum_fitted_blue
-y_continuum_fitted_red = g1_fit_red(sub_spectrum_red.spectral_axis)
-spec_sub_red = sub_spectrum_red - y_continuum_fitted_red
-#waveleng
-wl_blue = sub_spectrum_blue.spectral_axis.value
-wl_red = sub_spectrum_red.spectral_axis.value
-wl_concat = np.concatenate([wl_blue, wl_red])
-wl_concat_ = wl_concat * u.AA
-#uncertainty
-sigma_blue = sub_spectrum_blue.uncertainty.array
-sigma_red = sub_spectrum_red.uncertainty.array
-sigma_concat = np.concatenate([sigma_blue, sigma_red])
-sigma_concat_ = StdDevUncertainty(sigma_concat * rel_flux)
-
-spec_subtrated =  np.concatenate([spec_sub_blue.flux.value, spec_sub_red.flux.value])
-flux_sub = spec_subtrated * rel_flux
-spec_sub = Spectrum1D(spectral_axis=wl_concat_, flux=flux_sub, uncertainty=sigma_concat_)
 
 # dispersion per pixel 
 D = 1.0002302850208247
@@ -245,29 +208,80 @@ lines = {"[NeIII]+H7": 3967.470,
          "Halpha": 6564.614,
          }
 
-nlines_ = []
-lines_ = []
-flux_lines = []
-err_lines = []
-EW = []
-for v, t in lines.items():
-    flux_lines.append(measurent_line(t, spec_sub, spec_sub.spectral_axis, rel_flux, "Obs", v, saveplot = "y").value)
-    err_lines.append(err_line(t, spec, D = D))
-    EW.append(ew(t, spec))
-    lines_.append(t)
-    nlines_.append(v)
+# OUR PN
+hdu = fits.open("../Spectra-lamostdr7/spec-56581-VB031N50V1_sp08-218.fits")
+hdudata = hdu[0].data
+wl = hdudata[2]
+Flux = hdudata[0]
+inve_var = hdudata[1]
+sigma = 1 / np.sqrt(inve_var)
+#testing
+# Defining units astropy
+rel_flux = u.def_unit('Relative~flux')
+print(rel_flux.decompose())
+lamb = wl * u.AA 
+flux = Flux * rel_flux
+Sigma = StdDevUncertainty(sigma * rel_flux)
+spec = Spectrum1D(spectral_axis=lamb, flux=flux, uncertainty=Sigma)
 
-Hbeta = flux_lines[4]
-ratio_lines = flux_lines / Hbeta
+# dispersion per pixel 
+D = 1.0002302850208247
 
-# And the error
-err_Hbeta = err_lines[4]
-err_ratio_lines = np.sqrt((ratio_lines**2) * ((np.array(err_lines) / np.array(flux_lines))**2 + (err_Hbeta / Hbeta)**2))
+#correction for extinction
+#estimating c(Hbeta)
+FHa=19573.101745717628
+FHb=8438.273982463654
+cb = (1 / 0.348) * np.log10((FHa/FHb) / 2.85)
 
-#creating table and save it
-table = QTable([nlines_, lines_, flux_lines, ratio_lines, err_ratio_lines, EW],
-           names=('Line', 'Lambda', 'Flux', 'Ratio Flux', 'Sigma', "EW"),
-           meta={'name': 'first table'})
-#save the table
-table.write("parameters-lamost-pn-selec-lines.ecsv", format="ascii.ecsv", overwrite=True)
+#Excess color
+Ev = abs(cb / (0.4*3.615))
+Rv=3.1
+Av = Ev*Rv
+#Correcting
+# define the model
+ext = F99(Rv=Rv)
 
+# unextinguish (deredden) the spectrum
+spectrum_noext = spec.flux/ext.extinguish(spec.spectral_axis, Av=Av)
+spec_noext = Spectrum1D(spectral_axis=lamb, flux=spectrum_noext)
+
+
+# # Subtracting the continuum
+# with warnings.catch_warnings():  # Ignore warnings
+#     warnings.simplefilter('ignore')
+#     g1_fit_model = fit_generic_continuum(spec_model)
+# y_continuum_fitted_model = g1_fit_model(lamb_model)
+# spec_sub_model = spec_model - y_continuum_fitted_model
+
+# #Estimating the flux line for the models
+# flux_lines_models = []
+# for vv, tt in lines.items():
+#     flux_lines_models.append(measurent_line_model(tt, spec_model, spec_sub_model, lamb_model,  u.Unit('erg cm-2 s-1 AA-1'), "Model", vv, saveplot = "n").value)
+
+# Hbeta_models = flux_lines_models[4]
+# ratio_lines_models = flux_lines_models / Hbeta_models
+
+# # Estimating the chi-square
+# chi = (ratio_lines_models - ratio_lines)**2 / err_ratio_lines**2
+# chi_sum = chi.sum()
+
+# # Estimating the degree freedom
+# n = 9
+# np = 3
+# vv = n - np
+# chi_sum_red = chi_sum / vv
+
+# modell, chii, chii_red = [], [], [] 
+# if chi_sum_red <= 4:
+#     modell.append(model_name.split("l/")[-1])
+#     chii.append(chi_sum)
+#     chii_red.append(chi_sum_red)    
+# print(chii, chii_red)    
+# tab = Table([modell, chii, chii_red],
+#            names=('Name model', 'chi', 'Chi red'),
+#            meta={'name': 'first table'})
+
+# try:
+#     tab.write("better-" + str(modell).split("['")[-1].split("']")[0] +".ecsv", format="ascii.ecsv", overwrite=True)
+# except TypeError:
+#     pass

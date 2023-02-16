@@ -40,6 +40,20 @@ with warnings.catch_warnings():  # Ignore warnings
 quantity_support()
 sn.set_context("poster")
 
+parser = argparse.ArgumentParser(
+    description="""Reading the ouput cloudy models""")
+
+parser.add_argument("source", type=str,
+                    default="model_100000_36.58",
+                    help="Name of input model ")
+
+
+cmd_args = parser.parse_args()
+file_ = cmd_args.source + ".dat"
+
+# Reading the Cloudy outputs in the Mod CloudyModel object
+spec = Table.read(file_, format="ascii")
+
 def closest(lst, K):
     '''find the closest number'''
     lst = np.array(lst)
@@ -65,13 +79,13 @@ def find_line(wl_vacuum, spec):
         line_spec_mask = line_spec
     return line_spec_mask
 
-def measurent_line(wl_vacuum, spec, lamb, units_flux, type_spec, NameLine, saveplot = "y"):
+def measurent_line(wl_vacuum, spec, lamb, wl, Flux, units_flux, type_spec, NameLine, saveplot = "y"):
     '''
     Meassurent the flux line
     '''
     line_spec_mask = find_line(wl_vacuum,  spec)
     #Extract again the region using the lice center found
-    line_region_ = SpectralRegion(line_spec_mask['line_center'] - 3.5 * u.AA, line_spec_mask['line_center'] + 3.5 * u.AA)
+    line_region_ = SpectralRegion(line_spec_mask['line_center'] - 5 * u.AA, line_spec_mask['line_center'] + 5 * u.AA)
     sub_spectrum_line = extract_region(spec, line_region_)
     line_para_line = estimate_line_parameters(sub_spectrum_line, models.Gaussian1D())
     print("Parameters of the 1D-Gaussin:", line_para_line)
@@ -91,8 +105,8 @@ def measurent_line(wl_vacuum, spec, lamb, units_flux, type_spec, NameLine, savep
     #Ploting the lina and fit Gaussian
     if saveplot == "y":
         fig, ax = plt.subplots(figsize=(12, 12))
-        plt.plot(spec.spectral_axis, spec.flux, linewidth=10, c = "blueviolet", label = "J020808.63+491401.0")
-        plt.plot(spec.spectral_axis, y_fit_line, linewidth=10, c = "orange", linestyle='dashed', label = "1D Gaussian model")
+        plt.plot(wl, Flux, linewidth=10, c = "blueviolet", label = "J020808.63+491401.0")
+        plt.plot(wl, y_fit_line, linewidth=10, c = "orange", linestyle='dashed', label = "1D Gaussian model")
         plt.xlabel('Wavelength $(\AA)$')
         plt.ylim(-100, (sub_spectrum_line.max() + 500*rel_flux))
         plt.xlim((line_spec_mask['line_center'].value-15), (line_spec_mask['line_center'].value+15))
@@ -107,6 +121,48 @@ def measurent_line(wl_vacuum, spec, lamb, units_flux, type_spec, NameLine, savep
         pass
     return flux_line
 
+def measurent_line_model(wl_vacuum, spec_, spec, lamb, units_flux, type_spec, NameLine, saveplot = "y"):
+    '''
+    Meassurent the flux line
+    '''
+    line_spec_mask = find_line(wl_vacuum,  spec_)
+    #Extract again the region using the lice center found
+    line_region_ = SpectralRegion(line_spec_mask['line_center'] - 30 * u.AA, line_spec_mask['line_center'] + 30 * u.AA)
+    sub_spectrum_line = extract_region(spec_, line_region_)
+    line_para_line = estimate_line_parameters(sub_spectrum_line, models.Gaussian1D())
+    print("Parameters of the 1D-Gaussin:", line_para_line)
+    # Fit the spectrum and calculate the fitted flux values (``y_fit``)
+    g_init_line = models.Gaussian1D(amplitude=line_para_line.amplitude.value * units_flux,
+                                    mean=line_para_line.mean.value * u.AA , stddev=line_para_line.stddev.value * u.AA )
+    g_fit_line = fit_lines(spec, g_init_line, window=(line_spec_mask['line_center'] - 30 * u.AA, line_spec_mask['line_center'] + 30 * u.AA))
+    y_fit_line = g_fit_line(lamb)
+    #Integrating along the fit 1D-Gaussian
+    gauss = Spectrum1D(spectral_axis=lamb, flux=y_fit_line) 
+    sub_gauss = extract_region(gauss, line_region_)
+    min_lamb = line_para_line.mean.value - 8*line_para_line.stddev.value
+    max_lamb = line_para_line.mean.value + 8*line_para_line.stddev.value
+
+    sub_region_int = SpectralRegion(min_lamb * u.AA,  max_lamb * u.AA)
+    sub_gauss_int = extract_region(gauss, sub_region_int)
+    flux_line = np.trapz(sub_gauss_int.flux, sub_gauss_int.spectral_axis) 
+    #Ploting the lina and fit Gaussian
+    if saveplot == "y":
+        fig, ax = plt.subplots(figsize=(12, 12))
+        plt.xlabel('Wavelength $(\AA)$')
+        plt.plot(spec.spectral_axis, spec.flux/1e-13, linewidth=5, label = "CLOUDY")
+        plt.plot(spec.spectral_axis, y_fit_line/1e-13, label = "1D Gaussian model")
+        #plt.ylim(-0.3, ((sub_spectrum_line.flux/1e-13).max() + 0.1*u.Unit('erg cm-2 s-1 AA-1')))
+        plt.xlim((line_spec_mask['line_center'].value-35), (line_spec_mask['line_center'].value+35))
+        bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
+        plt.text(0.1, 0.9, NameLine,
+             transform=ax.transAxes, c="black", weight="bold", fontsize=24.8, bbox=bbox_props)
+        ax.legend()
+        plt.tight_layout()
+        plt.savefig(type_spec + "_" + NameLine + ".pdf")
+        plt.close()
+    else:
+        pass
+    return flux_line
 
 def ew(wl_vacuum, spec):
     '''
@@ -165,53 +221,7 @@ def err_line(wl_vacuum, spec, D=1.0002302850208247):
     npixel, err_cont = npx_errcont(wl_vacuum, spec) #number of pixel and error continuum
     err_line = err_cont * D * np.sqrt((2 * npixel) + (np.abs(ew1.value) / D))
     return err_line
-
-# OUR PN
-hdu = fits.open("spec-56581-VB031N50V1_sp08-218.fits")
-hdudata = hdu[0].data
-wl = hdudata[2]
-Flux = hdudata[0]
-inve_var = hdudata[1]
-sigma = 1 / np.sqrt(inve_var)
-
-#testing
-# Defining units astropy
-rel_flux = u.def_unit('Relative~flux')
-print(rel_flux.decompose())
-lamb = wl * u.AA 
-flux = Flux * rel_flux
-Sigma = StdDevUncertainty(sigma * rel_flux)
-spec = Spectrum1D(spectral_axis=lamb, flux=flux, uncertainty=Sigma)
-
-#Spliting the spectrum en blue and red part
-sub_region_blue = SpectralRegion(spec.spectral_axis.min(),  5800*u.AA)
-sub_region_red = SpectralRegion(6300*u.AA, spec.spectral_axis.max())
-sub_spectrum_blue = extract_region(spec, sub_region_blue)
-sub_spectrum_red = extract_region(spec, sub_region_red)
-
-# Subtracting the continuum
-with warnings.catch_warnings():  # Ignore warnings
-    warnings.simplefilter('ignore')
-    g1_fit_blue = fit_generic_continuum(sub_spectrum_blue)
-    g1_fit_red = fit_generic_continuum(sub_spectrum_red)
-y_continuum_fitted_blue = g1_fit_blue(sub_spectrum_blue.spectral_axis)
-spec_sub_blue = sub_spectrum_blue - y_continuum_fitted_blue
-y_continuum_fitted_red = g1_fit_red(sub_spectrum_red.spectral_axis)
-spec_sub_red = sub_spectrum_red - y_continuum_fitted_red
-#waveleng
-wl_blue = sub_spectrum_blue.spectral_axis.value
-wl_red = sub_spectrum_red.spectral_axis.value
-wl_concat = np.concatenate([wl_blue, wl_red])
-wl_concat_ = wl_concat * u.AA
-#uncertainty
-sigma_blue = sub_spectrum_blue.uncertainty.array
-sigma_red = sub_spectrum_red.uncertainty.array
-sigma_concat = np.concatenate([sigma_blue, sigma_red])
-sigma_concat_ = StdDevUncertainty(sigma_concat * rel_flux)
-
-spec_subtrated =  np.concatenate([spec_sub_blue.flux.value, spec_sub_red.flux.value])
-flux_sub = spec_subtrated * rel_flux
-spec_sub = Spectrum1D(spectral_axis=wl_concat_, flux=flux_sub, uncertainty=sigma_concat_)
+    
 
 # dispersion per pixel 
 D = 1.0002302850208247
@@ -245,29 +255,61 @@ lines = {"[NeIII]+H7": 3967.470,
          "Halpha": 6564.614,
          }
 
-nlines_ = []
-lines_ = []
-flux_lines = []
-err_lines = []
-EW = []
-for v, t in lines.items():
-    flux_lines.append(measurent_line(t, spec_sub, spec_sub.spectral_axis, rel_flux, "Obs", v, saveplot = "y").value)
-    err_lines.append(err_line(t, spec, D = D))
-    EW.append(ew(t, spec))
-    lines_.append(t)
-    nlines_.append(v)
+table = Table.read("../Spectra-lamostdr7/parameters-lamost-pn-selec-lines.ecsv", format="ascii.ecsv")
+ratio_lines = table["Ratio Flux"]
+err_ratio_lines = table["Sigma"]
 
-Hbeta = flux_lines[4]
-ratio_lines = flux_lines / Hbeta
+#################################################################################
+# Model  ########################################################################
+#################################################################################
+#Getting wl and flux
+wl = spec["col1"]
+flux = spec["col2"]
+#Ordered lambda and flux 
+wll, flux = zip(*sorted(zip(wl, flux)))
 
-# And the error
-err_Hbeta = err_lines[4]
-err_ratio_lines = np.sqrt((ratio_lines**2) * ((np.array(err_lines) / np.array(flux_lines))**2 + (err_Hbeta / Hbeta)**2))
+data = Table([wll, flux], names=('Wl', 'Flux'), meta={'name': 'first table'})
+lamb_model = data["Wl"] * u.AA 
+flux_model = data["Flux"] *  u.Unit('erg cm-2 s-1 AA-1') 
+spec_model = Spectrum1D(spectral_axis=lamb_model, flux=flux_model)
 
-#creating table and save it
-table = QTable([nlines_, lines_, flux_lines, ratio_lines, err_ratio_lines, EW],
-           names=('Line', 'Lambda', 'Flux', 'Ratio Flux', 'Sigma', "EW"),
+# Subtracting the continuum
+with warnings.catch_warnings():  # Ignore warnings
+    warnings.simplefilter('ignore')
+    g1_fit_model = fit_generic_continuum(spec_model)
+y_continuum_fitted_model = g1_fit_model(lamb_model)
+spec_sub_model = spec_model - y_continuum_fitted_model
+
+#Estimating the flux line for the models
+flux_lines_models = []
+for vv, tt in lines.items():
+    flux_lines_models.append(measurent_line_model(tt, spec_model, spec_sub_model, lamb_model,  u.Unit('erg cm-2 s-1 AA-1'), "Model", vv, saveplot = "y").value)
+
+Hbeta_models = np.array(flux_lines_models[4])
+ratio_lines_models = np.array(flux_lines_models) / np.array(Hbeta_models)
+
+# Estimating the chi-square
+chi = (ratio_lines_models - ratio_lines)**2 / err_ratio_lines**2
+chi_sum = chi.sum()
+
+# Estimating the degree freedom
+n = 9
+np = 3
+vv = n - np
+chi_sum_red = chi_sum / vv
+
+modell, chii, chii_red = [], [], [] 
+if chi_sum_red <= 4:
+    modell.append(file_.split("en/")[-1].split(".dat")[0])
+    chii.append(chi_sum)
+    chii_red.append(chi_sum_red)
+print(file_.split("en/")[-1].split(".dat")[0])
+print(chii, chii_red)    
+tab = Table([modell, chii, chii_red],
+           names=('Name model', 'chi', 'Chi red'),
            meta={'name': 'first table'})
-#save the table
-table.write("parameters-lamost-pn-selec-lines.ecsv", format="ascii.ecsv", overwrite=True)
 
+try:
+    tab.write("better-" + str(modell).split("['")[-1].split("']")[0] +".ecsv", format="ascii.ecsv", overwrite=True)
+except TypeError:
+    pass
