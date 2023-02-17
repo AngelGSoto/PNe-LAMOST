@@ -1,0 +1,10 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: Name model, datatype: string}
+# - {name: chi, datatype: float64}
+# - {name: Chi red, datatype: float64}
+# meta: {name: first table}
+# schema: astropy-2.0
+"Name model" chi "Chi red"
+model_140000_37.22_3.74_0.0 23.178781287070528 3.8631302145117545
