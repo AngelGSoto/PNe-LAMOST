@@ -101,12 +101,12 @@ $^{2}$Departamento de Astronomia, IAG, Universidade de S\~{a}o Paulo, Rua do Mat
   such as He II and [Ar V] lines. The LAMOST spectra was
   modelled using the code of photoionization  {\sc cloudy}.
   Comparing the model spectra with the observed one, we found
-  the best-fit {\sc cloudy} models resulting in three best model fit. These model spectra have
-   obtained a
-  effective temperature of 14$\times10^{4}$ K. Other parameters such as luminosity
-  and abundances were determined by comparing with the model.
-  Comparing with evolution track of post-AGB I found that the mass
-  of the progenitor star is 1.25 M{$\odot$}. 
+  the best-fit {\sc cloudy} models resulting in three best model fit.
+  These model spectra have obtained a effective temperature of 14$\times10^{4}$ K.
+  Other parameters such as luminosity and abundances were determined by
+  comparing with the model. Comparing with evolution track of post-AGB
+  I found that the mass of the progenitor star is 1.25 M{$\odot$}. Bla Bla Bla Bla
+  Bla Bla Bla Bla Bla Bla Bla Bla Bla
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -326,7 +326,7 @@ identify emission line objects from LAMOST  implementing a machine learning appr
 Then, they divided their final sample of emission line objects in tree subgroups.
 Those with \texttt{SIMBAD} coincidences, those that are listed by \citet{Hou:2016}
 and another list that are neither cross-matched with
-SIMBAD nor listed by  \citet{Hou:2016}. To texting the possibility to find
+SIMBAD nor listed by \citet{Hou:2016}. To texting the possibility to find
 for new PNe with the color criteria explained above, we applied it directly in the new list,
 which present objects not reported previously in the literature, which is a list with
 1000 objects.
@@ -364,8 +364,8 @@ were performed in the next section to try derived the physical parameters of the
 comparing its low-resolution spectra from LAMOST with modelled 1D-spectra.
 
 
-Note that the LAMOST spectra are not calibrated in absolute flux but they are calibrate flux relative,
-then any analysis will have to do in term of ratio lines. 
+Note that the LAMOST spectra are not calibrated in absolute flux but they are
+calibrate flux relative, then any analysis will have to do in term of ratio lines. 
 
 \begin{figure*}
 \centering
@@ -540,23 +540,21 @@ indicating, probably, the high temperature nature on their central star.
 \subsection{Why is not a supernova?}
 \label{sec:snr}
 
-Given supernovas are also high-ionization sources the object could be
-a supernova, but the spectra don show broad lines as the classical supernova.
+Two types of galactic objects show high excitation
+lines: planetary nebulae (\citealp{Bernard:2009}; \citealp{Guiles:2007})
+and supernova remnants \citep{Sandstrom:2009, Ghavamian:2009}.
+SNRs typically show very broad, high velocity ($v \geq 300$ km s$^{-1}$;
+\citealp{Oliveira:2011}, \citealp{Fesen:2010}), emission lines,  produced by the
+high velocity shock waves \citep{Fesen:1985, Fesen:1996, Stupar:2007}. 
+PNe, on the other hand, are characterized by narrow emission lines
+arising from the low-velocity expanding outer layers \citep{Balick:2002, Gorny:2009}.
+We have estimate FWHM < 300 km s$^{-1}$ for the lines of J020808.63+491401.0, indicating
+narrow emission lines.
 
-Two types of galactic objects show such high excitation
-lines: dusty planetary nebulae (PNe, \citeapl{Bernard:2009};
-Stanghellini et al. 2007; \citealp{Guiles:2007}) and supernova rem-
-nants (SNRs, Sandstrom et al. 2009; Ghavamian et al. 2009).
-SNRs typically show very broad emission lines, produced by the
-high velocity shock waves (Fesen et al. 1985; Fesen \& Hurford
-1996; Stupar et al. 2007). PNe, on the other hand, are character-
-ized by narrow emission lines arising from the low velocity ex-
-panding outer shells (Balick \& Frank 2002; Górny et al. 2009).
-Both classes of objects have been extensively studied by several
-authors, although just a few are so dusty that they were initially
-discovered only at mid-infrared wavelengths. To distinguish be-
-tween these two possibilities, further spectroscopy on OL17 was
-needed \citep{Oliveira:2011}.
+The absence of high velocity optical emission lines and the lack
+of detected [S II] emission, which would indicate the presence of shock-heated gas
+typically of SNRs, suggests that the object is most likely a high-excitation PN.
+	251.995958844	53.9082936719
 
 \section{Modeling the observed LAMOST spectra}
 \label{sec:model}
@@ -661,7 +659,7 @@ the parallax of GAIA of 2.31 kpc.
 After of getting the models and given that the observed spectra could be affected by dust interstellar extinction, we reddened each modelled 1D-spectra applying the
 reddening curve of R(V) = 3.1, and using
 colour excesses, E(B-V), from 0.0 to 0.1 in step of 0.01, also for 0.2.
-This was made by implementing the python package {\sc dust_extinction}\footnote{\ulr{https://dust-extinction.readthedocs.io/en/stable/#}}. This produced more than 40$\times10^3$ models.
+This was made by implementing the python package \texttt{dust\_extinction}\footnote{\url{https://dust-extinction.readthedocs.io/en/stable/#}}. This produced more than 40$\times10^3$ models.
 Fig~\ref{fig:spectra-obs-model} shows a comparison
 between LAMOST spectra and a {\sc cloudy}. This model was taken from a grid of
 models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches between the two spectra.
@@ -691,16 +689,15 @@ calculating $\chi^{2}$ of the models given by the following relation,
 
 where $M_i$, $O_i$ and $\sigma^{2}_i$ are the modelled line flux ratios, the observed line flux
 ratios and uncertainty in the observed line flux ratios, respectively. We define the minimum
-$\chi^{2}$ of the new PN:
+$\chi^{2}$ of the new PN as
 
 \begin{equation}
    \chi^{2}_{\text{min}} = \sum^{9}_{i = 1} \frac{(M^{\text{best}}_i - O_i)^2}{\sigma^{2}_i}
   \label{eq:chi-red}
 \end{equation}
 
-the number 9 in sum symbol indicates the number of parameters used to estimate the  $\chi^{2}$ value.
-In this case, are the 9 flux lines, that we are used because are the most intense.
-This lines are [Ne III] 3967.470, H$\delta$, H$\gamma$, He II 4685.99, H$\beta$, [O III] 4958, 4958.911,
+the number 9 in sum symbol indicates the number of parameters used to estimate the  $\chi^{2}$ value. In this case, are the 9 flux lines, that we are used because are the most intense.
+This lines are [Ne III] 3967.470, H$\delta$, H$\gamma$, He II 4685.99, H$\beta$, [O III] 4958.911,
 [OIII] 5006, He II 5412.12 and H{$\alpha$}.
 where $\nu$ is represents the number of degrees of freedom (DOF), which is estimate
 by implementing $\nu = n - n_p$, with $n$ and $n_p$ being the number of observed lines
