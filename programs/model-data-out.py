@@ -98,6 +98,14 @@ HBeta_our = Flux[MaskHbeta_our]
 max_HBeta_our = HBeta_our.max()
 flux_our = Flux / max_HBeta_our
 
+#spliting the spectra in the blue and red arms
+m_blue = (wl >= min(wl)) & (wl <= 5800)
+m_red = (wl >= 6300) & (wl <= max(wl))
+wl_blue = wl[m_blue]
+wl_red = wl[m_red]
+Flux_blue = flux_our[m_blue]
+Flux_red = flux_our[m_red]
+
 fig, ax = plt.subplots(figsize=(11, 5))
 #ax.set_title(namefile)
 ax.set(xlim=[3600,9100])
@@ -105,8 +113,9 @@ ax.set(xlim=[3600,9100])
 ax.set(xlabel='Wavelength $(\AA)$')
 ax.set(ylabel='Normalised flux')
 plt.plot(data_mask["Wl"], flux_m,  c = "darkolivegreen", linewidth=0.7, label = 'Model ')
-plt.plot(wl, flux_our, c = "blueviolet", linewidth=0.7, label = 'J020808.63+491401.0')
-
+plt.plot(wl, flux_our, c = "white", linewidth=0.7, label = 'J020808.63+491401.0')
+ax.plot(wl_blue, Flux_blue, c = "blueviolet", linewidth=0.7, zorder=5)
+ax.plot(wl_red, Flux_red, c = "blueviolet", linewidth=0.7, zorder=5)
 bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
 
 info_mod = [r"$\mathrm{T_{eff}=}$" + Tf + "K", r"L=" + Lf + r"$\mathrm{L_{\odot}}$", r"$n_{H}=$" + densf + r"$\mathrm{cm^{-3}}$", r"$\chi^2=$" + chi, r"$\chi^2_r=$" + chi_r]

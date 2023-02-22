@@ -72,6 +72,4 @@ if cmd_args.debug:
 # Creates The JSON files with the magnitudes
 pdffile = asciifile.replace(".dat.tere_E0.2", 
                   "-E02-comparing-spectra.jpg")
-
-
 plt.savefig(pdffile)

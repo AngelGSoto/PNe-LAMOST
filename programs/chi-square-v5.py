@@ -47,7 +47,6 @@ parser.add_argument("source", type=str,
                     default="model_100000_36.58",
                     help="Name of input model ")
 
-
 cmd_args = parser.parse_args()
 file_ = cmd_args.source + ".dat"
 
@@ -283,7 +282,8 @@ spec_sub_model = spec_model - y_continuum_fitted_model
 #Estimating the flux line for the models
 flux_lines_models = []
 for vv, tt in lines.items():
-    flux_lines_models.append(measurent_line_model(tt, spec_model, spec_sub_model, lamb_model,  u.Unit('erg cm-2 s-1 AA-1'), "Model", vv, saveplot = "y").value)
+    flux_lines_models.append(measurent_line_model(tt, spec_model, spec_sub_model, lamb_model,
+                                                  u.Unit('erg cm-2 s-1 AA-1'), "Model", vv, saveplot = "y").value)
 
 Hbeta_models = np.array(flux_lines_models[4])
 ratio_lines_models = np.array(flux_lines_models) / np.array(Hbeta_models)

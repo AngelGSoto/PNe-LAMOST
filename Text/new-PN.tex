@@ -132,8 +132,10 @@ interstellar medium. Then the dying star core becomes a white dwarf.
 
 The number of these kind of objects discovered in the galaxy is relatively low (\(\sim 3,500\)).
 However, this current number of PNe identify on the Milky Way is far away (which represents
-only about 15-30\%) of the estimated total of Galactic PNe (\citealp{Frew:2008}; \citealp{Jacoby:2010}) showing that a small fraction of the PNe have been cataloged until now \citep{Frew:2017}.
-If this is true, there will be a much larger number of PNe in the Galaxy waiting to be discovery. The models of \citet{Moe:2006}, for example, predict that there are 46,000 $\pm$ 22,000
+only about 15-30\%) of the estimated total of Galactic PNe (\citealp{Frew:2008}; \citealp{Jacoby:2010})
+showing that a small fraction of the PNe have been cataloged until now \citep{Frew:2017}.
+If this is true, there will be a much larger number of PNe in the Galaxy waiting to be discovery.
+The models of \citet{Moe:2006}, for example, predict that there are 46,000 $\pm$ 22,000
 for the general case, but only $\sim$6600 \citep{Marco:2005} if close binaries
 (e.g. common-envelope phase) are required. \citet{Miszalski:2009} confirm earlier estimates
 that the binary fraction of PN central stars is only 10-20\% of all
@@ -184,8 +186,8 @@ by using emission lines ratios observed in PNe, supernova remnants, and H{\sc ii
 regions. \citet{Viironen:2009a, Viironen:2009b} used two color-color diagrams
 based on IPHAS and 2MASS photometry to discriminate PNe from stellar and other
 emission lines sources in the Galactic context. The methodology more used to
-identify compact PNe consists in the identification of candidate in narrow- and broad-band
-photometric surveys and reveler their true nature through follow-up
+identify compact PNe consists in the identification of candidate in narrow- and
+broad-band photometric surveys and reveler their true nature through follow-up
 spectroscopic. This always is required with such samples because the success
 of finding compact PNe with photometric diagrams is low, being dominated for
 other type of compact emitters.
@@ -303,7 +305,8 @@ same region in the diagram. Then, We moved to Pan-STARRS and combining the two
 surveys; Pan-STARRS1 and GAIA EDR3, was found a color-color diagram that isolate the PNe
 with, strong \ha{} emission line. By using the \((G - r)\) versus \((G_{BP} - G_{RP})\)
 color-color is possible to separate those PNe with excess in the $r$-broad-band
-filter as is possible to see in the Fig~\ref{fig:gaia-ps}. This plot include PNe with their corresponding central star identification in GAIA collected by \citet{Gonzalez:2021}, 
+filter as is possible to see in the Fig~\ref{fig:gaia-ps}. This plot include PNe
+with their corresponding central star identification in GAIA collected by \citet{Gonzalez:2021}, 
 cataclysm variables \citep{Downes:2006}, supernova remnants \citep{Green:2019}, symbiotic starts
 from \citet{Akras:2019a}.  
 Fig~\ref{fig:gaia-ps} shows that the many of the PNe have value in
@@ -530,7 +533,8 @@ with these confirmed PNe emphasize that the emitter could be a real PN.
     PN PRTM 1(\textit{bottom}).
     The optical coloured images were constructed by combining the
     $g$, $r$ and $i$ Pan-STARRS filters in the green, blue and red channels, respectively.
-  The infrared RGB images were constructed by using the the W1 (3.368 $\mu$\,m), W2 (4.618 $\mu$\,m), and W4 (22.194 $\mu$\,m) WISE filters.} 
+    The infrared RGB images were constructed by using the the W1 (3.368 $\mu$\,m), W2 (4.618 $\mu$\,m),
+    and W4 (22.194 $\mu$\,m) WISE filters.} 
   \label{fig:images-known}
 \end{figure}
 
@@ -661,7 +665,8 @@ After to produce the models and given that the observed spectra could be affecte
 dust interstellar extinction, we reddened each modelled 1D-spectra applying the
 reddening curve of R(V) = 3.1, and using colour excesses, E(B-V), from 0.0 to 0.1 in
 step of 0.01, and also for 0.2. This was made by implementing the python
-package \texttt{dust\_extinction}\footnote{\url{https://dust-extinction.readthedocs.io/en/stable/#}}. This produced more than 40$\times10^3$ models. Fig~\ref{fig:spectra-obs-model} shows a
+package \texttt{dust\_extinction}\footnote{\url{https://dust-extinction.readthedocs.io/en/stable/#}}.
+This produced more than 40$\times10^3$ models. Fig~\ref{fig:spectra-obs-model} shows a
 comparison between LAMOST spectra and a {\sc cloudy}. %% This model was taken from a grid of
 %% models that reproduce spectra form the Galactic halo. For this, it don't exist a real matches
 %% between the two spectra. I will a perform a grid of PN models that better reproduce the
@@ -701,14 +706,15 @@ $\chi^{2}$ of the new PN as
 
 the number 9 in sum symbol indicates the number of parameters used to estimate the  $\chi^{2}$
 value. In this case, we used the 9 flux lines most intense.
-This lines are [Ne III] 3967.5 \AA, H$\delta$, H$\gamma$, He II 4685.9 \AA, H$\beta$, [O III] 4958.9 \AA, [O III] 5006.8, He II 5411.7 \AA~and H{$\alpha$}.
+This lines are [Ne III] 3967.5 \AA, H$\delta$, H$\gamma$, He II 4685.9 \AA, H$\beta$, [O III] 4958.9 \AA,
+[O III] 5006.8, He II 5411.7 \AA~and H{$\alpha$}.
 %% where $\nu$ is represents the number of degrees of freedom (DOF), which is estimate
 %% by implementing $\nu = n - n_p$, with $n$ and $n_p$ being the number of observed lines
 %% used to estimate $\chi^{2}$ and the number of parameters, respectively. Note that for a reasonably
 %% fit, the value of $\chi^{2} \sim \nu$. This means that the value of $\chi^{2}_r$ should be low,
 %% usually between 1 and 2. 
 
-The flux lines of each line were measured  interactively by fitting a 1D Gaussian using
+The flux lines of each line were measured interactively by fitting a 1D-Gaussian using
 the 10 $\AA$ centered on the line and integrate over this best fit Gaussian within more
 or less 3$\sigma$ interval. Being $\sigma$ the standard deviation of the individual
 line fit Gaussian. We found automatically the parameters to fit the best 1D-Gaussian model
@@ -773,7 +779,7 @@ most high effective temperature (T$_{\text{eff}}$ = 160$\times$10$^{4}$).
 
 \begin{figure*}
 \centering
-\includegraphics[width=\linewidth, trim=10 90 10 10, clip]{Figs/model_140000_36.79_3.40.pdf}
+\includegraphics[width=\linewidth, trim=10 90 10 10, clip]{Figs/model_130000_37.32_3.78.pdf}
 \caption{The three best fitted models, on which the $\chi^2_r$ value are 1.13, 1.59, 1.61.
   The spectra were normalised to H{$\beta$}.} 
   \label{fig:spectra-obs-model}
@@ -867,7 +873,9 @@ and the following  python packages: numpy, astropy, specutils, APLpy, matplotlib
 The best fitted models are available in the GitHub repository:
 \url{https://github.com/AngelGSoto/PNe-LAMOST/tree/main/better-fitModel}. 
 The inclusion of a Data Availability Statement is a requirement for articles published in MNRAS.
-Data Availability Statements provide a standardised format for readers to understand the availability of data underlying the research results described in the article. The statement may refer to original data generated in the course of the study or to third-party data analysed in the article.
+Data Availability Statements provide a standardised format for readers to understand the
+availability of data underlying the research results described in the article. The statement may
+refer to original data generated in the course of the study or to third-party data analysed in the article.
 The statement should describe and provide means of access, where possible, by linking to the
 data or providing the required accession numbers for the relevant databases or DOIs.
 
@@ -895,7 +903,8 @@ data or providing the required accession numbers for the relevant databases or D
 
 \appendix
 \section{1D-Gaussian fitted to the emission lines}
-The 1D-Gaussian fitted to the emission lines of J020808.63+491401.0 used to measurement the flux lines and subsequently used to estimate the $\chi^2$ to
+The 1D-Gaussian fitted to the emission lines of J020808.63+491401.0 used to measurement the flux lines
+and subsequently used to estimate the $\chi^2$ to
 find the best-fitted {\sc cloudy} models.
 \begin{table*}
 \centering

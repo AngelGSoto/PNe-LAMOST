@@ -1,6 +1,7 @@
 '''
 Script to dealing with output data from Cloudy
-Based in pyCloudy (Morisset, C., 2013, pyCloudy, Astrophysics Source Code Library)
+Based in pyCloudy (Morisset, C., 2013, pyCloudy, 
+Astrophysics Source Code Library)
 Author: Luis A. Gutiérrez Soto
 10/12/2022
 '''
