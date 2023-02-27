@@ -53,7 +53,7 @@ Lf = "{:.1e}".format((10**float(Lu[1])) / 3.839e33)
 densf = "{:.1e}".format(10**float(Denss[8]))
 
 # Chi-square and chi-reduce
-tab = Table.read("better-" + model_name + ".ecsv", format="ascii.ecsv")
+tab = Table.read("better-" + model_name + "_0.0.ecsv", format="ascii.ecsv")
 chi = "{:.2f}".format(float(tab["chi"]))
 chi_r = "{:.2f}".format(float(tab["Chi red"]))
 
@@ -118,8 +118,8 @@ ax.plot(wl_blue, Flux_blue, c = "blueviolet", linewidth=0.7, zorder=5)
 ax.plot(wl_red, Flux_red, c = "blueviolet", linewidth=0.7, zorder=5)
 bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
 
-info_mod = [r"$\mathrm{T_{eff}=}$" + Tf + "K", r"L=" + Lf + r"$\mathrm{L_{\odot}}$", r"$n_{H}=$" + densf + r"$\mathrm{cm^{-3}}$", r"$\chi^2=$" + chi, r"$\chi^2_r=$" + chi_r]
-loc_text = [(0.75, 0.9), (0.75, 0.9-0.13), (0.75,  0.9-2*0.13), (0.75, 0.9-3*0.13), (0.75, 0.9-4*0.13)]
+info_mod = [r"$\mathrm{T_{eff}=}$" + Tf + "K", r"L=" + Lf + r"$\mathrm{L_{\odot}}$", r"$n_{H}=$" + densf + r"$\mathrm{cm^{-3}}$", r"$\chi^2=$" + chi]
+loc_text = [(0.75, 0.9), (0.75, 0.9-0.13), (0.75,  0.9-2*0.13), (0.75, 0.9-3*0.13)]
 for loc_, taxt in zip(loc_text, info_mod):
     ax.text(loc_[0], loc_[1], taxt, fontsize=19,
             bbox=dict(facecolor='gray', alpha=0.0),

@@ -189,7 +189,7 @@ weidmantab = Table.read("../PN-high-ion-weidman.dat", format="ascii")
 pattern = "../better-fitModel/*.in"
 file_list = glob.glob(pattern)
 #best_model = ["../better-fitModel/model_140000_37.15_3.70.in", "../better-fitModel/model_150000_36.98_3.60.in", "../better-fitModel/model_140000_37.25_3.78.in"]
-best_model = ["../better-fitModel/model_130000_37.32_3.78.in"]
+best_model = ["../better-fitModel/model_130000_37.32_3.78.in"] 
 
 Te, Lu = [], []
 for model_name in best_model:
