@@ -401,9 +401,9 @@ a core of bright emission centred around J020808.63+491401.0.
 \begin{figure*}
 \centering
   \includegraphics[width=0.9\linewidth]{Figs/galctic-coord-pn.pdf}
-  \caption{Distribution of the 3862 Galactic PNe in the HASH database.
-    The green and white dots represent the 2701 labeled \lq\lq True\rq\rq~PNe in the HASH catalog.
-    While the white dots are the 1161 labeled \lq\lq Likely\rq\rq~and \lq\lq Possible\rq\rq~in PNe
+  \caption{Distribution of the 3,862 Galactic PNe in the HASH database.
+    The green and white dots represent the 2,701 labeled \lq\lq True\rq\rq~PNe in the HASH catalog.
+    While the white dots are the 1161 labeled \lq\lq Likely\rq\rq~and \lq\lq Possible\rq\rq~PNe in
     the same database. The big blue dot is the PNe reported in this manuscript. Its galactic coordinates
     are ($l, b$) = (135°35'11.979", -11°44'38.994"). This object is about 2.31 kpc from
     Earth, and 0.47 kpc
@@ -595,7 +595,7 @@ typically of SNRs, suggests that the object is most likely an high-excitation PN
 \begin{table}
 	\centering
 	\caption{Best-fit {\sc cloudy} model parameters for LAMOST J020808.63+491401.0.}
-	\label{tab:example_table}
+	\label{tab:parameter-best-fit}
 	\begin{tabular}{lc} % four columns, alignment for each
                 \hline
 		\hline
@@ -615,7 +615,8 @@ typically of SNRs, suggests that the object is most likely an high-excitation PN
                 $\log(\mathrm{Si/H})$ & -5.00\\ 
                 $\log(\mathrm{S/H})$ &  -6.00\\ 
                 $\log(\mathrm{Ar/H})$ & -6.24\\
-                 \hline
+                \hline
+                E(B-V) & 0.00
                  $\chi^2$ & 23.62  \\
                  
                  \hline
@@ -655,7 +656,7 @@ range, from non-local thermodynamic equilibrium (NLTE),
 illuminated gas clouds by solving the equations of thermal and
 statistical equilibrium for a given set of input parameters. More
 details about {\sc cloudy} could be found in \citet{Ferland:2013}
-and \citet{Pandey:2022}. The code uses a set of input parameters to compute the
+and \citet{Pandey:2022a}. The code uses a set of input parameters to compute the
 ionization, thermal, and chemical state of a non-equilibrium gas cloud
 illuminated by a central source and predict the resulting spectra. 
 In the past, \citet{Vejar:2019} used {\sc cloudy} to produce
@@ -730,7 +731,7 @@ $\chi^{2}$ of the new PN as
   \label{eq:chi-red}
 \end{equation}
 
-the number 9 in sum symbol indicates the number of parameters used to estimate the $\chi^{2}$
+the number 9 in the sum symbol indicates the number of parameters used to estimate the $\chi^{2}$
 value. In this case, we used the 9 flux lines most intense.
 This lines are [Ne III] 3967.5 \AA, H$\delta$, H$\gamma$, He II 4685.9 \AA, H$\beta$, [O III] 4958.9 \AA,
 [O III] 5006.8, He II 5411.7 \AA~and H{$\alpha$}.
@@ -757,8 +758,8 @@ equation presented by \citet{Tresse:1999}:
 
 respectively, where $\sigma_{c}$ is the mean standard deviation per pixel of
 the continuum on each side of the line, $N_{\text{pix}}$ is the number of pixels
-under the line, which is equated to the FWHM of the standar Gaussian profile
-following \citet{Mayya:2023} and $D$ ($\sim1.0009 \AA$ pixel$^{-1}$ for LAMOST)
+under the line, which is equated to the FWHM of the standard Gaussian profile 
+following \citet{Mayya:2023} and $D$ ($\sim1.0002$ \AA~per pixel for LAMOST)
 is the spectral dispersion.
 
 %% \begin{figure*}
@@ -793,17 +794,24 @@ is the spectral dispersion.
 	\end{tabular}
 \end{table*}
 
-The $\chi^{2}_{\text{min}}$ values indicates that the {\sc cloudy} generated
-spectra model match well with the observed spectra. Even while our model reproduces
-a wide variety of observable effects, the phenomenology has certain limits.
+The $\chi^{2}_{\text{min}}$ value indicates what is the {\sc cloudy} generated
+spectra model that matches well with the observed spectra. Even while our model reproduces
+a wide variety of observable effects, phenomenology has certain limits.
 In this sense, from about 40000 models generated, we choose those that
 match very wells with the spectra of J020808.63+491401.0,
-the values of $\chi^{2}$ of the three best-fit spectra
-are shown in the table~\ref{tab:abundances}. The three
-models have values of $\chi^{2}$ between 1 and 2, satisfying
-the criteria for an acceptable fit. Being the best model-fit ($\chi^{2}_{r} = 1.2$)
-those which is the  planetary nebula spectrum model with the
-most high effective temperature (T$_{\text{eff}}$ = 160$\times$10$^{4}$).
+by considering the minimum  value of $\chi^{2}$, which was estimated from the
+expected flux ratio lines of all models.
+The parameters of the best-fit model
+are shown in Table~\ref{tab:parameter-best-fit}. The
+model has value of $\chi^{2} \simeq 23.62$, representing the reasonable best fit.
+The temperature of the central ionizing source was determined to be  $\sim$130$\times$10$^{4}$K,
+which is a very high temperature as we expected because a high ionizing source is necessary
+to produce high excitation emission lines. The luminosity of the central ionizing star from
+the best-fitted model was estimated to be $\sim$5,500 L$_{\odot}$. The color excess of the model that better match with the observed one is zero, suggesting that the reddening effect of light due to interstellar dust is almost negligible.
+
+Table~\ref{}
+
+
 
 \begin{figure*}
 \centering
