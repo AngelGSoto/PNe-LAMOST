@@ -616,7 +616,7 @@ typically of SNRs, suggests that the object is most likely an high-excitation PN
                 $\log(\mathrm{S/H})$ &  -6.00\\ 
                 $\log(\mathrm{Ar/H})$ & -6.24\\
                 \hline
-                E(B-V) & 0.00
+                E(B-V) & 0.00 \\
                  $\chi^2$ & 23.62  \\
                  
                  \hline
@@ -724,7 +724,7 @@ calculating $\chi^{2}$ of the models given by the following relation,
 
 where $M_i$, $O_i$ and $\sigma^{2}_i$ are the modelled line flux ratios, the observed line flux
 ratios and uncertainty in the observed line flux ratios, respectively. We define the minimum
-$\chi^{2}$ of the new PN as
+$\chi^{2}$ of the new PN and, therefore, the best model fitted as
 
 \begin{equation}
    \chi^{2}_{\text{min}} = \sum^{9}_{i = 1} \frac{(M^{\text{best}}_i - O_i)^2}{\sigma^{2}_i}
@@ -759,8 +759,8 @@ equation presented by \citet{Tresse:1999}:
 respectively, where $\sigma_{c}$ is the mean standard deviation per pixel of
 the continuum on each side of the line, $N_{\text{pix}}$ is the number of pixels
 under the line, which is equated to the FWHM of the standard Gaussian profile 
-following \citet{Mayya:2023} and $D$ ($\sim1.0002$ \AA~per pixel for LAMOST)
-is the spectral dispersion.
+following \citet{Mayya:2023}, $D$ is the spectral dispersion ($\sim1.0002$ \AA~per
+pixel for LAMOST) and EW is the equivalent width of the line. 
 
 %% \begin{figure*}
 %% \centering
@@ -809,7 +809,8 @@ which is a very high temperature as we expected because a high ionizing source i
 to produce high excitation emission lines. The luminosity of the central ionizing star from
 the best-fitted model was estimated to be $\sim$5,500 L$_{\odot}$. The color excess of the model that better match with the observed one is zero, suggesting that the reddening effect of light due to interstellar dust is almost negligible.
 
-Table~\ref{}
+Table~\ref{tab:abundances} displays the relative flux to H{$\beta$} of the observed emission lines, the {\sc cloudy} modelled flux ratios of the 9 emission lines, and their respective $\chi^{2}$. I For comparison, the {\sc cloudy} model that represent the best-fit spectra (green solid line) are showed overlapped on observed optical spectra (violet solid line) are presented in Figure~\ref{fig:spectra-obs-model}. It is possible to see in the figure that all the observed emission lines
+are reproduced by the model. 
 
 
 
@@ -817,7 +818,7 @@ Table~\ref{}
 \centering
 \includegraphics[width=\linewidth, trim=10 90 10 10, clip]{Figs/model_130000_37.32_3.78.pdf}
 \caption{The best {\sc cloudy} fitted model, on which the $\chi^2$ value is around 23.6, which
-  represent the  minimum value obtained from all models. The spectra were normalized to H{$\beta$}.} 
+  represent the  minimum value obtained by comparing the observed spectra with each model. The spectra were normalized to H{$\beta$}.} 
   \label{fig:spectra-obs-model}
 \end{figure*}
 
@@ -849,10 +850,8 @@ the evolution proceeds from right to left side, followed by top to bottom.
 The temperature and luminosity of the model that better reproduce the spectra of the
 LAMOST PN are also represented in the diagram, is the big blue star.
 Comparing the model central ionizing black body (T$_{\text{eff}}$ = 130$\times$10$^{3}$K,
-L $\approx$ 5,500 L$_{\odot}$)
-with the post-AGB tracks
-would seem to
-imply an initial mass or progenitor star between 1.5 and 2.0M$_{\odot}$.
+L $\approx$ 5,500 L$_{\odot}$) with the post-AGB tracks would seem to imply an
+initial mass or progenitor star between 1.5 and 2.0M$_{\odot}$.
 %% In agreement with the
 %% position of J020808.63+491401.0 in the diagram the mas of the progenitor star is
 %% between 2.5 and 3.0M$_{\odot}$. {\sc bla bla bla bla bla bla bla bla bla bla bla bla bla bla}
