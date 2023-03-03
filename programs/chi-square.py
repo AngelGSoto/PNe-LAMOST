@@ -212,21 +212,26 @@ def npx_errcont(wl_vacuum, spec):
     line
     '''
     line_spec_mask = find_line(wl_vacuum,  spec)
-    min_lamb = line_spec_mask['line_center'] - 5 * u.AA
-    max_lamb = line_spec_mask['line_center'] + 5 * u.AA
+    min_lamb = line_spec_mask['line_center'] - 3.5 * u.AA
+    max_lamb = line_spec_mask['line_center'] + 3.5 * u.AA
     sub_region_int = SpectralRegion(min_lamb, max_lamb)
     sub_spect_int = extract_region(spec, sub_region_int)
     line_para_line = estimate_line_parameters(sub_spect_int, models.Gaussian1D())
-    min_lamb_ = line_para_line.mean.value - 3*line_para_line.stddev.value
-    max_lamb_ = line_para_line.mean.value + 3*line_para_line.stddev.value
-    sub_region_line_ = SpectralRegion(min_lamb_ * u.AA,  max_lamb_ * u.AA)
+    sub_spectrum_line = extract_region(spec, sub_region_int)
+    fwhm_ = gaussian_fwhm(sub_spectrum_line)
+    min_lamb_ = line_para_line.mean.value - fwhm_.value / 2.
+    max_lamb_ = line_para_line.mean.value + fwhm_.value / 2.
+    sub_region_line_ = SpectralRegion(min_lamb_* u.AA,  max_lamb_* u.AA)
     sub_line_ = extract_region(spec, sub_region_line_)
     n_pixel = len(sub_line_.spectral_axis)
+    print("Number of pixels:", n_pixel)
     # Determinante the median desviation standar in both side of the line
-    min_lamb_cont = min_lamb_ - 20
-    max_lamb_cont = min_lamb_ + 20
-    sub_region_cont_left = SpectralRegion(min_lamb_cont * u.AA, min_lamb_ * u.AA) # extract spec on left side of the line
-    sub_region_cont_right = SpectralRegion(max_lamb_ * u.AA, max_lamb_cont * u.AA) # extract spec on right side of the line
+    min_lamb_cont = line_para_line.mean.value - fwhm_.value
+    max_lamb_cont = line_para_line.mean.value + fwhm_.value
+    min_lamb_cont_ = min_lamb_cont - 20
+    max_lamb_cont_ = max_lamb_cont + 20
+    sub_region_cont_left = SpectralRegion(min_lamb_cont_ * u.AA, min_lamb_cont * u.AA) # extract spec on left side of the line
+    sub_region_cont_right = SpectralRegion(max_lamb_cont * u.AA, max_lamb_cont_ * u.AA) # extract spec on right side of the line
     sub_cont_left =  extract_region(spec, sub_region_cont_left)
     sub_cont_right =  extract_region(spec, sub_region_cont_right)
     err = []
@@ -259,7 +264,7 @@ spec = Spectrum1D(spectral_axis=lamb, flux=flux, uncertainty=Sigma)
 
 #Spliting the spectrum en blue and red part
 sub_region_blue = SpectralRegion(spec.spectral_axis.min(),  5800*u.AA)
-sub_region_red = SpectralRegion(5800*u.AA, spec.spectral_axis.max())
+sub_region_red = SpectralRegion(6300*u.AA, spec.spectral_axis.max())
 sub_spectrum_blue = extract_region(spec, sub_region_blue)
 sub_spectrum_red = extract_region(spec, sub_region_red)
 
@@ -272,11 +277,20 @@ y_continuum_fitted_blue = g1_fit_blue(sub_spectrum_blue.spectral_axis)
 spec_sub_blue = sub_spectrum_blue - y_continuum_fitted_blue
 y_continuum_fitted_red = g1_fit_red(sub_spectrum_red.spectral_axis)
 spec_sub_red = sub_spectrum_red - y_continuum_fitted_red
+#waveleng
+wl_blue = sub_spectrum_blue.spectral_axis.value
+wl_red = sub_spectrum_red.spectral_axis.value
+wl_concat = np.concatenate([wl_blue, wl_red])
+wl_concat_ = wl_concat * u.AA
+#uncertainty
+sigma_blue = sub_spectrum_blue.uncertainty.array
+sigma_red = sub_spectrum_red.uncertainty.array
+sigma_concat = np.concatenate([sigma_blue, sigma_red])
+sigma_concat_ = StdDevUncertainty(sigma_concat * rel_flux)
 
 spec_subtrated =  np.concatenate([spec_sub_blue.flux.value, spec_sub_red.flux.value])
 flux_sub = spec_subtrated * rel_flux
-spec_sub = Spectrum1D(spectral_axis=lamb, flux=flux_sub, uncertainty=Sigma)
-
+spec_sub = Spectrum1D(spectral_axis=wl_concat_, flux=flux_sub, uncertainty=sigma_concat_)
 
 # dispersion per pixel 
 D = 1.0002302850208247
@@ -370,7 +384,7 @@ vv = n - np
 chi_sum_red = chi_sum / vv
 
 modell, chii, chii_red = [], [], [] 
-if chi_sum_red <= 4:
+if chi_sum_red <= 6:
     modell.append(model_name.split("l/")[-1])
     chii.append(chi_sum)
     chii_red.append(chi_sum_red)    

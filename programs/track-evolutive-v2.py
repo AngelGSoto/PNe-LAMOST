@@ -189,7 +189,7 @@ weidmantab = Table.read("../PN-high-ion-weidman.dat", format="ascii")
 pattern = "../better-fitModel/*.in"
 file_list = glob.glob(pattern)
 #best_model = ["../better-fitModel/model_140000_37.15_3.70.in", "../better-fitModel/model_150000_36.98_3.60.in", "../better-fitModel/model_140000_37.25_3.78.in"]
-best_model = ["../better-fitModel/model_130000_37.32_3.78.in"] 
+best_model = ["../better-fitModel/model_140000_37.22_3.74.in"] 
 
 Te, Lu = [], []
 for model_name in best_model:
@@ -222,8 +222,8 @@ for i, j in zip(Tf, Lf):
     logLpn.append(np.log10((10**float(j)) / 3.839e33))
  
 models_cloudy = ["Model 1", "Model 2", "Model 3"]
-label_frac_x = 0.01, 0.3, 0.25 
-label_frac_y = 0.92, 0.4 , 0.93
+label_frac_x =(0.07) #0.3, 0.25 
+label_frac_y = (0.96) #0.4 , 0.93
 
 # Discard the best models
 others_files = list(set(file_list) - set(best_model))
@@ -323,7 +323,7 @@ def my_annotate(ax, s, xy_arr=[], *args, **kwargs):
 
 def my_annotate_ind(ax, s, x_, y_, label_frac_x, label_frac_y):
     ax.annotate(s, 
-                xy=(x_+0.015, y_+0.015), xycoords='data', color='black', fontsize=13.5, zorder=100,
+                xy=(x_, y_+0.08), xycoords='data', color='black', fontsize=13.5, zorder=100,
       xytext=(label_frac_x, label_frac_y), textcoords='axes fraction',
       arrowprops=dict(arrowstyle="->",
                       connectionstyle="arc3,rad=0.2",
@@ -352,8 +352,8 @@ ax.scatter(logTeffpn, logLpn,
 #     color="white", marker="^", s=90, 
 #            edgecolors="k", alpha=0.6, zorder=-200, label="Other best models")
 
-# for a, b, c, d, e in zip(models_cloudy, logTeffpn, logLpn, label_frac_x, label_frac_y):
-#     my_annotate_ind(ax, a, b, c, d, e)
+for a, b, c, d, e in zip(["Model that better reproduce J020808.63+491401.0"], logTeffpn, logLpn, [label_frac_x], [label_frac_y]):
+    my_annotate_ind(ax, a, b, c, d, e)
 #get handles and labels
 handles, labels = plt.gca().get_legend_handles_labels()
 
