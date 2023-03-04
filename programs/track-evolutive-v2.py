@@ -189,7 +189,7 @@ weidmantab = Table.read("../PN-high-ion-weidman.dat", format="ascii")
 pattern = "../better-fitModel/*.in"
 file_list = glob.glob(pattern)
 #best_model = ["../better-fitModel/model_140000_37.15_3.70.in", "../better-fitModel/model_150000_36.98_3.60.in", "../better-fitModel/model_140000_37.25_3.78.in"]
-best_model = ["../better-fitModel/model_140000_37.22_3.74.in"] 
+best_model = ["../better-fitModel/model_150000_37.22_3.78.in"] 
 
 Te, Lu = [], []
 for model_name in best_model:
@@ -346,7 +346,7 @@ for label_, x, y in zip(weidmantab["Name_2"], weidmantab["logTeff"], weidmantab[
 #Our PN
 
 ax.scatter(logTeffpn, logLpn, 
-    color="#377eb8", marker="*", s=900,
+    color="#377eb8", marker="*", s=800,
            edgecolors="k", zorder=11, label="The best CLOUDY model")
 # ax.scatter(logTeffpn1, logLpn1, 
 #     color="white", marker="^", s=90, 
