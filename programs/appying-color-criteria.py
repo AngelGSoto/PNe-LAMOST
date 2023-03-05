@@ -48,7 +48,10 @@ tab_f[col].write("pn-candidates-gaiaDR3.ecsv", format="ascii.ecsv", overwrite=Tr
 
 # For lamost
 n = len(tab_f["RAJ2000_1"])
-print(n)
+print("Numbers:", n)
+print("Objects:", tab_f["LAMOST_1"])
+print("Colors:", G_r_f, bp_rp_f)
+
 sep = np.linspace(2.0, 2.0, num=n)
 ra = tab_f["RAJ2000_1"]
 dec = tab_f["DEJ2000_1"]
