@@ -38,19 +38,25 @@ for i, ii in zip(tab_f["RAJ2000_1"], tab_f["DEJ2000_1"]):
 G_r_f = tab_f['phot_g_mean_mag'] - tab_f['rmag_x']
 bp_rp_f = tab_f['bp_rp']
 
+tab_f["G_r"] = G_r_f
+
 #Columns
 col = ["recno_1", "SpecL_1", "LAMOST_1", "RAJ2000_1", "DEJ2000_1", "RAJ2000_x", "DEJ2000_x",
        "gmag", "e_gmag", "rmag_x", "e_rmag", "imag", "e_imag", "zmag", "e_zmag", "ymag", "e_ymag",       "ra", "dec", "parallax", "parallax_error", "parallax_over_error", "phot_g_mean_mag",
-       "phot_bp_mean_mag", "phot_rp_mean_mag", "bp_rp", "angDist_2"]
+       "phot_bp_mean_mag", "phot_rp_mean_mag", "G_r", "bp_rp", "angDist_2"]
 
 #Saving file
-tab_f[col].write("pn-candidates-gaiaDR3.ecsv", format="ascii.ecsv", overwrite=True)
+for i in tab_f:
+        print(i["LAMOST_1"], i["G_r"], i["bp_rp"])
+        
+mask_inf = tab_f["G_r"] != float('inf')
+tab_f[mask_inf][col].write("pn-candidates-gaiaDR3.ecsv", format="ascii.ecsv", overwrite=True)
 
 # For lamost
 n = len(tab_f["RAJ2000_1"])
 print("Numbers:", n)
 print("Objects:", tab_f["LAMOST_1"])
-print("Colors:", G_r_f, bp_rp_f)
+print("G-r:", tab_f["G_r"][mask_inf])
 
 sep = np.linspace(2.0, 2.0, num=n)
 ra = tab_f["RAJ2000_1"]

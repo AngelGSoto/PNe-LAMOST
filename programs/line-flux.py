@@ -65,7 +65,7 @@ def find_line(wl_vacuum, spec):
         line_spec_mask = line_spec
     return line_spec_mask
 
-def measurent_line(wl_vacuum, spec, lamb, units_flux, type_spec, NameLine, saveplot = "y"):
+def measurent_line(wl_vacuum, spec, lamb, units_flux, type_spec, text, NameLine, saveplot = "y"):
     '''
     Meassurent the flux line
     '''
@@ -97,8 +97,8 @@ def measurent_line(wl_vacuum, spec, lamb, units_flux, type_spec, NameLine, savep
         plt.ylim(-100, (sub_spectrum_line.max() + 500*rel_flux))
         plt.xlim((line_spec_mask['line_center'].value-15), (line_spec_mask['line_center'].value+15))
         bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
-        plt.text(0.1, 0.9, NameLine,
-             transform=ax.transAxes, c="black", weight='bold', fontsize=24.8, bbox=bbox_props)
+        plt.text(0.1, 0.9, text,
+             transform=ax.transAxes, c="black", weight='bold', fontsize=35, bbox=bbox_props)
         ax.legend(loc="upper right")
         plt.tight_layout()
         plt.savefig(type_spec+ "_" + NameLine + ".pdf")
@@ -242,21 +242,34 @@ D = 1.0002302850208247
 lines = {"[NeIII]+H7": 3967.470,
          "Hdelta": 4101.742,
          "Hgamma": 4340.471,
-         "HeII": 4685.99,
+         "HeII4685": 4685.99,
          "Hbeta": 4861.333,
          "[OIII]4958": 4958.911,
          "[OIII]5006": 5006.843,
-         "[FeIII]": 5412.12,
+         "HeII5412": 5412.12,
          "Halpha": 6564.614,
          }
+
+lines_name = ["[Ne III]+H7",
+              r"H$\delta$",
+              r"H$\gamma$",
+              "He II$\lambda$4685", 
+              r"H$\beta$",
+              "[O III]$\lambda$4958",
+              "[O III]$\lambda$5006",
+              "He II$\lambda$5412", 
+              r"H$\alpha$"]
+
+
+
 
 nlines_ = []
 lines_ = []
 flux_lines = []
 err_lines = []
 EW = []
-for v, t in lines.items():
-    flux_lines.append(measurent_line(t, spec_sub, spec_sub.spectral_axis, rel_flux, "Obs", v, saveplot = "y").value)
+for n, (v, t) in zip(lines_name, lines.items()):
+    flux_lines.append(measurent_line(t, spec_sub, spec_sub.spectral_axis, rel_flux, "Obs", n, v, saveplot = "y").value)
     err_lines.append(err_line(t, spec, D = D))
     EW.append(ew(t, spec))
     lines_.append(t)
