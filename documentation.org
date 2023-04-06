@@ -567,14 +567,17 @@ Byte-by-byte Description of file (#): models/*
 
 ** images
 
-   - The panstarr image of the PN candiate is 29.062 arcsec.
+   - New program using the denoise package:
+     : python ../programs/rgb_image-ps1-denoise.py cutout_rings_v3_skycell_2294_031_stk_i_unconv cutout_rings_v3_skycell_2294_031_stk_r_unconv cutout_rings_v3_skycell_2294_031_stk_g_unconv --vmin_r -443.4 --vmax_r 5000 --vmin_g -200 --vmax_g 2500 --vmin_b -250.93 --vmax_b 2000 --debug 
+
+   - The panstarr image of the PN candidate is 29.062 arcsec.
 
    Size of the images dowloaded from WISE:
 
   -  PNPRTM1 => 70arcsec 
 
 ** Distance GAIA of new
-   Distance in parsec, Estimating distances from parallaxes (1467744818 sources) ( Bailer-Jones C.A.L., Rybizki J., Fouesneau M., Demleitner M., Andrae R .)
+   Distance in parsec, Estimating distances from parallaxes (1467744818 sources) (Bailer-Jones C.A.L., Rybizki J., Fouesneau M., Demleitner M., Andrae R .)
    =rgeo=2313.00952=
    =rpgeo=2324.19312=
 
@@ -597,7 +600,7 @@ Byte-by-byte Description of file (#): models/*
 *** First comments
     
     - Dens 3000 -> The model N2242 _130000_37.51. Seem the best fit.
-    - Dens 3000 -> DdDm1 _130000 _37.48. But two line apperars in 6400 and 6500 A.
+    - Dens 3000 -> DdDm1 _130000_37.48. But two line apperars in 6400 and 6500 A.
 
     - I drop out of the power law for the resolution, the improvement was quite better.
       Now I think that the best fit is, N2242_120000_37.58.

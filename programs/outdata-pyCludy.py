@@ -24,10 +24,8 @@ parser.add_argument("source", type=str,
                     default="model_100000_36.58",
                     help="Name of input model ")
 
-
 cmd_args = parser.parse_args()
 file_ = cmd_args.source 
-
 
 model_name = file_
 # Reading the Cloudy outputs in the Mod CloudyModel object
@@ -73,7 +71,6 @@ wl_hbeta_our = closest(wl, 4861.333)
 MaskHbeta_our = wl == wl_hbeta_our
 flux_HBeta_our = Flux[MaskHbeta_our]
 flux_our = Flux / flux_HBeta_our
-
 
 fig, ax = plt.subplots(figsize=(11, 5))
 #ax.set_title(namefile)

@@ -90,7 +90,7 @@ bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
 for label_, x, y in zip(em_lin, wv_lin, max_flux):
     ax.annotate(label_, (x, y), alpha=1, size=6,
                    xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
-sn.despine()
+#sn.despine()
 ###########
 #zoom plot#
 ###########

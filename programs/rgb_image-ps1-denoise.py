@@ -64,11 +64,41 @@ parser.add_argument("--position", type=str,
 parser.add_argument("--debug", action="store_true",
                     help="Print out verbose debugging info")
 
+############################################################
+# Definition to denoise the images the images ######################
+############################################################
+def denoise(image):
+    """
+    This converts SPLUS images
+    from .fz to .fits and applies 
+    denoising relies upon
+    """
+    datos = fits.open(image)[0].data
+    sigma_est = estimate_sigma(datos, average_sigmas=True)
+    # applying  denoise_wavelet, cycle_spin
+    denoised_data = denoise_wavelet(datos, 
+                                 method='VisuShrink', mode='soft',
+                                 sigma=sigma_est/4., rescale_sigma=True)
+    heada = fits.open(image)[0].header
+    imageout = image.replace('.fits', '_denoise.fits')
+    print ('Creating file: ')
+    print (imageout)
+    fits.writeto(imageout, denoised_data, heada, overwrite=True)
+
 
 cmd_args = parser.parse_args()
-image_r = cmd_args.image_r + ".fits"
-image_g = cmd_args.image_g + ".fits"
-image_b = cmd_args.image_b + ".fits"
+image_r_orig = cmd_args.image_r + ".fits"
+image_g_orig = cmd_args.image_g + ".fits"
+image_b_orig = cmd_args.image_b + ".fits"
+
+denoise(image_r_orig)
+denoise(image_g_orig)
+denoise(image_b_orig)
+
+image_r = cmd_args.image_r + "_denoise.fits"
+image_g = cmd_args.image_g + "_denoise.fits"
+image_b = cmd_args.image_b + "_denoise.fits"
+
 
 hdul_r = fits.open(image_r)
 instrument_r = hdul_r[0].header['HIERARCH FPA.FILTER'].split('.')[0]
@@ -152,7 +182,7 @@ img.add_label(0.1, 0.9, str(instrument_b) + "+" + str(instrument_g) + "+" + str(
               horizontalalignment='left',
               weight='bold', size=20, relative=True, zorder=1000)
 dx, dy = 0.001, -0.001
-img.add_label(0.7+dx, 0.89+dy, "NGC 2242", color="white", alpha=0.9,
+img.add_label(0.5+dx, 0.90+dy, "J020808.63+491401.0", color="white", alpha=0.9,
               horizontalalignment='left',
               bbox={"facecolor": "black", "edgecolor": "none",# "pad": 20,
                     "alpha": 0.5, "boxstyle": "round, pad=0.5"},

@@ -108,23 +108,46 @@ Flux_red = flux_our[m_red]
 
 fig, ax = plt.subplots(figsize=(11, 5))
 #ax.set_title(namefile)
-ax.set(xlim=[3600,9100])
+ax.set(xlim=[3600, 5900])
 #plt.ylim(ymin=-200,ymax=1500)
 ax.set(xlabel='Wavelength $(\AA)$')
 ax.set(ylabel='Normalised flux')
-plt.plot(data_mask["Wl"], flux_m,  c = "darkolivegreen", linewidth=0.7, zorder=3, label = 'Model ')
-plt.plot(wl, flux_our, c = "white", linewidth=0.7, zorder=1)
-ax.plot(wl_blue, Flux_blue, c = "blueviolet", linewidth=0.7, zorder=5, label = 'J020808.63+491401.0')
-ax.plot(wl_red, Flux_red, c = "blueviolet", linewidth=0.7, zorder=5)
+plt.plot(data_mask["Wl"], flux_m,  c = "darkolivegreen", linewidth=0.8, zorder=3, label = 'Model ')
+#plt.plot(wl, flux_our, c = "white", linewidth=900, alpha =0.6, zorder=1)
+ax.plot(wl_blue, Flux_blue, c = "blueviolet", linewidth=2.5, alpha =0.7, zorder=5, label = 'J020808.63+491401.0')
+#ax.plot(wl_red, Flux_red, c = "blueviolet", linewidth=0.7, zorder=5)
 bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
 
 info_mod = [r"$\mathrm{T_{eff}=}$" + Tf + "K", r"L=" + Lf + r"$\mathrm{L_{\odot}}$", r"$n_{H}=$" + densf + r"$\mathrm{cm^{-3}}$", r"$\chi^2=$" + chi]
-loc_text = [(0.75, 0.9), (0.75, 0.9-0.13), (0.75,  0.9-2*0.13), (0.75, 0.9-3*0.13)]
+loc_text = [(0.70, 0.7), (0.70, 0.7-0.13), (0.70, 0.7-2*0.13), (0.70, 0.7-3*0.13)]
 for loc_, taxt in zip(loc_text, info_mod):
     ax.text(loc_[0], loc_[1], taxt, fontsize=19,
             bbox=dict(facecolor='gray', alpha=0.0),
             transform=ax.transAxes)
 ax.legend(loc="upper left", fontsize="x-small")
-sn.despine()
+#sn.despine()
 plt.tight_layout()
-plt.savefig(model_name + ".pdf")
+plt.savefig(model_name + "-blue.pdf")
+
+fig, ax1 = plt.subplots(figsize=(11, 5))
+#ax.set_title(namefile)
+ax1.set(xlim=[5900, 9100])
+#plt.ylim(ymin=-200,ymax=1500)
+ax1.set(xlabel='Wavelength $(\AA)$')
+ax1.set(ylabel='Normalised flux')
+plt.plot(data_mask["Wl"], flux_m,  c = "darkolivegreen", linewidth=0.8, zorder=3, label = 'Model ')
+#plt.plot(wl, flux_our, c = "white", linewidth=0.7, zorder=1)
+#ax1.plot(wl_blue, Flux_blue, c = "blueviolet", linewidth=0.7, zorder=5, label = 'J020808.63+491401.0')
+ax1.plot(wl_red, Flux_red, c = "blueviolet", linewidth=2.5, alpha =0.7, zorder=5)
+bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
+info_mod = [r"$\mathrm{T_{eff}=}$" + Tf + "K", r"L=" + Lf + r"$\mathrm{L_{\odot}}$", r"$n_{H}=$" + densf + r"$\mathrm{cm^{-3}}$", r"$\chi^2=$" + chi]
+loc_text = [(0.70, 0.7), (0.70, 0.7-0.13), (0.70, 0.7-2*0.13), (0.70, 0.7-3*0.13)]
+for loc_, taxt in zip(loc_text, info_mod):
+    ax1.text(loc_[0], loc_[1], taxt, fontsize=19,
+            bbox=dict(facecolor='gray', alpha=0.0),
+            transform=ax1.transAxes)
+
+#ax1.legend(loc="upper left", fontsize="x-small")
+#sn.despine()
+plt.tight_layout()
+plt.savefig(model_name + "-red.pdf")

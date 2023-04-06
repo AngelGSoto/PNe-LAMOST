@@ -40,10 +40,8 @@ parser.add_argument("source", type=str,
                     default="model_100000_36.58",
                     help="Name of input model ")
 
-
 cmd_args = parser.parse_args()
 file_ = cmd_args.source 
-
 
 model_name = file_
 # Reading the Cloudy outputs in the Mod CloudyModel object

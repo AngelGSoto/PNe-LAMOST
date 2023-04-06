@@ -372,7 +372,7 @@ ax.set(
 )
 
 plt.gca().invert_xaxis()
-sns.despine()
+#sns.despine()
 fig.savefig("hr-planetarieNebula.pdf")
 None
 # Now, we try the appendix B tracks (how are they different?)
