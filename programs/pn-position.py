@@ -76,7 +76,7 @@ gal = icrs.galactic
 l_rad = gal.l.radian
 l_rad[l_rad > np.pi] -= 2. * np.pi
 b_rad = gal.b.radian
-# disntace fform GAIA
+# distance from GAIA
 D = 2.31300952
 z = D * np.sin(b_rad)
 
@@ -92,10 +92,10 @@ sns.set_style('ticks')
 fig, ax = plt.subplots(figsize=(12, 6))
 # fig = plt.figure(figsize=(14,7))
 # ax = fig.add_subplot(1,1,1, projection='aitoff')
-plt.tick_params(axis='x', labelsize=30) 
-plt.tick_params(axis='y', labelsize=30)
-plt.xlabel(r'$l$(Galactic longitude)[deg]', fontsize=28)
-plt.ylabel(r'$b$(Galactic latitude)[deg]', fontsize=28)
+plt.tick_params(axis='x', labelsize=18) 
+plt.tick_params(axis='y', labelsize=18)
+plt.xlabel(r'$l$(Galactic longitude)[deg]', fontsize=18)
+plt.ylabel(r'$b$(Galactic latitude)[deg]', fontsize=18)
 # ax.set_xlim(-1.2, 5.7)
 # ax.set_ylim(-3.3, 9.2)
 #fig = plt.figure(figsize=(10, 8))
@@ -115,6 +115,6 @@ ax.grid(True, linestyle='-.', linewidth=0.7)
 ax.legend(prop={'family': 'monospace', 'size': 15}, **lgd_kws)
 #plt.gca().invert_yaxis()
 plt.tight_layout()
-fig.savefig("Figs/galctic-coord-pn.pdf")
+fig.savefig("Figs/galactic-coord-pn.pdf")
 plt.clf()
 

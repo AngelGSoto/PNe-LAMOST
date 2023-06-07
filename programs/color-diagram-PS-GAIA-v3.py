@@ -98,11 +98,11 @@ ax.scatter(bp_rp_pn, G_r_pn, s=80, c = sns.xkcd_palette(["forest green"]), edgec
 sns.kdeplot(
     bp_rp_star2, G_r_star2,
     ax=ax,
-    bw_method='scott',
+    bw_method= 'scott',
     levels=[0.05, 0.08, 0.1, 0.2, 0.4, 0.5, 0.7, 0.8, 1],
     norm=PowerNorm(0.5),
-    cmap="vlag",
-    zorder = 4
+    cmap="Blues",
+    zorder = 4, 
 )
 
 sns.kdeplot(
@@ -143,10 +143,10 @@ ax.text(0.05, 0.9, "PN zone", fontsize=30,
 
 bbox_props = dict(boxstyle="round", fc="w", ec="0.78", alpha=0.5, pad=0.1)
 plt.text(0.3, 0.3, 'Stars',
-         transform=ax.transAxes, c="b", weight='bold', fontsize=12.8, bbox=bbox_props)
+         transform=ax.transAxes, c="b", weight='bold', fontsize=18.8, bbox=bbox_props)
 
-plt.text(0.1, 0.2, 'Others EMO',
-         transform=ax.transAxes, c="orange", weight='bold', fontsize=10.8, bbox=bbox_props)
+plt.text(0.1, 0.12, 'Others EMO',
+         transform=ax.transAxes, c="orange", weight='bold', fontsize=14.8, bbox=bbox_props)
 
 ax.legend(prop={'family': 'monospace', 'size': 30}, **lgd_kws)
 #plt.gca().invert_yaxis()

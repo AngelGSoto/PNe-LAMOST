@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import seaborn as sn
 import glob
 from matplotlib.patches import Ellipse
-sn.set_context("poster")
+#sn.set_context("poster")
 
 parser = argparse.ArgumentParser(
     description="""Making the LAMOST spectra""")
@@ -64,9 +64,13 @@ fig, ax = plt.subplots(figsize=(11, 5))
 #ax.set_title(namefile)
 ax.set(xlim=[3600,9100])
 ax.set(ylim=[-0.05,0.5])
+plt.tick_params(axis='x', labelsize=16) 
+plt.tick_params(axis='y', labelsize=16)
 #plt.ylim(ymin=0.0,ymax=500)
-ax.set(xlabel='Wavelength $(\AA)$')
-ax.set(ylabel='Relative flux')
+# ax.set(xlabel='Wavelength $(\AA)$')
+# ax.set(ylabel='Relative flux')
+ax.set_xlabel('Wavelength $(\AA)$', fontsize=16)
+ax.set_ylabel('Relative flux', fontsize=16)
 ax.plot(wl, Flux , c = "white", linewidth=0.7, zorder=5)
 ax.plot(wl_blue, Flux_blue, c = "blueviolet", linewidth=0.7, zorder=5)
 ax.plot(wl_red, Flux_red, c = "blueviolet", linewidth=0.7, zorder=5)
@@ -88,20 +92,20 @@ for wll in wv_lin:
 
 bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
 for label_, x, y in zip(em_lin, wv_lin, max_flux):
-    ax.annotate(label_, (x, y), alpha=1, size=6,
+    ax.annotate(label_, (x, y), alpha=1, size=8,
                    xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
 #sn.despine()
 ###########
 #zoom plot#
 ###########
-axins = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.41, 0.89),
+axins = zoomed_inset_axes(ax, 2.5, loc=2, bbox_to_anchor=(0.39, 0.87),
                    bbox_transform=ax.figure.transFigure) # zoom = 6
 axins.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
 axins.set_xlim(4500, 4830) # Limit the region for zoom
 axins.set_ylim(-0.01, 0.13)
 
 for label_, x, y in zip(em_lin, wv_lin, max_flux):
-    axins.annotate(label_, (x, y), alpha=1, size=6,
+    axins.annotate(label_, (x, y), alpha=1, size=8,
                    xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
 
 plt.xticks(visible=False)  # Not present ticks
@@ -109,7 +113,7 @@ plt.yticks(visible=False)
 #
 ## draw a bbox of the region of the inset axes in the parent axes and
 ## connecting lines between the bbox and the inset axes area
-mark_inset(ax, axins, loc1=2, loc2=4, fc="none",lw=1.2,  ec="0.6", zorder=1)
+mark_inset(ax, axins, loc1=2, loc2=4, fc="none", lw=1.2,  ec="0.6", zorder=1)
 
 ###########
 #Zoom other region
@@ -120,7 +124,7 @@ axins1.set_xlim(6830, 7200) # Limit the region for zoom
 axins1.set_ylim(-0.01, 0.13)
 
 for label_, x, y in zip(em_lin, wv_lin, max_flux):
-    axins1.annotate(label_, (x, y), alpha=1, size=6,
+    axins1.annotate(label_, (x, y), alpha=1, size=8,
                    xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
 
 plt.xticks(visible=False)  # Not present ticks

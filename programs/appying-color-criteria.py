@@ -42,7 +42,8 @@ tab_f["G_r"] = G_r_f
 
 #Columns
 col = ["recno_1", "SpecL_1", "LAMOST_1", "RAJ2000_1", "DEJ2000_1", "RAJ2000_x", "DEJ2000_x",
-       "gmag", "e_gmag", "rmag_x", "e_rmag", "imag", "e_imag", "zmag", "e_zmag", "ymag", "e_ymag",       "ra", "dec", "parallax", "parallax_error", "parallax_over_error", "phot_g_mean_mag",
+       "gmag", "e_gmag", "rmag_x", "e_rmag", "imag", "e_imag", "zmag", "e_zmag", "ymag", "e_ymag",
+       "ra", "dec", "parallax", "parallax_error", "parallax_over_error", "phot_g_mean_mag",
        "phot_bp_mean_mag", "phot_rp_mean_mag", "G_r", "bp_rp", "angDist_2"]
 
 #Saving file
@@ -98,8 +99,8 @@ plt.fill_between(x_new, y, yy, color="k", alpha=0.1)
 
 bbox_props = dict(boxstyle="round", fc="w", ec="0.78", alpha=0.6, pad=0.1)
 for label_, x, y in zip(tab_f["LAMOST_1"], bp_rp_f, G_r_f):
-    ax.annotate(label_, (x, y), alpha=1, size=8,
-                   xytext=(25.0, 10.6), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props, zorder=100)
+    ax.annotate(label_.split("T ")[-1], (x, y), alpha=1, size=15,
+                   xytext=(155.0, 10), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props, zorder=100)
 
 ax.legend(prop={'family': 'monospace', 'size': 30}, **lgd_kws)
 #plt.gca().invert_yaxis()

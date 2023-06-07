@@ -15,7 +15,7 @@ import numpy as np
 import seaborn as sn
 import argparse
 import sys
-sn.set_context("poster")
+#sn.set_context("poster")
 
 parser = argparse.ArgumentParser(
     description="""Reading the ouput cloudy models""")
@@ -48,9 +48,9 @@ for line in f:
     Lu.append(columns[L])
     Denss.append(columns[Dens])
     
-Tf = "{:.1e}".format(float(Te[0]))
-Lf = "{:.1e}".format((10**float(Lu[1])) / 3.839e33)
-densf = "{:.1e}".format(10**float(Denss[8]))
+Tf = "{:.0f}".format(float(Te[0]))
+Lf = "{:.0f}".format((10**float(Lu[1])) / 3.839e33)
+densf = "{:.0f}".format(10**float(Denss[8]))
 
 # Chi-square and chi-reduce
 tab = Table.read("better-" + model_name + "_0.0.ecsv", format="ascii.ecsv")
@@ -63,6 +63,11 @@ Mod = pc.CloudyModel(model_name)
 print(dir(Mod)) # This is the online answering way
 print(Mod.print_stats())
 print(Mod.get_ab_ion_vol_ne('O',2))
+#print("Halpha/Hbeta", Mod.get_emis_vol('H__1_6562.81A')/Mod.get_emis_vol('H__1_4861.33A'))
+#print(Mod.print_lines())
+print(Mod.Teff)
+print(Mod.nH_mean)
+print(Mod.te.mean())
 
 #Getting wl and flux
 wl = Mod.get_cont_x(unit='Ang')
@@ -110,8 +115,15 @@ fig, ax = plt.subplots(figsize=(11, 5))
 #ax.set_title(namefile)
 ax.set(xlim=[3600, 5900])
 #plt.ylim(ymin=-200,ymax=1500)
-ax.set(xlabel='Wavelength $(\AA)$')
-ax.set(ylabel='Normalised flux')
+plt.tick_params(axis='x', labelsize=16) 
+plt.tick_params(axis='y', labelsize=16)
+#plt.ylim(ymin=0.0,ymax=500)
+# ax.set(xlabel='Wavelength $(\AA)$')
+# ax.set(ylabel='Relative flux')
+ax.set_xlabel('Wavelength $(\AA)$', fontsize=16)
+ax.set_ylabel('Normalised flux', fontsize=16)
+# ax.set(xlabel='Wavelength $(\AA)$')
+# ax.set(ylabel='Normalised flux')
 plt.plot(data_mask["Wl"], flux_m,  c = "darkolivegreen", linewidth=0.8, zorder=3, label = 'Model ')
 #plt.plot(wl, flux_our, c = "white", linewidth=900, alpha =0.6, zorder=1)
 ax.plot(wl_blue, Flux_blue, c = "blueviolet", linewidth=2.5, alpha =0.7, zorder=5, label = 'J020808.63+491401.0')
@@ -124,7 +136,7 @@ for loc_, taxt in zip(loc_text, info_mod):
     ax.text(loc_[0], loc_[1], taxt, fontsize=19,
             bbox=dict(facecolor='gray', alpha=0.0),
             transform=ax.transAxes)
-ax.legend(loc="upper left", fontsize="x-small")
+ax.legend(loc="upper left", fontsize="x-large")
 #sn.despine()
 plt.tight_layout()
 plt.savefig(model_name + "-blue.pdf")
@@ -133,19 +145,24 @@ fig, ax1 = plt.subplots(figsize=(11, 5))
 #ax.set_title(namefile)
 ax1.set(xlim=[5900, 9100])
 #plt.ylim(ymin=-200,ymax=1500)
-ax1.set(xlabel='Wavelength $(\AA)$')
-ax1.set(ylabel='Normalised flux')
+plt.tick_params(axis='x', labelsize=16) 
+plt.tick_params(axis='y', labelsize=16)
+#plt.ylim(ymin=0.0,ymax=500)
+# ax.set(xlabel='Wavelength $(\AA)$')
+# ax.set(ylabel='Relative flux')
+ax1.set_xlabel('Wavelength $(\AA)$', fontsize=16)
+ax1.set_ylabel('Normalised flux', fontsize=16)
 plt.plot(data_mask["Wl"], flux_m,  c = "darkolivegreen", linewidth=0.8, zorder=3, label = 'Model ')
 #plt.plot(wl, flux_our, c = "white", linewidth=0.7, zorder=1)
 #ax1.plot(wl_blue, Flux_blue, c = "blueviolet", linewidth=0.7, zorder=5, label = 'J020808.63+491401.0')
 ax1.plot(wl_red, Flux_red, c = "blueviolet", linewidth=2.5, alpha =0.7, zorder=5)
-bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
-info_mod = [r"$\mathrm{T_{eff}=}$" + Tf + "K", r"L=" + Lf + r"$\mathrm{L_{\odot}}$", r"$n_{H}=$" + densf + r"$\mathrm{cm^{-3}}$", r"$\chi^2=$" + chi]
-loc_text = [(0.70, 0.7), (0.70, 0.7-0.13), (0.70, 0.7-2*0.13), (0.70, 0.7-3*0.13)]
-for loc_, taxt in zip(loc_text, info_mod):
-    ax1.text(loc_[0], loc_[1], taxt, fontsize=19,
-            bbox=dict(facecolor='gray', alpha=0.0),
-            transform=ax1.transAxes)
+# bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
+# info_mod = [r"$\mathrm{T_{eff}=}$" + Tf + "K", r"L=" + Lf + r"$\mathrm{L_{\odot}}$", r"$n_{H}=$" + densf + r"$\mathrm{cm^{-3}}$", r"$\chi^2=$" + chi]
+# loc_text = [(0.70, 0.7), (0.70, 0.7-0.13), (0.70, 0.7-2*0.13), (0.70, 0.7-3*0.13)]
+# for loc_, taxt in zip(loc_text, info_mod):
+#     ax1.text(loc_[0], loc_[1], taxt, fontsize=19,
+#             bbox=dict(facecolor='gray', alpha=0.0),
+#             transform=ax1.transAxes)
 
 #ax1.legend(loc="upper left", fontsize="x-small")
 #sn.despine()

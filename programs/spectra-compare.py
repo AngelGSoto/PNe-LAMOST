@@ -9,7 +9,7 @@ from astropy.io import fits
 import matplotlib.pyplot as plt
 import seaborn as sn
 import glob
-sn.set_context("poster")
+#sn.set_context("poster")
 
 
 # Data of the spectra
@@ -73,8 +73,12 @@ fig, ax = plt.subplots(figsize=(12, 12))
 ax.set(xlim=[3600,9100])
 ax.set(ylim=[-0.07,3.0])
 #plt.ylim(ymin=0.0,ymax=500)
-ax.set(xlabel='Wavelength $(\AA)$')
-ax.set(ylabel='Normalised flux')
+plt.tick_params(axis='x', labelsize=18) 
+plt.tick_params(axis='y', labelsize=18)
+ax.set_xlabel('Wavelength $(\AA)$', fontsize=18)
+ax.set_ylabel('Normalised flux', fontsize=18)
+# ax.set(xlabel='Wavelength $(\AA)$')
+# ax.set(ylabel='Normalised flux')
 ax.plot(wl2, Flux2 , c = "red", linewidth=2., zorder=5)
 ax.plot(wl1, Flux1 , c = "#FFA500", linewidth=2., zorder=5)
 ax.plot(wl0, Flux0 , c = "green", linewidth=2., zorder=5)
@@ -88,7 +92,7 @@ for wll in wv_lin:
 plt.yticks([])
 bbox_props = dict(boxstyle="round", fc="w", ec="0.88", alpha=0.6, pad=0.1)
 for label_, x, y in zip(em_lin, wv_lin, max_flux):
-    ax.annotate(label_, (x, y), alpha=1, size=6,
+    ax.annotate(label_, (x, y), alpha=1, size=8,
                    xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=200)
 
 plt.text(0.78, 0.1, 'J020808.63+491401.0',
