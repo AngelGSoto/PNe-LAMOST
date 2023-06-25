@@ -8,6 +8,7 @@
 Figs/.fuse_hidden000016e600000001
 better-fitModel/.fuse_hidden000012c200000002
 Spectra-lamostdr7/.fuse_hidden00000c2600000001
+image-wise/.ipynb_checkpoints/
 SySt-PS-Gaia-old.ecsv
 Star2-Gaia-distance.ecsv
 Star2-PS-Gaia.ecsv
@@ -25,6 +26,7 @@ Model-PNNew/models/DdDm1_L4/*
 !Model-PNNew/models/DdDm1_L4/*.jpg
 known-pn/PNPRTM1/.fuse_h*
 !Model-PNNew/models/N2242_Npow_He08_d3000/model_140000_37.57.jpg
+image-wise/Untitled.ipynb
 Text/LEGACY/*
 Text/apj.bst
 Text/astrojournals.sty

@@ -7,7 +7,7 @@ Autor: L. A. Gutiérrez Soto
 
 from __future__ import print_function
 import aplpy
-import numpy
+#import numpy
 import sys
 from astropy import coordinates as coord
 from astropy import units as u
@@ -57,9 +57,6 @@ parser.add_argument("--vmax_b", type=float, default=None,
 parser.add_argument("--zoom", type=float, default=None,
                     help="""\Zoom factor to adjust size of plot box - values > 1.0 mean to zoom in""")
 
-parser.add_argument("--position", type=str,
-                    default="HYDRA-0026-000010640-position",
-                    help="Find the DS9 region")
 
 parser.add_argument("--debug", action="store_true",
                     help="Print out verbose debugging info")
@@ -125,26 +122,26 @@ aplpy.make_rgb_image(image_r.replace('.fits', '_cube.fits'),
 
 
 # With the mask regions, the file may not exist
-position = cmd_args.position + ".reg"
-ra, dec = [], []
+# position = cmd_args.position + ".reg"
+# ra, dec = [], []
 
-try:
-    f = open(position, 'r')
-    header1 = f.readline()
-    header2 = f.readline()
-    header3 = f.readline()
-    for line in f:
-        line = line.strip()
-        columns = line.split()
-        coor = line.split("(")[-1].split("\"")[0]
-        ra1, dec1 = coor.split(",")[0:2]
-        c = SkyCoord(ra1, dec1, unit=(u.hourangle, u.deg))
-        ra.append(c.ra.hourangle)
-        dec.append(c.dec.degree)
+# try:
+#     f = open(position, 'r')
+#     header1 = f.readline()
+#     header2 = f.readline()
+#     header3 = f.readline()
+#     for line in f:
+#         line = line.strip()
+#         columns = line.split()
+#         coor = line.split("(")[-1].split("\"")[0]
+#         ra1, dec1 = coor.split(",")[0:2]
+#         c = SkyCoord(ra1, dec1, unit=(u.hourangle, u.deg))
+#         ra.append(c.ra.hourangle)
+#         dec.append(c.dec.degree)
 
-except FileNotFoundError:
-    print("File", position,
-                "not found - is not necesary now")
+# except FileNotFoundError:
+#     print("File", position,
+#                 "not found - is not necesary now")
     
 # Launch APLpy figure of 2D cube
 img = aplpy.FITSFigure(image_r.replace('.fits', '_cube_2d.fits')) 
@@ -188,10 +185,9 @@ dx, dy = 0.001, -0.001
 #                     "alpha": 0.5, "boxstyle": "round, pad=0.5"},
 #               weight='bold', size=55, relative=True, zorder=999)
 
-try:
-    img.show_regions(position)
-except FileNotFoundError: 
-    print('Region not found')
+
+img.show_regions("FoF-panstarr.reg")
+
 # except FileNotFoundError:
 #     print("File", position,
 #                 "not found - is not necesary now")
@@ -199,10 +195,10 @@ except FileNotFoundError:
 # img.show_markers(ra, dec, layer='marker_set_1', edgecolor='red',
 #                  facecolor='red', marker='o', s=10, alpha=1.)
 #img.show_markers(ra, dec , layer="marker_set_1", edgecolor="red", facecolor="none", marker="o", s=10,  alpha=0.5)
-try:
-    img.recenter(ra, dec, radius = cmd_args.zoom/3600.) #degree, for this reazon a split into 3600. #zoom ax2.recenter(ra0, dec0, 4*R0/cmd_args.zoom)
-except TypeError:
-    print("No zoom here")
+# try:
+#     img.recenter(ra, dec, radius = cmd_args.zoom/3600.) #degree, for this reazon a split into 3600. #zoom ax2.recenter(ra0, dec0, 4*R0/cmd_args.zoom)
+# except TypeError:
+#     print("No zoom here")
 #img.show_markers(ra, dec, layer='marker', edgecolor='red', facecolor='none', marker='o', s=10, alpha=0.9, linewidths=100.)#, layer='marker_set_1', edgecolor='black', facecolor='none', s=30, alpha=0.5, linewidths=20)
 # img.scalebar.set_font(size=23, weight='bold',
 #                       stretch='normal', family='sans-serif',
@@ -214,8 +210,8 @@ except TypeError:
 # img.scalebar.set_length(20/3600.)
 # img.scalebar.set_label('20 arcsec')
 
-if cmd_args.debug:
-    print("Creating of PDF image of:", position.split('-p')[0])
+# if cmd_args.debug:
+#     print("Creating of PDF image of:", position.split('-p')[0])
 
 img.set_theme('publication')
 if image_r.endswith("_swp-crop.fits"):
