@@ -6,7 +6,7 @@
 
 
 I found a new PN Candidate (32.035994 49.233615), by using synthetic fotometry based on Lamost spectra of objects
-catalog as emission lines objects. See the [[https://github.com/AngelGSoto/python-notebooks/blob/master/Lamost%20and%20emission%20line%20objects.ipynb][notebook]].
+catalog as emission lines objects. See the [[https://github.com/AngelGSoto/python-notebooks/blob/master/Lamost%20and%20emission%20line%20objects.ipynb][notebook].
 
 + Papers:
 
@@ -185,15 +185,6 @@ catalog as emission lines objects. See the [[https://github.com/AngelGSoto/pytho
 + HII regions -> [[https://ui.adsabs.harvard.edu/abs/2014ApJS..212....1A/abstract][Anderson, L. D. et. al.]].
 + SySt -> [[https://ui.adsabs.harvard.edu/abs/2019ApJS..240...21A/abstract][Akras et. al]]
 + Near stars GAIA -> [[https://ui.adsabs.harvard.edu/abs/2021A%26A...649A...6G/abstract][ Smart, R. L. et al.]].
-
-**** Paper using CLOUDY
-    - [[https://iopscience.iop.org/article/10.1088/0004-6256/140/5/1347/pdf][Helton et al.]]
-    - [[https://arxiv.org/pdf/2207.10473.pdf][Pandey et al.]]
-    - [[https://ui.adsabs.harvard.edu/abs/2018MNRAS.474.4211M/abstract][Mondal et al.]]
-    - [[https://ui.adsabs.harvard.edu/abs/2019A%26A...622A.126P/abstract][Pavana et al.]]
-    - [[https://ui.adsabs.harvard.edu/abs/2020MNRAS.492.2326M/abstract][Mondal el al.]]
-    - [[https://ui.adsabs.harvard.edu/abs/2022ApJ...925..187P/abstract][Pandey et al.]]
-    - [[https://arxiv.org/pdf/1807.01787.pdf][Barria et al.]]
 
 ** How measurement of the emission lines ratios?
 *** Tools
@@ -565,100 +556,53 @@ Byte-by-byte Description of file (#): models/*
 --------------------------------------------------------------------------------
 #+END_SRC
 
-** images
-
-   - New program using the denoise package:
-     : python ../programs/rgb_image-ps1-denoise.py cutout_rings_v3_skycell_2294_031_stk_i_unconv cutout_rings_v3_skycell_2294_031_stk_r_unconv cutout_rings_v3_skycell_2294_031_stk_g_unconv --vmin_r -443.4 --vmax_r 5000 --vmin_g -200 --vmax_g 2500 --vmin_b -250.93 --vmax_b 2000 --debug 
-
-   - The panstarr image of the PN candidate is 29.062 arcsec.
+** WISE images
 
    Size of the images dowloaded from WISE:
 
   -  PNPRTM1 => 70arcsec 
 
 ** Distance GAIA of new
-   Distance in parsec, Estimating distances from parallaxes (1467744818 sources) (Bailer-Jones C.A.L., Rybizki J., Fouesneau M., Demleitner M., Andrae R .)
+   Distance in parsec, Estimating distances from parallaxes (1467744818 sources) ( Bailer-Jones C.A.L., Rybizki J., Fouesneau M., Demleitner M., Andrae R .)
    =rgeo=2313.00952=
    =rpgeo=2324.19312=
+   
+* Improving
 
+Considering the referee report. I worked on the project to add more scientific insights to the paper.
+I contributed to the paper by supplementing it with additional LAMOST spectra.
 
-** Cloudy models
-   *** Some paper modeling PN
-   [[https://www.aanda.org/articles/aa/pdf/2013/01/aa19263-12.pdf][S.-J. Lee and S. Hyung]]
++ True PNe:
+  - Duplicate objects
 
-   Now I got to construct the Cloudy model of the object. I construct the input using [[https://github.com/AngelGSoto/PNe-LAMOST/blob/main/notebook/Creating-grid-models.ipynb][pyCluody]].
-   To run in a grid  cloudy is only necessary:
+#+BEGIN_SRC bash :
 
-   : for f in *.in; do cloudy ${f%.in}; done
+Duplicate Objects: Object spec-56396-HD125932N280356M01_sp04-145.fits and Object spec-56769-VB194N28V1_sp04-145.fits
+Duplicate Objects: Object spec-56396-HD125932N280356M01_sp04-145.fits and Object spec-56396-HD125932N280356F01_sp04-145.fits
+Duplicate Objects: Object spec-56249-HD084529N184902M01_sp08-197.fits and Object spec-56249-HD084529N184902B01_sp08-197.fits
+Duplicate Objects: Object spec-56249-HD084529N184902M01_sp08-197.fits and Object spec-58460-KII084529N184902B02_sp08-197.fits
+Duplicate Objects: Object spec-58549-HD163804N393437V01_sp08-159.fits and Object spec-56018-B5601808_sp04-177.fits
+Duplicate Objects: Object spec-55960-GAC_071N47_V1_sp05-062.fits and Object spec-56701-GAC071N47V1_sp05-062.fits
+Duplicate Objects: Object spec-55960-GAC_071N47_V1_sp05-062.fits and Object spec-56996-HD043544N451252V01_sp12-022.fits
+Duplicate Objects: Object spec-56966-HD213605N150455V01_sp01-008.fits and Object spec-57325-EG214033N103644V01_sp16-228.fits
+Duplicate Objects: Object spec-58493-KII062035N253629B02_sp16-084.fits and Object spec-58096-KII062035N253629B01_sp16-084.fits
+Duplicate Objects: Object spec-56701-GAC071N47V1_sp05-062.fits and Object spec-56996-HD043544N451252V01_sp12-022.fits
+Duplicate Objects: Object spec-58257-KP192102N424113V05_sp13-110.fits and Object spec-56436-kepler02_1_sp13-139.fits
+Duplicate Objects: Object spec-56769-VB194N28V1_sp04-145.fits and Object spec-56396-HD125932N280356F01_sp04-145.fits
+Duplicate Objects: Object spec-56249-HD084529N184902B01_sp08-197.fits and Object spec-58460-KII084529N184902B02_sp08-197.fits
+Duplicate Objects: Object spec-56326-GAC069N36V2_sp08-030.fits and Object spec-56570-GAC069N36V2_sp08-030.fits
+Duplicate Objects: Object spec-58253-HD175745N291452V02_sp05-212.fits and Object spec-56767-HD175745N291452V01_sp05-212.fits
 
-   - I also generate the 1D spectra using pyCloudy:
-     : for f in *.in; do python ../../../programs/outdata-pyCludy.py ${f%.in}; done
-
-   - I include the reddening, Ev = [0, 0.1, 0.2.. 1.0].
-     : for f in *.in; do python ../../../programs/redenned.py ${f%.in}; done
-     
-*** First comments
-    
-    - Dens 3000 -> The model N2242 _130000_37.51. Seem the best fit.
-    - Dens 3000 -> DdDm1 _130000_37.48. But two line apperars in 6400 and 6500 A.
-
-    - I drop out of the power law for the resolution, the improvement was quite better.
-      Now I think that the best fit is, N2242_120000_37.58.
-    - Now change the He abundance in He of N2242, I used -0.8. Very nice improvement see model_140000_37.57.
-    - Change Ar = -6.24.
-    - Using radius 16.6030 17.05, very similar result: 140000_36.86
-
-*** Measurements flux line
-
-    I used the ==specultis== to measurement the flux line. I used it to fit 1D Gaussian and integrated the flux.
-    What about of the uncertainty? Here some papers, [[https://articles.adsabs.harvard.edu/pdf/1999MNRAS.310..262T][Tresse et. al.]] and [[https://www.aanda.org/articles/aa/full/2002/47/aa2895/node3.html][this]].
-
-    
-*** Better models
-    
-#+BEGIN_SRC python :results output
-  from astropy.table import Table
-  import glob
-  
-  file_list = glob.glob("better-fitModel/*.ecsv")
-  for file_name in file_list:
-    tab = Table.read(file_name)
-    mask = tab["Chi red"] < 4
-    better_model = tab[mask]
-    print(better_model)
 #+END_SRC
 
-#+RESULTS:
-#+begin_example
-       Name model              chi              Chi red     
------------------------ ------------------ -----------------
-model_130000_37.03_3.54 23.485306363271494 3.914217727211916
-       Name model              chi              Chi red      
------------------------ ------------------ ------------------
-model_130000_37.12_3.60 23.904325009487284 3.9840541682478805
-       Name model              chi              Chi red     
------------------------ ------------------ -----------------
-model_130000_37.22_3.70 23.070701698849014 3.845116949808169
-       Name model              chi              Chi red     
------------------------ ------------------ -----------------
-model_130000_37.27_3.74 22.620381864506573 3.770063644084429
-       Name model              chi              Chi red      
------------------------ ------------------ ------------------
-model_130000_37.32_3.78 22.411742734577704 3.7352904557629505
-       Name model              chi              Chi red     
------------------------ ------------------ -----------------
-model_140000_37.15_3.70 23.857530904674757 3.976255150779126
-       Name model              chi              Chi red      
------------------------ ------------------ ------------------
-model_140000_37.22_3.74 23.178786493244182 3.8631310822073637
-       Name model              chi              Chi red      
------------------------ ------------------ ------------------
-model_140000_37.27_3.78 23.923062736725495 3.9871771227875823
-       Name model              chi             Chi red      
------------------------ ----------------- ------------------
-model_150000_37.22_3.78 23.85684015614496 3.9761400260241597
-#+end_example
++ Likely and probable PNe:
+  - Duplicate objects
 
-** About the LMAOST spectra
-   A paper that apeak about the blue and red arm of the LAMOST spectra:
-   [[https://iopscience.iop.org/article/10.3847/0004-6256/152/2/45/pdf][Bingqiu Chen et al]]
+#+BEGIN_SRC bash :
+uplicate Objects: Object spec-58042-HD070023N151717V01_sp05-172.fits and Object spec-56258-GAC105N15V1_sp05-035.fits
+Duplicate Objects: Object spec-57019-HD083217N291909M01_sp16-242.fits and Object spec-57725-HD083217N291909M02_sp16-242.fits
+Duplicate Objects: Object spec-55903-M31_021N30_B1_sp13-190.fits and Object spec-55907-M31_021N30_B1_sp13-190.fits
+Duplicate Objects: Object spec-55903-M31_021N30_B1_sp13-190.fits and Object spec-55931-M31_025N30_B2_sp13-176.fits
+Duplicate Objects: Object spec-55907-M31_021N30_B1_sp13-190.fits and Object spec-55931-M31_025N30_B2_sp13-176.fits
+
+#+END_SRC

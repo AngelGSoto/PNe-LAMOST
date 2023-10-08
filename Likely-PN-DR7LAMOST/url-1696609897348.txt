@@ -1,0 +1,24 @@
+#command to download listed file(s)> wget --content-disposition -nc -i url-1696609897348.txt 
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/592905172?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/160803021?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/14713190?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/11613190?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/470012174?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/600316041?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/84105035?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/26513176?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/592502224?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/392511177?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/287016242?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/451606028?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/523904211?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/491811040?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/571809044?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/605903101?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/486716242?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/46614247?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/587103238?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/436209120?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/82712038?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/96615004?token=
+http://www.lamost.org:80/dr7/v2.0/spectrum/fits/632709148?token=

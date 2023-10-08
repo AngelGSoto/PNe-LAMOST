@@ -22,10 +22,15 @@ parser.add_argument("source", type=str,
 cmd_args = parser.parse_args()
 file_ = cmd_args.source + ".fits"
 
+#LAMOST DR8
 hdu = fits.open(file_)
 hdudata = hdu[0].data
 wl = hdudata[2]
 Flux = hdudata[0]
+
+# DR8 LAMOST
+#wl = hdudata["WAVELENGTH"][0]
+#Flux =hdudata["FLUX"][0]
 Flux /=10e3
 
 #spliting the spectra in the blue and red arms
@@ -175,8 +180,7 @@ for label_, x, y in zip(em_lin, wv_lin, max_flux):
 #ax.legend()
 plt.tight_layout()
 namefile0 = file_.replace(".fits", "-zoom.pdf")
-plt.savefig(namefile0)
-
+#plt.savefig(namefile0)
 
 ############################################################
 #----------------------------------------------------------#
@@ -193,4 +197,27 @@ ax1.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
 #ax.legend()
 plt.tight_layout()
 namefile1 = file_.replace(".fits", "-Halpha.pdf")
-plt.savefig(namefile1)
+#plt.savefig(namefile1)
+############################################################
+############################################################
+#----------------------------------------------------------#
+############################################################
+fig, ax = plt.subplots(figsize=(11, 5))
+#ax.set_title(namefile)
+ax.set(xlim=[3600,9100])
+#plt.ylim(ymin=-200,ymax=1500)
+ax.set(xlabel='Wavelength $(\AA)$')
+ax.set(ylabel='Flux')
+ax.plot(wl, Flux, c = "blueviolet", linewidth=0.7, zorder=5)
+for wll in wv_lin:
+    ax.axvline(wll, color='k', linewidth=0.4, alpha=0.5, linestyle='--')
+
+bbox_props = dict(boxstyle="round", fc="w", ec="0.78", alpha=0.6, pad=0.1)
+for label_, x, y in zip(em_lin, wv_lin, max_flux):
+    ax.annotate(label_, (x, y), alpha=1, size=4,
+                   xytext=(3.0, 5.6), textcoords='offset points', ha='right', va='bottom', rotation=90, bbox=bbox_props, zorder=100)
+    
+#ax.legend()
+plt.tight_layout()
+namefile0 = file_.replace(".fits", "-normal.pdf")
+plt.savefig(namefile0)

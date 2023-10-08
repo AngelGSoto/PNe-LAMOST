@@ -120,10 +120,10 @@ ax.set_xlim(-1.2, 5.7)
 ax.set_ylim(-3.3, 9.2)
 
 # Region where are located the PNe
-result = findIntersection(1/1.5, 0.15, -7, 23.5, 0.0)
+result = findIntersection(0.84, -0.2, -7, 23.5, 0.0)
 
 x_new = np.linspace(-15.5, result,  200)
-y = (1/1.5)*x_new + 0.15
+y = 0.84*x_new - 0.2
 yy = -7*x_new + 23.5
 #Mask
 #mask = y >= result_y - 0.5
