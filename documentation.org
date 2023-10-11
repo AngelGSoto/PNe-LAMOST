@@ -6,7 +6,7 @@
 
 
 I found a new PN Candidate (32.035994 49.233615), by using synthetic fotometry based on Lamost spectra of objects
-catalog as emission lines objects. See the [[https://github.com/AngelGSoto/python-notebooks/blob/master/Lamost%20and%20emission%20line%20objects.ipynb][notebook].
+catalog as emission lines objects. See the [[https://github.com/AngelGSoto/python-notebooks/blob/master/Lamost%20and%20emission%20line%20objects.ipynb][notebook]].
 
 + Papers:
 

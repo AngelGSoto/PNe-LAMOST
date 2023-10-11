@@ -20,7 +20,7 @@ def findIntersection(m, y, m1, y1, x0):
 dfCand = pd.read_csv("GAIA-PS1-cans-new.csv")
 tab = Table.from_pandas(dfCand)
 
-dfTrue = pd.read_csv("True-PN-DR7LAMOST/DR7lamost-True-PN-duplicate-GAIA-PS1.csv")
+tabTrue = Table.read("True-PN-DR7LAMOST/DR7lamost-True-PN-duplicate-GAIA-PS1-final-saturated.ecsv", format="ascii.ecsv")
 dfLP = pd.read_csv("Likely-PN-DR7LAMOST/DR7lamost-Likely-PN-duplicate-GAIA-PS1.csv")
 
 #tab_ff = vstack([tab1, tab2, tab3])
@@ -43,8 +43,8 @@ bp_rp_f = tab_f['BP-RP']
 tab_f["G_r"] = G_r_f
 
 # True
-G_r_t = dfTrue['Gmag'] - dfTrue['rmag']
-bp_rp_t = dfTrue['BP-RP']
+G_r_t = tabTrue['Gmag'] - tabTrue['rmag']
+bp_rp_t = tabTrue['BP-RP']
 
 # Likely
 G_r_p = dfLP['Gmag'] - dfLP['rmag']
@@ -115,9 +115,9 @@ for label_, x, y in zip(tab_f["LAMOST"], bp_rp_f, G_r_f):
                    xytext=(155.0, 10), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props, zorder=100)
 
 # True
-#for label_, x, y in zip(dfTrue["FileName"], bp_rp_t, G_r_t):
-    #ax.annotate(label_.split(".fit")[0], (x, y), alpha=1, size=15,
-                   #xytext=(155.0, 10), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props, zorder=100)
+# for label_, x, y in zip(tabTrue["FileName"], bp_rp_t, G_r_t):
+#     ax.annotate(label_.split(".fit")[0], (x, y), alpha=1, size=15,
+#                    xytext=(155.0, 10), textcoords='offset points', ha='right', va='bottom', bbox=bbox_props, zorder=100)
 
 #for label_, x, y in zip(dfLP["FileName"], bp_rp_p, G_r_p):
     #ax.annotate(label_.split(".fit")[0], (x, y), alpha=1, size=15,
@@ -125,5 +125,5 @@ for label_, x, y in zip(tab_f["LAMOST"], bp_rp_f, G_r_f):
 
 ax.legend(prop={'family': 'monospace', 'size': 23}, loc="upper right", **lgd_kws)
 #plt.gca().invert_yaxis()
-fig.savefig("Figs/pn-candidates-gaiaDR3.pdf")
+fig.savefig("Figs/pn-candidates-gaiaDR3-PS1.pdf")
 plt.clf()
